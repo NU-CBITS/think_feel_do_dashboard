@@ -1,27 +1,12 @@
 <h1>Listing Arms</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Project</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="btn-toolbar" role="toolbar">
+  <%= link_to "New", new_arm_path, class: "btn btn-default" %>
+</div>
 
-  <tbody>
-    <% @arms.each do |arm| %>
-      <tr>
-        <td><%= arm.name %></td>
-        <td><%= arm.project_id %></td>
-        <td><%= link_to 'Show', arm %></td>
-        <td><%= link_to 'Edit', edit_arm_path(arm) %></td>
-        <td><%= link_to 'Destroy', arm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="list-group">
+  <% @arms.each do |arm| %>
+    <%= link_to arm.name, arm, class: "list-group-item" %>
+  <% end %>
+</div>
 
-<br>
-
-<%= link_to 'New Arm', new_arm_path %>

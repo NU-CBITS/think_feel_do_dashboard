@@ -1,27 +1,11 @@
 <h1>Listing Groups</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Arm</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="btn-toolbar" role="toolbar">
+  <%= link_to "New", new_group_path, class: "btn btn-default" %>
+</div>
 
-  <tbody>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.name %></td>
-        <td><%= group.arm_id %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Group', new_group_path %>
+<div class="list-group">
+  <% @groups.each do |group| %>
+    <%= link_to group.name, group, class: "list-group-item" %>
+  <% end %>
+</div>

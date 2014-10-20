@@ -1,0 +1,18 @@
+/* Bootstrap Overrides */
+
+.alert {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-toolbar {
+  margin-bottom: 10px;
+}
+
+.navbar.navbar-default.navbar-static-top {
+  margin-bottom: 0px;
+}
+
+#main h1 {
+  margin-top: 10px;
+}
