@@ -1,8 +1,8 @@
-<%= form_for(@participant) do |f| %>
+<%= form_for(@participant, html: { role: :form }) do |f| %>
   <% if @participant.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@participant.errors.count, "error") %> prohibited this participant from being saved:</h2>
-
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <strong><%= pluralize(@participant.errors.count, "error") %> prohibited this participant from being saved:</strong>
       <ul>
       <% @participant.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,19 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :phone_number %><br>
-    <%= f.text_field :phone_number %>
+  <div class="form-group">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :study_id %><br>
-    <%= f.text_field :study_id %>
+  <div class="form-group">
+    <%= f.label :study_id %>
+    <%= f.text_field :study_id, class: "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit button_text, class: "btn btn-primary" %>
+    <%= link_to "Cancel", cancel_path, class: "btn btn-default" %>
   </div>
 <% end %>

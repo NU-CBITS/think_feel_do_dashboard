@@ -1,4 +1,10 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @arm.name %></h1>
+
+<div class="btn-toolbar" role="toolbar">
+  <%= link_to "Arms", arms_path, class: "btn btn-default" %>
+  <%= link_to "Edit", edit_arm_path(@arm), class: "btn btn-default" %>
+  <%= link_to "Destroy", @arm, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+</div>
 
 <p>
   <strong>Name:</strong>
@@ -9,6 +15,3 @@
   <strong>Project:</strong>
   <%= @arm.project_id %>
 </p>
-
-<%= link_to 'Edit', edit_arm_path(@arm) %> |
-<%= link_to 'Back', arms_path %>

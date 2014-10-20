@@ -1,4 +1,10 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @group.name %></h1>
+
+<div class="btn-toolbar" role="toolbar">
+  <%= link_to "Groups", groups_path, class: "btn btn-default" %>
+  <%= link_to "Edit", edit_group_path(@participant), class: "btn btn-default" %>
+  <%= link_to "Destroy", @group, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+</div>
 
 <p>
   <strong>Name:</strong>

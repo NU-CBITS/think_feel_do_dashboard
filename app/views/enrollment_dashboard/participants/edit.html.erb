@@ -1,6 +1,3 @@
-<h1>Editing participant</h1>
+<h1>Editing Participant</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @participant %> |
-<%= link_to 'Back', participants_path %>
+<%= render 'form', button_text: "Update", cancel_path: participant_path(@participant) %>

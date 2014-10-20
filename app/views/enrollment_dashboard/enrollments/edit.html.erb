@@ -1,6 +1,3 @@
-<h1>Editing enrollment</h1>
+<h1>Editing Enrollment</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @enrollment %> |
-<%= link_to 'Back', enrollments_path %>
+<%= render 'form', button_text: "Update", cancel_path: enrollment_path(@enrollment) %>

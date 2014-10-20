@@ -1,9 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @coach.name %></h1>
+
+<div class="btn-toolbar" role="toolbar">
+  <%= link_to "Coaches", coaches_path, class: "btn btn-default" %>
+  <%= link_to "Edit", edit_coach_path(@coach), class: "btn btn-default" %>
+  <%= link_to "Destroy", @coach, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+</div>
 
 <p>
   <strong>Name:</strong>
   <%= @coach.name %>
 </p>
-
-<%= link_to 'Edit', edit_coach_path(@coach) %> |
-<%= link_to 'Back', coaches_path %>
