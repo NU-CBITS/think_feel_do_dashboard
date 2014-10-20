@@ -1,0 +1,27 @@
+<h1>Listing arms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Project</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @arms.each do |arm| %>
+      <tr>
+        <td><%= arm.name %></td>
+        <td><%= arm.project_id %></td>
+        <td><%= link_to 'Show', arm %></td>
+        <td><%= link_to 'Edit', edit_arm_path(arm) %></td>
+        <td><%= link_to 'Destroy', arm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Arm', new_arm_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Coach:</strong>
+  <%= @enrollment.coach_id %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @enrollment.group_id %>
+</p>
+
+<p>
+  <strong>Display name:</strong>
+  <%= @enrollment.display_name %>
+</p>
+
+<p>
+  <strong>Participant:</strong>
+  <%= @enrollment.participant_id %>
+</p>
+
+<%= link_to 'Edit', edit_enrollment_path(@enrollment) %> |
+<%= link_to 'Back', enrollments_path %>

@@ -1,0 +1,45 @@
+= EnrollmentDashboard
+
+This is a rails engine that allows for the CRUDing and Enrolling of participants
+
+Download <code>git clone https://github.com/cbitstech/?.git [name of folder]</code>
+
+<h2>Dependencies</h2>
+
+ruby: 2.1.2
+
+rails: ~> 4.1.6
+
+<h2>Configuration</h2>
+
+Application Name: EnrollmentDashboard
+
+Github Repo: https://github.com/cbitstech/?
+
+Production Url:
+
+Staging Url:
+
+Confluence:
+
+<h2>Database creation</h2>
+
+<code>rake db:drop db:create db:migrate</code>
+
+<h2>Database initialization</h2>
+
+<h2>Running tests</h2>
+
+<h2>Services (job queues, cache servers, search engines, etc.)</h2>
+
+<h2>Deployment Instructions</h2>
+
+<ul>
+  <li></li>
+</ul>
+
+<h3>Production</h3>
+
+<h3>Staging</h3>
+
+<h2>Possible future 'To Dos'</h2>

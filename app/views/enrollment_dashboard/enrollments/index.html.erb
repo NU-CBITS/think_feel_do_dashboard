@@ -1,0 +1,31 @@
+<h1>Listing enrollments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Coach</th>
+      <th>Group</th>
+      <th>Display name</th>
+      <th>Participant</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @enrollments.each do |enrollment| %>
+      <tr>
+        <td><%= enrollment.coach_id %></td>
+        <td><%= enrollment.group_id %></td>
+        <td><%= enrollment.display_name %></td>
+        <td><%= enrollment.participant_id %></td>
+        <td><%= link_to 'Show', enrollment %></td>
+        <td><%= link_to 'Edit', edit_enrollment_path(enrollment) %></td>
+        <td><%= link_to 'Destroy', enrollment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Enrollment', new_enrollment_path %>
