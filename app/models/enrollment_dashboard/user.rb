@@ -1,4 +1,4 @@
 module EnrollmentDashboard
-  class Coach < ActiveRecord::Base
+  class User < ActiveRecord::Base
   end
 end
