@@ -1,0 +1,40 @@
+AllCops:
+  Exclude:
+    - bin/**/*
+    - config/**/*
+    - db/**/*
+
+ClassLength:
+  Enabled: false
+
+Documentation:
+  Exclude:
+    - spec/**/*
+
+DotPosition:
+  Enabled: false
+
+TrailingBlankLines:
+  Enabled: false
+
+HandleExceptions:
+  Enabled: false
+
+IfUnlessModifier:
+  Enabled: false
+
+LineLength:
+  Exclude:
+    - spec/**/*
+
+MethodLength:
+  Max: 15
+
+StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/GuardClause:
+  Enabled: false
+
+WordArray:
+  Enabled: false

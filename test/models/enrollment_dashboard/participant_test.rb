@@ -1,3 +1,4 @@
+# Model tests for Participant Model
 require 'test_helper'
 
 module EnrollmentDashboard

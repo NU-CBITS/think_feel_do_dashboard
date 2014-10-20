@@ -15,31 +15,31 @@ ActiveRecord::Schema.define(version: 20141020191836) do
 
   create_table "enrollment_dashboard_arms", force: true do |t|
     t.string   "name"
-    t.integer  "project_id"
+    t.integer  "project_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "enrollment_dashboard_enrollments", force: true do |t|
-    t.integer  "coach_id"
-    t.integer  "group_id"
+    t.integer  "coach_id",       null: false
+    t.integer  "group_id",       null: false
     t.string   "display_name"
-    t.integer  "participant_id"
+    t.integer  "participant_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "enrollment_dashboard_groups", force: true do |t|
     t.string   "name"
-    t.integer  "arm_id"
+    t.integer  "arm_id",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "enrollment_dashboard_participants", force: true do |t|
-    t.string   "email"
+    t.string   "email",        null: false
     t.string   "phone_number"
-    t.string   "study_id"
+    t.string   "study_id",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
