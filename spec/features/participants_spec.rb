@@ -10,7 +10,14 @@ describe "participant tool", type: :request do
   end
 
   scenario "User creates participant" do
+    expect(page).to_not have_text "bob@ex.co"
+
     click_on "New"
     fill_in "Email", with: "bob@ex.co"
+    fill_in "Phone number", with: "773-723-3261"
+    fill_in "Study Id", with: "123asdf9"
+    click_on "Create"
+
+    expect(page).to have_text "bob@ex.co"
   end
 end

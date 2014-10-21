@@ -5819,3 +5819,64 @@ Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for
 
 
 Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:03:07 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 12:08:52 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  [1mSELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"[0m
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (1.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:08:52 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:08:52 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:08:52 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/new" for 127.0.0.1 at 2014-10-21 12:09:43 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#new as HTML
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/_form.html.erb (2.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/new.html.erb within layouts/think_feel_do_dashboard/application (3.5ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:09:43 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:09:43 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:09:43 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 12:11:32 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.3ms)[0m  SELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (1.5ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:11:32 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:11:32 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:11:32 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 12:16:49 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[36mThinkFeelDoDashboard::Participant Load (1.1ms)[0m  [1mSELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"[0m
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb (9.1ms)
+Completed 200 OK in 32ms (Views: 14.0ms | ActiveRecord: 1.3ms)
