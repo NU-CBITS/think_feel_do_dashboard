@@ -4423,3 +4423,7 @@ Started GET "/assets/enrollment_dashboard/bootstrap_overrides.css?body=1" for 12
 
 
 Started GET "/assets/enrollment_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 10:46:21 -0500
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
