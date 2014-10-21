@@ -11,6 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20141020191836) do
+
+  create_table "enrollment_dashboard_arms", force: true do |t|
+    t.string   "name"
+    t.integer  "project_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "enrollment_dashboard_enrollments", force: true do |t|
+    t.integer  "coach_id",       null: false
+    t.integer  "group_id",       null: false
+    t.string   "display_name"
+    t.integer  "participant_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "enrollment_dashboard_groups", force: true do |t|
+    t.string   "name"
+    t.integer  "arm_id",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "enrollment_dashboard_participants", force: true do |t|
+    t.string   "email",        null: false
+    t.string   "phone_number"
+    t.string   "study_id",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "enrollment_dashboard_projects", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "enrollment_dashboard_users", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
