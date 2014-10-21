@@ -46,7 +46,7 @@ Confluence:
 
 <h2>Running tests</h2>
 
-<code>bundle exec rake app:db:migrate</code>
+<code>rake app:db:migrate</code>
 
 <code>rspec</code>
 

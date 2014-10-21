@@ -20,10 +20,8 @@ ActiveRecord::Schema.define(version: 20141020191836) do
     t.datetime "updated_at"
   end
 
-  create_table "think_feel_do_dashboard_enrollments", force: true do |t|
+  create_table "think_feel_do_dashboard_coach_assignments", force: true do |t|
     t.integer  "coach_id",       null: false
-    t.integer  "group_id",       null: false
-    t.string   "display_name"
     t.integer  "participant_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -36,10 +34,18 @@ ActiveRecord::Schema.define(version: 20141020191836) do
     t.datetime "updated_at"
   end
 
+  create_table "think_feel_do_dashboard_memberships", force: true do |t|
+    t.integer  "group_id",       null: false
+    t.integer  "participant_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "think_feel_do_dashboard_participants", force: true do |t|
-    t.string   "email",        null: false
+    t.string   "email",                     null: false
     t.string   "phone_number"
-    t.string   "study_id",     null: false
+    t.string   "study_id",                  null: false
+    t.string   "display_name", default: ""
     t.datetime "created_at"
     t.datetime "updated_at"
   end

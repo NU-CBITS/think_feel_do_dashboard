@@ -26,7 +26,6 @@ Gem::Specification.new do |s|
 
   # Ror rspec testing
   s.add_development_dependency "rspec-rails", "~> 3"
-  s.add_development_dependency "poltergeist", "~> 1.5"
   s.add_development_dependency "capybara", "~> 2"
   s.add_development_dependency "database_cleaner", "~> 1.3"
 end

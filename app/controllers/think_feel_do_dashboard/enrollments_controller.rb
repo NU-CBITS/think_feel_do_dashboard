@@ -4,10 +4,6 @@ module ThinkFeelDoDashboard
   class EnrollmentsController < ApplicationController
     before_action :set_enrollment, only: [:show, :edit, :update, :destroy]
 
-    # GET /enrollments
-    def index
-      @enrollments = Enrollment.all
-    end
 
     # GET /enrollments/1
     def show
@@ -27,7 +23,7 @@ module ThinkFeelDoDashboard
       @enrollment = Enrollment.new(enrollment_params)
 
       if @enrollment.save
-        redirect_to @enrollment, notice: 'Enrollment was successfully created.'
+        redirect_to @enrollment, notice: "Participant was successfully enrollment."
       else
         render :new
       end
@@ -36,7 +32,7 @@ module ThinkFeelDoDashboard
     # PATCH/PUT /enrollments/1
     def update
       if @enrollment.update(enrollment_params)
-        redirect_to @enrollment, notice: 'Enrollment was successfully updated.'
+        redirect_to @enrollment, notice: "Participant's enrollment was successfully updated."
       else
         render :edit
       end
@@ -45,7 +41,7 @@ module ThinkFeelDoDashboard
     # DELETE /enrollments/1
     def destroy
       @enrollment.destroy
-      redirect_to enrollments_url, notice: 'Enrollment was successfully destroyed.'
+      redirect_to enrollments_url, notice: "Participant's was successfully unenrolled."
     end
 
     private

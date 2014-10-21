@@ -4,6 +4,7 @@ class CreateThinkFeelDoDashboardParticipants < ActiveRecord::Migration
       t.string :email, null: false, unique: true
       t.string :phone_number, unique: true
       t.string :study_id, null: false, unique: true
+      t.string :display_name, empty: true, default: ""
 
       t.timestamps
     end
