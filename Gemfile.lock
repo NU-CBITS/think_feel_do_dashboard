@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    enrollment_dashboard (0.0.1)
+    think_feel_do_dashboard (0.0.1)
       rails (~> 4.1)
 
 GEM
@@ -135,8 +135,8 @@ PLATFORMS
 DEPENDENCIES
   capybara (~> 2)
   database_cleaner (~> 1.3)
-  enrollment_dashboard!
   poltergeist (~> 1.5)
   rspec-rails (~> 3)
   rubocop
   sqlite3
+  think_feel_do_dashboard!

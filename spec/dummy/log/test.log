@@ -162,3 +162,327 @@ SQLite3::SQLException: table enrollment_dashboard_participants has no column nam
   [1m[35m (1.5ms)[0m  commit transaction
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "think_feel_do_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:33:52', '2014-10-21 16:33:52', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:33:52', '2014-10-21 16:33:52', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:33:52', '2014-10-21 16:33:52', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:33:52', '2014-10-21 16:33:52', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:33:52', '2014-10-21 16:33:52', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:33:52', '2014-10-21 16:33:52', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:33:52', '2014-10-21 16:33:52', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:33:52', '2014-10-21 16:33:52', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:33:52', '2014-10-21 16:33:52', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:33:52', '2014-10-21 16:33:52', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:33:52', '2014-10-21 16:33:52', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:33:52', '2014-10-21 16:33:52', 298486374)[0m
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "think_feel_do_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:34:57', '2014-10-21 16:34:57', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:34:57', '2014-10-21 16:34:57', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:34:57', '2014-10-21 16:34:57', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:34:57', '2014-10-21 16:34:57', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:34:57', '2014-10-21 16:34:57', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:34:57', '2014-10-21 16:34:57', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:34:57', '2014-10-21 16:34:57', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:34:57', '2014-10-21 16:34:57', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:34:57', '2014-10-21 16:34:57', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:34:57', '2014-10-21 16:34:57', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:34:57', '2014-10-21 16:34:57', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:34:57', '2014-10-21 16:34:57', 298486374)[0m
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "think_feel_do_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:35:11', '2014-10-21 16:35:11', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:35:11', '2014-10-21 16:35:11', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:35:11', '2014-10-21 16:35:11', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:35:11', '2014-10-21 16:35:11', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:35:11', '2014-10-21 16:35:11', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:35:11', '2014-10-21 16:35:11', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:35:11', '2014-10-21 16:35:11', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:35:11', '2014-10-21 16:35:11', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:35:11', '2014-10-21 16:35:11', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:35:11', '2014-10-21 16:35:11', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:35:11', '2014-10-21 16:35:11', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:35:11', '2014-10-21 16:35:11', 298486374)[0m
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "think_feel_do_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:37:21', '2014-10-21 16:37:21', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:37:21', '2014-10-21 16:37:21', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:37:21', '2014-10-21 16:37:21', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:37:21', '2014-10-21 16:37:21', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:37:21', '2014-10-21 16:37:21', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:37:21', '2014-10-21 16:37:21', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:37:21', '2014-10-21 16:37:21', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:37:21', '2014-10-21 16:37:21', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:37:21', '2014-10-21 16:37:21', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:37:21', '2014-10-21 16:37:21', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:37:21', '2014-10-21 16:37:21', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:37:21', '2014-10-21 16:37:21', 298486374)[0m
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "think_feel_do_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:37:49', '2014-10-21 16:37:49', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:37:49', '2014-10-21 16:37:49', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:37:49', '2014-10-21 16:37:49', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:37:49', '2014-10-21 16:37:49', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:37:49', '2014-10-21 16:37:49', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:37:49', '2014-10-21 16:37:49', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:37:49', '2014-10-21 16:37:49', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:37:49', '2014-10-21 16:37:49', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:37:49', '2014-10-21 16:37:49', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:37:49', '2014-10-21 16:37:49', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:37:49', '2014-10-21 16:37:49', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:37:49', '2014-10-21 16:37:49', 298486374)[0m
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "think_feel_do_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:38:07', '2014-10-21 16:38:07', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:38:07', '2014-10-21 16:38:07', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:38:07', '2014-10-21 16:38:07', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:38:07', '2014-10-21 16:38:07', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:38:07', '2014-10-21 16:38:07', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:38:07', '2014-10-21 16:38:07', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:38:07', '2014-10-21 16:38:07', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:38:07', '2014-10-21 16:38:07', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:38:07', '2014-10-21 16:38:07', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:38:07', '2014-10-21 16:38:07', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:38:07', '2014-10-21 16:38:07', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:38:07', '2014-10-21 16:38:07', 298486374)[0m
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "think_feel_do_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:38:44', '2014-10-21 16:38:44', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:38:44', '2014-10-21 16:38:44', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:38:44', '2014-10-21 16:38:44', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:38:44', '2014-10-21 16:38:44', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:38:44', '2014-10-21 16:38:44', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:38:44', '2014-10-21 16:38:44', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:38:44', '2014-10-21 16:38:44', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:38:44', '2014-10-21 16:38:44', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:38:44', '2014-10-21 16:38:44', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:38:44', '2014-10-21 16:38:44', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:38:44', '2014-10-21 16:38:44', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:38:44', '2014-10-21 16:38:44', 298486374)[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 11:38:44 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  SELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (9.8ms)
+Completed 500 Internal Server Error in 17ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "think_feel_do_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:40:39', '2014-10-21 16:40:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:40:39', '2014-10-21 16:40:39', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:40:39', '2014-10-21 16:40:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:40:39', '2014-10-21 16:40:39', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:40:39', '2014-10-21 16:40:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:40:39', '2014-10-21 16:40:39', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:40:39', '2014-10-21 16:40:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:40:39', '2014-10-21 16:40:39', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:40:39', '2014-10-21 16:40:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:40:39', '2014-10-21 16:40:39', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:40:39', '2014-10-21 16:40:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:40:39', '2014-10-21 16:40:39', 298486374)[0m
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 11:40:39 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  SELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (8.4ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "think_feel_do_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:41:08', '2014-10-21 16:41:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:41:08', '2014-10-21 16:41:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:41:08', '2014-10-21 16:41:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:41:08', '2014-10-21 16:41:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:41:08', '2014-10-21 16:41:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:41:08', '2014-10-21 16:41:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:41:08', '2014-10-21 16:41:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:41:08', '2014-10-21 16:41:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:41:08', '2014-10-21 16:41:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:41:08', '2014-10-21 16:41:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:41:08', '2014-10-21 16:41:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:41:08', '2014-10-21 16:41:08', 298486374)[0m
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 11:41:08 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  SELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (8.6ms)
+Completed 200 OK in 24ms (Views: 23.7ms | ActiveRecord: 0.2ms)
+Started GET "/think_feel_do_dashboard/participants/new" for 127.0.0.1 at 2014-10-21 11:41:08 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#new as HTML
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/_form.html.erb (13.6ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/new.html.erb within layouts/think_feel_do_dashboard/application (16.8ms)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "think_feel_do_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:43:11', '2014-10-21 16:43:11', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:43:11', '2014-10-21 16:43:11', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:43:11', '2014-10-21 16:43:11', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:43:11', '2014-10-21 16:43:11', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:43:11', '2014-10-21 16:43:11', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:43:11', '2014-10-21 16:43:11', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:43:11', '2014-10-21 16:43:11', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:43:11', '2014-10-21 16:43:11', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:43:11', '2014-10-21 16:43:11', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:43:11', '2014-10-21 16:43:11', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:43:11', '2014-10-21 16:43:11', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:43:11', '2014-10-21 16:43:11', 298486374)[0m
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 11:43:11 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  SELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (8.4ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.2ms)
+Started GET "/think_feel_do_dashboard/participants/new" for 127.0.0.1 at 2014-10-21 11:43:11 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#new as HTML
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/_form.html.erb (12.7ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/new.html.erb within layouts/think_feel_do_dashboard/application (16.1ms)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "think_feel_do_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:43:56', '2014-10-21 16:43:56', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:43:56', '2014-10-21 16:43:56', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:43:56', '2014-10-21 16:43:56', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:43:56', '2014-10-21 16:43:56', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:43:56', '2014-10-21 16:43:56', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:43:56', '2014-10-21 16:43:56', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:43:56', '2014-10-21 16:43:56', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:43:56', '2014-10-21 16:43:56', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:43:56', '2014-10-21 16:43:56', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:43:56', '2014-10-21 16:43:56', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:43:56', '2014-10-21 16:43:56', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:43:56', '2014-10-21 16:43:56', 298486374)[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 11:43:56 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  SELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (8.8ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.2ms)
+Started GET "/think_feel_do_dashboard/participants/new" for 127.0.0.1 at 2014-10-21 11:43:56 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#new as HTML
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/_form.html.erb (12.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/new.html.erb within layouts/think_feel_do_dashboard/application (15.1ms)
+Completed 200 OK in 17ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "think_feel_do_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 17:03:16', '2014-10-21 17:03:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 17:03:16', '2014-10-21 17:03:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 17:03:16', '2014-10-21 17:03:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 17:03:16', '2014-10-21 17:03:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 17:03:16', '2014-10-21 17:03:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 17:03:16', '2014-10-21 17:03:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 17:03:16', '2014-10-21 17:03:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 17:03:16', '2014-10-21 17:03:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 17:03:16', '2014-10-21 17:03:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 17:03:16', '2014-10-21 17:03:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 17:03:16', '2014-10-21 17:03:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 17:03:16', '2014-10-21 17:03:16', 298486374)[0m
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 12:03:16 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  SELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (8.3ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.4ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.3ms)
+Completed 200 OK in 38ms (Views: 37.4ms | ActiveRecord: 0.2ms)
+Started GET "/think_feel_do_dashboard/participants/new" for 127.0.0.1 at 2014-10-21 12:03:17 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#new as HTML
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/_form.html.erb (11.8ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/new.html.erb within layouts/think_feel_do_dashboard/application (13.2ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.1ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m

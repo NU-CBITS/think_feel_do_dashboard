@@ -13,6 +13,7 @@ Rails.backtrace_cleaner.remove_silencers!
 Dir["#{ File.dirname(__FILE__) }/support/**/*.rb"].each { |f| require f }
 
 RSpec.configure do |config|
+  config.include Capybara::DSL
   config.mock_with :rspec
   config.fixture_path = "#{ File.dirname(__FILE__) }/fixtures"
   config.use_transactional_fixtures = true

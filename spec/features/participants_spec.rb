@@ -1,15 +1,16 @@
 require "spec_helper"
 
-describe "participant tool" do
+describe "participant tool", type: :request do
   fixtures :all
 
   let(:user) { users(:user) }
 
-  before do
-    visit "/social_networking/profile_page"
+  before :each do
+    visit "/think_feel_do_dashboard/participants"
   end
 
   scenario "User creates participant" do
-    expect(1).to be 2
+    click_on "New"
+    fill_in "Email", with: "bob@ex.co"
   end
 end
