@@ -1,8 +1,22 @@
-= EnrollmentDashboard
+<h1>EnrollmentDashboard</h1>
 
 This is a rails engine that allows for the CRUDing and Enrolling of participants
 
 Download <code>git clone https://github.com/cbitstech/?.git [name of folder]</code>
+
+<h2>Assumptions</h2>
+
+This engine expects there to be a Devise-like API available, and an authenticatable Participant class stored in a participants table.
+
+<h2>Installation</h2>
+
+Add to your Gemfile
+
+<code>gem 'think_feel_do_dashboard', git: 'git://github.com/cbitstech/think_feel_do_dashboard.git'</code>
+
+Then
+
+<code>bundle install</code>
 
 <h2>Dependencies</h2>
 

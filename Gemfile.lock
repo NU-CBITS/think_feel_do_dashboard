@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     enrollment_dashboard (0.0.1)
-      rails (~> 4.1.6)
+      rails (~> 4.1)
 
 GEM
   remote: https://rubygems.org/
@@ -140,10 +140,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  capybara (~> 2)
   database_cleaner (~> 1.3)
   enrollment_dashboard!
   jasmine-rails (= 0.10.0)
   poltergeist (~> 1.5)
-  rspec-rails (~> 3.0)
+  rspec-rails (~> 3)
   rubocop
   sqlite3

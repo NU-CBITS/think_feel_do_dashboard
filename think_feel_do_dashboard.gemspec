@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = EnrollmentDashboard::VERSION
   s.authors     = ["Michael Wehrley"]
   s.email       = ["michael.wehrley@northwestern.edu"]
-  s.homepage    = "https://github.com/michaelwehrley"
+  s.homepage    = "https://github.com/cbitstech/think_feel_do_dashboard"
   s.summary     = "Summary of EnrollmentDashboard."
   s.description = "Description of EnrollmentDashboard."
   s.license     = "MIT"
@@ -17,14 +17,15 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 4.1.6"
+  s.add_dependency "rails", "~> 4.1"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rubocop"
 
-  # for testing
-  s.add_development_dependency "rspec-rails", "~> 3.0"
+  # for rspec testing
+  s.add_development_dependency "rspec-rails", "~> 3"
   s.add_development_dependency "poltergeist", "~> 1.5"
+  s.add_development_dependency "capybara", "~> 2"
   s.add_development_dependency "database_cleaner", "~> 1.3"
   s.add_development_dependency "jasmine-rails", "0.10.0"
 end
