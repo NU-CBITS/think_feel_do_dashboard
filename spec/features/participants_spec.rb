@@ -18,6 +18,8 @@ describe "participant tool", type: :request do
     fill_in "Study Id", with: "123asdf9"
     click_on "Create"
 
-    expect(page).to have_text "bob@ex.co"
+    expect(page).to have_text "Email: bob@ex.co"
+    expect(page).to have_text "Phone number: 773-723-3261"
+    expect(page).to have_text "Study Id: 123asdf9"
   end
 end

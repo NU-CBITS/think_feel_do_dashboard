@@ -5880,3 +5880,40 @@ Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
   [1m[36mThinkFeelDoDashboard::Participant Load (1.1ms)[0m  [1mSELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"[0m
   Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb (9.1ms)
 Completed 200 OK in 32ms (Views: 14.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 12:19:37 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  SELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (1.1ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.3ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.3ms)
+Completed 200 OK in 45ms (Views: 44.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:19:37 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:19:37 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:19:37 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 12:19:39 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (1.4ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:19:39 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:19:39 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:19:39 -0500

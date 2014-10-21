@@ -645,3 +645,109 @@ Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
   Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.1ms)
 Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
   [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "think_feel_do_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 17:20:20', '2014-10-21 17:20:20', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 17:20:20', '2014-10-21 17:20:20', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 17:20:20', '2014-10-21 17:20:20', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 17:20:20', '2014-10-21 17:20:20', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 17:20:20', '2014-10-21 17:20:20', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 17:20:20', '2014-10-21 17:20:20', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 17:20:20', '2014-10-21 17:20:20', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 17:20:20', '2014-10-21 17:20:20', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 17:20:20', '2014-10-21 17:20:20', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 17:20:20', '2014-10-21 17:20:20', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 17:20:20', '2014-10-21 17:20:20', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 17:20:20', '2014-10-21 17:20:20', 298486374)[0m
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 12:20:20 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  SELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (8.4ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.4ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.3ms)
+Completed 200 OK in 37ms (Views: 36.3ms | ActiveRecord: 0.2ms)
+Started GET "/think_feel_do_dashboard/participants/new" for 127.0.0.1 at 2014-10-21 12:20:20 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#new as HTML
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/_form.html.erb (12.6ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/new.html.erb within layouts/think_feel_do_dashboard/application (13.9ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+Started POST "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 12:20:20 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "participant"=>{"email"=>"bob@ex.co", "phone_number"=>"773-723-3261", "study_id"=>"123asdf9"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThinkFeelDoDashboard::Participant Exists (0.1ms)[0m  SELECT  1 AS one FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."phone_number" = '773-723-3261' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_participants" ("created_at", "email", "phone_number", "study_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-21 17:20:20.698713"], ["email", "bob@ex.co"], ["phone_number", "773-723-3261"], ["study_id", "123asdf9"], ["updated_at", "2014-10-21 17:20:20.698713"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/think_feel_do_dashboard/participants/980190963
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms)
+Started GET "/think_feel_do_dashboard/participants/980190963" for 127.0.0.1 at 2014-10-21 12:20:20 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"980190963"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 980190963]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (1.2ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "think_feel_do_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 17:26:00', '2014-10-21 17:26:00', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 17:26:00', '2014-10-21 17:26:00', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 17:26:00', '2014-10-21 17:26:00', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 17:26:00', '2014-10-21 17:26:00', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 17:26:00', '2014-10-21 17:26:00', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 17:26:00', '2014-10-21 17:26:00', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 17:26:00', '2014-10-21 17:26:00', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 17:26:00', '2014-10-21 17:26:00', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "think_feel_do_dashboard_projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 17:26:00', '2014-10-21 17:26:00', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 17:26:00', '2014-10-21 17:26:00', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "think_feel_do_dashboard_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 17:26:00', '2014-10-21 17:26:00', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 17:26:00', '2014-10-21 17:26:00', 298486374)[0m
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 12:26:00 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  SELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (8.3ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.4ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.3ms)
+Completed 200 OK in 36ms (Views: 35.4ms | ActiveRecord: 0.2ms)
+Started GET "/think_feel_do_dashboard/participants/new" for 127.0.0.1 at 2014-10-21 12:26:00 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#new as HTML
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/_form.html.erb (12.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/new.html.erb within layouts/think_feel_do_dashboard/application (13.4ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+Started POST "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 12:26:00 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "participant"=>{"email"=>"bob@ex.co", "phone_number"=>"773-723-3261", "study_id"=>"123asdf9"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThinkFeelDoDashboard::Participant Exists (0.1ms)[0m  SELECT  1 AS one FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."phone_number" = '773-723-3261' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_participants" ("created_at", "email", "phone_number", "study_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-21 17:26:00.611596"], ["email", "bob@ex.co"], ["phone_number", "773-723-3261"], ["study_id", "123asdf9"], ["updated_at", "2014-10-21 17:26:00.611596"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/think_feel_do_dashboard/participants/980190963
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms)
+Started GET "/think_feel_do_dashboard/participants/980190963" for 127.0.0.1 at 2014-10-21 12:26:00 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"980190963"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 980190963]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (1.1ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
