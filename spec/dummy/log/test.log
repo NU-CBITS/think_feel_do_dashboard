@@ -74,3 +74,91 @@ Unable to load enrollment_dashboard/coach, underlying cause No such file to load
   [1m[35m (0.0ms)[0m  rollback transaction
   [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "enrollment_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:14:38', '2014-10-21 16:14:38', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:14:38', '2014-10-21 16:14:38', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "enrollment_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:14:38', '2014-10-21 16:14:38', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:14:38', '2014-10-21 16:14:38', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "enrollment_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:14:38', '2014-10-21 16:14:38', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:14:38', '2014-10-21 16:14:38', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "enrollment_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "enrollment_dashboard_participants" ("title", "email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', '2014-10-21 16:14:38', '2014-10-21 16:14:38', 980190962)
+SQLite3::SQLException: table enrollment_dashboard_participants has no column named title: INSERT INTO "enrollment_dashboard_participants" ("title", "email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', '2014-10-21 16:14:38', '2014-10-21 16:14:38', 980190962)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.8ms)[0m  DELETE FROM "enrollment_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:15:28', '2014-10-21 16:15:28', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:15:28', '2014-10-21 16:15:28', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "enrollment_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:15:28', '2014-10-21 16:15:28', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:15:28', '2014-10-21 16:15:28', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "enrollment_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:15:28', '2014-10-21 16:15:28', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:15:28', '2014-10-21 16:15:28', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "enrollment_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:15:28', '2014-10-21 16:15:28', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:15:28', '2014-10-21 16:15:28', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "enrollment_dashboard_projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:15:28', '2014-10-21 16:15:28', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:15:28', '2014-10-21 16:15:28', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "enrollment_dashboard_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:15:28', '2014-10-21 16:15:28', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:15:28', '2014-10-21 16:15:28', 298486374)[0m
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "enrollment_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:15:44', '2014-10-21 16:15:44', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:15:44', '2014-10-21 16:15:44', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "enrollment_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:15:44', '2014-10-21 16:15:44', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:15:44', '2014-10-21 16:15:44', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "enrollment_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:15:44', '2014-10-21 16:15:44', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:15:44', '2014-10-21 16:15:44', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "enrollment_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:15:44', '2014-10-21 16:15:44', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:15:44', '2014-10-21 16:15:44', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "enrollment_dashboard_projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:15:44', '2014-10-21 16:15:44', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:15:44', '2014-10-21 16:15:44', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "enrollment_dashboard_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:15:44', '2014-10-21 16:15:44', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:15:44', '2014-10-21 16:15:44', 298486374)[0m
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "enrollment_dashboard_arms"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:19:48', '2014-10-21 16:19:48', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_arms" ("name", "project_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:19:48', '2014-10-21 16:19:48', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "enrollment_dashboard_enrollments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:19:48', '2014-10-21 16:19:48', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_enrollments" ("coach_id", "group_id", "display_name", "participant_id", "created_at", "updated_at", "id") VALUES (1, 1, 'MyString', 1, '2014-10-21 16:19:48', '2014-10-21 16:19:48', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "enrollment_dashboard_groups"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:19:48', '2014-10-21 16:19:48', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_groups" ("name", "arm_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2014-10-21 16:19:48', '2014-10-21 16:19:48', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "enrollment_dashboard_participants"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:19:48', '2014-10-21 16:19:48', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_participants" ("email", "phone_number", "study_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-10-21 16:19:48', '2014-10-21 16:19:48', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "enrollment_dashboard_projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:19:48', '2014-10-21 16:19:48', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_projects" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:19:48', '2014-10-21 16:19:48', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "enrollment_dashboard_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "enrollment_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:19:48', '2014-10-21 16:19:48', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "enrollment_dashboard_users" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-10-21 16:19:48', '2014-10-21 16:19:48', 298486374)[0m
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
