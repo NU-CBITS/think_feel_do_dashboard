@@ -3,7 +3,7 @@ require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 
 Bundler.require(*Rails.groups)
-require "enrollment_dashboard"
+require "think_feel_do_dashboard"
 
 module Dummy
   class Application < Rails::Application

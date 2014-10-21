@@ -4561,3 +4561,1261 @@ Started GET "/assets/enrollment_dashboard/bootstrap_overrides.css?body=1" for 12
 
 
 Started GET "/assets/enrollment_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:20:00 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateEnrollmentDashboardProjects (20141020191836)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "enrollment_dashboard_projects"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141020191836'[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateEnrollmentDashboardArms (20141020191822)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "enrollment_dashboard_arms"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141020191822'[0m
+  [1m[35m (2.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateEnrollmentDashboardGroups (20141020191754)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "enrollment_dashboard_groups"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141020191754'[0m
+  [1m[35m (2.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateEnrollmentDashboardUsers (20141020191622)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "enrollment_dashboard_users"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141020191622'[0m
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateEnrollmentDashboardEnrollments (20141020190823)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "enrollment_dashboard_enrollments"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141020190823'[0m
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateEnrollmentDashboardParticipants (20141020185953)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "enrollment_dashboard_participants"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141020185953'[0m
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/enrollment_dashboard/participants" for 127.0.0.1 at 2014-10-21 11:31:04 -0500
+
+ActionController::RoutingError (No route matches [GET] "/enrollment_dashboard/participants"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/usabilitymonitor/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/usabilitymonitor/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/usabilitymonitor/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.3ms)
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.6ms)
+
+
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 11:31:07 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.5ms)[0m  [1mSELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"[0m
+SQLite3::SQLException: no such table: think_feel_do_dashboard_participants: SELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (35.7ms)
+Completed 500 Internal Server Error in 56ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: think_feel_do_dashboard_participants: SELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"):
+     5: </div>
+     6: 
+     7: <div class="list-group">
+     8:   <% @participants.each do |participant| %>
+     9:     <%= link_to participant.name, participant, class: "list-group-item" %>
+    10:   <% end %>
+    11: </div>
+  sqlite3 (1.3.9) lib/sqlite3/database.rb:91:in `initialize'
+  sqlite3 (1.3.9) lib/sqlite3/database.rb:91:in `new'
+  sqlite3 (1.3.9) lib/sqlite3/database.rb:91:in `prepare'
+  activerecord (4.1.6) lib/active_record/connection_adapters/sqlite3_adapter.rb:301:in `block in exec_query'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:373:in `block in log'
+  activesupport (4.1.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:367:in `log'
+  activerecord (4.1.6) lib/active_record/connection_adapters/sqlite3_adapter.rb:298:in `exec_query'
+  activerecord (4.1.6) lib/active_record/connection_adapters/sqlite3_adapter.rb:510:in `select'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/database_statements.rb:24:in `select_all'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `block in select_all'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/query_cache.rb:83:in `cache_sql'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `select_all'
+  activerecord (4.1.6) lib/active_record/querying.rb:39:in `find_by_sql'
+  activerecord (4.1.6) lib/active_record/relation.rb:611:in `exec_queries'
+  activerecord (4.1.6) lib/active_record/relation.rb:493:in `load'
+  activerecord (4.1.6) lib/active_record/relation.rb:238:in `to_a'
+  activerecord (4.1.6) lib/active_record/relation/delegation.rb:46:in `each'
+  /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb:8:in `___sers_usabilitymonitor__esktop__ithub_think_feel_do_dashboard_app_views_think_feel_do_dashboard_participants_index_html_erb__3830793595644522698_70288001373320'
+  actionview (4.1.6) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.6) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.6) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.6) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.6) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.6) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.6) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.6) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.6) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.6) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.6) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.6) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.6) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.6) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.6) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.6) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.6) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/usabilitymonitor/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.6) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.6) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/railtie.rb:194:in `public_send'
+  railties (4.1.6) lib/rails/railtie.rb:194:in `method_missing'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/usabilitymonitor/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/usabilitymonitor/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/usabilitymonitor/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.8ms)
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.8ms)
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateThinkFeelDoDashboardParticipants (20141020185953)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "think_feel_do_dashboard_participants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) NOT NULL, "phone_number" varchar(255), "study_id" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141020185953"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateThinkFeelDoDashboardEnrollments (20141020190823)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "think_feel_do_dashboard_enrollments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "coach_id" integer NOT NULL, "group_id" integer NOT NULL, "display_name" varchar(255), "participant_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141020190823"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateThinkFeelDoDashboardUsers (20141020191622)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "think_feel_do_dashboard_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141020191622"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateThinkFeelDoDashboardGroups (20141020191754)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "think_feel_do_dashboard_groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "arm_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141020191754"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateThinkFeelDoDashboardArms (20141020191822)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "think_feel_do_dashboard_arms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "project_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141020191822"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to CreateThinkFeelDoDashboardProjects (20141020191836)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "think_feel_do_dashboard_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141020191836"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 11:31:41 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[36mThinkFeelDoDashboard::Participant Load (1.2ms)[0m  [1mSELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"[0m
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (4.5ms)
+Completed 200 OK in 74ms (Views: 56.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:31:41 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:31:41 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:31:41 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/new" for 127.0.0.1 at 2014-10-21 11:31:43 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#new as HTML
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/_form.html.erb (18.2ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/new.html.erb within layouts/think_feel_do_dashboard/application (21.8ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/think_feel_do_dashboard" for 127.0.0.1 at 2014-10-21 11:31:49 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  SELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (0.8ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 11:31:57 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"[0m
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (0.7ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateThinkFeelDoDashboardParticipants (20141020185953)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "think_feel_do_dashboard_participants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) NOT NULL, "phone_number" varchar(255), "study_id" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141020185953"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateThinkFeelDoDashboardEnrollments (20141020190823)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "think_feel_do_dashboard_enrollments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "coach_id" integer NOT NULL, "group_id" integer NOT NULL, "display_name" varchar(255), "participant_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141020190823"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateThinkFeelDoDashboardUsers (20141020191622)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "think_feel_do_dashboard_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141020191622"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateThinkFeelDoDashboardGroups (20141020191754)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "think_feel_do_dashboard_groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "arm_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141020191754"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateThinkFeelDoDashboardArms (20141020191822)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "think_feel_do_dashboard_arms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "project_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141020191822"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateThinkFeelDoDashboardProjects (20141020191836)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "think_feel_do_dashboard_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141020191836"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "think_feel_do_dashboard_arms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "project_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "think_feel_do_dashboard_enrollments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "coach_id" integer NOT NULL, "group_id" integer NOT NULL, "display_name" varchar(255), "participant_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "think_feel_do_dashboard_groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "arm_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.3ms)[0m  CREATE TABLE "think_feel_do_dashboard_participants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) NOT NULL, "phone_number" varchar(255), "study_id" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "think_feel_do_dashboard_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.3ms)[0m  CREATE TABLE "think_feel_do_dashboard_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141020191836')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141020185953')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141020190823')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141020191622')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141020191754')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141020191822')
+
+
+Started GET "/think_feel_do_dashboard/participants/new" for 127.0.0.1 at 2014-10-21 11:41:14 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#new as HTML
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/_form.html.erb (35.4ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/new.html.erb within layouts/think_feel_do_dashboard/application (39.2ms)
+Completed 200 OK in 82ms (Views: 63.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/think_feel_do_dashboard/participants/new" for 127.0.0.1 at 2014-10-21 11:43:47 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#new as HTML
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/_form.html.erb (2.9ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/new.html.erb within layouts/think_feel_do_dashboard/application (3.9ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:43:47 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:43:47 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:43:47 -0500
+
+
+Started POST "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 11:54:21 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LHKmntpfhB8n74Gbub85E1LDyx7m0A4CFqKq4Lwfcz0=", "participant"=>{"email"=>"asdf@asdf.com", "phone_number"=>"asdf", "study_id"=>"asdf"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mThinkFeelDoDashboard::Participant Exists (0.2ms)[0m  SELECT  1 AS one FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."phone_number" = 'asdf' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "think_feel_do_dashboard_participants" ("created_at", "email", "phone_number", "study_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-21 16:54:21.291964"], ["email", "asdf@asdf.com"], ["phone_number", "asdf"], ["study_id", "asdf"], ["updated_at", "2014-10-21 16:54:21.291964"]]
+  [1m[35m (18.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/think_feel_do_dashboard/participants/1
+Completed 302 Found in 35ms (ActiveRecord: 19.4ms)
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 11:54:21 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.3ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (1.9ms)
+Completed 200 OK in 21ms (Views: 17.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:54:21 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:54:21 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:54:21 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 11:54:23 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  SELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (0.7ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:54:23 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:54:23 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:54:23 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 11:54:26 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  [1mSELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"[0m
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (2.0ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:54:26 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:54:26 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:54:26 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 11:54:27 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  SELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (0.8ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:54:28 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:54:28 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:54:28 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 11:54:59 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (2.6ms)
+Completed 200 OK in 70ms (Views: 46.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:54:59 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:54:59 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:54:59 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1/edit" for 127.0.0.1 at 2014-10-21 11:55:01 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  SELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/_form.html.erb (15.2ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/edit.html.erb within layouts/think_feel_do_dashboard/application (18.9ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:55:01 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:55:01 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:55:01 -0500
+
+
+Started PATCH "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 11:55:02 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LHKmntpfhB8n74Gbub85E1LDyx7m0A4CFqKq4Lwfcz0=", "participant"=>{"email"=>"asdf@asdf.com", "phone_number"=>"asdf", "study_id"=>"asdf"}, "commit"=>"Update", "id"=>"1"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mThinkFeelDoDashboard::Participant Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "think_feel_do_dashboard_participants"  WHERE ("think_feel_do_dashboard_participants"."phone_number" = 'asdf' AND "think_feel_do_dashboard_participants"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/think_feel_do_dashboard/participants/1
+Completed 302 Found in 11ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 11:55:02 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (0.8ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:55:02 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:55:02 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:55:02 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1/edit" for 127.0.0.1 at 2014-10-21 11:56:15 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  SELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/_form.html.erb (2.1ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/edit.html.erb within layouts/think_feel_do_dashboard/application (3.4ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:15 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:15 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:56:15 -0500
+
+
+Started PATCH "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 11:56:16 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LHKmntpfhB8n74Gbub85E1LDyx7m0A4CFqKq4Lwfcz0=", "participant"=>{"email"=>"asdf@asdf.com", "phone_number"=>"asdf", "study_id"=>"asdf"}, "commit"=>"Update", "id"=>"1"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mThinkFeelDoDashboard::Participant Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "think_feel_do_dashboard_participants"  WHERE ("think_feel_do_dashboard_participants"."phone_number" = 'asdf' AND "think_feel_do_dashboard_participants"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/think_feel_do_dashboard/participants/1
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 11:56:16 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (0.8ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:16 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:16 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:56:16 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 11:56:17 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  SELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (0.8ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:17 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:17 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:56:17 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 11:56:18 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  [1mSELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"[0m
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (1.7ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:18 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:18 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:56:18 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 11:56:20 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  SELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (0.7ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:20 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:20 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:56:20 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1/edit" for 127.0.0.1 at 2014-10-21 11:56:21 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/_form.html.erb (2.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/edit.html.erb within layouts/think_feel_do_dashboard/application (3.2ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:21 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:21 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:56:21 -0500
+
+
+Started PATCH "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 11:56:22 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LHKmntpfhB8n74Gbub85E1LDyx7m0A4CFqKq4Lwfcz0=", "participant"=>{"email"=>"asdf@asdf.com", "phone_number"=>"asdf", "study_id"=>"asdf"}, "commit"=>"Update", "id"=>"1"}
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  SELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mThinkFeelDoDashboard::Participant Exists (0.1ms)[0m  SELECT  1 AS one FROM "think_feel_do_dashboard_participants"  WHERE ("think_feel_do_dashboard_participants"."phone_number" = 'asdf' AND "think_feel_do_dashboard_participants"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/think_feel_do_dashboard/participants/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 11:56:22 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  SELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (0.7ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:22 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:22 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:56:22 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 11:56:54 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (0.7ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:54 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:54 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:56:54 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1/edit" for 127.0.0.1 at 2014-10-21 11:56:55 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  SELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/_form.html.erb (2.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/edit.html.erb within layouts/think_feel_do_dashboard/application (3.2ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:55 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:55 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:56:55 -0500
+
+
+Started PATCH "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 11:56:56 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LHKmntpfhB8n74Gbub85E1LDyx7m0A4CFqKq4Lwfcz0=", "participant"=>{"email"=>"asdf@asdf.com", "phone_number"=>"asdf", "study_id"=>"asdf"}, "commit"=>"Update", "id"=>"1"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mThinkFeelDoDashboard::Participant Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "think_feel_do_dashboard_participants"  WHERE ("think_feel_do_dashboard_participants"."phone_number" = 'asdf' AND "think_feel_do_dashboard_participants"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/think_feel_do_dashboard/participants/1
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 11:56:56 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (0.8ms)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:56 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:56:56 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:56:56 -0500
+
+
+Started GET "/think_feel_do_dashboard/spec/dummy" for 127.0.0.1 at 2014-10-21 11:58:34 -0500
+
+ActionController::RoutingError (No route matches [GET] "/spec/dummy"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/usabilitymonitor/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/usabilitymonitor/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/usabilitymonitor/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.5ms)
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.8ms)
+
+
+Started GET "/think_feel_do_dashboard/spec/dummy/participants" for 127.0.0.1 at 2014-10-21 11:58:45 -0500
+
+ActionController::RoutingError (No route matches [GET] "/spec/dummy/participants"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/usabilitymonitor/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/usabilitymonitor/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/usabilitymonitor/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (20.5ms)
+
+
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 11:58:48 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[36mThinkFeelDoDashboard::Participant Load (1.5ms)[0m  [1mSELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"[0m
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (9.2ms)
+Completed 200 OK in 69ms (Views: 39.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 11:58:48 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 11:58:48 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 11:58:48 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 12:01:06 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  SELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (1.2ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (Missing partial alerts/_alert with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby]}. Searched in:
+  * "/Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/spec/dummy/app/views"
+  * "/Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views"
+):
+    22:   </head>
+    23:   <body>
+    24:     <div class="container">
+    25:       <%= render "alerts/alert", alert: alert %>
+    26:       <%= render "alerts/notice", notice: notice %>
+    27:       <%= yield %>
+    28:     </div>
+  actionview (4.1.6) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.6) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.6) lib/action_view/renderer/partial_renderer.rb:383:in `find_template'
+  actionview (4.1.6) lib/action_view/renderer/partial_renderer.rb:377:in `find_partial'
+  actionview (4.1.6) lib/action_view/renderer/partial_renderer.rb:263:in `render'
+  actionview (4.1.6) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+  actionview (4.1.6) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+  /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/layouts/think_feel_do_dashboard/application.html.erb:25:in `___sers_usabilitymonitor__esktop__ithub_think_feel_do_dashboard_app_views_layouts_think_feel_do_dashboard_application_html_erb___3526820004784750416_70093736564680'
+  actionview (4.1.6) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.6) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.6) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.6) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.6) lib/action_view/renderer/template_renderer.rb:67:in `render_with_layout'
+  actionview (4.1.6) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.6) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.6) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.6) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.6) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.6) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.6) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.6) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/usabilitymonitor/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.6) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.6) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/railtie.rb:194:in `public_send'
+  railties (4.1.6) lib/rails/railtie.rb:194:in `method_missing'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/usabilitymonitor/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/usabilitymonitor/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/usabilitymonitor/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/usabilitymonitor/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.6ms)
+
+
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 12:01:25 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  [1mSELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"[0m
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (1.1ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.4ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.3ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:01:25 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:01:25 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:01:25 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 12:01:28 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  SELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (1.4ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:01:28 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:01:28 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:01:28 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1/edit" for 127.0.0.1 at 2014-10-21 12:01:29 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/_form.html.erb (10.5ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/edit.html.erb within layouts/think_feel_do_dashboard/application (12.4ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:01:29 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:01:29 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:01:29 -0500
+
+
+Started PATCH "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 12:01:32 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LHKmntpfhB8n74Gbub85E1LDyx7m0A4CFqKq4Lwfcz0=", "participant"=>{"email"=>"asdf@asdf.com", "phone_number"=>"asdf", "study_id"=>"asdf"}, "commit"=>"Update", "id"=>"1"}
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  SELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mThinkFeelDoDashboard::Participant Exists (0.2ms)[0m  SELECT  1 AS one FROM "think_feel_do_dashboard_participants"  WHERE ("think_feel_do_dashboard_participants"."phone_number" = 'asdf' AND "think_feel_do_dashboard_participants"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/think_feel_do_dashboard/participants/1
+Completed 302 Found in 11ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 12:01:32 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  SELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (0.8ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:01:32 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:01:32 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:01:32 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 12:02:04 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (0.7ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:02:04 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:02:04 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:02:04 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 12:02:15 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  SELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (1.3ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:02:15 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:02:15 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:02:15 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 12:02:22 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (0.8ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:02:22 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:02:22 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:02:22 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 12:02:39 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  SELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (0.8ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:02:39 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:02:39 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:02:39 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 12:02:43 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (0.9ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:02:43 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:02:43 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:02:43 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 12:02:58 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  SELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (1.3ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:02:58 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:02:58 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:02:58 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 12:02:59 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"[0m
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (1.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:02:59 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:02:59 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:02:59 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 12:03:01 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.2ms)[0m  SELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (0.9ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:03:01 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:03:01 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:03:01 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants/1/edit" for 127.0.0.1 at 2014-10-21 12:03:03 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/_form.html.erb (2.4ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/edit.html.erb within layouts/think_feel_do_dashboard/application (3.7ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:03:03 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:03:03 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:03:03 -0500
+
+
+Started PATCH "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 12:03:05 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LHKmntpfhB8n74Gbub85E1LDyx7m0A4CFqKq4Lwfcz0=", "participant"=>{"email"=>"asdf@asdf.com1", "phone_number"=>"asdf", "study_id"=>"asdf"}, "commit"=>"Update", "id"=>"1"}
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  SELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mThinkFeelDoDashboard::Participant Exists (0.2ms)[0m  SELECT  1 AS one FROM "think_feel_do_dashboard_participants"  WHERE ("think_feel_do_dashboard_participants"."phone_number" = 'asdf' AND "think_feel_do_dashboard_participants"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "think_feel_do_dashboard_participants" SET "email" = ?, "updated_at" = ? WHERE "think_feel_do_dashboard_participants"."id" = 1[0m  [["email", "asdf@asdf.com1"], ["updated_at", "2014-10-21 17:03:05.567790"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/think_feel_do_dashboard/participants/1
+Completed 302 Found in 8ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/think_feel_do_dashboard/participants/1" for 127.0.0.1 at 2014-10-21 12:03:05 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  [1mSELECT  "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"  WHERE "think_feel_do_dashboard_participants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/show.html.erb within layouts/think_feel_do_dashboard/application (0.9ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:03:05 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:03:05 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:03:05 -0500
+
+
+Started GET "/think_feel_do_dashboard/participants" for 127.0.0.1 at 2014-10-21 12:03:07 -0500
+Processing by ThinkFeelDoDashboard::ParticipantsController#index as HTML
+  [1m[35mThinkFeelDoDashboard::Participant Load (0.1ms)[0m  SELECT "think_feel_do_dashboard_participants".* FROM "think_feel_do_dashboard_participants"
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/think_feel_do_dashboard/participants/index.html.erb within layouts/think_feel_do_dashboard/application (1.2ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_alert.html.erb (0.0ms)
+  Rendered /Users/usabilitymonitor/Desktop/Github/think_feel_do_dashboard/app/views/alerts/_notice.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/think_feel_do_dashboard/application.css?body=1" for 127.0.0.1 at 2014-10-21 12:03:07 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/bootstrap_overrides.css?body=1" for 127.0.0.1 at 2014-10-21 12:03:07 -0500
+
+
+Started GET "/assets/think_feel_do_dashboard/application.js?body=1" for 127.0.0.1 at 2014-10-21 12:03:07 -0500

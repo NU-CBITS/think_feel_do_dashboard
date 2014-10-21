@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  mount EnrollmentDashboard::Engine => "/enrollment_dashboard"
+  mount ThinkFeelDoDashboard::Engine => "/think_feel_do_dashboard"
 end
