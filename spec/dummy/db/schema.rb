@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141020191836) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "think_feel_do_dashboard_arms", force: true do |t|
     t.string   "name"
     t.integer  "project_id", null: false
@@ -28,8 +31,8 @@ ActiveRecord::Schema.define(version: 20141020191836) do
   end
 
   create_table "think_feel_do_dashboard_groups", force: true do |t|
-    t.string   "name"
     t.integer  "arm_id",     null: false
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -37,15 +40,18 @@ ActiveRecord::Schema.define(version: 20141020191836) do
   create_table "think_feel_do_dashboard_memberships", force: true do |t|
     t.integer  "group_id",       null: false
     t.integer  "participant_id", null: false
+    t.date     "end_date"
+    t.date     "start_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "think_feel_do_dashboard_participants", force: true do |t|
-    t.string   "email",                     null: false
+    t.string   "contact_preference", default: ""
+    t.string   "display_name",       default: ""
+    t.string   "email",                           null: false
     t.string   "phone_number"
-    t.string   "study_id",                  null: false
-    t.string   "display_name", default: ""
+    t.string   "study_id",                        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -57,7 +63,7 @@ ActiveRecord::Schema.define(version: 20141020191836) do
   end
 
   create_table "think_feel_do_dashboard_users", force: true do |t|
-    t.string   "name"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

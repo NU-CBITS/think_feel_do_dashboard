@@ -14,17 +14,18 @@ Gem::Specification.new do |s|
   s.description = "Description of ThinkFeelDoDashboard."
   s.license     = "MIT"
 
+  s.test_files = Dir["spec/**/*"]
+
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 4.1"
+  s.add_dependency "rails", "~> 4.1.6"
 
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "pg"
 
   # To enforce code conventions
   s.add_development_dependency "rubocop"
 
-  # Ror rspec testing
+  # For rspec testing
   s.add_development_dependency "rspec-rails", "~> 3"
   s.add_development_dependency "capybara", "~> 2"
   s.add_development_dependency "database_cleaner", "~> 1.3"

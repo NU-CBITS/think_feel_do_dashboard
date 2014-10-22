@@ -1,0 +1,17 @@
+<h1>Membership</h1>
+
+<div class="btn-toolbar" role="toolbar">
+  <%= link_to "Groups", participant_groups_path(@membership.participant), class: "btn btn-default" %>
+  <%= link_to "Edit", edit_participant_group_path(@membership.participant, @membership.group), class: "btn btn-default" %>
+  <%= link_to "Destroy", participant_coach_path(@membership.participant, @membership.group), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+</div>
+
+<p>
+  <strong>Group:</strong>
+  <%= @membership.group_name %>
+</p>
+
+<p>
+  <strong>Participant:</strong>
+  <%= @membership.participant_name %>
+</p>

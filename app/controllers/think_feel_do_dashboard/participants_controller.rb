@@ -7,19 +7,8 @@ module ThinkFeelDoDashboard
     # GET /participants
     def index
       @participants = Participant.all
-    end
-
-    # GET /participants/1
-    def show
-    end
-
-    # GET /participants/new
-    def new
-      @participant = Participant.new
-    end
-
-    # GET /participants/1/edit
-    def edit
+      @projects = Project.all
+      @arms = Arm.all
     end
 
     # POST /participants
@@ -27,16 +16,29 @@ module ThinkFeelDoDashboard
       @participant = Participant.new(participant_params)
 
       if @participant.save
-        redirect_to @participant, notice: 'Participant was successfully created.'
+        redirect_to @participant, notice: "Participant was successfully created."
       else
         render :new
       end
     end
 
+    # GET /participants/new
+    def new
+      @participant = Participant.new
+    end
+
+    # GET /participants/1
+    def show
+    end
+
+    # GET /participants/1/edit
+    def edit
+    end
+
     # PATCH/PUT /participants/1
     def update
       if @participant.update(participant_params)
-        redirect_to @participant, notice: 'Participant was successfully updated.'
+        redirect_to @participant, notice: "Participant was successfully updated."
       else
         render :edit
       end
@@ -45,18 +47,18 @@ module ThinkFeelDoDashboard
     # DELETE /participants/1
     def destroy
       @participant.destroy
-      redirect_to participants_url, notice: 'Participant was successfully destroyed.'
+      redirect_to participants_url, notice: "Participant was successfully destroyed."
     end
 
     private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_participant
-        @participant = Participant.find(params[:id])
-      end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_participant
+      @participant = Participant.find(params[:id])
+    end
 
-      # Only allow a trusted parameter "white list" through.
-      def participant_params
-        params.require(:participant).permit(:title, :email, :phone_number, :study_id)
-      end
+    # Only allow a trusted parameter "white list" through.
+    def participant_params
+      params.require(:participant).permit(:title, :email, :phone_number, :study_id)
+    end
   end
 end

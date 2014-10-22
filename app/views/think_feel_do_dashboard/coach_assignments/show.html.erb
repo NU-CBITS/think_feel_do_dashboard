@@ -1,0 +1,17 @@
+<h1>Coach Assignment</h1>
+
+<div class="btn-toolbar" role="toolbar">
+  <%= link_to "Coaches", participant_coaches_path(@coach_assignment.participant), class: "btn btn-default" %>
+  <%= link_to "Edit", edit_participant_coach_path(@coach_assignment.participant, @coach_assignment.coach), class: "btn btn-default" %>
+  <%= link_to "Destroy", participant_coach_path(@coach_assignment.participant, @coach_assignment.coach), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+</div>
+
+<p>
+  <strong>Coach:</strong>
+  <%= @coach_assignment.coach_name %>
+</p>
+
+<p>
+  <strong>Participant:</strong>
+  <%= @coach_assignment.participant_name %>
+</p>

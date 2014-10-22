@@ -1,6 +1,6 @@
 module ThinkFeelDoDashboard
   class Arm < ActiveRecord::Base
     belongs_to :project
-    has_many :groups
+    has_many :groups, dependent: :destroy
   end
 end

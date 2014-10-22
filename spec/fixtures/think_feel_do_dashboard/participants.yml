@@ -1,9 +1,43 @@
-one:
-  email: MyString
-  phone_number: MyString
-  study_id: MyString
+participant1:
+  contact_preference: email
+  display_name: Joe
+  study_id: TFD-1111
+  email: participant1@example.com
 
-two:
-  email: joan@ex.co
-  phone_number: MyString
-  study_id: MyString
+participant2:
+  contact_preference: phone
+  display_name: Joe
+  study_id: TFD-2
+  email: participant2@example.com
+
+participant3:
+  study_id: TFD-33303
+  email: participant3@example.com
+
+participant_wo_membership1:
+  study_id: TFD-without_membership1
+  email: participant_wo_membership1@example.com
+
+participant_wo_membership2:
+  study_id: TFD-without_membership2
+  email: participant_wo_membership2@example.com
+
+participant4:
+  study_id: TFD-44444
+  email: participant4@example.com
+
+participant5:
+  study_id: TFD-TFD-future1
+  email: participant5@example.com
+
+participant6:
+  study_id: TFD-TFD-future2
+  email: participant6@example.com
+
+inactive_participant:
+  study_id: TFD-inactive
+  email: inactive_participant@example.com
+
+active_participant:
+  study_id: TFD-active
+  email: active_participant@example.com

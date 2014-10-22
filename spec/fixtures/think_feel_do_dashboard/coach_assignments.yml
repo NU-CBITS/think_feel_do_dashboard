@@ -1,7 +1,15 @@
-one:
-  coach_id: 1
-  participant_id: 1
+assignment1:
+  participant: participant1
+  coach: user1
 
-two:
-  coach_id: 2
-  participant_id: 2
+assignment2:
+  participant: participant2
+  coach: user2
+
+assignment3:
+  participant: inactive_participant
+  coach: user1
+
+assignment4:
+  participant: participant_wo_membership1
+  coach: user_with_memberless_participant
