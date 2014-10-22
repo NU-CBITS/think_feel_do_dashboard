@@ -6,10 +6,6 @@ module ThinkFeelDoDashboard
     before_action :set_coaches
     before_action :set_coach_assignment, only: [:show, :edit, :update, :destroy]
 
-    # GET /participants/1/coaches
-    def index
-    end
-
     # GET /participants/1/coaches/new
     def new
       @coach_assignment = @participant.coach_assignments.build

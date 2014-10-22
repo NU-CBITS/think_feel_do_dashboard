@@ -26,23 +26,14 @@
   <%= @participant.study_id %>
 </p>
 
-<p>
-  <strong>Current Coach:</strong>
-  <%#= @participant.active_coach %>
-</p>
-
-<p>
-  <strong>Current Group:</strong>
-  <%#= @participant.active_membership %>
-</p>
-
 <div class="panel panel-default">
-  <div class="panel-heading">Enrollments</div>
+  <div class="panel-heading">Enrollment Information</div>
   <div class="panel-body">
-    Listed below are all the coaches and groups associated with the participant.
+    ...
   </div>
   <ul class="list-group">
-    <%= link_to "Coaches<span class='badge'>#{@participant.coaches.count}</span>".html_safe, participant_coaches_path(@participant), class: "list-group-item" %>
-    <%= link_to "Groups<span class='badge'>#{@participant.groups.count}</span>".html_safe, participant_groups_path(@participant), class: "list-group-item" %>
+    <%= link_to "Current Coach: #{@participant.coach.name}", participant_coach_path(@participant, @participant.coach), class: "list-group-item" %>
+    <%= link_to "Current Group: #{@participant.active_membership.group.name}", participant_group_path(@participant, @participant.active_membership.group), class: "list-group-item" %>
+    <%= link_to "All Groups<span class='badge'>#{@participant.groups.count}</span>".html_safe, participant_groups_path(@participant), class: "list-group-item" %>
   </ul>
 </div>

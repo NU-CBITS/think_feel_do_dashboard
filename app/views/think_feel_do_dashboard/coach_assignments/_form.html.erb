@@ -16,7 +16,7 @@
     <%= f.text_field :participant_id, class: "form-control" %>
   </div>
 
-  <%= f.select(:coach_id, options_for_select(@coaches)) %>
+  <%= f.select(:coach_id, options_for_select(@coaches, @coach_assignment.coach_id), { prompt: "Select Coach" }, class: "form-control") %>
 
   <div class="actions">
     <%= f.submit button_text, class: "btn btn-primary" %>

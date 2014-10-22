@@ -4,7 +4,11 @@ module ThinkFeelDoDashboard
     has_many :memberships, dependent: :destroy
     has_many :participants, through: :memberships
 
-    # validates :arm_id, presence: true
-    # validates :title, presence: true, length: { maximum: 50 }
+    validates :arm, presence: true
+    validates :title, presence: true, length: { maximum: 50 }
+
+    def name
+      title
+    end
   end
 end
