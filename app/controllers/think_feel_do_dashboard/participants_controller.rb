@@ -58,7 +58,10 @@ module ThinkFeelDoDashboard
 
     # Only allow a trusted parameter "white list" through.
     def participant_params
-      params.require(:participant).permit(:title, :email, :phone_number, :study_id)
+      params.require(:participant).permit(
+        :email, :phone_number,
+        :study_id, :contact_preference
+      )
     end
   end
 end

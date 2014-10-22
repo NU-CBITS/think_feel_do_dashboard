@@ -12,8 +12,9 @@ module ThinkFeelDoDashboard
     has_many :groups, through: :memberships
     has_one :active_group, through: :active_membership
 
-    validates :phone_number, allow_nil: true, uniqueness: true
+    validates :phone_number, allow_nil: true, allow_blank: true, uniqueness: true
     validates :study_id, :email, presence: true, uniqueness: true
+    validates :contact_preference, presence: true, inclusion: %w(email phone)
 
     def name
       email
