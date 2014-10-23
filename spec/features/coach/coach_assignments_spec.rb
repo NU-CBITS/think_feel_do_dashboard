@@ -7,7 +7,7 @@ feature "Coach Assignments" do
     visit "/think_feel_do_dashboard/participants"
   end
 
-  scenario "can assign a coach" do
+  it "allows for the assigning of a coach" do
     click_on "participant3@example.com"
 
     expect(page).to_not have_text "Current Coach: user3@example.com"
@@ -27,6 +27,14 @@ feature "Coach Assignments" do
     click_on "Participant"
 
     expect(page).to have_text "Current Coach: user3@example.com"
+  end
+
+  it "doesn't allows for the assigning of no coach" do
+    click_on "participant3@example.com"
+    click_on "Assign Coach"
+    click_on "Assign"
+
+    expect(page).to have_text "prohibited this coach from being assigned"
   end
 
   scenario "can update the assigned a coach" do

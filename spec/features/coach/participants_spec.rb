@@ -51,6 +51,12 @@ feature "Participants" do
     expect(page).to have_text "prohibited this participant from being saved"
   end
 
+  scenario "should list group count" do
+    click_on "participant1@example.com"
+
+    expect(page).to have_text "All Groups1"
+  end
+
   scenario "should enable the updating of a participant" do
     click_on "participant1@example.com"
 
