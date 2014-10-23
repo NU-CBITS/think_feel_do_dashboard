@@ -11,72 +11,34 @@ feature "Participants" do
     expect(page).to have_text "participant1@example.com"
   end
 
-  # it "streak should be the latest entry's streak count" do
-  #   click_on "All"
-  #   click_on "Max"
-  #   expect(page).to have_text "Streak: 3"
-  # end
+  scenario "should display errors if required fields aren't filled in when created" do
+    click_on "New"
+    click_on "Create"
 
-  # scenario "should filter participants only" do
-  #   click_on "All"
+    expect(page).to have_text "prohibited this participant from being saved"
+  end
 
-  #   expect(page).to have_text "Jenny"
-  #   expect(page).to have_text "Jorge"
-  #   expect(page).to have_text "Active"
-  #   expect(page).to have_text "Anna"
-  #   expect(page).to have_text "Inactive"
+  scenario "should enable the creation of a participant" do
+    expect(page).to_not have_text "George Washington"
 
-  #   click_on "Your"
+    click_on "New"
+    fill_in "Email", with: "gwashington@ex.co"
+    fill_in "Phone number", with: "123-456-7890"
+    select "Phone", from: "Contact Preference"
+    fill_in "Study Id", with: "favoriteToken1!"
+    click_on "Create"
 
-  #   expect(page).to have_text "Jenny"
-  #   expect(page).to have_text "Jorge"
-  #   expect(page).to have_text "Active"
-  #   expect(page).to_not have_text "Anna"
-  #   expect(page).to_not have_text "Inactive"
+    expect(page).to have_text "Participant was successfully created"
+    expect(page).to have_text "Email: gwashington@ex.co"
+    expect(page).to have_text "Phone Number: 123-456-7890"
+    expect(page).to have_text "Contact Preference: Phone"
+    expect(page).to have_text "Study Id: favoriteToken1!"
+    expect(page).to have_text "Enrollment Information"
 
-  #   click_on "All"
+    click_on "Participants"
 
-  #   expect(page).to have_text "Jenny"
-  #   expect(page).to have_text "Jorge"
-  #   expect(page).to have_text "Anna"
-  #   expect(page).to have_text "Inactive"
-  # end
-
-  # scenario "should display errors if required fields aren't filled in" do
-  #   click_on "New Participant"
-  #   click_on "Create"
-
-  #   expect(page).to have_text "prohibited this participant from being saved"
-  # end
-
-  # scenario "should enable the creation of a participant" do
-  #   click_on "All"
-
-  #   expect(page).to have_text "Participants"
-  #   expect(page).to_not have_text "George Washington"
-
-  #   click_on "New Participant"
-  #   fill_in "Address", with: "123 Washington St., Westmoreland Count, Virginia"
-  #   fill_in "Email", with: "gwashington@ex.co"
-  #   fill_in "Name", with: "George Washington"
-  #   fill_in "Phone Number", with: "123-456-7890"
-  #   fill_in "Medical Record Number", with: "000"
-  #   fill_in "Participant Unique Id", with: "favoriteToken1!"
-  #   click_on "Create"
-
-  #   expect(page).to have_text "Participant was successfully created"
-  #   expect(page).to have_text "123 Washington St., Westmoreland Count, Virginia"
-  #   expect(page).to have_text "gwashington@ex.co"
-  #   expect(page).to have_text "George Washington"
-  #   expect(page).to have_text "123-456-7890"
-  #   expect(page).to have_text "000"
-  #   expect(page).to have_text "favoriteToken1!"
-
-  #   visit "/participants"
-  #   click_on "All"
-
-  #   expect(page).to have_text "George Washington"
-  # end
+    expect(page).to have_text "gwashington@ex.co"
+  end
 
   # scenario "should display errors if required fields aren't filled in" do
   #   click_on "Jenny"
