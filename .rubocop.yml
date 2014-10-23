@@ -3,6 +3,9 @@ AllCops:
     - bin/**/*
     - config/**/*
     - db/**/*
+    - spec/dummy/**/*
+    - vendor/**/*
+  RunRailsCops: true
 
 ClassLength:
   Enabled: false
