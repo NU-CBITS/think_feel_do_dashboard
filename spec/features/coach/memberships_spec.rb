@@ -20,7 +20,17 @@ feature "Memberships" do
     expect(page).to have_text "Participant: participant1@example.com"
   end
 
-  it "allows for the assigning of a participant to a group " do
+  it "allows for the assigning of a participant to a group from the participant show page" do
+    click_on "participant6@example.com"
+
+    click_on "Assign Group"
+
+    expect(page).to have_text "Assigning Group to Participant"
+
+    click_on "Cancel"
+  end
+
+  it "allows for the assigning of a participant to a group" do
     click_on "participant1@example.com"
     click_on "All Groups"
 
@@ -29,6 +39,7 @@ feature "Memberships" do
 
     click_on "Assign Group"
 
+    expect(page).to have_text "Assigning Group to Participant"
     expect(page).to have_text "Participant: participant1@example.com"
 
     select "Group 2", from: "Group"
