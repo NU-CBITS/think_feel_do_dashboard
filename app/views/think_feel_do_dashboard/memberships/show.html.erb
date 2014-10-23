@@ -4,7 +4,7 @@
   <%= link_to "Participant", participant_path(@membership.participant), class: "btn btn-default" %>
   <%= link_to "Groups", participant_groups_path(@membership.participant), class: "btn btn-default" %>
   <%= link_to "Edit", edit_participant_group_path(@membership.participant, @membership.group), class: "btn btn-default" %>
-  <%= link_to "Destroy", participant_coach_path(@membership.participant, @membership.group), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <%= link_to "Destroy", participant_group_path(@membership.participant, @membership.group), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 </div>
 
 <p>

@@ -37,7 +37,7 @@ module ThinkFeelDoDashboard
     def update
       if @coach_assignment.update(coach_assignment_params)
         redirect_to participant_coach_path(@participant, @coach_assignment.coach),
-                    notice: "New coach was assigned."
+                    notice: "New coach was successfully assigned."
       else
         render :edit
       end

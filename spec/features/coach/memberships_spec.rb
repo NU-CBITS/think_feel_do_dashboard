@@ -70,9 +70,24 @@ feature "Memberships" do
 
     click_on "Update"
 
-    expect(page).to have_text "Assignment of Group was successfully updated."
+    expect(page).to have_text "New group was successfully assigned"
     expect(page).to have_text "Group: Group Without Creator"
     expect(page).to_not have_text "Group: Group 1"
     expect(page).to have_text "Participant: participant1@example.com"
+  end
+
+  scenario "unassign a group" do
+    click_on "participant1@example.com"
+
+    expect(page).to have_text "All Groups1"
+    expect(page).to_not have_text "All Groups0"
+
+    click_on "All Groups"
+    click_on "Group 1"
+    click_on "Destroy"
+
+    expect(page).to have_text "Group was successfully removed"
+    expect(page).to have_text "All Groups0"
+    expect(page).to_not have_text "All Groups1"
   end
 end

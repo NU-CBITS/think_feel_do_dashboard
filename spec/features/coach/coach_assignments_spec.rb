@@ -52,7 +52,7 @@ feature "Coach Assignments" do
 
     click_on "Update"
 
-    expect(page).to have_text "New coach was assigned."
+    expect(page).to have_text "New coach was successfully assigned."
     expect(page).to_not have_text "Coach: user1@example.com"
     expect(page).to have_text "Coach: user2@example.com"
 

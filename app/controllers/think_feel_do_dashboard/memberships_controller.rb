@@ -41,7 +41,7 @@ module ThinkFeelDoDashboard
     def update
       if @membership.update(membership_params)
         redirect_to participant_group_path(@participant, @membership.group),
-                    notice: "Assignment of Group was successfully updated."
+                    notice: "New group was successfully assigned."
       else
         render :edit
       end
@@ -49,6 +49,13 @@ module ThinkFeelDoDashboard
 
     # DELETE /think_feel_do_dashboard/participants/1/groups/1
     def destroy
+      if @membership.destroy
+        redirect_to participant_path(@participant),
+                    notice: "Group was successfully removed."
+      else
+        redirect_to participant_path(@participant),
+                    alert: "There were errors."
+      end
     end
 
     private
