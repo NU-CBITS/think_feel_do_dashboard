@@ -40,70 +40,53 @@ feature "Participants" do
     expect(page).to have_text "gwashington@ex.co"
   end
 
-  # scenario "should display errors if required fields aren't filled in" do
-  #   click_on "Jenny"
-  #   click_on "Edit"
-  #   fill_in "Address", with: ""
-  #   click_on "Update"
+  scenario "should display errors if required fields aren't filled in" do
+    click_on "participant1@example.com"
+    click_on "Edit"
+    fill_in "Email", with: ""
+    fill_in "Phone number", with: ""
+    fill_in "Study Id", with: ""
+    click_on "Update"
 
-  #   expect(page).to have_text "prohibited this participant from being saved"
-  # end
+    expect(page).to have_text "prohibited this participant from being saved"
+  end
 
-  # scenario "should enable the updating of a participant" do
-  #   click_on "Jenny"
+  scenario "should enable the updating of a participant" do
+    click_on "participant1@example.com"
 
-  #   expect(page).to have_text "13 Oliver Dr., Madison, WI 53300"
-  #   expect(page).to have_text "participant@example.com"
-  #   expect(page).to have_text "Jenny"
-  #   expect(page).to have_text "500-555-0000"
-  #   expect(page).to have_text "abc123"
-  #   expect(page).to have_text "mohrlab123!"
-  #   expect(page).to have_text "Active"
+    expect(page).to have_text "Email: participant1@example.com"
+    expect(page).to have_text "Phone Number: 500-555-0000"
+    expect(page).to have_text "Contact Preference: Email"
+    expect(page).to have_text "Study Id: TFD-1111"
 
-  #   expect(page).to_not have_text "123 Washington St., Westmoreland Count, Virginia"
-  #   expect(page).to_not have_text "gwashington@ex.co"
-  #   expect(page).to_not have_text "George Washington"
-  #   expect(page).to_not have_text "123-456-7890"
-  #   expect(page).to_not have_text "zzz"
-  #   expect(page).to_not have_text "Inactive"
+    expect(page).to_not have_text "Email: gwashington@ex.co"
+    expect(page).to_not have_text "Phone Number: 123-456-7890"
+    expect(page).to_not have_text "Contact Preference: Phone"
+    expect(page).to_not have_text "Study Id: favoriteToken1!"
 
-  #   click_on "Edit"
-  #   fill_in "Address", with: "123 Washington St., Westmoreland Count, Virginia"
-  #   fill_in "Email", with: "gwashington@ex.co"
-  #   fill_in "Name", with: "George Washington"
-  #   fill_in "Phone Number", with: "123-456-7890"
-  #   fill_in "Medical Record Number", with: "zzz"
-  #   check "Inactive"
-  #   click_on "Update"
+    click_on "Edit"
+    fill_in "Email", with: "gwashington@ex.co"
+    fill_in "Phone number", with: "123-456-7890"
+    select "Phone", from: "Contact Preference"
+    fill_in "Study Id", with: "favoriteToken1!"
+    click_on "Update"
 
-  #   expect(page).to have_text "Participant was successfully updated"
-  #   expect(page).to have_text "123 Washington St., Westmoreland Count, Virginia"
-  #   expect(page).to have_text "gwashington@ex.co"
-  #   expect(page).to have_text "George Washington"
-  #   expect(page).to have_text "123-456-7890"
-  #   expect(page).to have_text "zzz"
-  #   expect(page).to have_text "mohrlab123!"
-  #   expect(page).to have_text "Inactive"
+    expect(page).to_not have_text "Email: participant1@example.com"
+    expect(page).to_not have_text "Phone Number: 500-555-0000"
+    expect(page).to_not have_text "Contact Preference: Email"
+    expect(page).to_not have_text "Study Id: TFD-1111"
 
-  #   expect(page).to_not have_text "13 Oliver Dr., Madison, WI 53300"
-  #   expect(page).to_not have_text "participant@example.com"
-  #   expect(page).to_not have_text "Jenny"
-  #   expect(page).to_not have_text "500-555-0000"
-  #   expect(page).to_not have_text "abc123"
-  #   expect(page).to_not have_text "Active"
+    expect(page).to have_text "Email: gwashington@ex.co"
+    expect(page).to have_text "Phone Number: 123-456-7890"
+    expect(page).to have_text "Contact Preference: Phone"
+    expect(page).to have_text "Study Id: favoriteToken1!"
+  end
 
-  #   click_on "Edit"
-  #   uncheck "Inactive"
-  #   click_on "Update"
-  #   expect(page).to have_text "Active"
-  #   expect(page).to_not have_text "Inactive"
-  # end
+  scenario "should be able to delete a user" do
+    click_on "participant1@example.com"
+    click_on "Destroy"
 
-  # scenario "should be able to delete a user" do
-  #   click_on "Jenny"
-  #   click_on "Destroy"
-
-  #   expect(page).to_not have_text "Jenny"
-  #   expect(page).to have_text "Participant was successfully destroyed"
-  # end
+    expect(page).to have_text "Participant was successfully destroyed"
+    expect(page).to_not have_text "participant1@example.com"
+  end
 end

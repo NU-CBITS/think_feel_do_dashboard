@@ -1,5 +1,6 @@
 participant1:
   contact_preference: email
+  phone_number: 500-555-0000
   display_name: Joe
   study_id: TFD-1111
   email: participant1@example.com
