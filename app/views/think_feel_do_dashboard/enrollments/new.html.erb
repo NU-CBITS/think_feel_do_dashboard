@@ -7,10 +7,10 @@
   </p>
 
   <%= label_tag "enrollment[coach_id]", "Coach" %>
-  <%= select_tag "enrollment[coach_id]", options_for_select(@coaches.all.map(&:email), @coach_assignment.coach_id), { prompt: "Select Coach" , class: "form-control" } %>
+  <%= select_tag "enrollment[coach_id]", options_for_select(@coaches.all.map { |coach| [coach.email, coach.id] }), { prompt: "Select Coach" , class: "form-control" } %>
 
   <%= label_tag "enrollment[group_id]", "Group" %>
-  <%= select_tag "enrollment[group_id]", options_for_select(@groups.all.map(&:title), @membership.group_id), { prompt: "Select Group", class: "form-control" } %>
+  <%= select_tag "enrollment[group_id]", options_for_select(@groups.all.map { |group| [group.title, group.id] }), { prompt: "Select Group", class: "form-control" } %>
 
   <div class="actions">
     <%= submit_tag "Enroll", class: "btn btn-primary" %>

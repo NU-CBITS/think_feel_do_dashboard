@@ -10,11 +10,12 @@ module ThinkFeelDoDashboard
     end
 
     def create
+      puts  "enrollment_params = #{enrollment_params}"
       @coach_assignment = @participant.build_coach_assignment(
-        coach_assignment_params
+        coach_id: enrollment_params[:coach_id]
       )
       @membership = @participant.memberships.build(
-        membership_params
+        group_id: enrollment_params[:group_id]
       )
       if @coach_assignment.save && @membership.save
         redirect_to participant_path(@participant),
@@ -26,16 +27,10 @@ module ThinkFeelDoDashboard
 
     private
 
-    def coach_assignment_params
+    def enrollment_params
       params
         .require(:enrollment)
-        .permit(:coach_id)
-    end
-
-    def membership_params
-      params
-        .require(:enrollment)
-        .permit(:group_id)
+        .permit(:coach_id, :group_id)
     end
 
     def set_groups
