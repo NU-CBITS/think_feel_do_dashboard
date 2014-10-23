@@ -40,13 +40,15 @@ Confluence:
 
 <h2>Database creation</h2>
 
-<code>rake db:drop db:create db:migrate</code>
+Make sure you are in the top level folder; i.e., think_feel_do_dashboard. Then run:
+
+<code>rake app:db:drop app:db:create app:db:migrate</code>
 
 <h2>Database initialization</h2>
 
 <h2>Running tests</h2>
 
-<code>rake app:db:migrate</code>
+<code>rake app:db:create app:db:migrate</code>
 
 <code>rspec</code>
 

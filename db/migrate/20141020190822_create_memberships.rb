@@ -1,6 +1,6 @@
-class CreateThinkFeelDoDashboardMemberships < ActiveRecord::Migration
+class CreateMemberships < ActiveRecord::Migration
   def change
-    create_table :think_feel_do_dashboard_memberships do |t|
+    create_table :memberships do |t|
       t.integer :group_id, null: false
       t.integer :participant_id, null: false
       t.date :end_date

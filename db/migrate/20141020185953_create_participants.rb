@@ -1,6 +1,6 @@
-class CreateThinkFeelDoDashboardParticipants < ActiveRecord::Migration
+class CreateParticipants < ActiveRecord::Migration
   def change
-    create_table :think_feel_do_dashboard_participants do |t|
+    create_table :participants do |t|
       t.string :contact_preference, empty: true, default: ""
       t.string :display_name, empty: true, default: ""
       t.string :email, null: false, unique: true

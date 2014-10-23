@@ -17,13 +17,13 @@ namespace :seed do
   task with_fixtures: :environment do
     path = File.join(File.dirname(__FILE__), '..', '..', 'spec', 'fixtures')
     ActiveRecord::FixtureSet.create_fixtures path, [
-      :'think_feel_do_dashboard/participants',
-      :'think_feel_do_dashboard/users',
-      :'think_feel_do_dashboard/projects',
-      :'think_feel_do_dashboard/arms',
-      :'think_feel_do_dashboard/groups',
-      :'think_feel_do_dashboard/memberships',
-      :'think_feel_do_dashboard/coach_assignments'
+      :participants,
+      :users,
+      :projects,
+      :arms,
+      :groups,
+      :coach_assignments,
+      :memberships
     ]
   end
 end

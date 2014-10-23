@@ -1,4 +1,4 @@
-module ThinkFeelDoDashboard
+# module ThinkFeelDoDashboard
   class Membership < ActiveRecord::Base
     belongs_to :group
     belongs_to :active_group,
@@ -21,4 +21,4 @@ module ThinkFeelDoDashboard
       .where("end_date >= ? OR end_date = ?", Date.today, nil)
     }
   end
-end
+# end

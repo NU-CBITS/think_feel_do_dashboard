@@ -1,4 +1,4 @@
-module ThinkFeelDoDashboard
+# module ThinkFeelDoDashboard
   class User < ActiveRecord::Base
     has_many :coach_assignments, foreign_key: :coach_id, dependent: :destroy
     has_many :participants, through: :coach_assignments
@@ -9,4 +9,4 @@ module ThinkFeelDoDashboard
       email
     end
   end
-end
+# end

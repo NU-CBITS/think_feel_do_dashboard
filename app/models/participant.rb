@@ -1,4 +1,4 @@
-module ThinkFeelDoDashboard
+# module ThinkFeelDoDashboard
   class Participant < ActiveRecord::Base
     has_one :coach_assignment, dependent: :destroy
     has_one :coach, class_name: "User", through: :coach_assignment
@@ -20,4 +20,4 @@ module ThinkFeelDoDashboard
       email
     end
   end
-end
+# end

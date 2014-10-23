@@ -1,4 +1,4 @@
-module ThinkFeelDoDashboard
+# module ThinkFeelDoDashboard
   class Group < ActiveRecord::Base
     belongs_to :arm
     has_many :memberships, dependent: :destroy
@@ -11,4 +11,4 @@ module ThinkFeelDoDashboard
       title
     end
   end
-end
+# end
