@@ -3,6 +3,7 @@ require_dependency "think_feel_do_dashboard/application_controller"
 module ThinkFeelDoDashboard
   class ParticipantsController < ApplicationController
     before_action :set_participant, only: [:show, :edit, :update, :destroy]
+    before_action :set_contact_preferences
 
     # GET /participants
     def index
@@ -51,12 +52,17 @@ module ThinkFeelDoDashboard
     end
 
     private
-    # Use callbacks to share common setup or constraints between actions.
     def set_participant
       @participant = Participant.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
+    def set_contact_preferences
+      @contact_preferences = [
+        ["Email", "email"],
+        ["Phone", "phone"]
+      ]
+    end
+
     def participant_params
       params.require(:participant).permit(
         :email, :phone_number,
