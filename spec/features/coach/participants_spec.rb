@@ -11,14 +11,14 @@ feature "Participants" do
     expect(page).to have_text "participant1@example.com"
   end
 
-  scenario "should display errors if required fields aren't filled in when created" do
+  it "should display errors if required fields aren't filled in when created" do
     click_on "New"
     click_on "Create"
 
     expect(page).to have_text "prohibited this participant from being saved"
   end
 
-  scenario "should enable the creation of a participant" do
+  it "should enable the creation of a participant" do
     expect(page).to_not have_text "George Washington"
 
     click_on "New"
@@ -34,13 +34,14 @@ feature "Participants" do
     expect(page).to have_text "Contact Preference: Phone"
     expect(page).to have_text "Study Id: favoriteToken1!"
     expect(page).to have_text "Enrollment Information"
+    expect(page).to have_text "Below lists the participants enrollment information. This includes all the groups she/he is associated with and the current coach and group they are part of the coach or group exists."
 
     click_on "Participants"
 
     expect(page).to have_text "gwashington@ex.co"
   end
 
-  scenario "should display errors if required fields aren't filled in" do
+  it "should display errors if required fields aren't filled in" do
     click_on "participant1@example.com"
     click_on "Edit"
     fill_in "Email", with: ""
@@ -51,13 +52,13 @@ feature "Participants" do
     expect(page).to have_text "prohibited this participant from being saved"
   end
 
-  scenario "should list group count" do
+  it "should list group count" do
     click_on "participant1@example.com"
 
     expect(page).to have_text "All Groups1"
   end
 
-  scenario "should enable the updating of a participant" do
+  it "should enable the updating of a participant" do
     click_on "participant1@example.com"
 
     expect(page).to have_text "Email: participant1@example.com"
@@ -88,7 +89,7 @@ feature "Participants" do
     expect(page).to have_text "Study Id: favoriteToken1!"
   end
 
-  scenario "should be able to delete a user" do
+  it "should be able to delete a user" do
     click_on "participant1@example.com"
     click_on "Destroy"
 

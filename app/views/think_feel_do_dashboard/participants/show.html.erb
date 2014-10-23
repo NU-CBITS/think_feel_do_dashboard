@@ -2,6 +2,7 @@
 
 <div class="btn-toolbar" role="toolbar">
   <%= link_to "Participants", participants_path, class: "btn btn-default" %>
+  <%= link_to "Enroll", new_participant_enrollment_path(@participant), class: "btn btn-default" %>
   <%= link_to "Edit", edit_participant_path(@participant), class: "btn btn-default" %>
   <%= link_to "Destroy", @participant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 </div>
@@ -29,7 +30,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">Enrollment Information</div>
   <div class="panel-body">
-    ...
+    Below lists the participants enrollment information. This includes all the groups she/he is associated with and the current coach and group they are part of the coach or group exists.
   </div>
   <ul class="list-group">
     <%= current_coach_link(@participant) %>

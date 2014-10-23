@@ -1,0 +1,19 @@
+<h1>Enrolling Participant</h1>
+
+<%= form_tag(participant_enrollments_path(@participant), { role: :form }) do |f| %>
+  <p>
+    <strong>Participant:</strong>
+    <%= @participant.name %>
+  </p>
+
+  <%= label_tag "enrollment[coach_id]", "Coach" %>
+  <%= select_tag "enrollment[coach_id]", options_for_select(@coaches.all.map(&:email), @coach_assignment.coach_id), { prompt: "Select Coach" , class: "form-control" } %>
+
+  <%= label_tag "enrollment[group_id]", "Group" %>
+  <%= select_tag "enrollment[group_id]", options_for_select(@groups.all.map(&:title), @membership.group_id), { prompt: "Select Group", class: "form-control" } %>
+
+  <div class="actions">
+    <%= submit_tag "Enroll", class: "btn btn-primary" %>
+    <%= link_to "Cancel", participant_path(@participant), class: "btn btn-default" %>
+  </div>
+<% end %>

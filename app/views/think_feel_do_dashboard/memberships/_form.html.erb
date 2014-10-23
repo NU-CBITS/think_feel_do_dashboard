@@ -17,7 +17,7 @@
   </p>
 
   <%= f.label :group_id, "Group" %>
-  <%= f.select(:group_id, options_for_select(@groups, @membership.group_id), { prompt: "Select Group" }, class: "form-control") %>
+  <%= f.select :group_id, options_for_select(@groups, @membership.group_id), { prompt: "Select Group" }, class: "form-control" %>
 
   <div class="actions">
     <%= f.submit button_text, class: "btn btn-primary" %>

@@ -37,7 +37,7 @@ feature "Coach Assignments" do
     expect(page).to have_text "prohibited this coach from being assigned"
   end
 
-  scenario "can update the assigned a coach" do
+  it "can update the assigned a coach" do
     click_on "participant1@example.com"
 
     expect(page).to_not have_text "Current Coach: user2@example.com"
@@ -62,7 +62,7 @@ feature "Coach Assignments" do
     expect(page).to have_text "Current Coach: user2@example.com"
   end
 
-  scenario "unassign a coach" do
+  it "unassign a coach" do
     click_on "participant1@example.com"
     click_on "Current Coach: user1@example.com"
     click_on "Destroy"

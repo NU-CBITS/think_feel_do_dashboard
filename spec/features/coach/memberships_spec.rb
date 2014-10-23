@@ -87,7 +87,7 @@ feature "Memberships" do
     expect(page).to have_text "Participant: participant1@example.com"
   end
 
-  scenario "unassign a group" do
+  it "allows for the unassigning a group" do
     click_on "participant1@example.com"
 
     expect(page).to have_text "All Groups1"

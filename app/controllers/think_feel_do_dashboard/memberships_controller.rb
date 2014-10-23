@@ -79,7 +79,7 @@ module ThinkFeelDoDashboard
     def membership_params
       params
         .require(:membership)
-        .permit(:group_id, :participant_id)
+        .permit(:group_id)
     end
   end
 end
