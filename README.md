@@ -38,13 +38,15 @@ Staging Url:
 
 Confluence:
 
-<h2>Database creation</h2>
+<h2>Database initialization/creation</h2>
 
 Make sure you are in the top level folder; i.e., think_feel_do_dashboard. Then run:
 
 <code>rake app:db:drop app:db:create app:db:migrate</code>
 
-<h2>Database initialization</h2>
+<h2>Seeding Database</h2>
+<code>cd /spec/dummy</code>
+<code>app:seed:with_fixtures</code>
 
 <h2>Running tests</h2>
 

@@ -32,7 +32,7 @@
     ...
   </div>
   <ul class="list-group">
-    <%#= link_to "Current Coach: #{@participant.coach.name}", participant_coach_path(@participant, @participant.coach), class: "list-group-item" %>
+    <%= coach_link(@participant) %>
     <%#= link_to "Current Group: #{@participant.active_membership.group.name}", participant_group_path(@participant, @participant.active_membership.group), class: "list-group-item" %>
     <%#= link_to "All Groups<span class='badge'>#{@participant.groups.count}</span>".html_safe, participant_groups_path(@participant), class: "list-group-item" %>
   </ul>

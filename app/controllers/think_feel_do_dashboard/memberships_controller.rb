@@ -6,44 +6,48 @@ module ThinkFeelDoDashboard
     before_action :set_groups
     before_action :set_membership, only: [:show, :edit, :update, :destroy]
 
-    # GET /participants/1/groups
+    # GET /think_feel_do_dashboard/participants/1/groups
     def index
     end
 
-    # GET /participants/1/groups/new
+    # GET /think_feel_do_dashboard/participants/1/groups/new
     def new
       @membership = @participant.memberships.build
     end
 
-    # POST /participants/1/groups
+    # POST /think_feel_do_dashboard/participants/1/groups
     def create
-      @membership = @participant.memberships.build(membership_params)
+      @membership = @participant.memberships.build(
+        membership_params
+      )
 
       if @membership.save
-        redirect_to participant_group_path(@participant, @membership.group), notice: "Group was successfully assigned to Participant."
+        redirect_to participant_group_path(@participant, @membership.group),
+                    notice: "Group was successfully assigned"
       else
         render :new
       end
     end
 
-    # GET /participants/1/groups/1
+    # GET /think_feel_do_dashboard/participants/1/groups/1
     def show
     end
 
-    # GET /participants/1/groups/1/edit
+    # GET /think_feel_do_dashboard/participants/1/groups/1/edit
     def edit
     end
 
-    # PATCH/PUT /participants/1/groups/1
+    # PATCH/PUT /think_feel_do_dashboard/participants/1/groups/1
     def update
       if @membership.update(membership_params)
-        redirect_to participant_group_path(@participant, @membership.group), notice: "Assignment of Group was successfully updated."
+        redirect_to participant_group_path(@participant, @membership.group),
+                    notice: "Assignment of Group was successfully updated."
       else
         render :edit
       end
     end
 
-    # DELETE /participants/1/groups/1
+    # DELETE /think_feel_do_dashboard/participants/1/groups/1
     def destroy
     end
 
@@ -59,11 +63,16 @@ module ThinkFeelDoDashboard
 
 
     def set_membership
-      @membership = Membership.where(participant_id: @participant.id, group_id: params[:id]).first
+      @membership = Membership.where(
+        participant_id: @participant.id,
+        group_id: params[:id]
+      ).first
     end
 
     def membership_params
-      params.require(:membership).permit(:group_id, :participant_id)
+      params
+        .require(:membership)
+        .permit(:group_id, :participant_id)
     end
   end
 end

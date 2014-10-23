@@ -11,11 +11,12 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :participant_id %>
-    <%= f.text_field :participant_id, class: "form-control" %>
-  </div>
+  <p>
+    <strong>Participant:</strong>
+    <%= @participant.name %>
+  </p>
 
+  <%= f.label :coach_id, "Coach" %>
   <%= f.select(:coach_id, options_for_select(@coaches, @coach_assignment.coach_id), { prompt: "Select Coach" }, class: "form-control") %>
 
   <div class="actions">

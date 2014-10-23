@@ -6,41 +6,52 @@ module ThinkFeelDoDashboard
     before_action :set_coaches
     before_action :set_coach_assignment, only: [:show, :edit, :update, :destroy]
 
-    # GET /participants/1/coaches/new
+    # GET /think_feel_do_dashboard/participants/1/coaches/new
     def new
-      @coach_assignment = @participant.coach_assignments.build
+      @coach_assignment = @participant.build_coach_assignment
     end
 
-    # POST /participants/1/coaches
+    # POST /think_feel_do_dashboard/participants/1/coaches
     def create
-      @coach_assignment = @participant.coach_assignments.build(coach_assignment_params)
+      @coach_assignment = @participant.build_coach_assignment(
+        coach_assignment_params
+      )
 
       if @coach_assignment.save
-        redirect_to participant_coach_path(@participant, @coach_assignment.coach), notice: "Coach was successfully assigned to Participant."
+        redirect_to participant_coach_path(@participant, @coach_assignment.coach),
+                    notice: "Coach was successfully assigned."
       else
         render :new
       end
     end
 
-    # GET /participants/1/coaches/1
+    # GET /think_feel_do_dashboard/participants/1/coaches/1
     def show
     end
 
-    # GET /participants/1/coaches/1/edit
+    # GET /think_feel_do_dashboard/participants/1/coaches/1/edit
     def edit
     end
 
-    # PATCH/PUT /participants/1/coaches/1
+    # PATCH/PUT /think_feel_do_dashboard/participants/1/coaches/1
     def update
       if @coach_assignment.update(coach_assignment_params)
-        redirect_to participant_coach_path(@participant, @coach_assignment.coach), notice: "Assignment of Coach was successfully updated."
+        redirect_to participant_coach_path(@participant, @coach_assignment.coach),
+                    notice: "New coach was assigned."
       else
         render :edit
       end
     end
 
-    # DELETE /participants/1/coaches/1
+    # DELETE /think_feel_do_dashboard/participants/1/coaches/1
     def destroy
+      if @coach_assignment.destroy
+        redirect_to participant_path(@participant),
+                    notice: "Coach was successfully removed."
+      else
+        redirect_to participant_path(@participant),
+                    alert: "There were errors."
+      end
     end
 
     private
@@ -55,11 +66,16 @@ module ThinkFeelDoDashboard
 
 
     def set_coach_assignment
-      @coach_assignment = CoachAssignment.where(participant_id: @participant.id, coach_id: params[:id]).first
+      @coach_assignment = CoachAssignment.where(
+        participant_id: @participant.id,
+        coach_id: params[:id]
+      ).first
     end
 
     def coach_assignment_params
-      params.require(:coach_assignment).permit(:coach_id, :participant_id)
+      params
+        .require(:coach_assignment)
+        .permit(:coach_id)
     end
   end
 end
