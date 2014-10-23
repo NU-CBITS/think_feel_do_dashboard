@@ -48,7 +48,7 @@ Make sure you are in the top level folder; i.e., think_feel_do_dashboard. Then r
 
 <h2>Running tests</h2>
 
-<code>rake app:db:create app:db:migrate</code>
+<code>rake app:db:drop app:db:create app:db:migrate app:db:test:prepare</code>
 
 <code>rspec</code>
 

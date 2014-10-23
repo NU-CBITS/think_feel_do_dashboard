@@ -1,11 +1,13 @@
-# module ThinkFeelDoDashboard
-  class CoachAssignment < ActiveRecord::Base
-    belongs_to :coach, class_name: "User"
-    belongs_to :participant
+# A Coach Assignment is the relationship between a participant
+# and which coach he/she is assigned to.  However, please keep
+# in mind that only one coach is tied to each participant
+# However, a coach could have many participants
+class CoachAssignment < ActiveRecord::Base
+  belongs_to :coach, class_name: "User"
+  belongs_to :participant
 
-    validates :coach, :participant, presence: true
+  validates :coach, :participant, presence: true
 
-    delegate :name, to: :coach, prefix: true
-    delegate :name, to: :participant, prefix: true
-  end
-# end
+  delegate :name, to: :coach, prefix: true
+  delegate :name, to: :participant, prefix: true
+end
