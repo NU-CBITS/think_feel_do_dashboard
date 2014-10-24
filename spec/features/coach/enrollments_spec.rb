@@ -18,7 +18,7 @@ feature "Enrollments" do
     select "user4@example.com", from: "Coach"
     select "Group 2", from: "Group"
     fill_in "Display Name", with: "Howdy"
-    # Start date and End date are auto selected
+    # Start date and End date are auto populated
     click_on "Enroll"
 
     expect(page).to have_text "Participant was successfully enrolled."
@@ -31,8 +31,9 @@ feature "Enrollments" do
 
   it "displays errors if the group needs a display name"
 
-  it "throws erros if no coach is assigned" do
+  it "throws errors if no coach is assigned" do
     click_on "participant3@example.com"
+    # Start date and End date are auto populated
     click_on "Enroll"
 
     expect(page).to_not have_text "prohibited this coach from being assigned to this participant"
@@ -42,9 +43,10 @@ feature "Enrollments" do
     expect(page).to have_text " prohibited this coach from being assigned to this participant"
   end
 
-  it "throws erros if no group is assigned" do
+  it "throws errors if no group is assigned" do
     click_on "participant3@example.com"
     click_on "Enroll"
+    # Start date and End date are auto populated
     select "user4@example.com", from: "Coach"
 
     expect(page).to_not have_text "prohibited this group from being assigned to this participant"
