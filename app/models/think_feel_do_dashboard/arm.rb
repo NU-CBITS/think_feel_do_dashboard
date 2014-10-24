@@ -4,18 +4,19 @@ module ThinkFeelDoDashboard
   # could have between 1 and 10 or so participants
   class Arm < ActiveRecord::Base
     belongs_to :project
-    has_many :groups, dependent: :destroy
+    has_many :arm_group_joins, dependent: :destroy
+    has_many :groups, through: :arm_group_joins
 
     validates :project, presence: true
 
-    def display_name_required_for_membership?(membership)
-      puts "in display_name_required_for_membership"
-      puts "self.attributes = #{attributes}"
-      puts "self.social? = #{social?}"
-      if self.social?
-        puts "social is YES"
-        membership.participant.errors.add(:display_name, "is required because the arm of this intervention the group you selected is utilizes social features.")
+    def display_name_required_for_membership?(display_name, membership)
+      if social? && display_name.empty?
+        membership.participant.errors.add(
+          :display_name, "is required because the arm of this intervention the group you selected is utilizes social features."
+          )
         false
+      else
+        true
       end
     end
 

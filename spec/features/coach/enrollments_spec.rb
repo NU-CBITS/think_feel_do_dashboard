@@ -46,6 +46,8 @@ feature "Enrollments" do
     expect(page).to have_text "Current Group: Group 2"
   end
 
+  it "allows for the enrolling of a participant to a group that does NOT need a display name but has one"
+
   it "displays errors if the group needs a display name" do
     click_on "participant5@example.com"
     click_on "Enroll"

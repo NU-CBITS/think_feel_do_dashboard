@@ -6,8 +6,8 @@ module ThinkFeelDoDashboard
   # participant to a coach/user (membership)
   # It also associates a participant with a group (membership)
   class EnrollmentsController < ApplicationController
-    before_action :set_coaches, :set_groups, :set_participant
-    before_action :set_arms, only: [:new, :create]
+    before_action :coaches_options, :arm_group_join_options, :set_participant
+    before_action :set_arm_group_join, :set_arm, :set_group, :set_membership, only: [:create]
 
     def new
       @membership = @participant.memberships.build
@@ -18,13 +18,9 @@ module ThinkFeelDoDashboard
       @coach_assignment = @participant.build_coach_assignment(
         coach_id: enrollment_params[:coach_id]
       )
-      @membership = @participant.memberships.build(
-        group_id: enrollment_params[:group_id],
-        start_date: enrollment_params[:start_date],
-        end_date: enrollment_params[:end_date])
 
       if  @coach_assignment.save &&
-          Arm.find(enrollment_params[:arm_id]).display_name_required_for_membership?(@membership) &&
+          validate_display_name &&
           @membership.save &&
           @participant.update(display_name: enrollment_params[:display_name])
         redirect_to participant_path(@participant),
@@ -36,22 +32,44 @@ module ThinkFeelDoDashboard
 
     private
 
+    def validate_display_name
+      @arm.display_name_required_for_membership?(enrollment_params[:display_name], @membership)
+    end
+
     def enrollment_params
       params
         .require(:enrollment)
-        .permit(:coach_id, :group_id, :start_date, :end_date, :display_name, :arm_id)
+        .permit(:coach_id, :arm_group_join_id, :start_date, :end_date, :display_name)
     end
 
-    def set_arms
-      @arms = Arm.all
+    def arm_group_join_options
+      @grouped_options = []
+      Arm.all.each do |arm|
+        @grouped_options << [arm.name, arm.groups.map { |group| [group.title, ArmGroupJoin.where(arm_id: arm.id, group_id: group.id).first.id] }]
+      end
     end
 
-    def set_groups
-      @groups = Group.all
+    def coaches_options
+      @coaches_options = User.all.all.map { |coach| [coach.email, coach.id] }
     end
 
-    def set_coaches
-      @coaches = User.all
+    def set_arm
+      @arm = @arm_group_join.arm
+    end
+
+    def set_group
+      @group = @arm_group_join.group
+    end
+
+    def set_membership
+      @membership = @participant.memberships.build(
+        group_id: @group.id,
+        start_date: enrollment_params[:start_date],
+        end_date: enrollment_params[:end_date])
+    end
+
+    def set_arm_group_join
+      @arm_group_join = ArmGroupJoin.find(enrollment_params[:arm_group_join_id])
     end
 
     def set_participant
