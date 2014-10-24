@@ -1,6 +1,7 @@
 require_dependency "think_feel_do_dashboard/application_controller"
 
 module ThinkFeelDoDashboard
+  # Used to associated coaches with participants
   class CoachAssignmentsController < ApplicationController
     before_action :set_participant
     before_action :set_coaches
@@ -18,7 +19,9 @@ module ThinkFeelDoDashboard
       )
 
       if @coach_assignment.save
-        redirect_to participant_coach_path(@participant, @coach_assignment.coach),
+        redirect_to participant_coach_path(
+          @participant, @coach_assignment.coach
+        ),
                     notice: "Coach was successfully assigned."
       else
         render :new
@@ -36,7 +39,9 @@ module ThinkFeelDoDashboard
     # PATCH/PUT /think_feel_do_dashboard/participants/1/coaches/1
     def update
       if @coach_assignment.update(coach_assignment_params)
-        redirect_to participant_coach_path(@participant, @coach_assignment.coach),
+        redirect_to participant_coach_path(
+          @participant, @coach_assignment.coach
+        ),
                     notice: "New coach was successfully assigned."
       else
         render :edit
@@ -63,7 +68,6 @@ module ThinkFeelDoDashboard
     def set_participant
       @participant = Participant.find(params[:participant_id])
     end
-
 
     def set_coach_assignment
       @coach_assignment = CoachAssignment.where(

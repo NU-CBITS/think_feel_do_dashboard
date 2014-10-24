@@ -1,6 +1,6 @@
 module ThinkFeelDoDashboard
+  # Used in the participant 'show' page to create dynamic routes
   module ParticipantsHelper
-
     def current_coach_link(participant)
       if participant.coach
         text = "Current Coach: #{participant.coach.email}"

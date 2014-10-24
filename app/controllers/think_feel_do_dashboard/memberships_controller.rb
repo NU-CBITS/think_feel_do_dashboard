@@ -1,6 +1,7 @@
 require_dependency "think_feel_do_dashboard/application_controller"
 
 module ThinkFeelDoDashboard
+  # Assigns a participant with a group along with setting the start and end date
   class MembershipsController < ApplicationController
     before_action :set_participant
     before_action :set_groups
@@ -67,7 +68,6 @@ module ThinkFeelDoDashboard
     def set_participant
       @participant = Participant.find(params[:participant_id])
     end
-
 
     def set_membership
       @membership = Membership.where(

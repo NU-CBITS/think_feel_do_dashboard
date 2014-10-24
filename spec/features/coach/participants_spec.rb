@@ -25,6 +25,7 @@ feature "Participants" do
     fill_in "Email", with: "gwashington@ex.co"
     fill_in "Phone Number", with: "123-456-7890"
     select "Phone", from: "Contact Preference"
+    fill_in "Display Name", with: "Mr. Happy"
     fill_in "Study Id", with: "favoriteToken1!"
     click_on "Create"
 
@@ -32,6 +33,7 @@ feature "Participants" do
     expect(page).to have_text "Email: gwashington@ex.co"
     expect(page).to have_text "Phone Number: 123-456-7890"
     expect(page).to have_text "Contact Preference: Phone"
+    expect(page).to have_text "Display Name: Mr. Happy"
     expect(page).to have_text "Study Id: favoriteToken1!"
     expect(page).to have_text "Enrollment Information"
     expect(page).to have_text "Below lists the participants enrollment information. This includes all the groups she/he is associated with and the current coach and group they are part of the coach or group exists."

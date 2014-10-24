@@ -1,9 +1,11 @@
 require_dependency "think_feel_do_dashboard/application_controller"
 
 module ThinkFeelDoDashboard
+  # Allows for the creation, updating, and deletion of participants
   class ParticipantsController < ApplicationController
     before_action :set_participant, only: [:show, :edit, :update, :destroy]
-    before_action :set_contact_preferences, only: [:new, :create, :show, :edit, :update]
+    before_action :set_contact_preferences,
+                  only: [:new, :create, :show, :edit, :update]
 
     # GET /think_feel_do_dashboard/participants
     def index
@@ -67,7 +69,7 @@ module ThinkFeelDoDashboard
 
     def participant_params
       params.require(:participant).permit(
-        :email, :phone_number,
+        :email, :phone_number, :display_name,
         :study_id, :contact_preference
       )
     end

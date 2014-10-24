@@ -13,7 +13,7 @@ feature "Coach Assignments" do
     expect(page).to_not have_text "Current Coach: user3@example.com"
 
     click_on "Assign Coach"
-    
+
     expect(page).to have_text "Participant: participant3@example.com"
 
     select "user3@example.com", from: "Coach"
@@ -43,7 +43,7 @@ feature "Coach Assignments" do
     expect(page).to_not have_text "Current Coach: user2@example.com"
 
     click_on "Current Coach: user1@example.com"
-    
+
     expect(page).to have_text "Participant: participant1@example.com"
     expect(page).to have_text "Coach: user1@example.com"
 
