@@ -6,7 +6,8 @@
 </div>
 
 <div class="list-group">
-  <% @participant.groups.each do |group| %>
-    <%= link_to group.title, participant_group_path(@participant, group), class: "list-group-item" %>
+  <% @participant.memberships.each do |membership| %>
+    <% label = @participant.memberships.active.include?(membership) ? "<span class='label label-success'>Active</span>" : "<span class='label label-info'>Inactive</span>" %>
+    <%= link_to ("#{label} ".html_safe + membership.group.title), participant_group_path(@participant, membership.group), class: "list-group-item" %>
   <% end %>
 </div>

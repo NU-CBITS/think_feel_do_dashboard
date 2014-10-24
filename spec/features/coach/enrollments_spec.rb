@@ -23,4 +23,27 @@ feature "Enrollments" do
     expect(page).to have_text "Current Coach: user4@example.com"
     expect(page).to have_text "Current Group: Group 2"
   end
+
+  it "throws erros if no coach is assigned" do
+    click_on "participant3@example.com"
+    click_on "Enroll"
+
+    expect(page).to_not have_text "prohibited this coach from being assigned to this participant"
+
+    click_on "Enroll"
+
+    expect(page).to have_text " prohibited this coach from being assigned to this participant"
+  end
+
+  it "throws erros if no group is assigned" do
+    click_on "participant3@example.com"
+    click_on "Enroll"
+    select "user4@example.com", from: "Coach"
+
+    expect(page).to_not have_text "prohibited this group from being assigned to this participant"
+
+    click_on "Enroll"
+
+    expect(page).to have_text "prohibited this group from being assigned to this participant"
+  end
 end

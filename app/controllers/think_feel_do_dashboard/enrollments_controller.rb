@@ -10,7 +10,6 @@ module ThinkFeelDoDashboard
     end
 
     def create
-      puts  "enrollment_params = #{enrollment_params}"
       @coach_assignment = @participant.build_coach_assignment(
         coach_id: enrollment_params[:coach_id]
       )
@@ -19,8 +18,6 @@ module ThinkFeelDoDashboard
         start_date: enrollment_params[:start_date],
         end_date: enrollment_params[:end_date]        
       )
-
-      puts "@membership.attributes = #{@membership.attributes}"
 
       if @coach_assignment.save && @membership.save
         redirect_to participant_path(@participant),

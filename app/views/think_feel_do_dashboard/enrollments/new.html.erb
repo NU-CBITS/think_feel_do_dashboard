@@ -1,6 +1,30 @@
 <h1>Enrolling Participant</h1>
 
 <%= form_tag(participant_enrollments_path(@participant), { role: :form }) do |f| %>
+  <% if @coach_assignment.errors.any? %>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <strong><%= pluralize(@coach_assignment.errors.count, "error") %> prohibited this coach from being assigned to this participant:</strong>
+      <ul>
+      <% @coach_assignment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if @membership.errors.any? %>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <strong><%= pluralize(@membership.errors.count, "error") %> prohibited this group from being assigned to this participant:</strong>
+      <ul>
+      <% @membership.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
     <strong>Participant:</strong>
     <%= @participant.email %>
