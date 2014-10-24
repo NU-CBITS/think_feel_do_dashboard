@@ -7,6 +7,7 @@ module ThinkFeelDoDashboard
   # It also associates a participant with a group (membership)
   class EnrollmentsController < ApplicationController
     before_action :set_coaches, :set_groups, :set_participant
+    before_action :set_arms, only: [:new, :create]
 
     def new
       @membership = @participant.memberships.build
@@ -23,6 +24,7 @@ module ThinkFeelDoDashboard
         end_date: enrollment_params[:end_date])
 
       if  @coach_assignment.save &&
+          Arm.find(enrollment_params[:arm_id]).display_name_required_for_membership?(@membership) &&
           @membership.save &&
           @participant.update(display_name: enrollment_params[:display_name])
         redirect_to participant_path(@participant),
@@ -37,7 +39,11 @@ module ThinkFeelDoDashboard
     def enrollment_params
       params
         .require(:enrollment)
-        .permit(:coach_id, :group_id, :start_date, :end_date, :display_name)
+        .permit(:coach_id, :group_id, :start_date, :end_date, :display_name, :arm_id)
+    end
+
+    def set_arms
+      @arms = Arm.all
     end
 
     def set_groups

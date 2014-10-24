@@ -46,6 +46,10 @@
     <%= select_tag "enrollment[coach_id]", options_for_select(@coaches.all.map { |coach| [coach.email, coach.id] }), { prompt: "Select Coach" , class: "form-control", value: @coach_assignment.coach_id } %>
   </div>
   <div class="form-group">
+    <%= label_tag "enrollment[arm_id]", "Arm" %>
+    <%= select_tag "enrollment[arm_id]", options_for_select(@arms.all.map { |arm| [arm.name, arm.id] }), { prompt: "Select Arm", class: "form-control" } %>
+  </div>
+  <div class="form-group">
     <%= label_tag "enrollment[group_id]", "Group" %>
     <%= select_tag "enrollment[group_id]", options_for_select(@groups.all.map { |group| [group.title, group.id] }), { prompt: "Select Group", class: "form-control" , value: @membership.group_id } %>
   </div>

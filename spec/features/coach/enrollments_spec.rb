@@ -12,11 +12,11 @@ feature "Enrollments" do
 
     expect(page).to_not have_text "Howdy"
     expect(page).to_not have_text "Current Coach: user4@example.com"
-    expect(page).to_not have_text "Current Group: Group 2"
+    expect(page).to_not have_text "Current Group: Group 1"
 
     click_on "Enroll"
     select "user4@example.com", from: "Coach"
-    select "Group 2", from: "Group"
+    select "Group 1", from: "Group"
     fill_in "Display Name", with: "Howdy"
     # Start date and End date are auto populated
     click_on "Enroll"
@@ -24,12 +24,39 @@ feature "Enrollments" do
     expect(page).to have_text "Participant was successfully enrolled."
     expect(page).to have_text "Howdy"
     expect(page).to have_text "Current Coach: user4@example.com"
+    expect(page).to have_text "Current Group: Group 1"
+  end
+
+  it "allows for the enrolling of a participant to a group that does NOT need a display name" do
+    click_on "participant5@example.com"
+
+    expect(page).to_not have_text "Howdy"
+    expect(page).to_not have_text "Current Coach: user4@example.com"
+    expect(page).to_not have_text "Current Group: Group 2"
+
+    click_on "Enroll"
+    select "user4@example.com", from: "Coach"
+    select "Group 2", from: "Group"
+    fill_in "Display Name", with: ""
+    # Start date and End date are auto populated
+    click_on "Enroll"
+
+    expect(page).to have_text "Participant was successfully enrolled."
+    expect(page).to have_text "Current Coach: user4@example.com"
     expect(page).to have_text "Current Group: Group 2"
   end
 
-  it "allows for the enrolling of a participant to a group that does NOT need a display name"
+  it "displays errors if the group needs a display name" do
+    click_on "participant5@example.com"
+    click_on "Enroll"
+    select "user4@example.com", from: "Coach"
+    select "Group 1", from: "Group"
+    fill_in "Display Name", with: ""
+    # Start date and End date are auto populated
+    click_on "Enroll"
 
-  it "displays errors if the group needs a display name"
+    expect(page).to have_text "Display name is required because the arm of this intervention the group you selected is utilizes social features"
+  end
 
   it "throws errors if no coach is assigned" do
     click_on "participant3@example.com"
