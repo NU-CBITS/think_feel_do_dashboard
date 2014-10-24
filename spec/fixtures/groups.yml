@@ -1,23 +1,17 @@
 group1:
-  arm_id: arm1
   title: Group 1
 
 group2:
-  arm: arm1
   title: Group 2
 
 group3:
-  arm: arm1
   title: Group 3
 
 group4:
-  arm: arm2
   title: Group Without Creator
 
 group_without_members1:
-  arm: arm2
   title: Group Without Members 1
 
 group_without_members2:
-  arm: arm2
   title: Group Without Members 2

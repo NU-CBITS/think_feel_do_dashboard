@@ -17,10 +17,4 @@ class Participant < ActiveRecord::Base
   validates :phone_number, allow_nil: true, allow_blank: true, uniqueness: true
   validates :study_id, :email, presence: true, uniqueness: true
   validates :contact_preference, presence: true, inclusion: %w(email phone)
-
-  delegate :name, to: :coach, allow_nil: true, prefix: true
-
-  def name
-    email
-  end
 end

@@ -61,7 +61,7 @@ module ThinkFeelDoDashboard
     private
 
     def set_groups
-      @groups = Group.all.map { |user| [user.name, user.id] }
+      @groups = Group.all.map { |group| [group.title, group.id] }
     end
 
     def set_participant

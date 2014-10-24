@@ -57,7 +57,7 @@ module ThinkFeelDoDashboard
     private
 
     def set_coaches
-      @coaches = User.all.map { |user| [user.name, user.id] }
+      @coaches = User.all.map { |user| [user.email, user.id] }
     end
 
     def set_participant

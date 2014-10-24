@@ -6,8 +6,4 @@ class User < ActiveRecord::Base
   has_many :participants, through: :coach_assignments
 
   validates :email, presence: true
-
-  def name
-    email
-  end
 end

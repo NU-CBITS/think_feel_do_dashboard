@@ -1,0 +1,7 @@
+arm_group_join1:
+  arm: arm1
+  group: group1
+
+arm_group_join2:
+  arm: arm2
+  group: group2

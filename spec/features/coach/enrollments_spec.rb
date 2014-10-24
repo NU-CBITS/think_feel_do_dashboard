@@ -16,7 +16,7 @@ feature "Enrollments" do
     click_on "Enroll"
     select "user4@example.com", from: "Coach"
     select "Group 2", from: "Group"
-    # Set activiation days...
+    # Start date and End date are auto selected
     click_on "Enroll"
 
     expect(page).to have_text "Participant was successfully enrolled."

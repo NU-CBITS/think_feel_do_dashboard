@@ -13,12 +13,12 @@
 
   <p>
     <strong>Participant:</strong>
-    <%= @participant.name %>
+    <%= @participant.email %>
   </p>
-
-  <%= f.label :group_id, "Group" %>
-  <%= f.select :group_id, options_for_select(@groups, @membership.group_id), { prompt: "Select Group" }, class: "form-control" %>
-
+  <div class="form-group">
+    <%= f.label :group_id, "Group" %>
+    <%= f.select :group_id, options_for_select(@groups, @membership.group_id), { prompt: "Select Group" }, class: "form-control" %>
+  </div>
   <div class="actions">
     <%= f.submit button_text, class: "btn btn-primary" %>
     <%= link_to "Cancel", cancel_path, class: "btn btn-default" %>

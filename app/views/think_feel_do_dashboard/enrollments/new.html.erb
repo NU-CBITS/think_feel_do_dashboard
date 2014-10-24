@@ -3,15 +3,24 @@
 <%= form_tag(participant_enrollments_path(@participant), { role: :form }) do |f| %>
   <p>
     <strong>Participant:</strong>
-    <%= @participant.name %>
+    <%= @participant.email %>
   </p>
-
-  <%= label_tag "enrollment[coach_id]", "Coach" %>
-  <%= select_tag "enrollment[coach_id]", options_for_select(@coaches.all.map { |coach| [coach.email, coach.id] }), { prompt: "Select Coach" , class: "form-control" } %>
-
-  <%= label_tag "enrollment[group_id]", "Group" %>
-  <%= select_tag "enrollment[group_id]", options_for_select(@groups.all.map { |group| [group.title, group.id] }), { prompt: "Select Group", class: "form-control" } %>
-
+  <div class="form-group">
+    <%= label_tag "enrollment[coach_id]", "Coach" %>
+    <%= select_tag "enrollment[coach_id]", options_for_select(@coaches.all.map { |coach| [coach.email, coach.id] }), { prompt: "Select Coach" , class: "form-control" } %>
+  </div>
+  <div class="form-group">
+    <%= label_tag "enrollment[group_id]", "Group" %>
+    <%= select_tag "enrollment[group_id]", options_for_select(@groups.all.map { |group| [group.title, group.id] }), { prompt: "Select Group", class: "form-control" } %>
+  </div>
+  <div class="form-group">
+    <%= label_tag "enrollment[start_date]", "Start Date" %>
+    <%= text_field_tag "enrollment[start_date]", {}, type: :date, class: "form-control", value: Date.today  %>
+  </div>
+  <div class="form-group">
+    <%= label_tag "enrollment[end_date]", "Start Date" %>
+    <%= text_field_tag "enrollment[end_date]", {}, type: :date, class: "form-control", value: Date.today + 1.week %>
+  </div>
   <div class="actions">
     <%= submit_tag "Enroll", class: "btn btn-primary" %>
     <%= link_to "Cancel", participant_path(@participant), class: "btn btn-default" %>

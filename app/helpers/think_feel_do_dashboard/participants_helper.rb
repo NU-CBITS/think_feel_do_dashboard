@@ -3,7 +3,7 @@ module ThinkFeelDoDashboard
 
     def current_coach_link(participant)
       if participant.coach
-        text = "Current Coach: #{participant.coach_name}"
+        text = "Current Coach: #{participant.coach.email}"
         href = participant_coach_path(participant, participant.coach)
       else
         text = "Assign Coach"
@@ -14,8 +14,8 @@ module ThinkFeelDoDashboard
 
     def current_group_link(participant)
       if participant.active_membership && participant.active_membership.group
-        text = "Current Group: #{participant.active_membership.group.name}"
-        href = participant_group_path(participant, participant.active_membership.group)
+        text = "Current Group: #{participant.active_group.title}"
+        href = participant_group_path(participant, participant.active_group)
       else
         text = "Assign Group"
         href = new_participant_group_path(participant)
