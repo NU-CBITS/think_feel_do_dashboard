@@ -19,7 +19,7 @@ module ThinkFeelDoDashboard
         end_date: enrollment_params[:end_date]        
       )
 
-      if @coach_assignment.save && @membership.save
+      if @coach_assignment.save && @membership.save && @participant.update(display_name: enrollment_params[:display_name])
         redirect_to participant_path(@participant),
                     notice: "Participant was successfully enrolled."
       else
@@ -32,7 +32,7 @@ module ThinkFeelDoDashboard
     def enrollment_params
       params
         .require(:enrollment)
-        .permit(:coach_id, :group_id, :start_date, :end_date)
+        .permit(:coach_id, :group_id, :start_date, :end_date, :display_name)
     end
 
     def set_groups

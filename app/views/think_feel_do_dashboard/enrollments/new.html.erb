@@ -25,17 +25,34 @@
     </div>
   <% end %>
 
+  <% if @participant.errors.any? %>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <strong><%= pluralize(@participant.errors.count, "error") %> prohibited this display name from being saved for the participant:</strong>
+      <ul>
+      <% @participant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
     <strong>Participant:</strong>
     <%= @participant.email %>
   </p>
   <div class="form-group">
     <%= label_tag "enrollment[coach_id]", "Coach" %>
-    <%= select_tag "enrollment[coach_id]", options_for_select(@coaches.all.map { |coach| [coach.email, coach.id] }), { prompt: "Select Coach" , class: "form-control" } %>
+    <%= select_tag "enrollment[coach_id]", options_for_select(@coaches.all.map { |coach| [coach.email, coach.id] }), { prompt: "Select Coach" , class: "form-control", value: @coach_assignment.coach_id } %>
   </div>
   <div class="form-group">
     <%= label_tag "enrollment[group_id]", "Group" %>
-    <%= select_tag "enrollment[group_id]", options_for_select(@groups.all.map { |group| [group.title, group.id] }), { prompt: "Select Group", class: "form-control" } %>
+    <%= select_tag "enrollment[group_id]", options_for_select(@groups.all.map { |group| [group.title, group.id] }), { prompt: "Select Group", class: "form-control" , value: @membership.group_id } %>
+  </div>
+  <div class="form-group">
+    <%= label_tag "enrollment[display_name]", "Display Name" %>
+    <%= text_field_tag "enrollment[display_name]", {}, class: "form-control", value: @participant.display_name %>
+    <p class="help-block">Only necessary for enrollments where socializing is a feature of the group</p>
   </div>
   <div class="form-group">
     <%= label_tag "enrollment[start_date]", "Start Date" %>

@@ -28,6 +28,7 @@ participant4:
   email: participant4@example.com
 
 participant5:
+  contact_preference: phone
   study_id: TFD-TFD-future1
   email: participant5@example.com
 

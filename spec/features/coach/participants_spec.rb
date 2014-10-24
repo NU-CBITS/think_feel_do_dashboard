@@ -23,7 +23,7 @@ feature "Participants" do
 
     click_on "New"
     fill_in "Email", with: "gwashington@ex.co"
-    fill_in "Phone number", with: "123-456-7890"
+    fill_in "Phone Number", with: "123-456-7890"
     select "Phone", from: "Contact Preference"
     fill_in "Study Id", with: "favoriteToken1!"
     click_on "Create"
@@ -45,7 +45,7 @@ feature "Participants" do
     click_on "participant1@example.com"
     click_on "Edit"
     fill_in "Email", with: ""
-    fill_in "Phone number", with: ""
+    fill_in "Phone Number", with: ""
     fill_in "Study Id", with: ""
     click_on "Update"
 
@@ -73,7 +73,7 @@ feature "Participants" do
 
     click_on "Edit"
     fill_in "Email", with: "gwashington@ex.co"
-    fill_in "Phone number", with: "123-456-7890"
+    fill_in "Phone Number", with: "123-456-7890"
     select "Phone", from: "Contact Preference"
     fill_in "Study Id", with: "favoriteToken1!"
     click_on "Update"
