@@ -1,13 +1,13 @@
 participant1:
   contact_preference: email
   phone_number: 500-555-0000
-  display_name: Joe
+  # display_name: Joe
   study_id: TFD-1111
   email: participant1@example.com
 
 participant2:
   contact_preference: phone
-  display_name: Joe
+  # display_name: Joe
   study_id: TFD-2
   email: participant2@example.com
 

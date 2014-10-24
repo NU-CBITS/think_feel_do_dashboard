@@ -70,4 +70,4 @@ Make sure you are in the top level folder; i.e., think_feel_do_dashboard. Then r
 
 <h2>Possible future 'To Dos'</h2>
 
-crud participant with contact preference
+Add display name and scoping...

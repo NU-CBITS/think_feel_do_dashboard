@@ -7,8 +7,8 @@ feature "Enrollments" do
     visit "/think_feel_do_dashboard/participants"
   end
 
-  it "allows for the enrolling of a coach" do
-    click_on "participant3@example.com"
+  it "allows for the enrolling of a participant" do
+    click_on "participant5@example.com"
 
     expect(page).to_not have_text "Current Coach: user4@example.com"
     expect(page).to_not have_text "Current Group: Group 2"

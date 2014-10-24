@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 20141024162116) do
 
   create_table "participants", force: true do |t|
     t.string   "contact_preference", default: ""
-    t.string   "display_name",       default: ""
     t.string   "email",                           null: false
     t.string   "phone_number"
     t.string   "study_id",                        null: false
