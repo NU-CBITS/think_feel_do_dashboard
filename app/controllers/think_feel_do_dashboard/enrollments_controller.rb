@@ -7,7 +7,8 @@ module ThinkFeelDoDashboard
   # It also associates a participant with a group (membership)
   class EnrollmentsController < ApplicationController
     before_action :coaches_options, :arm_group_join_options, :set_participant
-    before_action :set_arm_group_join, :set_arm, :set_group, :set_membership, only: [:create]
+    before_action :set_arm_group_join, :set_arm,
+                  :set_group, :set_membership, only: [:create]
 
     def new
       @membership = @participant.memberships.build
@@ -19,10 +20,10 @@ module ThinkFeelDoDashboard
         coach_id: enrollment_params[:coach_id]
       )
 
-      if  @coach_assignment.save &&
+      if  @participant.update(display_name: enrollment_params[:display_name]) &&
+          @coach_assignment.save &&
           validate_display_name &&
-          @membership.save &&
-          @participant.update(display_name: enrollment_params[:display_name])
+          @membership.save
         redirect_to participant_path(@participant),
                     notice: "Participant was successfully enrolled."
       else
@@ -33,19 +34,24 @@ module ThinkFeelDoDashboard
     private
 
     def validate_display_name
-      @arm.display_name_required_for_membership?(enrollment_params[:display_name], @membership)
+      @arm.display_name_required_for_membership?(@participant)
     end
 
     def enrollment_params
       params
         .require(:enrollment)
-        .permit(:coach_id, :arm_group_join_id, :start_date, :end_date, :display_name)
+        .permit(:coach_id, :arm_group_join_id,
+                :start_date, :end_date, :display_name)
     end
 
     def arm_group_join_options
       @grouped_options = []
       Arm.all.each do |arm|
-        @grouped_options << [arm.name, arm.groups.map { |group| [group.title, ArmGroupJoin.where(arm_id: arm.id, group_id: group.id).first.id] }]
+        @grouped_options << [
+          arm.name, arm.groups.map do |group|
+            [group.title, arm_group_join(arm, group)]
+          end
+        ]
       end
     end
 
@@ -59,6 +65,10 @@ module ThinkFeelDoDashboard
 
     def set_group
       @group = @arm_group_join.group
+    end
+
+    def arm_group_join(arm, group)
+      ArmGroupJoin.where(arm_id: arm.id, group_id: group.id).first.id
     end
 
     def set_membership

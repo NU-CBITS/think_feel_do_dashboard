@@ -57,7 +57,7 @@ feature "Enrollments" do
     # Start date and End date are auto populated
     click_on "Enroll"
 
-    expect(page).to have_text "Display name is required because the arm of this intervention the group you selected is utilizes social features"
+    expect(page).to have_text "Display name is required because the arm of this intervention utilizes social features."
   end
 
   it "throws errors if no coach is assigned" do

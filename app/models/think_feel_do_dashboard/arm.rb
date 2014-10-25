@@ -9,10 +9,11 @@ module ThinkFeelDoDashboard
 
     validates :project, presence: true
 
-    def display_name_required_for_membership?(display_name, membership)
-      if social? && display_name.empty?
-        membership.participant.errors.add(
-          :display_name, "is required because the arm of this intervention the group you selected is utilizes social features."
+    def display_name_required_for_membership?(participant)
+      if social? && participant.display_name.empty?
+        participant.errors.add(
+          :display_name, "is required because the arm of this \
+            intervention utilizes social features."
           )
         false
       else
