@@ -46,7 +46,25 @@ feature "Enrollments" do
     expect(page).to have_text "Current Group: Group 2"
   end
 
-  it "allows for the enrolling of a participant to a group that does NOT need a display name but has one"
+  it "allows for the enrolling of a participant to a group that does NOT need a display name but has one" do
+    click_on "participant5@example.com"
+
+    expect(page).to_not have_text "Display Name: My Joy"
+    expect(page).to_not have_text "Current Coach: user4@example.com"
+    expect(page).to_not have_text "Current Group: Group 2"
+
+    click_on "Enroll"
+    select "user4@example.com", from: "Coach"
+    select "Group 2", from: "Group"
+    fill_in "Display Name", with: "My Joy"
+    # Start date and End date are auto populated
+    click_on "Enroll"
+
+    expect(page).to have_text "Participant was successfully enrolled."
+    expect(page).to have_text "Display Name: My Joy"
+    expect(page).to have_text "Current Coach: user4@example.com"
+    expect(page).to have_text "Current Group: Group 2"
+  end
 
   it "displays errors if the group needs a display name" do
     click_on "participant5@example.com"
@@ -65,11 +83,12 @@ feature "Enrollments" do
     # Start date and End date are auto populated
     click_on "Enroll"
 
-    expect(page).to_not have_text "prohibited this coach from being assigned to this participant"
+    # membership check happens first - thus group error
+    expect(page).to_not have_text "prohibited this group from being assigned to this participant"
 
     click_on "Enroll"
 
-    expect(page).to have_text " prohibited this coach from being assigned to this participant"
+    expect(page).to have_text " prohibited this group from being assigned to this participant"
   end
 
   it "throws errors if no group is assigned" do

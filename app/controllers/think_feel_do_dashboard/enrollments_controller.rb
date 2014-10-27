@@ -7,8 +7,8 @@ module ThinkFeelDoDashboard
   # It also associates a participant with a group (membership)
   class EnrollmentsController < ApplicationController
     before_action :coaches_options, :arm_group_join_options, :set_participant
-    before_action :set_arm_group_join, :set_arm,
-                  :set_group, :set_membership, only: [:create]
+    before_action :set_coach_assignment, :set_arm_group_join,
+                  :set_arm, :set_group, :set_membership, only: [:create]
 
     def new
       @membership = @participant.memberships.build
@@ -16,14 +16,11 @@ module ThinkFeelDoDashboard
     end
 
     def create
-      @coach_assignment = @participant.build_coach_assignment(
-        coach_id: enrollment_params[:coach_id]
-      )
-
-      if  @participant.update(display_name: enrollment_params[:display_name]) &&
-          @coach_assignment.save &&
-          validate_display_name &&
-          @membership.save
+      if valid_enrollment?
+        @membership.save &&
+        @coach_assignment.save &&
+        @participant.update(
+          display_name: enrollment_params[:display_name])
         redirect_to participant_path(@participant),
                     notice: "Participant was successfully enrolled."
       else
@@ -33,15 +30,17 @@ module ThinkFeelDoDashboard
 
     private
 
-    def validate_display_name
-      @arm.display_name_required_for_membership?(@participant)
+    def validate_display_name(display_name)
+      @arm.display_name_required_for_membership?(@participant, display_name)
     end
 
     def enrollment_params
       params
         .require(:enrollment)
-        .permit(:coach_id, :arm_group_join_id,
-                :start_date, :end_date, :display_name)
+        .permit(
+          :coach_id, :arm_group_join_id,
+          :start_date, :end_date, :display_name
+        )
     end
 
     def arm_group_join_options
@@ -59,16 +58,31 @@ module ThinkFeelDoDashboard
       @coaches_options = User.all.all.map { |coach| [coach.email, coach.id] }
     end
 
+    def arm_group_join(arm, group)
+      ArmGroupJoin.where(arm_id: arm.id, group_id: group.id).first.id
+    end
+
     def set_arm
       @arm = @arm_group_join.arm
+    end
+
+    def set_arm_group_join
+      if enrollment_params[:arm_group_join_id].empty?
+        @membership = Membership.new
+        @membership.errors.add(:group_id, "can't be blank")
+        render :new
+      else
+        @arm_group_join = ArmGroupJoin.find(enrollment_params[:arm_group_join_id])
+      end
     end
 
     def set_group
       @group = @arm_group_join.group
     end
 
-    def arm_group_join(arm, group)
-      ArmGroupJoin.where(arm_id: arm.id, group_id: group.id).first.id
+    def set_coach_assignment
+      @coach_assignment = @participant.build_coach_assignment(
+        coach_id: enrollment_params[:coach_id])
     end
 
     def set_membership
@@ -78,12 +92,14 @@ module ThinkFeelDoDashboard
         end_date: enrollment_params[:end_date])
     end
 
-    def set_arm_group_join
-      @arm_group_join = ArmGroupJoin.find(enrollment_params[:arm_group_join_id])
-    end
-
     def set_participant
       @participant = Participant.find(params[:participant_id])
+    end
+
+    def valid_enrollment?
+      @coach_assignment.valid? &&
+      @membership.valid? &&
+      validate_display_name(enrollment_params[:display_name])
     end
   end
 end
