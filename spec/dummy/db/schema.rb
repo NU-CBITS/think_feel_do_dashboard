@@ -41,12 +41,16 @@ ActiveRecord::Schema.define(version: 20141024183028) do
   create_table "participants", force: true do |t|
     t.string   "contact_preference", default: ""
     t.string   "display_name",       default: ""
-    t.string   "email",                           null: false
+    t.string   "email",              default: "", null: false
     t.string   "phone_number"
-    t.string   "study_id",                        null: false
+    t.string   "study_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "participants", ["email"], name: "index_participants_on_email", unique: true, using: :btree
+  add_index "participants", ["phone_number"], name: "index_participants_on_phone_number", unique: true, using: :btree
+  add_index "participants", ["study_id"], name: "index_participants_on_study_id", unique: true, using: :btree
 
   create_table "think_feel_do_dashboard_arm_group_joins", force: true do |t|
     t.integer  "arm_id",     null: false

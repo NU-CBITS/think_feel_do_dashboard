@@ -23,7 +23,7 @@ feature "Participants" do
 
     click_on "New"
     fill_in "Email", with: "gwashington@ex.co"
-    fill_in "Phone Number", with: "123-456-7890"
+    fill_in "Phone Number", with: "608-215-3617"
     select "Phone", from: "Contact Preference"
     fill_in "Display Name", with: "Mr. Happy"
     fill_in "Study Id", with: "favoriteToken1!"
@@ -31,7 +31,7 @@ feature "Participants" do
 
     expect(page).to have_text "Participant was successfully created"
     expect(page).to have_text "Email: gwashington@ex.co"
-    expect(page).to have_text "Phone Number: 123-456-7890"
+    expect(page).to have_text "Phone Number: 6082153617"
     expect(page).to have_text "Contact Preference: Phone"
     expect(page).to have_text "Display Name: Mr. Happy"
     expect(page).to have_text "Study Id: favoriteToken1!"
@@ -54,6 +54,16 @@ feature "Participants" do
     expect(page).to have_text "prohibited this participant from being saved"
   end
 
+  it "should have a valid phonen number if contact preference is 'phone'" do
+    click_on "participant1@example.com"
+    click_on "Edit"
+    fill_in "Phone Number", with: "asdf"
+    select "Phone", from: "Contact Preference"
+    click_on "Update"
+
+    expect(page).to have_text "prohibited this participant from being saved"
+  end
+
   it "should list group count" do
     click_on "participant1@example.com"
 
@@ -64,30 +74,30 @@ feature "Participants" do
     click_on "participant1@example.com"
 
     expect(page).to have_text "Email: participant1@example.com"
-    expect(page).to have_text "Phone Number: 500-555-0000"
-    expect(page).to have_text "Contact Preference: Email"
+    expect(page).to have_text "Phone Number: 5005550000"
+    expect(page).to have_text "Contact Preference: Phone"
     expect(page).to have_text "Study Id: TFD-1111"
 
     expect(page).to_not have_text "Email: gwashington@ex.co"
     expect(page).to_not have_text "Phone Number: 123-456-7890"
-    expect(page).to_not have_text "Contact Preference: Phone"
+    expect(page).to_not have_text "Contact Preference: Email"
     expect(page).to_not have_text "Study Id: favoriteToken1!"
 
     click_on "Edit"
     fill_in "Email", with: "gwashington@ex.co"
-    fill_in "Phone Number", with: "123-456-7890"
-    select "Phone", from: "Contact Preference"
+    fill_in "Phone Number", with: "1234567890"
+    select "Email", from: "Contact Preference"
     fill_in "Study Id", with: "favoriteToken1!"
     click_on "Update"
 
     expect(page).to_not have_text "Email: participant1@example.com"
-    expect(page).to_not have_text "Phone Number: 500-555-0000"
-    expect(page).to_not have_text "Contact Preference: Email"
+    expect(page).to_not have_text "Phone Number: 5005550000"
+    expect(page).to_not have_text "Contact Preference: Phone"
     expect(page).to_not have_text "Study Id: TFD-1111"
 
     expect(page).to have_text "Email: gwashington@ex.co"
-    expect(page).to have_text "Phone Number: 123-456-7890"
-    expect(page).to have_text "Contact Preference: Phone"
+    expect(page).to have_text "Phone Number: 1234567890"
+    expect(page).to have_text "Contact Preference: Email"
     expect(page).to have_text "Study Id: favoriteToken1!"
   end
 

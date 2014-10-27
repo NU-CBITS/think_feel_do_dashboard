@@ -47,12 +47,11 @@ Make sure you are in the top level folder; i.e., think_feel_do_dashboard. Then r
 <code>rake app:db:drop app:db:create app:db:migrate</code>
 
 <h2>Seeding Database</h2>
-<code>cd /spec/dummy</code>
 <code>app:seed:with_fixtures</code>
 
 <h2>Running tests</h2>
 
-<code>rake app:db:drop app:db:create app:db:migrate app:db:test:prepare</code>
+<code>rake app:db:test:prepare</code>
 
 <code>rspec</code>
 

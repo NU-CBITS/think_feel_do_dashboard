@@ -1,24 +1,24 @@
 <h1>Enrolling Participant</h1>
 
 <%= form_tag(participant_enrollments_path(@participant), { role: :form }) do |f| %>
-  <% if @coach_assignment.errors.any? %>
-    <div class="alert alert-danger alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-      <strong><%= pluralize(@coach_assignment.errors.count, "error") %> prohibited this coach from being assigned to this participant:</strong>
-      <ul>
-      <% @coach_assignment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <% if @membership.errors.any? %>
     <div class="alert alert-danger alert-dismissible" role="alert">
       <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
       <strong><%= pluralize(@membership.errors.count, "error") %> prohibited this group from being assigned to this participant:</strong>
       <ul>
       <% @membership.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if @coach_assignment.errors.any? %>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <strong><%= pluralize(@coach_assignment.errors.count, "error") %> prohibited this coach from being assigned to this participant:</strong>
+      <ul>
+      <% @coach_assignment.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -42,12 +42,12 @@
     <%= @participant.email %>
   </p>
   <div class="form-group">
-    <%= label_tag "enrollment[coach_id]", "Coach" %>
-    <%= select_tag "enrollment[coach_id]", options_for_select(@coaches_options), { prompt: "Select Coach" , class: "form-control", value: @coach_assignment.coach_id } %>
-  </div>
-  <div class="form-group">
     <%= label_tag "enrollment[arm_group_join_id]", "Group" %>
     <%= select_tag "enrollment[arm_group_join_id]", grouped_options_for_select(@grouped_options), { prompt: "Select Group", class: "form-control" , value: @membership.group_id } %>
+  </div>
+  <div class="form-group">
+    <%= label_tag "enrollment[coach_id]", "Coach" %>
+    <%= select_tag "enrollment[coach_id]", options_for_select(@coaches_options), { prompt: "Select Coach" , class: "form-control", value: @coach_assignment.coach_id } %>
   </div>
   <div class="form-group">
     <%= label_tag "enrollment[display_name]", "Display Name" %>

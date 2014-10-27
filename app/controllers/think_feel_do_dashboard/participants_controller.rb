@@ -6,6 +6,7 @@ module ThinkFeelDoDashboard
     before_action :set_participant, only: [:show, :edit, :update, :destroy]
     before_action :set_contact_preferences,
                   only: [:new, :create, :show, :edit, :update]
+    before_action :set_contact_preference, only: [:create, :update]
 
     # GET /think_feel_do_dashboard/participants
     def index
@@ -16,7 +17,7 @@ module ThinkFeelDoDashboard
     def create
       @participant = Participant.new(participant_params)
 
-      if @participant.save
+      if validate_contact_preference && @participant.save
         redirect_to @participant,
                     notice: "Participant was successfully created."
       else
@@ -39,7 +40,7 @@ module ThinkFeelDoDashboard
 
     # PATCH/PUT /think_feel_do_dashboard/participants/1
     def update
-      if @participant.update(participant_params)
+      if validate_contact_preference && @participant.update(participant_params)
         redirect_to @participant,
                     notice: "Participant was successfully updated."
       else
@@ -67,11 +68,44 @@ module ThinkFeelDoDashboard
       ]
     end
 
+    def set_contact_preference
+      @contact_preference = params[:participant][:contact_preference]
+    end
+
     def participant_params
       params.require(:participant).permit(
         :email, :phone_number, :display_name,
         :study_id, :contact_preference
       )
+    end
+
+    def validate_contact_preference
+      validate_email && validate_phone_number
+    end
+
+    def validate_email
+      if @contact_preference == "email" && @participant.email.empty?
+        @participant.errors.add(:email, "is not a valid format")
+        false
+      else
+        true
+      end
+    end
+
+    def validate_phone_number
+      phone = Phonelib.parse(params[:participant][:phone_number])
+      if @contact_preference == "phone" && phone.nil?
+        @participant.errors.add(:phone_number, "is not a valid format")
+        false
+      elsif @contact_preference == "phone" && !Phonelib.valid?(phone.sanitized)
+        @participant.errors.add(:phone_number, "is not a valid format")
+        false
+      elsif @contact_preference == "phone"
+        @participant.phone_number = phone.sanitized
+        true
+      else
+        true
+      end
     end
   end
 end

@@ -14,6 +14,7 @@ class Participant < ActiveRecord::Base
   has_many :groups, through: :memberships
   has_one :active_group, through: :active_membership
 
+  # My tests check this, but it isn't part of the application
   validates :phone_number, allow_nil: true, allow_blank: true, uniqueness: true
   validates :study_id, :email, presence: true, uniqueness: true
   validates :contact_preference, presence: true, inclusion: %w(email phone)

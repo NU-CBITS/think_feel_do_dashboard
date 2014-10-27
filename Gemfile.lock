@@ -85,6 +85,7 @@ GEM
       ast (>= 1.1, < 3.0)
       slop (~> 3.4, >= 3.4.5)
     pg (0.17.1)
+    phonelib (0.3.4)
     powerpack (0.0.9)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -169,6 +170,7 @@ DEPENDENCIES
   capybara (~> 2)
   database_cleaner (~> 1.3)
   pg
+  phonelib
   rspec-rails (~> 3)
   rubocop (~> 0.26)
   think_feel_do_dashboard!

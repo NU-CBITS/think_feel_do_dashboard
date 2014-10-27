@@ -17,6 +17,10 @@ group :development, :test do
   gem "rubocop", "~> 0.26"
 end
 
+group :test do
+  gem "phonelib"
+end
+
 group :development do
   gem "brakeman", require: false
   gem "better_errors"
