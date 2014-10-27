@@ -72,7 +72,9 @@ module ThinkFeelDoDashboard
         @membership.errors.add(:group_id, "can't be blank")
         render :new
       else
-        @arm_group_join = ArmGroupJoin.find(enrollment_params[:arm_group_join_id])
+        @arm_group_join = ArmGroupJoin.find(
+          enrollment_params[:arm_group_join_id]
+        )
       end
     end
 
