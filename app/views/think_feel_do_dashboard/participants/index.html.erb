@@ -6,6 +6,6 @@
 
 <div class="list-group">
   <% @participants.each do |participant| %>
-    <%= link_to participant.email, participant, class: "list-group-item" %>
+    <%= link_to membership_status(participant) + participant.email, participant, class: "list-group-item" %>
   <% end %>
 </div>

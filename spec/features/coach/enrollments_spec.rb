@@ -8,11 +8,14 @@ feature "Enrollments" do
   end
 
   it "allows for the enrolling of a participant to a group that needs a display name" do
+    expect(page).to_not have_text "Active participant5@example.com"
+
     click_on "participant5@example.com"
 
     expect(page).to_not have_text "Howdy"
     expect(page).to_not have_text "Current Coach: user4@example.com"
     expect(page).to_not have_text "Current Group: Group 1"
+    expect(page).to_not have_text "Membership Status: Active participant5@example.com"
 
     click_on "Enroll"
     select "user4@example.com", from: "Coach"
@@ -25,6 +28,11 @@ feature "Enrollments" do
     expect(page).to have_text "Howdy"
     expect(page).to have_text "Current Coach: user4@example.com"
     expect(page).to have_text "Current Group: Group 1"
+    expect(page).to have_text "Membership Status: Active"
+
+    click_on "Participants"
+
+    expect(page).to have_text "Active participant5@example.com"
   end
 
   it "allows for the enrolling of a participant to a group that does NOT need a display name" do

@@ -1,6 +1,14 @@
 module ThinkFeelDoDashboard
   # Used in the participant 'show' page to create dynamic routes
   module ParticipantsHelper
+    def membership_status(participant)
+      if participant.active_group
+        "<span class=\"label label-success\">Active</span> ".html_safe
+      else
+        "<span class=\"label label-danger\">Inactive</span> ".html_safe
+      end
+    end
+
     def current_coach_link(participant)
       if participant.coach
         text = "Current Coach: #{participant.coach.email}"

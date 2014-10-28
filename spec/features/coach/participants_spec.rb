@@ -19,7 +19,7 @@ feature "Participants" do
   end
 
   it "should enable the creation of a participant" do
-    expect(page).to_not have_text "George Washington"
+    expect(page).to_not have_text "Inactive gwashington@ex.co"
 
     click_on "New"
     fill_in "Email", with: "gwashington@ex.co"
@@ -36,11 +36,12 @@ feature "Participants" do
     expect(page).to have_text "Display Name: Mr. Happy"
     expect(page).to have_text "Study Id: favoriteToken1!"
     expect(page).to have_text "Enrollment Information"
+    expect(page).to have_text "Membership Status: Inactive"
     expect(page).to have_text "Below lists the participants enrollment information. This includes all the groups she/he is associated with and the current coach and group they are part of the coach or group exists."
 
     click_on "Participants"
 
-    expect(page).to have_text "gwashington@ex.co"
+    expect(page).to have_text "Inactive gwashington@ex.co"
   end
 
   it "should display errors if required fields aren't filled in" do
