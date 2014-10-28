@@ -72,8 +72,8 @@ feature "Memberships" do
     expect(page).to have_text "Participant: participant1@example.com"
     expect(page).to have_text "Group: Group 1"
     expect(page).to have_text "Membership Status: Active"
-    expect(page).to have_text "Start Date: #{DateTime.now.strftime('%Y-%m-%d')}"
-    expect(page).to have_text "End Date: #{1.week.from_now.strftime('%Y-%m-%d')}"
+    expect(page).to have_text "Start Date: " + DateTime.now.strftime("%Y-%m-%d")
+    expect(page).to have_text "End Date: " + 1.week.from_now.strftime("%Y-%m-%d")
     expect(page).to_not have_text "Group: Group Without Creator"
 
     click_on "Edit"
@@ -88,8 +88,8 @@ feature "Memberships" do
     expect(page).to have_text "Group: Group Without Creator"
     expect(page).to_not have_text "Group: Group 1"
     expect(page).to have_text "Participant: participant1@example.com"
-    expect(page).to have_text "Start Date: #{DateTime.now.strftime('%Y-%m-%d')}"
-    expect(page).to have_text "End Date: #{1.week.from_now.strftime('%Y-%m-%d')}"
+    expect(page).to have_text "Start Date: " + DateTime.now.strftime("%Y-%m-%d")
+    expect(page).to have_text "End Date: " + 1.week.from_now.strftime("%Y-%m-%d")
   end
 
   it "allows for the unassigning a group" do

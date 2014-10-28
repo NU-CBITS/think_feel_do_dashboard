@@ -42,25 +42,25 @@
     <%= @participant.email %>
   </p>
   <div class="form-group">
-    <%= label_tag "enrollment[arm_group_join_id]", "Group" %>
-    <%= select_tag "enrollment[arm_group_join_id]", grouped_options_for_select(@arm_group_join_options, @first_agj_id), { prompt: "Select Group", class: "form-control" } %>
+    <%= label_tag "membership[arm_group_join_id]", "Group" %>
+    <%= select_tag "membership[arm_group_join_id]", grouped_options_for_select(@arm_group_join_options, @first_agj_id), { prompt: "Select Group", class: "form-control" } %>
   </div>
   <div class="form-group">
-    <%= label_tag "enrollment[coach_id]", "Coach" %>
-    <%= select_tag "enrollment[coach_id]", options_for_select(@coaches_options), { prompt: "Select Coach" , class: "form-control", value: @coach_assignment.coach_id } %>
+    <%= label_tag "coach_assignment[coach_id]", "Coach" %>
+    <%= select_tag "coach_assignment[coach_id]", options_for_select(@coaches_options), { prompt: "Select Coach" , class: "form-control", value: @coach_assignment.coach_id } %>
   </div>
   <div class="form-group">
-    <%= label_tag "enrollment[display_name]", "Display Name" %>
-    <%= text_field_tag "enrollment[display_name]", {}, class: "form-control", value: @participant.display_name %>
+    <%= label_tag "participant[display_name]", "Display Name" %>
+    <%= text_field_tag "participant[display_name]", {}, class: "form-control", value: @participant.display_name %>
     <p class="help-block">Only necessary for enrollments where socializing is a feature of the arm.</p>
   </div>
   <div class="form-group">
-    <%= label_tag "enrollment[start_date]", "Start Date" %>
-    <%= text_field_tag "enrollment[start_date]", {}, type: :date, class: "form-control", value: Date.today %>
+    <%= label_tag "membership[start_date]", "Start Date" %>
+    <%= text_field_tag "membership[start_date]", {}, type: :date, class: "form-control", value: Date.today %>
   </div>
   <div class="form-group">
-    <%= label_tag "enrollment[end_date]", "Start Date" %>
-    <%= text_field_tag "enrollment[end_date]", {}, type: :date, class: "form-control", value: Date.today + 1.week %>
+    <%= label_tag "membership[end_date]", "Start Date" %>
+    <%= text_field_tag "membership[end_date]", {}, type: :date, class: "form-control", value: Date.today + 1.week %>
   </div>
   <div class="actions">
     <%= submit_tag "Enroll", class: "btn btn-primary" %>

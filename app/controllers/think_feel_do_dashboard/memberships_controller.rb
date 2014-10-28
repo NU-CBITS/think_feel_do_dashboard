@@ -3,10 +3,8 @@ require_dependency "think_feel_do_dashboard/application_controller"
 module ThinkFeelDoDashboard
   # Assigns a participant with a group along with setting the start and end date
   class MembershipsController < ApplicationController
-    before_action :set_group, only: [:edit]
     before_action :set_participant, :set_groups, :arm_group_join_options,
-                  :set_prepopulated_arm_group_join
-    before_action :set_membership, only: [:show, :edit, :update, :destroy]
+                  :set_arm_group_join, :set_arm, :set_membership
 
     # GET /think_feel_do_dashboard/participants/1/groups
     def index
@@ -23,7 +21,9 @@ module ThinkFeelDoDashboard
         membership_params
       )
 
-      if @membership.save
+      if valid_enrollment? &&
+        @membership.save &&
+        @participant.update(participant_params)
         redirect_to participant_group_path(@participant, @membership.group),
                     notice: "Group was successfully assigned"
       else
@@ -41,7 +41,9 @@ module ThinkFeelDoDashboard
 
     # PATCH/PUT /think_feel_do_dashboard/participants/1/groups/1
     def update
-      if @membership.update(membership_params)
+      if valid_enrollment? &&
+        @membership.update(membership_params) &&
+        @participant.update(participant_params)
         redirect_to participant_group_path(@participant, @membership.group),
                     notice: "New group was successfully assigned."
       else
@@ -62,6 +64,10 @@ module ThinkFeelDoDashboard
 
     private
 
+    def arm_group_join(arm, group)
+      ArmGroupJoin.where(arm_id: arm.id, group_id: group.id).first
+    end
+
     def arm_group_join_options
       @arm_group_join_options = []
       Arm.all.each do |arm|
@@ -73,55 +79,66 @@ module ThinkFeelDoDashboard
       end
     end
 
-    def arm_group_join(arm, group)
-      ArmGroupJoin.where(arm_id: arm.id, group_id: group.id).first
-    end
-
-    def set_group
-      @group = Group.find(params[:id])
-    end
-
-    def set_prepopulated_arm_group_join
-      if @group
-        @first_agj_id = ThinkFeelDoDashboard::ArmGroupJoin
-          .where(group_id: @group.id).first.id
+    def set_arm_group_join
+      if params[:id]
+        @arm_group_join = ArmGroupJoin
+          .where(group_id: params[:id]).first
+      elsif params[:membership] &&
+        !params[:membership][:arm_group_join_id].empty?
+        @arm_group_join = ArmGroupJoin.find(
+          params[:membership][:arm_group_join_id])
+      else
+        @arm_group_join = ArmGroupJoin.new
       end
     end
 
-    def validate_display_name(display_name)
-      @arm.display_name_required_for_membership?(@participant, display_name)
+    def set_arm
+      @arm = @arm_group_join.arm
     end
 
     def set_groups
       @groups = Group.all.map { |group| [group.title, group.id] }
     end
 
-    def set_participant
-      @participant = Participant.find(params[:participant_id])
-    end
-
-    def set_membership
-      @membership = Membership.where(
-        participant_id: @participant.id,
-        group_id: params[:id]
-      ).first
-    end
-
-    def membership_params
-      unless params[:enrollment][:arm_group_join_id].empty?
-        agj = ArmGroupJoin.find(params[:enrollment][:arm_group_join_id])
-        params[:membership][:group_id] = agj.group_id
-      end
+    def participant_params
+      params[:participant][:id] = params[:participant_id]
       params
-        .require(:membership)
+        .require(:participant)
         .permit(
-          :group_id, :end_date,
-          :start_date, :display_name
+          :display_name, :id
         )
     end
 
+    def set_participant
+      @participant = Participant
+        .find(params[:participant_id])
+    end
+
+    def membership_params
+      params[:membership][:group_id] = @arm_group_join.group_id
+      params
+        .require(:membership)
+        .permit(
+          :group_id, :start_date, :end_date
+        )
+    end
+
+    def set_membership
+      if params[:id]
+        @membership = @participant
+          .memberships.find_by_group_id(params[:id])
+      elsif params[:membership]
+        @membership = @participant
+          .memberships
+          .build(membership_params)
+      end
+    end
+
     def valid_enrollment?
-      validate_display_name(params[:display_name])
+      @membership.valid? &&
+      @arm.display_name_required_for_membership?(
+        @participant, participant_params[:display_name]
+      )
     end
   end
 end
