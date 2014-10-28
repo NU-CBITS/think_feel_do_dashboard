@@ -6,7 +6,8 @@ module ThinkFeelDoDashboard
   # participant to a coach/user (membership)
   # It also associates a participant with a group (membership)
   class EnrollmentsController < ApplicationController
-    before_action :coaches_options, :arm_group_join_options, :set_participant
+    before_action :coaches_options, :arm_group_join_options,
+                  :set_participant, :set_prepopulated_arm_group_join
     before_action :set_coach_assignment, :set_arm_group_join,
                   :set_arm, :set_group, :set_membership, only: [:create]
 
@@ -44,9 +45,9 @@ module ThinkFeelDoDashboard
     end
 
     def arm_group_join_options
-      @grouped_options = []
+      @arm_group_join_options = []
       Arm.all.each do |arm|
-        @grouped_options << [
+        @arm_group_join_options << [
           arm.name, arm.groups.map do |group|
             [group.title, arm_group_join(arm, group)]
           end
@@ -66,6 +67,17 @@ module ThinkFeelDoDashboard
       @arm = @arm_group_join.arm
     end
 
+    def set_group
+      @group = @arm_group_join.group
+    end
+
+    def set_prepopulated_arm_group_join
+      if @group
+        @first_agj_id = ThinkFeelDoDashboard::ArmGroupJoin
+          .where(group_id: @group.id).first.id
+      end
+    end
+
     def set_arm_group_join
       if enrollment_params[:arm_group_join_id].empty?
         @membership = Membership.new
@@ -76,10 +88,6 @@ module ThinkFeelDoDashboard
           enrollment_params[:arm_group_join_id]
         )
       end
-    end
-
-    def set_group
-      @group = @arm_group_join.group
     end
 
     def set_coach_assignment

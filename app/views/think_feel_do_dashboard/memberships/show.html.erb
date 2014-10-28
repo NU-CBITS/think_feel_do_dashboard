@@ -5,13 +5,27 @@
   <%= link_to "Edit", edit_participant_group_path(@membership.participant, @membership.group), class: "btn btn-default" %>
   <%= link_to "Destroy", participant_group_path(@membership.participant, @membership.group), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 </div>
-
 <p>
   <strong>Group:</strong>
   <%= @membership.group.title %>
 </p>
-
 <p>
   <strong>Participant:</strong>
   <%= @membership.participant.email %>
+</p>
+<p>
+  <strong>Display Name:</strong>
+  <%= @membership.participant.display_name %>
+</p>
+<p>
+  <strong>Membership Status:</strong>
+  <%= membership_status @participant, @membership %>
+</p>
+<p>
+  <strong>Start Date:</strong>
+  <%= @membership.start_date %>
+</p>
+<p>
+  <strong>End Date:</strong>
+  <%= @membership.end_date %>
 </p>

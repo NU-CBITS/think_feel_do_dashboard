@@ -43,7 +43,7 @@
   </p>
   <div class="form-group">
     <%= label_tag "enrollment[arm_group_join_id]", "Group" %>
-    <%= select_tag "enrollment[arm_group_join_id]", grouped_options_for_select(@grouped_options), { prompt: "Select Group", class: "form-control" , value: @membership.group_id } %>
+    <%= select_tag "enrollment[arm_group_join_id]", grouped_options_for_select(@arm_group_join_options, @first_agj_id), { prompt: "Select Group", class: "form-control" } %>
   </div>
   <div class="form-group">
     <%= label_tag "enrollment[coach_id]", "Coach" %>
@@ -56,11 +56,11 @@
   </div>
   <div class="form-group">
     <%= label_tag "enrollment[start_date]", "Start Date" %>
-    <%= text_field_tag "enrollment[start_date]", {}, type: :date, class: "form-control", value: Date.today  %>
+    <%= text_field_tag "enrollment[start_date]", {}, type: :date, class: "form-control", value: DateTime.now %>
   </div>
   <div class="form-group">
     <%= label_tag "enrollment[end_date]", "Start Date" %>
-    <%= text_field_tag "enrollment[end_date]", {}, type: :date, class: "form-control", value: Date.today + 1.week %>
+    <%= text_field_tag "enrollment[end_date]", {}, type: :date, class: "form-control", value: DateTime.now + 1.week %>
   </div>
   <div class="actions">
     <%= submit_tag "Enroll", class: "btn btn-primary" %>

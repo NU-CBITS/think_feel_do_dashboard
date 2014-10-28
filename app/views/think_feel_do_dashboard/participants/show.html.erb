@@ -28,13 +28,13 @@
 </p>
 
 <p>
-  <strong>Study Id:</strong>
-  <%= @participant.study_id %>
+  <strong>Membership Status:</strong>
+  <%= membership_status @participant, @participant.active_membership %>
 </p>
 
 <p>
-  <strong>Membership Status:</strong>
-  <%= membership_status(@participant) %>
+  <strong>Study Id:</strong>
+  <%= @participant.study_id %>
 </p>
 
 <div class="panel panel-default">

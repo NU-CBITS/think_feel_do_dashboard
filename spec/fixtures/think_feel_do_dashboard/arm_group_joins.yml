@@ -5,3 +5,11 @@ arm_group_join1:
 arm_group_join2:
   arm: arm2
   group: group2
+
+arm_group_join3:
+  arm: arm1
+  group: group3
+
+arm_group_join4:
+  arm: arm2
+  group: group4
