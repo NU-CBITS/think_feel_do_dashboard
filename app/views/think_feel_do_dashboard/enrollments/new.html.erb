@@ -56,11 +56,11 @@
   </div>
   <div class="form-group">
     <%= label_tag "enrollment[start_date]", "Start Date" %>
-    <%= text_field_tag "enrollment[start_date]", {}, type: :date, class: "form-control", value: DateTime.now %>
+    <%= text_field_tag "enrollment[start_date]", {}, type: :date, class: "form-control", value: Date.today %>
   </div>
   <div class="form-group">
     <%= label_tag "enrollment[end_date]", "Start Date" %>
-    <%= text_field_tag "enrollment[end_date]", {}, type: :date, class: "form-control", value: DateTime.now + 1.week %>
+    <%= text_field_tag "enrollment[end_date]", {}, type: :date, class: "form-control", value: Date.today + 1.week %>
   </div>
   <div class="actions">
     <%= submit_tag "Enroll", class: "btn btn-primary" %>

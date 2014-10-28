@@ -26,11 +26,11 @@
   </div>
   <div class="form-group">
     <%= f.label :start_date, "Start Date" %>
-    <%= f.text_field :start_date, type: :date, class: "form-control", value: DateTime.now  %>
+    <%= f.text_field :start_date, type: :date, class: "form-control", value: Date.today  %>
   </div>
   <div class="form-group">
     <%= f.label :end_date, "End Date" %>
-    <%= f.text_field :end_date, type: :date, class: "form-control", value: DateTime.now + 1.week %>
+    <%= f.text_field :end_date, type: :date, class: "form-control", value: Date.today + 1.week %>
   </div>
   <div class="actions">
     <%= f.submit button_text, class: "btn btn-primary" %>

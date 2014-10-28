@@ -97,7 +97,7 @@ module ThinkFeelDoDashboard
 
     def set_membership
       @membership = @participant.memberships.build(
-        group_id: @group.id,
+        group_id: ArmGroupJoin.find(enrollment_params[:arm_group_join_id]).group_id,
         start_date: enrollment_params[:start_date],
         end_date: enrollment_params[:end_date])
     end
