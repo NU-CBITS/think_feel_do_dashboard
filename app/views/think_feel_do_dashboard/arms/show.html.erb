@@ -17,7 +17,9 @@
 </p>
 
 <div class="panel panel-default">
-  <div class="panel-heading">Project associated with this Arm</div>
+  <div class="panel-heading">
+    Project associated with this Arm
+  </div>
   <% if @arm.project_id %>
     <div class="list-group">
       <%= link_to @arm.project_name, project_path(@arm.project), class: "list-group-item clearfix" %>
@@ -25,6 +27,23 @@
   <% else %>
     <div class="panel-body">
       None
+    </div>
+  <% end %>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Groups associated with this Arm
+  </div>
+  <% if @arm.groups.count == 0 %>
+    <div class="panel-body">
+      None
+    </div>
+  <% else %>
+    <div class="list-group">
+      <% @arm.groups.each do |group| %>
+        <%= link_to group.title, group_path(group), class: "list-group-item clearfix" %>
+      <% end %>
     </div>
   <% end %>
 </div>

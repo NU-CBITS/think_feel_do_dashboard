@@ -14,7 +14,7 @@ feature "Enrollments" do
 
     expect(page).to_not have_text "Howdy"
     expect(page).to_not have_text "Current Coach: user4@example.com"
-    expect(page).to_not have_text "Current Group: Group 3"
+    expect(page).to_not have_text "Current Membership: Group 3"
     expect(page).to_not have_text "Membership Status: Active participant5@example.com"
 
     click_on "Enroll"
@@ -27,7 +27,7 @@ feature "Enrollments" do
     expect(page).to have_text "Participant was successfully enrolled."
     expect(page).to have_text "Howdy"
     expect(page).to have_text "Current Coach: user4@example.com"
-    expect(page).to have_text "Current Group: Group 3"
+    expect(page).to have_text "Current Membership: Group 3"
     expect(page).to have_text "Membership Status: Active"
 
     click_on "Participants"
@@ -40,7 +40,7 @@ feature "Enrollments" do
 
     expect(page).to_not have_text "Howdy"
     expect(page).to_not have_text "Current Coach: user4@example.com"
-    expect(page).to_not have_text "Current Group: Group 2"
+    expect(page).to_not have_text "Current Membership: Group 2"
 
     click_on "Enroll"
     select "user4@example.com", from: "Coach"
@@ -51,7 +51,7 @@ feature "Enrollments" do
 
     expect(page).to have_text "Participant was successfully enrolled."
     expect(page).to have_text "Current Coach: user4@example.com"
-    expect(page).to have_text "Current Group: Group 2"
+    expect(page).to have_text "Current Membership: Group 2"
   end
 
   it "allows for the enrolling of a participant to a group that does NOT need a display name but has one" do
@@ -59,7 +59,7 @@ feature "Enrollments" do
 
     expect(page).to_not have_text "Display Name: My Joy"
     expect(page).to_not have_text "Current Coach: user4@example.com"
-    expect(page).to_not have_text "Current Group: Group 2"
+    expect(page).to_not have_text "Current Membership: Group 2"
 
     click_on "Enroll"
     select "user4@example.com", from: "Coach"
@@ -71,7 +71,7 @@ feature "Enrollments" do
     expect(page).to have_text "Participant was successfully enrolled."
     expect(page).to have_text "Display Name: My Joy"
     expect(page).to have_text "Current Coach: user4@example.com"
-    expect(page).to have_text "Current Group: Group 2"
+    expect(page).to have_text "Current Membership: Group 2"
   end
 
   it "displays errors if the group needs a display name" do

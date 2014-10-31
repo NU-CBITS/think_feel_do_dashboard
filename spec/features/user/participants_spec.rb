@@ -68,7 +68,7 @@ feature "Participants" do
   it "should list group count" do
     click_on "participant1@example.com"
 
-    expect(page).to have_text "All Groups1"
+    expect(page).to have_text "All Memberships1"
   end
 
   it "should enable the updating of a participant" do

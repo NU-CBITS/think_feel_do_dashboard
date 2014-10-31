@@ -22,7 +22,7 @@ module ThinkFeelDoDashboard
 
     def current_group_link(participant)
       if participant.active_membership && participant.active_membership.group
-        text = "Current Group: #{participant.active_group.title}"
+        text = "Current Membership: #{participant.active_group.title}"
         href = participant_group_path(participant, participant.active_group)
       else
         text = "Assign Group"

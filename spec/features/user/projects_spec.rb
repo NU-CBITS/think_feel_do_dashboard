@@ -66,7 +66,7 @@ feature "Projects" do
     expect(page).to_not have_text "Project 1"
   end
 
-  it "should be able to view all associated arms of the project" do
+  it "should be able to view all associated arms to this project" do
     click_on "Project 1"
 
     expect(page).to have_text "Arms associated with this Project"

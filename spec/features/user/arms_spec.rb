@@ -44,6 +44,13 @@ feature "Arms" do
     expect(page).to have_link "Project 1", href: "/think_feel_do_dashboard/projects/#{ThinkFeelDoDashboard::Project.find_by_name("Project 1").id}"
   end
 
+  it "should be able to view all associated groups" do
+    click_on "Arm 1"
+
+    expect(page).to have_text "Groups associated with this Arm"
+    expect(page).to have_link "Group 1", href: "/think_feel_do_dashboard/groups/#{Group.find_by_title("Group 1").id}"
+  end
+
   it "should display errors if required fields aren't filled in" do
     click_on "Arm 1"
     click_on "Edit"
