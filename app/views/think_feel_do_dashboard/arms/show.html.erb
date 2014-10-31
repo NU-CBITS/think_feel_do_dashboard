@@ -1,0 +1,17 @@
+<h1>Arm</h1>
+
+<div class="btn-toolbar" role="toolbar">
+  <%= link_to "Arms", arms_path, class: "btn btn-default" %>
+  <%= link_to "Edit", edit_arm_path(@arm), class: "btn btn-default" %>
+  <%= link_to "Destroy", arm_path(@arm), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+</div>
+
+<p>
+  <strong>Name:</strong>
+  <%= @arm.name %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @arm.project_name %>
+</p>

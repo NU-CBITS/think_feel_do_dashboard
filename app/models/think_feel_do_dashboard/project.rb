@@ -4,5 +4,7 @@ module ThinkFeelDoDashboard
   # Between 1 and 8 groups are in each arm.
   class Project < ActiveRecord::Base
     has_many :arms, dependent: :destroy
+
+    validates :name, presence: true
   end
 end

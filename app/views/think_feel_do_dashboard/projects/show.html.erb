@@ -1,0 +1,26 @@
+<h1>Project</h1>
+
+<div class="btn-toolbar" role="toolbar">
+  <%= link_to "Projects", projects_path, class: "btn btn-default" %>
+  <%= link_to "Edit", edit_project_path(@project), class: "btn btn-default" %>
+  <%= link_to "Destroy", project_path(@project), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+</div>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Panel heading</div>
+  <div class="panel-body">
+    <p>...</p>
+  </div>
+  <div class="list-group">
+    <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
+    <a href="#" class="list-group-item list-group-item-info">Cras sit amet nibh libero</a>
+    <a href="#" class="list-group-item list-group-item-warning">Porta ac consectetur ac</a>
+    <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
+  </div>
+</div>
