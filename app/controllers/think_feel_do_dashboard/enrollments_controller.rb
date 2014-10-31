@@ -7,7 +7,7 @@ module ThinkFeelDoDashboard
   # It also associates a participant with a group (membership)
   class EnrollmentsController < ApplicationController
     before_action :set_participant, :coaches_options, :arm_group_join_options
-    before_action :set_coach_assignment, :set_arm_group_join,
+    before_action :set_arm_group_join, :set_coach_assignment,
                   :set_membership, except: [:new]
 
     # GET /think_feel_do_dashboard/participants/1/enrollments/new
@@ -31,26 +31,22 @@ module ThinkFeelDoDashboard
 
     private
 
-    def arm_group_join(arm, group)
-      ArmGroupJoin.where(arm_id: arm.id, group_id: group.id).first
-    end
-
     def arm_group_join_options
       @arm_group_join_options = []
       Arm.all.each do |arm|
         @arm_group_join_options << [
           arm.name, arm.groups.map do |group|
-            [group.title, arm_group_join(arm, group).id]
+            [group.title, group.id]
           end
         ]
       end
     end
 
     def set_arm_group_join
-      if params[:membership] && !params[:membership][:arm_group_join_id].empty?
-        @arm_group_join = ArmGroupJoin.find(
-          params[:membership][:arm_group_join_id]
-        )
+      if params[:membership] && !params[:membership][:group_id].empty?
+        @arm_group_join = ArmGroupJoin
+          .where(group_id: params[:membership][:group_id])
+          .first
       else
         @arm_group_join = ArmGroupJoin.new
       end
@@ -74,7 +70,6 @@ module ThinkFeelDoDashboard
     end
 
     def membership_params
-      params[:membership][:group_id] = @arm_group_join.group_id
       params
         .require(:membership)
         .permit(
@@ -83,14 +78,9 @@ module ThinkFeelDoDashboard
     end
 
     def set_membership
-      if params[:membership][:arm_group_join_id].empty?
-        @membership = Membership.new
-        @membership.errors.add(:group_id, "can't be blank")
-      else
-        @membership = @participant
-          .memberships
-          .build(membership_params)
-      end
+      @membership = @participant
+        .memberships
+        .build(membership_params)
     end
 
     def participant_params
@@ -106,11 +96,16 @@ module ThinkFeelDoDashboard
     end
 
     def valid_enrollment?
-      @membership.valid? &&
-      @coach_assignment.valid? &&
-      @arm_group_join.arm.display_name_required_for_membership?(
-        @participant, participant_params[:display_name]
-      )
+      if @arm_group_join && @arm_group_join.arm
+        @membership.valid? &&
+        @coach_assignment.valid? &&
+        @arm_group_join.arm.display_name_required_for_membership?(
+          @participant, participant_params[:display_name])
+      else
+        @membership = Membership.new
+        @membership.errors.add(:group_id, "can't be blank")
+        false
+      end
     end
   end
 end
