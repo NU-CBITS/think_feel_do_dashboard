@@ -28,8 +28,8 @@
     <%= @participant.email %>
   </p>
   <div class="form-group">
-    <%= label_tag "membership[arm_group_join_id]", "Group" %>
-    <%= select_tag "membership[arm_group_join_id]", grouped_options_for_select(@arm_group_join_options, @arm_group_join.id), { prompt: "Select Group", class: "form-control" } %>
+    <%= f.label :group_id %>
+    <%= f.select :group_id, grouped_options_for_select(@arm_group_join_options, (@arm_group_join.id)), { prompt: "Select Group" }, { class: "form-control" } %>
   </div>
   <div class="form-group">
     <%= label_tag "participant[display_name]", "Display Name" %>
@@ -38,11 +38,11 @@
   </div>
   <div class="form-group">
     <%= f.label :start_date, "Start Date" %>
-    <%= f.text_field :start_date, type: :date, class: "form-control", value: Date.today  %>
+    <%= f.text_field :start_date, type: :date, class: "form-control", value: (@membership.start_date || Date.today) %>
   </div>
   <div class="form-group">
     <%= f.label :end_date, "End Date" %>
-    <%= f.text_field :end_date, type: :date, class: "form-control", value: Date.today + 1.week %>
+    <%= f.text_field :end_date, type: :date, class: "form-control", value: (@membership.end_date || (Date.today + 1.week)) %>
   </div>
   <div class="actions">
     <%= f.submit button_text, class: "btn btn-primary" %>

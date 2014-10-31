@@ -3,8 +3,8 @@ require_dependency "think_feel_do_dashboard/application_controller"
 module ThinkFeelDoDashboard
   # Assigns a participant with a group along with setting the start and end date
   class MembershipsController < ApplicationController
-    before_action :set_participant, :set_groups, :arm_group_join_options,
-                  :set_arm_group_join, :set_arm, :set_membership
+    before_action :set_participant, :set_groups,
+                  :arm_group_join_options, :set_arm_group_join
 
     # GET /think_feel_do_dashboard/participants/1/groups
     def index
@@ -17,10 +17,7 @@ module ThinkFeelDoDashboard
 
     # POST /think_feel_do_dashboard/participants/1/groups
     def create
-      @membership = @participant.memberships.build(
-        membership_params
-      )
-
+      @membership = @participant.memberships.build(membership_params)
       if valid_enrollment? &&
         @membership.save &&
         @participant.update(participant_params)
@@ -33,14 +30,23 @@ module ThinkFeelDoDashboard
 
     # GET /think_feel_do_dashboard/participants/1/groups/1
     def show
+      @membership = @participant
+        .memberships
+        .find_by_group_id(params[:id])
     end
 
     # GET /think_feel_do_dashboard/participants/1/groups/1/edit
     def edit
+      @membership = @participant
+        .memberships
+        .find_by_group_id(params[:id])
     end
 
     # PATCH/PUT /think_feel_do_dashboard/participants/1/groups/1
     def update
+      @membership = @participant
+        .memberships
+        .find_by_group_id(params[:id])
       if valid_enrollment? &&
         @membership.update(membership_params) &&
         @participant.update(participant_params)
@@ -53,6 +59,9 @@ module ThinkFeelDoDashboard
 
     # DELETE /think_feel_do_dashboard/participants/1/groups/1
     def destroy
+      @membership = @participant
+        .memberships
+        .find_by_group_id(params[:id])
       if @membership.destroy
         redirect_to participant_path(@participant),
                     notice: "Group was successfully removed."
@@ -73,40 +82,40 @@ module ThinkFeelDoDashboard
       Arm.all.each do |arm|
         @arm_group_join_options << [
           arm.name, arm.groups.map do |group|
-            [group.title, arm_group_join(arm, group).id]
+            [group.title, group.id]
           end
         ]
       end
     end
 
     def set_arm_group_join
-      if params[:id]
+      if params[:membership] && !params[:membership][:group_id].empty?
         @arm_group_join = ArmGroupJoin
-          .where(group_id: params[:id]).first
-      elsif params[:membership] &&
-        !params[:membership][:arm_group_join_id].empty?
-        @arm_group_join = ArmGroupJoin.find(
-          params[:membership][:arm_group_join_id])
+          .where(group_id: params[:membership][:group_id])
+          .first
+      elsif params[:id]
+        @arm_group_join = ArmGroupJoin
+          .where(group_id: params[:id])
+          .first
       else
         @arm_group_join = ArmGroupJoin.new
       end
-    end
-
-    def set_arm
-      @arm = @arm_group_join.arm
     end
 
     def set_groups
       @groups = Group.all.map { |group| [group.title, group.id] }
     end
 
+    def membership_params
+      params
+        .require(:membership)
+        .permit(:start_date, :end_date, :group_id)
+    end
+
     def participant_params
-      params[:participant][:id] = params[:participant_id]
       params
         .require(:participant)
-        .permit(
-          :display_name, :id
-        )
+        .permit(:display_name)
     end
 
     def set_participant
@@ -114,31 +123,21 @@ module ThinkFeelDoDashboard
         .find(params[:participant_id])
     end
 
-    def membership_params
-      params[:membership][:group_id] = @arm_group_join.group_id
-      params
-        .require(:membership)
-        .permit(
-          :group_id, :start_date, :end_date
-        )
-    end
-
-    def set_membership
-      if params[:id]
-        @membership = @participant
-          .memberships.find_by_group_id(params[:id])
-      elsif params[:membership]
-        @membership = @participant
-          .memberships
-          .build(membership_params)
-      end
-    end
-
     def valid_enrollment?
-      @membership.valid? &&
-      @arm.display_name_required_for_membership?(
-        @participant, participant_params[:display_name]
-      )
+      if @arm_group_join && @arm_group_join.arm
+        @arm_group_join.arm.display_name_required_for_membership?(
+            @participant, participant_params[:display_name])
+      else
+        if params[:id]
+          @membership = @participant
+            .memberships
+            .find_by_group_id(params[:id])
+        else
+          @membership = @participant.memberships.build(membership_params)
+        end
+        @membership.errors.add(:group_id, "can't be blank")
+        false
+      end
     end
   end
 end
