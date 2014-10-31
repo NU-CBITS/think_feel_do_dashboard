@@ -18,7 +18,7 @@ feature "Arms" do
     expect(page).to have_text "prohibited this arm from being saved"
   end
 
-  it "should enable the creation of a participant" do
+  it "should enable the creation of a arm" do
     expect(page).to_not have_text "Big arm 2"
 
     click_on "New"
@@ -46,7 +46,7 @@ feature "Arms" do
     expect(page).to have_text "prohibited this arm from being saved"
   end
 
-  it "should enable the updating of a participant" do
+  it "should enable the updating of a arm" do
     click_on "Arm 1"
 
     expect(page).to have_text "Name: Arm 1"

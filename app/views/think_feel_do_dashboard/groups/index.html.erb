@@ -6,6 +6,6 @@
 
 <div class="list-group">
   <% @groups.each do |group| %>
-    <%= link_to group.name, group_path(group), class: "list-group-item" %>
+    <%= link_to group.title, group_path(group), class: "list-group-item" %>
   <% end %>
 </div>

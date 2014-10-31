@@ -5,3 +5,8 @@
   <%= link_to "Edit", edit_group_path(@group), class: "btn btn-default" %>
   <%= link_to "Destroy", group_path(@group), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 </div>
+
+<p>
+  <strong>Title:</strong>
+  <%= @group.title %>
+</p>

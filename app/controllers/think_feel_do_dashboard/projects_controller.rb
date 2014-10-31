@@ -59,9 +59,7 @@ module ThinkFeelDoDashboard
     end
 
     def project_params
-      params.require(:project).permit(
-        :name, :project_id, :is_social
-      )
+      params.require(:project).permit(:name)
     end
   end
 end

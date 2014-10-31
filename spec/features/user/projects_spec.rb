@@ -18,7 +18,7 @@ feature "Projects" do
     expect(page).to have_text "prohibited this project from being saved"
   end
 
-  it "should enable the creation of a participant" do
+  it "should enable the creation of a project" do
     expect(page).to_not have_text "HUGe PrOjEct 3"
 
     click_on "New"
@@ -42,7 +42,7 @@ feature "Projects" do
     expect(page).to have_text "prohibited this project from being saved"
   end
 
-  it "should enable the updating of a participant" do
+  it "should enable the updating of a project" do
     click_on "Project 1"
 
     expect(page).to have_text "Name: Project 1"
