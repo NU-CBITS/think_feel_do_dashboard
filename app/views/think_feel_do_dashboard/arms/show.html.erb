@@ -12,11 +12,19 @@
 </p>
 
 <p>
-  <strong>Project:</strong>
-  <%= @arm.project_name %>
-</p>
-
-<p>
   <strong>Is social:</strong>
   <%= @arm.social? ? "Yes" : "No" %>
 </p>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Project associated with this Arm</div>
+  <% if @arm.project_id %>
+    <div class="list-group">
+      <%= link_to @arm.project_name, project_path(@arm.project), class: "list-group-item clearfix" %>
+    </div>
+  <% else %>
+    <div class="panel-body">
+      None
+    </div>
+  <% end %>
+</div>

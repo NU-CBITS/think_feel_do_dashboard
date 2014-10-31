@@ -12,15 +12,16 @@
 </p>
 
 <div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">Panel heading</div>
-  <div class="panel-body">
-    <p>...</p>
-  </div>
-  <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
-    <a href="#" class="list-group-item list-group-item-info">Cras sit amet nibh libero</a>
-    <a href="#" class="list-group-item list-group-item-warning">Porta ac consectetur ac</a>
-    <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
-  </div>
+  <div class="panel-heading">Arms associated with this Project</div>
+  <% if @project.arms.count == 0 %>
+    <div class="panel-body">
+      None
+    </div>
+  <% else %>
+    <div class="list-group">
+      <% @project.arms.each do |arm| %>
+        <%= link_to arm.name, arm_path(arm), class: "list-group-item clearfix" %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

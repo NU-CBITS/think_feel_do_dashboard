@@ -29,12 +29,19 @@ feature "Arms" do
 
     expect(page).to have_text "Arm was successfully created"
     expect(page).to have_text "Name: Big arm 2"
-    expect(page).to have_text "Project: Project 1"
+    expect(page).to have_text "Project 1"
     expect(page).to have_text "Is social: Yes"
 
     click_on "Arms"
 
     expect(page).to have_text "Big arm 2"
+  end
+
+  it "should display associated project" do
+    click_on "Arm 1"
+
+    expect(page).to have_text "Project associated with this Arm"
+    expect(page).to have_link "Project 1", href: "/think_feel_do_dashboard/projects/#{ThinkFeelDoDashboard::Project.find_by_name("Project 1").id}"
   end
 
   it "should display errors if required fields aren't filled in" do
@@ -50,10 +57,10 @@ feature "Arms" do
     click_on "Arm 1"
 
     expect(page).to have_text "Name: Arm 1"
-    expect(page).to have_text "Project: Project 1"
+    expect(page).to have_text "Project 1"
     expect(page).to have_text "Is social: Yes"
     expect(page).to_not have_text "Name: What!"
-    expect(page).to_not have_text "Project: Project 2"
+    expect(page).to_not have_text "Project 2"
     expect(page).to_not have_text "Is social: No"
 
     click_on "Edit"
@@ -65,10 +72,10 @@ feature "Arms" do
     expect(page).to have_text "Arm was successfully updated"
 
     expect(page).to_not have_text "Name: Arm 1"
-    expect(page).to_not have_text "Project: Project 1"
+    expect(page).to_not have_text "Project 1"
     expect(page).to_not have_text "Is social: Yes"
     expect(page).to have_text "Name: What!"
-    expect(page).to have_text "Project: Project 2"
+    expect(page).to have_text "Project 2"
     expect(page).to have_text "Is social: No"
   end
 
