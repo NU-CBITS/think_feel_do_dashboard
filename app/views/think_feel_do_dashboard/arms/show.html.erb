@@ -40,10 +40,6 @@
       None
     </div>
   <% else %>
-    <div class="list-group">
-      <% @arm.groups.each do |group| %>
-        <%= link_to group.title, group_path(group), class: "list-group-item clearfix" %>
-      <% end %>
-    </div>
+    <%= render "think_feel_do_dashboard/groups/groups", groups: @arm.groups %>
   <% end %>
 </div>

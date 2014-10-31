@@ -4,8 +4,4 @@
   <%= link_to "New", new_group_path, class: "btn btn-default" %>
 </div>
 
-<div class="list-group">
-  <% @groups.each do |group| %>
-    <%= link_to group.title, group_path(group), class: "list-group-item" %>
-  <% end %>
-</div>
+<%= render "groups", groups: @groups %>

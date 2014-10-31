@@ -20,10 +20,6 @@
       None
     </div>
   <% else %>
-    <div class="list-group">
-      <% @project.arms.each do |arm| %>
-        <%= link_to arm.name, arm_path(arm), class: "list-group-item clearfix" %>
-      <% end %>
-    </div>
+    <%= render "think_feel_do_dashboard/arms/arms", arms: @project.arms %>
   <% end %>
 </div>
