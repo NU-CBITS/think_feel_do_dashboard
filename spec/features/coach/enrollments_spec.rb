@@ -14,12 +14,12 @@ feature "Enrollments" do
 
     expect(page).to_not have_text "Howdy"
     expect(page).to_not have_text "Current Coach: user4@example.com"
-    expect(page).to_not have_text "Current Group: Group 1"
+    expect(page).to_not have_text "Current Group: Group 3"
     expect(page).to_not have_text "Membership Status: Active participant5@example.com"
 
     click_on "Enroll"
     select "user4@example.com", from: "Coach"
-    select "Group 1", from: "Group"
+    select "Group 3", from: "Group"
     fill_in "Display Name", with: "Howdy"
     # Start date and End date are auto populated
     click_on "Enroll"
@@ -27,7 +27,7 @@ feature "Enrollments" do
     expect(page).to have_text "Participant was successfully enrolled."
     expect(page).to have_text "Howdy"
     expect(page).to have_text "Current Coach: user4@example.com"
-    expect(page).to have_text "Current Group: Group 1"
+    expect(page).to have_text "Current Group: Group 3"
     expect(page).to have_text "Membership Status: Active"
 
     click_on "Participants"
@@ -78,7 +78,7 @@ feature "Enrollments" do
     click_on "participant5@example.com"
     click_on "Enroll"
     select "user4@example.com", from: "Coach"
-    select "Group 1", from: "Group"
+    select "Group 3", from: "Group"
     fill_in "Display Name", with: ""
     # Start date and End date are auto populated
     click_on "Enroll"

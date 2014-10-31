@@ -14,8 +14,8 @@ class Membership < ActiveRecord::Base
              inverse_of: :active_membership
 
   validates :group, :participant, presence: true
-  # validates :group_id,
-            # uniqueness: { scope: :participant_id, message: "has already been assigned to this participant." }
+  validates :group_id,
+            uniqueness: { scope: :participant_id, message: "has already been assigned to this participant." }
 
   scope :active, lambda {
     where("start_date <= ? OR start_date = ?", Date.today, nil)
