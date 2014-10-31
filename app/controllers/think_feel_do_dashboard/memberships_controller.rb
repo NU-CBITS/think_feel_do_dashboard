@@ -128,13 +128,7 @@ module ThinkFeelDoDashboard
         @arm_group_join.arm.display_name_required_for_membership?(
             @participant, participant_params[:display_name])
       else
-        if params[:id]
-          @membership = @participant
-            .memberships
-            .find_by_group_id(params[:id])
-        else
-          @membership = @participant.memberships.build(membership_params)
-        end
+        @membership = Membership.new
         @membership.errors.add(:group_id, "can't be blank")
         false
       end

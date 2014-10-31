@@ -106,8 +106,8 @@ module ThinkFeelDoDashboard
     end
 
     def valid_enrollment?
-      @coach_assignment.valid? &&
       @membership.valid? &&
+      @coach_assignment.valid? &&
       @arm_group_join.arm.display_name_required_for_membership?(
         @participant, participant_params[:display_name]
       )
