@@ -24,11 +24,13 @@ feature "Arms" do
     click_on "New"
     fill_in "Name", with: "Big arm 2"
     select "Project 1", from: "Project"
+    check "Is social"
     click_on "Create"
 
     expect(page).to have_text "Arm was successfully created"
     expect(page).to have_text "Name: Big arm 2"
     expect(page).to have_text "Project: Project 1"
+    expect(page).to have_text "Is social: Yes"
 
     click_on "Arms"
 
@@ -49,22 +51,25 @@ feature "Arms" do
 
     expect(page).to have_text "Name: Arm 1"
     expect(page).to have_text "Project: Project 1"
-
+    expect(page).to have_text "Is social: Yes"
     expect(page).to_not have_text "Name: What!"
     expect(page).to_not have_text "Project: Project 2"
+    expect(page).to_not have_text "Is social: No"
 
     click_on "Edit"
     fill_in "Name", with: "What!"
     select "Project 2", from: "Project"
+    uncheck "Is social"
     click_on "Update"
 
     expect(page).to have_text "Arm was successfully updated"
 
     expect(page).to_not have_text "Name: Arm 1"
     expect(page).to_not have_text "Project: Project 1"
-
+    expect(page).to_not have_text "Is social: Yes"
     expect(page).to have_text "Name: What!"
     expect(page).to have_text "Project: Project 2"
+    expect(page).to have_text "Is social: No"
   end
 
   it "should be able to delete a user" do
