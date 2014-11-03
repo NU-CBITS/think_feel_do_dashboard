@@ -69,7 +69,7 @@ feature "Projects" do
   it "should be able to view all associated arms to this project" do
     click_on "Project 1"
 
-    expect(page).to have_text "Arms associated with this Project"
+    expect(page).to have_text "Arms"
     expect(page).to have_link "Arm 1", href: "/think_feel_do_dashboard/arms/#{ThinkFeelDoDashboard::Arm.find_by_name("Arm 1").id}"
   end
 end

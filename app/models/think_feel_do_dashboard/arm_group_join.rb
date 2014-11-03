@@ -10,7 +10,5 @@ module ThinkFeelDoDashboard
     validates :group_id,
               uniqueness: { scope: :arm,
                             message: "has already been assigned to this arm." }
-
-    # delegate :name, to: :arm, :group, prefix: true, null: false
   end
 end

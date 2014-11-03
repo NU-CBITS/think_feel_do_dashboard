@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20141024183028) do
 
   create_table "think_feel_do_dashboard_arms", force: true do |t|
     t.string   "name"
-    t.integer  "project_id",                 null: false
+    t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_social",  default: false

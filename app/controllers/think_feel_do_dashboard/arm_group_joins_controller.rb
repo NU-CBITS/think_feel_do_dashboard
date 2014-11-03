@@ -7,9 +7,10 @@ module ThinkFeelDoDashboard
 
     # DELETE /think_feel_do_dashboard/arm_group_join/1
     def destroy
-      @arm.destroy
-      redirect_to arms_url,
-                  notice: "Arm was successfully destroyed."
+      group = @arm_group_join.group
+      @arm_group_join.destroy
+      redirect_to group_path(group),
+                  notice: "Group and arm were successfully disassociated."
     end
 
     private

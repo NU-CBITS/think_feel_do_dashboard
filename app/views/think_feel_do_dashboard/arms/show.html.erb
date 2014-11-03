@@ -17,13 +17,18 @@
 </p>
 
 <p>
-  <strong>Project associated with this Arm</strong>
+  <strong>Project:</strong>
   <%= @arm.project_id ? link_to(@arm.project_name, project_path(@arm.project)) : "None" %>
 </p>
 
+<%= form_for(@arm, html: { role: :form }, html: { style: "margin-bottom: 10px;" }) do |f| %>
+  <%= f.hidden_field(:project_id, value: nil) %>
+  <%= f.submit "Remove Project", class: "btn btn-default" %>
+<% end %>
+
 <div class="panel panel-default">
   <div class="panel-heading">
-    Groups associated with this Arm
+    <h3 class="panel-title">Groups</h3>
   </div>
   <% if @arm.groups.count == 0 %>
     <div class="panel-body">

@@ -7,7 +7,7 @@ module ThinkFeelDoDashboard
     has_many :arm_group_joins, dependent: :destroy
     has_many :groups, through: :arm_group_joins
 
-    validates :name, :project, presence: true
+    validates :name, presence: true
 
     delegate :name, to: :project, prefix: true
 

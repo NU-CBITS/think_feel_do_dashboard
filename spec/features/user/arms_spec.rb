@@ -40,14 +40,14 @@ feature "Arms" do
   it "should display associated project" do
     click_on "Arm 1"
 
-    expect(page).to have_text "Project associated with this Arm"
+    expect(page).to have_text "Project:"
     expect(page).to have_link "Project 1", href: "/think_feel_do_dashboard/projects/#{ThinkFeelDoDashboard::Project.find_by_name("Project 1").id}"
   end
 
   it "should be able to view all associated groups" do
     click_on "Arm 1"
 
-    expect(page).to have_text "Groups associated with this Arm"
+    expect(page).to have_text "Groups"
     expect(page).to have_link "Group 1", href: "/think_feel_do_dashboard/groups/#{Group.find_by_title("Group 1").id}"
   end
 
@@ -84,6 +84,17 @@ feature "Arms" do
     expect(page).to have_text "Name: What!"
     expect(page).to have_text "Project 2"
     expect(page).to have_text "Is social: No"
+  end
+
+  it "should be able to disassociate an arm from a project" do
+    click_on "Arm 1"
+
+    expect(page).to have_text "Project: Project 1"
+
+    click_on "Remove Project"
+
+    expect(page).to have_text "Arm was successfully updated."
+    expect(page).to_not have_text "Project 1"
   end
 
   it "should be able to delete a user" do
