@@ -5,6 +5,7 @@ module ThinkFeelDoDashboard
   class MembershipsController < ApplicationController
     before_action :set_participant, :set_groups,
                   :arm_group_join_options, :set_arm_group_join
+    before_action :set_membership, only: [:show, :edit, :update, :destroy]
 
     # GET /think_feel_do_dashboard/participants/1/groups
     def index
@@ -30,23 +31,14 @@ module ThinkFeelDoDashboard
 
     # GET /think_feel_do_dashboard/participants/1/groups/1
     def show
-      @membership = @participant
-        .memberships
-        .find_by_group_id(params[:id])
     end
 
     # GET /think_feel_do_dashboard/participants/1/groups/1/edit
     def edit
-      @membership = @participant
-        .memberships
-        .find_by_group_id(params[:id])
     end
 
     # PATCH/PUT /think_feel_do_dashboard/participants/1/groups/1
     def update
-      @membership = @participant
-        .memberships
-        .find_by_group_id(params[:id])
       if valid_enrollment? &&
         @membership.update(membership_params) &&
         @participant.update(participant_params)
@@ -59,9 +51,6 @@ module ThinkFeelDoDashboard
 
     # DELETE /think_feel_do_dashboard/participants/1/groups/1
     def destroy
-      @membership = @participant
-        .memberships
-        .find_by_group_id(params[:id])
       if @membership.destroy
         redirect_to participant_path(@participant),
                     notice: "Group was successfully removed."
@@ -110,6 +99,12 @@ module ThinkFeelDoDashboard
       params
         .require(:membership)
         .permit(:start_date, :end_date, :group_id)
+    end
+
+    def set_membership
+      @membership = @participant
+        .memberships
+        .find_by_group_id(params[:id])
     end
 
     def participant_params

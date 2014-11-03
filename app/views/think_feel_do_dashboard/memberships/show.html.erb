@@ -7,11 +7,11 @@
 </div>
 <p>
   <strong>Group:</strong>
-  <%= @membership.group.title %>
+  <%= link_to @membership.group.title, group_path(@membership.group) %>
 </p>
 <p>
   <strong>Participant:</strong>
-  <%= @membership.participant.email %>
+  <%= link_to @membership.participant.email, participant_path(@membership.participant) %>
 </p>
 <p>
   <strong>Display Name:</strong>
@@ -29,3 +29,18 @@
   <strong>End Date:</strong>
   <%= @membership.end_date %>
 </p>
+
+<dl class="dl-horizontal">
+  <dt>Group:</dt>
+  <dd><%= link_to @membership.group.title, group_path(@membership.group) %></dd>
+  <dt>Participant:</dt>
+  <dd><%= link_to @membership.participant.email, participant_path(@membership.participant) %></dd>
+  <dt>Display Name:</dt>
+  <dd><%= @membership.participant.display_name %></dd>
+  <dt>Membership Status:</dt>
+  <dd><%= membership_status @participant, @membership %></dd>
+  <dt>Start Date:</dt>
+  <dd><%= @membership.start_date %></dd>
+  <dt>End Date:</dt>
+  <dd><%= @membership.end_date %></dd>
+</dl>

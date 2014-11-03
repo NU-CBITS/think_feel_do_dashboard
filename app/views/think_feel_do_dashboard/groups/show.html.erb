@@ -11,20 +11,10 @@
   <%= @group.title %>
 </p>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    Arm associated with this Group
-  </div>
-  <% if @arm %>
-    <div class="list-group">
-      <%= link_to @arm.name, arm_path(@arm), class: "list-group-item clearfix" %>
-    </div>
-  <% else %>
-    <div class="panel-body">
-      None
-    </div>
-  <% end %>
-</div>
+<p>
+  <strong>Arm associated with this Group</strong>
+  <%= @arm ? link_to(@arm.name, arm_path(@arm)) : "None" %>
+</p>
 
 <div class="panel panel-default">
   <div class="panel-heading">
