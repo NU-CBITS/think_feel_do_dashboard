@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/cbitstech/think_feel_do_dashboard.svg)](https://travis-ci.org/cbitstech/think_feel_do_dashboard) [![security](https://hakiri.io/github/cbitstech/think_feel_do_dashboard/master.svg)](https://hakiri.io/github/cbitstech/think_feel_do_dashboard/master)
 
-This is a rails engine that allows for the CRUDing and Enrolling of participants
+This is a rails engine that allows for the CRUDing and Enrolling of participants, the CRUDing of groups, coach assignments, and memberships.
 
 ## Mockups
 
