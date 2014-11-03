@@ -39,8 +39,9 @@ module ThinkFeelDoDashboard
     # PATCH/PUT /think_feel_do_dashboard/arms/1
     def update
       if @arm.update(arm_params)
-        redirect_to @arm,
-                    notice: "Arm was successfully updated."
+        redirect_to arm_path(@arm),
+                    notice: "Arm was successfully updated.",
+                    only: true
       else
         render :edit
       end

@@ -38,8 +38,9 @@ module ThinkFeelDoDashboard
     # PATCH/PUT /think_feel_do_dashboard/projects/1
     def update
       if @project.update(project_params)
-        redirect_to @project,
-                    notice: "Project was successfully updated."
+        redirect_to project_path(@project),
+                    notice: "Project was successfully updated.",
+                    only: true
       else
         render :edit
       end

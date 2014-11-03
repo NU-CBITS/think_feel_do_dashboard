@@ -4,7 +4,7 @@
   <%= link_to "Participants", participants_path, class: "btn btn-default" %>
   <%= link_to "Enroll", new_participant_enrollment_path(@participant), class: "btn btn-default" %>
   <%= link_to "Edit", edit_participant_path(@participant), class: "btn btn-default" %>
-  <%= link_to "Destroy", @participant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <%= link_to "Destroy", participant_path(@participant), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 </div>
 
 <p>

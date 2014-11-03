@@ -42,8 +42,9 @@ module ThinkFeelDoDashboard
     # PATCH/PUT /think_feel_do_dashboard/participants/1
     def update
       if validate_contact_preference && @participant.update(participant_params)
-        redirect_to @participant,
-                    notice: "Participant was successfully updated."
+        redirect_to participant_path(@participant),
+                    notice: "Participant was successfully updated.",
+                    only: true
       else
         render :edit
       end

@@ -40,8 +40,9 @@ module ThinkFeelDoDashboard
     # PATCH/PUT /think_feel_do_dashboard/groups/1
     def update
       if update_agj && @group.update(group_params.except(:arm_id))
-        redirect_to @group,
-                    notice: "Group was successfully updated."
+        redirect_to group_path(@group),
+                    notice: "Group was successfully updated.",
+                    only: true
       else
         render :edit
       end
