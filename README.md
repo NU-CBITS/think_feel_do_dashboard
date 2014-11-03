@@ -10,7 +10,7 @@ This is a rails engine that allows for the CRUDing and Enrolling of participants
 
 ### Download
 ```
-git clone https://github.com/cbitstech/?.git [name of folder]
+git clone https://github.com/cbitstech/think_feel_do_dashboard.git [name of folder]
 ```
 
 ## Assumptions
@@ -37,7 +37,7 @@ Then
 bundle install
 ```
 
-### links:
+### Links:
 
 1. projects: `/think_feel_do_dashboard/projects`
 2. arms: `/think_feel_do_dashboard/arms`
@@ -90,4 +90,8 @@ rake
 ```
 ## Services (job queues, cache servers, search engines, etc.)
 
+N/A
+
 ## Deployment Instructions
+
+N/A
