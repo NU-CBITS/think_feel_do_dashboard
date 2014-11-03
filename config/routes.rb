@@ -9,4 +9,5 @@ ThinkFeelDoDashboard::Engine.routes.draw do
     resources :enrollments
     resources :groups, controller: :memberships
   end
+  resources :users
 end

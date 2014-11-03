@@ -1,0 +1,11 @@
+<h1>Listing Users</h1>
+
+<div class="btn-toolbar" role="toolbar">
+  <%= link_to "New", new_user_path, class: "btn btn-default" %>
+</div>
+
+<div class="list-group">
+  <% @users.each do |user| %>
+    <%= link_to user.email, user_path(user), class: "list-group-item clearfix" %>
+  <% end %>
+</div>
