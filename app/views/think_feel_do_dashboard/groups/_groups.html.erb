@@ -1,5 +1,5 @@
 <div class="list-group">
   <% groups.each do |group| %>
-    <%= link_to "#{group.title} <span class=\"badge\">#{group.participants.count}</span>".html_safe, group_path(group), class: "list-group-item" %>
+    <%= link_to "#{group.title} #{arm_type(ThinkFeelDoDashboard::ArmGroupJoin.where(group_id: group.id).first.try(:arm))} <span class=\"badge\">#{group.participants.count}</span>".html_safe, group_path(group), class: "list-group-item" %>
   <% end %>
 </div>

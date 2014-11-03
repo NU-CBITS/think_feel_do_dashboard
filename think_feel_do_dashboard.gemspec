@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
                 "Rakefile",
                 "README.rdoc"]
 
-  s.add_dependency "rails", "~> 4.1.6"
+  s.add_dependency "rails", "~> 4.1.7"
 
   s.add_development_dependency "pg"
 

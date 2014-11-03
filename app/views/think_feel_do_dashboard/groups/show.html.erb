@@ -1,4 +1,4 @@
-<h1>Group</h1>
+<h1>Group <%= arm_type(ThinkFeelDoDashboard::ArmGroupJoin.where(group_id: @group.id).first.try(:arm)) %></h1>
 
 <div class="btn-toolbar" role="toolbar">
   <%= link_to "Groups", groups_path, class: "btn btn-default" %>
