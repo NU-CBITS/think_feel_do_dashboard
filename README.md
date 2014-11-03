@@ -71,4 +71,4 @@ Make sure you are in the top level folder; i.e., think_feel_do_dashboard. Then r
 
 <h2>Possible future 'To Dos'</h2>
 
-Add display name test and scoping...
+Add test for associting arms with groups from group form page
