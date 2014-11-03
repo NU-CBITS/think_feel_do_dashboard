@@ -20,6 +20,11 @@
   <%= (link_to "Remove Arm", arm_group_join_path(@arm.arm_group_joins.first), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default") if @arm %>
 </p>
 
+<p>
+  <strong>Moderator:</strong>
+  <%= @group.moderator ? @group.moderator.email : "None" %>
+</p>
+
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Participants</h3>

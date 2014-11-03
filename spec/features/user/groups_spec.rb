@@ -24,12 +24,14 @@ feature "Groups" do
     click_on "New"
     fill_in "Title", with: "HUGe PrOjEct 3"
     select "Arm 1", from: "Arm"
+    select "admin1@example.com", from: "Moderator"
 
     click_on "Create"
 
     expect(page).to have_text "Group was successfully created"
     expect(page).to have_text "Title: HUGe PrOjEct 3"
     expect(page).to have_text "Arm 1"
+    expect(page).to have_text "Moderator: admin1@example.com"
 
     click_on "Groups"
 
@@ -66,16 +68,28 @@ feature "Groups" do
     expect(page).to_not have_text "Title: What!"
     expect(page).to have_text "Arm: Arm 1"
     expect(page).to_not have_text "Arm: Arm 2"
+    expect(page).to have_text "Moderator: admin1@example.com"
+    expect(page).to_not have_text "Moderator: user1@example.com"
 
     click_on "Edit"
     fill_in "Title", with: "What!"
     select "Arm 2", from: "Arm"
+    select "user1@example.com", from: "Moderator"
     click_on "Update"
 
     expect(page).to_not have_text "Title: Group 1"
     expect(page).to have_text "Title: What!"
     expect(page).to have_text "Arm: Arm 2"
     expect(page).to_not have_text "Arm: Arm 1"
+    expect(page).to_not have_text "Moderator: admin1@example.com"
+    expect(page).to have_text "Moderator: user1@example.com"
+
+    click_on "Edit"
+    select "None", from: "Moderator"
+    click_on "Update"
+
+    expect(page).to_not have_text "Moderator: user1@example.com"
+    expect(page).to have_text "Moderator: None"
   end
 
   it "should be able to disassociate a group from an arm" do
