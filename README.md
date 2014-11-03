@@ -37,6 +37,15 @@ Then
 bundle install
 ```
 
+### links:
+
+1. projects: `/think_feel_do_dashboard/projects`
+2. arms: `/think_feel_do_dashboard/arms`
+3. groups: `/think_feel_do_dashboard/groups`
+4. participants: `/think_feel_do_dashboard/participants`
+5. memberships: `/think_feel_do_dashboard/participants/1/groups`
+6. coach_assignments: `/think_feel_do_dashboard/participants/1/coaches`
+
 ## Dependencies
 
 ruby: 2.1.2
@@ -82,9 +91,3 @@ rake
 ## Services (job queues, cache servers, search engines, etc.)
 
 ## Deployment Instructions
-
-### Production
-
-### Staging
-
-## Possible future 'To Dos'
