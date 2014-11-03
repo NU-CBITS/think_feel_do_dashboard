@@ -73,7 +73,9 @@ module ThinkFeelDoDashboard
     end
 
     def group_params
-      params.require(:group).permit(:title, :arm_id)
+      params.require(:group).permit(
+        :title, :arm_id
+      )
     end
 
     def update_agj

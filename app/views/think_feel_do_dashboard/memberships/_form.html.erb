@@ -32,8 +32,8 @@
     <%= f.select :group_id, grouped_options_for_select(@arm_group_join_options, (@arm_group_join.id)), { prompt: "Select Group" }, { class: "form-control" } %>
   </div>
   <div class="form-group">
-    <%= label_tag "participant[display_name]", "Display Name" %>
-    <%= text_field_tag "participant[display_name]", {}, class: "form-control", value: @participant.display_name %>
+    <%= f.label :display_name, "Display Name" %>
+    <%= f.text_field :display_name, class: "form-control" %>
     <p class="help-block">Only necessary for enrollments where socializing is a feature of the arm.</p>
   </div>
   <div class="form-group">

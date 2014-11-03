@@ -18,10 +18,12 @@ module ThinkFeelDoDashboard
 
     # POST /think_feel_do_dashboard/participants/1/groups
     def create
-      @membership = @participant.memberships.build(membership_params)
+      @membership = @participant.memberships.build(
+        membership_params.except(:display_name)
+      )
       if valid_enrollment? &&
         @membership.save &&
-        @participant.update(participant_params)
+        @participant.update(membership_params.slice(:display_name))
         redirect_to participant_group_path(@participant, @membership.group),
                     notice: "Group was successfully assigned"
       else
@@ -40,8 +42,8 @@ module ThinkFeelDoDashboard
     # PATCH/PUT /think_feel_do_dashboard/participants/1/groups/1
     def update
       if valid_enrollment? &&
-        @membership.update(membership_params) &&
-        @participant.update(participant_params)
+        @membership.update(membership_params.except(:display_name)) &&
+        @participant.update(membership_params.slice(:display_name))
         redirect_to participant_group_path(@participant, @membership.group),
                     notice: "New group was successfully assigned."
       else
@@ -98,19 +100,16 @@ module ThinkFeelDoDashboard
     def membership_params
       params
         .require(:membership)
-        .permit(:start_date, :end_date, :group_id)
+        .permit(
+          :start_date, :end_date,
+          :group_id, :display_name
+        )
     end
 
     def set_membership
       @membership = @participant
         .memberships
         .find_by_group_id(params[:id])
-    end
-
-    def participant_params
-      params
-        .require(:participant)
-        .permit(:display_name)
     end
 
     def set_participant
@@ -121,7 +120,7 @@ module ThinkFeelDoDashboard
     def valid_enrollment?
       if @arm_group_join && @arm_group_join.arm
         @arm_group_join.arm.display_name_required_for_membership?(
-            @participant, participant_params[:display_name])
+            @participant, membership_params[:display_name])
       else
         @membership = Membership.new
         @membership.errors.add(:group_id, "can't be blank")
