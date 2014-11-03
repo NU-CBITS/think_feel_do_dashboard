@@ -6,23 +6,30 @@ https://moqups.com/#!/edit/michael.wehrley@gmail.com/bfbZNvUJ
 
 This is a rails engine that allows for the CRUDing and Enrolling of participants
 
-Download <code>git clone https://github.com/cbitstech/?.git [name of folder]</code>
+### Download
+```
+git clone https://github.com/cbitstech/?.git [name of folder]
+```
 
-<h2>Assumptions</h2>
+## Assumptions
 
 This engine expects there to be a Devise-like API available, and an authenticatable Participant class stored in a participants table.
 
-<h2>Installation</h2>
+## Installation
 
 Add to your Gemfile
 
-<code>gem 'think_feel_do_dashboard', git: 'git://github.com/cbitstech/think_feel_do_dashboard.git'</code>
+```
+gem 'think_feel_do_dashboard', git: 'git://github.com/cbitstech/think_feel_do_dashboard.git'
+```
 
 Then
 
-<code>bundle install</code>
+```
+bundle install
+```
 
-<h2>Dependencies</h2>
+## Dependencies
 
 ruby: 2.1.2
 
@@ -30,7 +37,7 @@ rails: ~> 4.1.6
 
 jQuery
 
-<h2>Configuration</h2>
+## Configuration
 
 Application Name: ThinkFeelDoDashboard
 
@@ -42,33 +49,36 @@ Staging Url:
 
 Confluence:
 
-<h2>Database initialization/creation</h2>
+## Database initialization/creation
 
 Make sure you are in the top level folder; i.e., think_feel_do_dashboard. Then run:
 
-<code>rake app:db:drop app:db:create app:db:migrate</code>
+```
+rake app:db:drop app:db:create app:db:migrate
+```
 
-<h2>Seeding Database</h2>
-<code>app:seed:with_fixtures</code>
+## Seeding Database
+```
+app:seed:with_fixtures
+```
 
-<h2>Running tests</h2>
+## Running tests
 
-<code>rake app:db:test:prepare</code>
+After you migrate the database, you may have to update the engine's testing environment
+```
+rake app:db:test:prepare
+```
 
-<code>rspec</code>
+Because we have combined brakeman, rubocop, and rspec, you can just run the rake command to run everything
+```
+rake
+```
+## Services (job queues, cache servers, search engines, etc.)
 
-<h2>Services (job queues, cache servers, search engines, etc.)</h2>
+## Deployment Instructions
 
-<h2>Deployment Instructions</h2>
+### Production
 
-<ul>
-  <li></li>
-</ul>
+### Staging
 
-<h3>Production</h3>
-
-<h3>Staging</h3>
-
-<h2>Possible future 'To Dos'</h2>
-
-Add test for associting arms with groups from group form page
+## Possible future 'To Dos'
