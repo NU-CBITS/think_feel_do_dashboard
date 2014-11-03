@@ -17,8 +17,6 @@ class Membership < ActiveRecord::Base
   validates :group_id,
             uniqueness: { scope: :participant_id, message: "has already been assigned to this participant." }
 
-  attr_accessor :display_name
-
   scope :active, lambda {
     where("start_date <= ? OR start_date = ?", Date.today, nil)
     .where("end_date >= ? OR end_date = ?", Date.today, nil)

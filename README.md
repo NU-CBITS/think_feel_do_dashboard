@@ -1,10 +1,12 @@
-https://moqups.com/#!/edit/michael.wehrley@gmail.com/bfbZNvUJ
-
 # ThinkFeelDoDashboard
 
 [![Build Status](https://travis-ci.org/cbitstech/think_feel_do_dashboard.svg)](https://travis-ci.org/cbitstech/think_feel_do_dashboard) [![security](https://hakiri.io/github/cbitstech/think_feel_do_dashboard/master.svg)](https://hakiri.io/github/cbitstech/think_feel_do_dashboard/master)
 
 This is a rails engine that allows for the CRUDing and Enrolling of participants
+
+## Mockups
+
+[Membership & Enrollment Mockups](https://moqups.com/#!/edit/michael.wehrley@gmail.com/bfbZNvUJ)
 
 ### Download
 ```
@@ -13,7 +15,13 @@ git clone https://github.com/cbitstech/?.git [name of folder]
 
 ## Assumptions
 
-This engine expects there to be a Devise-like API available, and an authenticatable Participant class stored in a participants table.
+This engine expects there to be multiple models:
+
+1. Participant: a Devise-like API available and an authenticatable Participant class stored in a participants table;
+2. Group: a Group class stored in the groups table and has a title:string
+3. Membership: a Membership class that stores a group_id:integer and participant_id:integer in the memberships table. Each membership as a start_date:date and end_date:date that determines if the participant [membership] is active
+4. User: a Devise-like API available and an authenticatable User class stored in a users table but referred to as coaches;
+5. CoachAssignment: a CoachAssignment class that stores the participant:integer and user_id:integer in the coach_assignments table;
 
 ## Installation
 
@@ -35,19 +43,17 @@ ruby: 2.1.2
 
 rails: ~> 4.1.6
 
-jQuery
-
 ## Configuration
 
-Application Name: ThinkFeelDoDashboard
+__Application Name:__ ThinkFeelDoDashboard
 
-Github Repo: https://github.com/cbitstech/?
+__Github Repo:__ https://github.com/cbitstech/think_feel_do_dashboard
 
-Production Url:
+__Production Url:__ N/A
 
-Staging Url:
+__Staging Url:__ N/A
 
-Confluence:
+__Confluence:__ N/A
 
 ## Database initialization/creation
 
