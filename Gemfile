@@ -15,6 +15,7 @@ gemspec
 
 group :development, :test do
   gem "rubocop", "~> 0.26"
+  gem "launchy"
 end
 
 group :development do

@@ -43,19 +43,37 @@ feature "Users" do
   end
 
   it "should enable the updating of a user" do
+    expect(page).to_not have_text "Admin user1@example.com"
+
     click_on "user1@example.com"
 
     expect(page).to have_text "Email: user1@example.com"
     expect(page).to_not have_text "Email: What!"
+    expect(page).to have_text "Admin: No"
+    expect(page).to_not have_text "Admin: Yes"
 
     click_on "Edit"
+    check "Admin"
     fill_in "Email", with: "What!"
     click_on "Update"
 
     expect(page).to have_text "User was successfully updated"
-
+    expect(page).to have_text "Admin: Yes"
+    expect(page).to_not have_text "Admin: No"
     expect(page).to_not have_text "Email: user1@example.com"
     expect(page).to have_text "Email: What!"
+
+    click_on "Users"
+
+    expect(page).to have_text "Admin What!"
+
+    click_on "Admin What!"
+    click_on "Edit"
+    uncheck "Admin"
+    click_on "Update"
+
+    expect(page).to have_text "Admin: No"
+    expect(page).to_not have_text "Admin: Yes"
   end
 
   it "should be able to delete a user" do
