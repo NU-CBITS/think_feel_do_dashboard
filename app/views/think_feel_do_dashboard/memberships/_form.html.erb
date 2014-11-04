@@ -36,14 +36,7 @@
     <%= text_field_tag "membership[display_name]", {}, class: "form-control", value: @participant.display_name %>
     <p class="help-block">Only necessary for enrollments where socializing is a feature of the arm.</p>
   </div>
-  <div class="form-group">
-    <%= f.label :start_date, "Start Date" %>
-    <%= f.text_field :start_date, type: :date, class: "form-control", value: (@membership.start_date || Date.today) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :end_date, "End Date" %>
-    <%= f.text_field :end_date, type: :date, class: "form-control", value: (@membership.end_date || (Date.today + 1.week)) %>
-  </div>
+  <%= render "dates", membership: @membership %>
   <div class="actions">
     <%= f.submit button_text, class: "btn btn-primary" %>
     <%= link_to "Cancel", cancel_path, class: "btn btn-default" %>

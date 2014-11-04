@@ -54,14 +54,7 @@
     <%= text_field_tag "participant[display_name]", {}, class: "form-control", value: @participant.display_name %>
     <p class="help-block">Only necessary for enrollments where socializing is a feature of the arm.</p>
   </div>
-  <div class="form-group">
-    <%= label_tag "membership[start_date]", "Start Date" %>
-    <%= text_field_tag "membership[start_date]", {}, type: :date, class: "form-control", value: Date.today %>
-  </div>
-  <div class="form-group">
-    <%= label_tag "membership[end_date]", "End Date" %>
-    <%= text_field_tag "membership[end_date]", {}, type: :date, class: "form-control", value: Date.today + 1.week %>
-  </div>
+  <%= render "think_feel_do_dashboard/memberships/dates" %>
   <div class="actions">
     <%= submit_tag "Enroll", class: "btn btn-primary" %>
     <%= link_to "Cancel", participant_path(@participant), class: "btn btn-default" %>
