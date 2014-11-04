@@ -23,10 +23,12 @@ feature "Users" do
 
     click_on "New"
     fill_in "Email", with: "mike@example.com"
+    check "Researcher"
     click_on "Create"
 
     expect(page).to have_text "User was successfully created"
     expect(page).to have_text "Email: mike@example.com"
+    expect(page).to have_text "Roles: Researcher"
 
     click_on "Users"
 
@@ -51,9 +53,11 @@ feature "Users" do
     expect(page).to_not have_text "Email: What!"
     expect(page).to have_text "Admin: No"
     expect(page).to_not have_text "Admin: Yes"
+    expect(page).to_not have_text "Roles: Researcher"
 
     click_on "Edit"
     check "Admin"
+    check "Researcher"
     fill_in "Email", with: "What!"
     click_on "Update"
 
@@ -62,6 +66,7 @@ feature "Users" do
     expect(page).to_not have_text "Admin: No"
     expect(page).to_not have_text "Email: user1@example.com"
     expect(page).to have_text "Email: What!"
+    expect(page).to have_text "Roles: Researcher"
 
     click_on "Users"
 
@@ -70,10 +75,15 @@ feature "Users" do
     click_on "Admin What!"
     click_on "Edit"
     uncheck "Admin"
+    uncheck "Researcher"
+    check "Clinician"
+    check "Content Author"
     click_on "Update"
 
     expect(page).to have_text "Admin: No"
     expect(page).to_not have_text "Admin: Yes"
+    expect(page).to_not have_text "Roles: Researcher"
+    expect(page).to have_text "Roles: Clinician and Content Author"
   end
 
   it "should be able to delete a user" do

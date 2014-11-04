@@ -16,12 +16,20 @@
     </label>
   </div>
   <div class="form-group">
-    <%= f.label :email %>
-    <%= f.text_field :email, class: "form-control" %>
+    <label>Roles</label>
+    <% @roles.each do |role| %>
+      <div class="checkbox">
+        <label for="user_user_roles_<%= role %>">
+          <input name="user[user_roles][<%= role %>]" type="hidden" value="0">
+          <input id="user_user_roles_<%= role %>" name="user[user_roles][<%= role %>]" type="checkbox" value="1" <%= "checked" if @user.user_roles.map(&:role_class_name).include?("Roles::#{role.gsub(' ', '')}") %>>
+          <%= role.tableize.titleize.singularize %>
+        </label>
+      </div>
+    <% end %>
   </div>
   <div class="form-group">
-    <%#= f.label :email %>
-    <%#= f.select :coach_id, options_for_select(@coaches, @coach_assignment.coach_id), { prompt: "Select Coach" }, class: "form-control" %>
+    <%= f.label :email %>
+    <%= f.text_field :email, class: "form-control" %>
   </div>
   <div class="actions">
     <%= f.submit button_text, class: "btn btn-primary" %>

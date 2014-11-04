@@ -18,5 +18,5 @@
 
 <p>
   <strong>Roles:</strong>
-  <%#= %>
+  <%= @user.user_roles.all.map { |role| role.role_class_name.demodulize.titleize }.to_sentence %>
 </p>
