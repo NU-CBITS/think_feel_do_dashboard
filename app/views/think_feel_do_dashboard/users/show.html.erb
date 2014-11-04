@@ -20,3 +20,16 @@
   <strong>Roles:</strong>
   <%= @user.user_roles.all.map { |role| role.role_class_name.demodulize.titleize }.to_sentence %>
 </p>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Groups</h3>
+  </div>
+  <% if @user.groups.count == 0 %>
+    <div class="panel-body">
+      None
+    </div>
+  <% else %>
+    <%= render "think_feel_do_dashboard/groups/groups", groups: @user.groups %>
+  <% end %>
+</div>
