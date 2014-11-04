@@ -60,7 +60,9 @@ module ThinkFeelDoDashboard
     end
 
     def user_params
-      params.require(:user).permit(:email)
+      params.require(:user).permit(
+        :email, :is_admin
+      )
     end
   end
 end

@@ -6,6 +6,6 @@
 
 <div class="list-group">
   <% @users.each do |user| %>
-    <%= link_to user.email, user_path(user), class: "list-group-item clearfix" %>
+    <%= link_to admin_status(user.is_admin) + user.email, user_path(user), class: "list-group-item clearfix" %>
   <% end %>
 </div>

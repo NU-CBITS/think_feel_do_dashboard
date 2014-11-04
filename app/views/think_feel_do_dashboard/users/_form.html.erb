@@ -10,12 +10,18 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="checkbox">
+    <%= f.label :is_admin %>
+    <%= f.check_box :is_admin, class: "form-control" %>
+  </div>
   <div class="form-group">
     <%= f.label :email %>
     <%= f.text_field :email, class: "form-control" %>
   </div>
-
+  <div class="form-group">
+    <%#= f.label :email %>
+    <%#= f.select :coach_id, options_for_select(@coaches, @coach_assignment.coach_id), { prompt: "Select Coach" }, class: "form-control" %>
+  </div>
   <div class="actions">
     <%= f.submit button_text, class: "btn btn-primary" %>
     <%= link_to "Cancel", cancel_path, class: "btn btn-default" %>
