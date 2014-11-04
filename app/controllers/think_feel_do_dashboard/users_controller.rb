@@ -14,16 +14,7 @@ module ThinkFeelDoDashboard
     # POST /think_feel_do_dashboard/users
     def create
       @user = User.new(user_params)
-
-      @roles.each do |role|
-        if (params[:user][:user_roles][role] == "1") && !@user.user_roles.map(&:role_class_name).include?("Roles::#{role.gsub(' ', '')}")
-          @user.user_roles.build(role_class_name: "Roles::#{role.gsub(' ', '')}")
-        elsif (params[:user][:user_roles][role] == "0") && @user.user_roles.map(&:role_class_name).include?("Roles::#{role.gsub(' ', '')}")
-          user_role = @user.user_roles.find_by_role_class_name("Roles::#{role.gsub(' ', '')}")
-          user_role.destroy
-        end
-      end
-
+      build_user_roles(params)
       if @user.save
         redirect_to @user,
                     notice: "User was successfully created."
@@ -47,16 +38,7 @@ module ThinkFeelDoDashboard
 
     # PATCH/PUT /think_feel_do_dashboard/users/1
     def update
-
-      @roles.each do |role|
-        if (params[:user][:user_roles][role] == "1") && !@user.user_roles.map(&:role_class_name).include?("Roles::#{role.gsub(' ', '')}")
-          @user.user_roles.build(role_class_name: "Roles::#{role.gsub(' ', '')}")
-        elsif (params[:user][:user_roles][role] == "0") && @user.user_roles.map(&:role_class_name).include?("Roles::#{role.gsub(' ', '')}")
-          user_role = @user.user_roles.find_by_role_class_name("Roles::#{role.gsub(' ', '')}")
-          user_role.destroy
-        end
-      end
-
+      build_user_roles(params)
       if @user.update(user_params)
         redirect_to user_path(@user),
                     notice: "User was successfully updated.",
@@ -76,7 +58,7 @@ module ThinkFeelDoDashboard
     private
 
     def set_roles
-      @roles = ActiveRecord::Base::UserRole::ROLES.map { |role| role.demodulize }
+      @roles = UserRole::ROLES.map(&:demodulize)
     end
 
     def set_user
@@ -87,6 +69,21 @@ module ThinkFeelDoDashboard
       params.require(:user).permit(
         :email, :is_admin
       )
+    end
+
+    def build_user_roles(params)
+      @roles.each do |role|
+        role = role.gsub(" ", "")
+        klass_name = "Roles::#{role}"
+        if (params[:user][:user_roles][role] == "1") &&
+          !@user.user_roles.map(&:role_class_name).include?(klass_name)
+          @user.user_roles.build(role_class_name: klass_name)
+        elsif (params[:user][:user_roles][role] == "0") &&
+          @user.user_roles.map(&:role_class_name).include?(klass_name)
+          user_role = @user.user_roles.find_by_role_class_name(klass_name)
+          user_role.destroy
+        end
+      end
     end
   end
 end
