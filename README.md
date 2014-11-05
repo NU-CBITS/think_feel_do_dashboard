@@ -50,7 +50,10 @@ Note: you will have access to the following routes:
 5. memberships: `/think_feel_do_dashboard/participants/1/groups`
 6. coach_assignments: `/think_feel_do_dashboard/participants/1/coaches`
 
-Run the migrations of the engine `rake think_feel_do_dashboard:install:migrations`
+Run the migrations of the engine
+```
+rake think_feel_do_dashboard:install:migrations
+```
 
 ## Dependencies
 
