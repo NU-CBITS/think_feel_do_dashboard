@@ -23,6 +23,16 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.1.7"
 
+  # turbolinks
+  s.add_dependency "turbolinks", "~> 2.2"
+
+  # bootstrap
+  s.add_dependency "bootstrap-sass", "~> 3.3.0"
+  s.add_dependency "sass-rails", "~> 4.0"
+  s.add_dependency "phonelib"
+
+  ### DEVELOPMENT ###
+  # development database
   s.add_development_dependency "pg"
 
   # To enforce code conventions
@@ -32,5 +42,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec-rails", "~> 3"
   s.add_development_dependency "capybara", "~> 2"
   s.add_development_dependency "database_cleaner", "~> 1.3"
-  s.add_development_dependency "phonelib"
 end
