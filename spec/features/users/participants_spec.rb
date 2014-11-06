@@ -55,14 +55,24 @@ feature "Participants" do
     expect(page).to have_text "prohibited this participant from being saved"
   end
 
-  it "should have a valid phonen number if contact preference is 'phone'" do
+  it "should have a valid phone number if contact preference is 'phone'" do
     click_on "participant1@example.com"
     click_on "Edit"
-    fill_in "Phone Number", with: "asdf"
+    fill_in "Phone Number", with: "1-999-123-4223"
     select "Phone", from: "Contact Preference"
     click_on "Update"
 
-    expect(page).to have_text "prohibited this participant from being saved"
+    expect(page).to have_text "Phone number is not valid"
+  end
+
+  it "should have a valid phone number if contact preference is 'phone'" do
+    click_on "participant1@example.com"
+    click_on "Edit"
+    fill_in "Phone Number", with: ""
+    select "Phone", from: "Contact Preference"
+    click_on "Update"
+
+    expect(page).to have_text "Phone number is not valid"
   end
 
   it "should list group count" do

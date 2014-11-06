@@ -1,8 +1,9 @@
 require_dependency "think_feel_do_dashboard/application_controller"
-require "phonelib"
-
+# Allows for the creation, updating, and deletion of participants
 module ThinkFeelDoDashboard
-  # Allows for the creation, updating, and deletion of participants
+  # helps validate phone numbers
+  require "phonelib"
+  #
   class ParticipantsController < ApplicationController
     before_action :set_participant, only: [:show, :edit, :update, :destroy]
     before_action :set_contact_preferences,
@@ -75,6 +76,8 @@ module ThinkFeelDoDashboard
     end
 
     def participant_params
+      phone = Phonelib.parse(params[:participant][:phone_number])
+      params[:participant][:phone_number] = phone.sanitized
       params.require(:participant).permit(
         :email, :phone_number, :display_name,
         :study_id, :contact_preference
@@ -95,16 +98,13 @@ module ThinkFeelDoDashboard
     end
 
     def validate_phone_number
-      phone = Phonelib.parse(params[:participant][:phone_number])
-      if @contact_preference == "phone" && phone.nil?
-        @participant.errors.add(:phone_number, "is not a valid format")
-        false
-      elsif @contact_preference == "phone" && !Phonelib.valid?(phone.sanitized)
-        @participant.errors.add(:phone_number, "is not a valid format")
-        false
-      elsif @contact_preference == "phone"
-        @participant.phone_number = phone.sanitized
+      phone = participant_params[:phone_number]
+      if @contact_preference == "phone" && Phonelib.valid?(phone)
+        @participant.phone_number = phone
         true
+      elsif @contact_preference == "phone" && Phonelib.invalid?(phone)
+        @participant.errors.add(:phone_number, "is not valid")
+        false
       else
         true
       end
