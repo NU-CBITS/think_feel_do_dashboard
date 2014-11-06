@@ -4,8 +4,8 @@ module ThinkFeelDoDashboard
   # Allows for the creation, updating, and deletion of groups
   class GroupsController < ApplicationController
     before_action :set_arms, :set_users
-    before_action :set_group, :set_arm, only: [:show, :edit, :update, :destroy]
-    before_action :arm_id, only: :edit
+    before_action :set_group, :set_arm, :set_moderator,
+                  only: [:show, :edit, :update, :destroy]
 
     # GET /think_feel_do_dashboard/groups
     def index
@@ -14,9 +14,9 @@ module ThinkFeelDoDashboard
 
     # POST /think_feel_do_dashboard/groups
     def create
-      @group = Group.new(group_params.except(:arm_id))
+      @group = Group.new(group_params.except(:arm_id, :user_id))
 
-      if @group.save && create_agj
+      if @group.save && create_agj && create_moderator
         redirect_to @group,
                     notice: "Group was successfully created."
       else
@@ -39,7 +39,9 @@ module ThinkFeelDoDashboard
 
     # PATCH/PUT /think_feel_do_dashboard/groups/1
     def update
-      if update_agj && @group.update(group_params.except(:arm_id))
+      if update_agj &&
+        update_moderator &&
+        @group.update(group_params.except(:arm_id, :user_id))
         redirect_to group_path(@group),
                     notice: "Group was successfully updated.",
                     only: true
@@ -72,20 +74,41 @@ module ThinkFeelDoDashboard
       @group = Group.find(params[:id])
     end
 
+    def set_moderator
+      @moderator = Moderator.where(group_id: @group.id).first
+    end
+
     def set_users
       @users = User.all
     end
 
     def group_params
       params.require(:group).permit(
-        :arm_id, :moderator_id, :title
+        :arm_id, :title, :user_id
       )
     end
 
     def update_agj
       agj = ArmGroupJoin.where(group_id: @group.id).first
-      if agj
+      if agj && !group_params[:arm_id].empty?
         agj.update(arm_id: group_params[:arm_id])
+      elsif agj && group_params[:arm_id].empty?
+        agj.destroy
+      elsif !group_params[:arm_id].empty?
+        ArmGroupJoin.create(arm_id: group_params[:arm_id], group_id: @group.id)
+      else
+        true
+      end
+    end
+
+    def update_moderator
+      moderator = Moderator.where(group_id: @group.id).first
+      if moderator && !group_params[:user_id].empty?
+        moderator.update(user_id: group_params[:user_id])
+      elsif moderator && group_params[:user_id].empty?
+        moderator.destroy
+      elsif !group_params[:user_id].empty?
+        Moderator.create(user_id: group_params[:user_id], group_id: @group.id)
       else
         true
       end
@@ -99,10 +122,11 @@ module ThinkFeelDoDashboard
       end
     end
 
-    def arm_id
-      agj = ArmGroupJoin.where(group_id: @group.id).first
-      if agj
-        @arm_id = agj.arm_id
+    def create_moderator
+      if group_params[:user_id]
+        Moderator.create(user_id: group_params[:user_id], group_id: @group.id)
+      else
+        true
       end
     end
   end

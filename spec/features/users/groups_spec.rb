@@ -85,11 +85,11 @@ feature "Groups" do
     expect(page).to have_text "Moderator: user1@example.com"
 
     click_on "Edit"
-    select "None", from: "Moderator"
+    select "Select Moderator", from: "Moderator"
     click_on "Update"
 
-    expect(page).to_not have_text "Moderator: user1@example.com"
     expect(page).to have_text "Moderator: None"
+    expect(page).to_not have_text "Moderator: user1@example.com"
   end
 
   it "should be able to disassociate a group from an arm" do

@@ -51,9 +51,9 @@ feature "Users" do
 
     click_on "user1@example.com"
 
+    expect(page).to have_text "Admin: No"
     expect(page).to have_text "Email: user1@example.com"
     expect(page).to_not have_text "Email: What!"
-    expect(page).to have_text "Admin: No"
     expect(page).to have_text "Groups"
     expect(page).to have_text "Group 2 · TFD-SO 2"
     expect(page).to_not have_text "Admin: Yes"

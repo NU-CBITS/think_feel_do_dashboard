@@ -25,11 +25,15 @@
   <div class="panel-heading">
     <h3 class="panel-title">Groups</h3>
   </div>
-  <% if @user.groups.count == 0 %>
+  <% if ThinkFeelDoDashboard::Moderator.where(user_id: @user.id).count == 0 %>
     <div class="panel-body">
       None
     </div>
   <% else %>
-    <%= render "think_feel_do_dashboard/groups/groups", groups: @user.groups %>
+    <div class="list-group">
+      <% ThinkFeelDoDashboard::Moderator.where(user_id: @user.id).each do |moderator|  %>
+        <%= render "think_feel_do_dashboard/groups/group_item_link", group: moderator.group %>
+      <% end %>
+    </div>
   <% end %>
 </div>

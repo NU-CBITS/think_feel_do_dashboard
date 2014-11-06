@@ -3,7 +3,6 @@
 # Admin, Coach etc in the parent application
 class User < ActiveRecord::Base
   has_many :coach_assignments, foreign_key: :coach_id, dependent: :destroy
-  has_many :groups, foreign_key: :moderator_id, dependent: :destroy
   has_many :participants, through: :coach_assignments
   has_many :user_roles, dependent: :destroy
   validates :email, presence: true

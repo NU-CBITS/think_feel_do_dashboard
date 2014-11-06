@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104141420) do
+ActiveRecord::Schema.define(version: 20141105203408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20141104141420) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "moderator_id"
   end
 
   create_table "memberships", force: true do |t|
@@ -66,6 +65,13 @@ ActiveRecord::Schema.define(version: 20141104141420) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_social",  default: false
+  end
+
+  create_table "think_feel_do_dashboard_moderators", force: true do |t|
+    t.integer  "group_id",   null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "think_feel_do_dashboard_projects", force: true do |t|

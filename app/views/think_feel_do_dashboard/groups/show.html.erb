@@ -22,7 +22,11 @@
 
 <p>
   <strong>Moderator:</strong>
-  <%= @group.moderator ? @group.moderator.email : "None" %>
+  <%= @moderator ? link_to(@moderator.user_email, user_path(@moderator.user)) : "None" %>
+</p>
+
+<p>
+  <%= (link_to "Remove Moderator", moderator_path(@moderator), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default") if @moderator %>
 </p>
 
 <div class="panel panel-default">

@@ -1,0 +1,7 @@
+moderator1:
+  group: group1
+  user: admin1
+
+moderator2:
+  group: group2
+  user: user1  

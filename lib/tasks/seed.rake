@@ -29,7 +29,8 @@ namespace :seed do
       :memberships,
       :'think_feel_do_dashboard/projects',
       :'think_feel_do_dashboard/arms',
-      :'think_feel_do_dashboard/arm_group_joins'
+      :'think_feel_do_dashboard/arm_group_joins',
+      :'think_feel_do_dashboard/moderators'
     ]
     puts "seeded"
   end
