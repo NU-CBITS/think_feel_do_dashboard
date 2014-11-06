@@ -23,6 +23,22 @@ feature "Groups" do
 
     click_on "New"
     fill_in "Title", with: "HUGe PrOjEct 3"
+
+    click_on "Create"
+
+    expect(page).to have_text "Group was successfully created"
+    expect(page).to have_text "Title: HUGe PrOjEct 3"
+
+    click_on "Groups"
+
+    expect(page).to have_text "HUGe PrOjEct 3"
+  end
+
+  it "should enable the creation of a group with an arm and a moderator" do
+    expect(page).to_not have_text "HUGe PrOjEct 3"
+
+    click_on "New"
+    fill_in "Title", with: "HUGe PrOjEct 3"
     select "Arm 1", from: "Arm"
     select "admin1@example.com", from: "Moderator"
 
@@ -32,10 +48,6 @@ feature "Groups" do
     expect(page).to have_text "Title: HUGe PrOjEct 3"
     expect(page).to have_text "Arm 1"
     expect(page).to have_text "Moderator: admin1@example.com"
-
-    click_on "Groups"
-
-    expect(page).to have_text "HUGe PrOjEct 3"
   end
 
   it "should display errors if required fields aren't filled in" do
@@ -92,7 +104,26 @@ feature "Groups" do
     expect(page).to_not have_text "Moderator: user1@example.com"
   end
 
-  it "should be able to disassociate a group from an arm" do
+  it "should enable the updating of a group" do
+    click_on "Group 1"
+
+    expect(page).to have_text "Arm: Arm 1"
+    expect(page).to_not have_text "Arm: None"
+    expect(page).to have_text "Moderator: admin1@example.com"
+    expect(page).to_not have_text "Moderator: None"
+
+    click_on "Edit"
+    select "Select Arm", from: "Arm"
+    select "Select Moderator", from: "Moderator"
+    click_on "Update"
+
+    expect(page).to have_text "Arm: None"
+    expect(page).to_not have_text "Arm: Arm 1"
+    expect(page).to have_text "Moderator: None"
+    expect(page).to_not have_text "Moderator: admin1@example.com"
+  end
+
+  it "should be able to disassociate an arm from the group" do
     click_on "Group 1"
 
     expect(page).to have_text "Arm: Arm 1"
@@ -100,7 +131,20 @@ feature "Groups" do
     click_on "Remove Arm"
 
     expect(page).to have_text "Group and arm were successfully disassociated"
+    expect(page).to have_text "Arm: None"
     expect(page).to_not have_text "Arm 1"
+  end
+
+  it "should be able to remove a moderator from the group" do
+    click_on "Group 1"
+
+    expect(page).to have_text "Moderator: admin1@example.com"
+
+    click_on "Remove Moderator"
+
+    expect(page).to have_text "Moderator was successfully removed"
+    expect(page).to have_text "Moderator: None"
+    expect(page).to_not have_text "Moderator: admin1@example.com"
   end
 
   it "should be able to delete a group" do

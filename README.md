@@ -107,6 +107,4 @@ N/A
 
 ## To Do:
 
-1. Test when no arm or moderator is selected when updating a group
-2. Test when no arm or moderator has been selected but then update a group with one.
-3. Test for removing moderator
+N/A
