@@ -4,8 +4,6 @@
     <title>ThinkFeelDoDashboard</title>
     <%= stylesheet_link_tag    "think_feel_do_dashboard/application", media: "all" %>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
     <%= javascript_include_tag "think_feel_do_dashboard/application" %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,8 +11,8 @@
   </head>
   <body>
     <div class="container">
-      <%= render "alerts/alert", alert: alert %>
-      <%= render "alerts/notice", notice: notice %>
+      <%= render "/think_feel_do_dashboard/alerts/alert", alert: alert %>
+      <%= render "/think_feel_do_dashboard/alerts/notice", notice: notice %>
       <%= yield %>
     </div>
   </body>
