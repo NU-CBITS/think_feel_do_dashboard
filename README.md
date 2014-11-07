@@ -28,6 +28,8 @@ This engine expects there to be multiple models:
 Update your Gemfile:
 
 ```
+# Gemfile
+
 gem 'think_feel_do_dashboard', git: 'git://github.com/cbitstech/think_feel_do_dashboard.git'
 ```
 
@@ -38,10 +40,14 @@ bundle install
 ```
 
 Add the routes by configuring your routes.rb file:
+
 ```
+# routes.rb
+
 mount ThinkFeelDoDashboard::Engine => "think_feel_do_dashboard"
-````
-Note: you will have access to the following routes:
+```
+
+Note: You will have access to the following routes:
 
 1. projects: `/think_feel_do_dashboard/projects`
 2. arms: `/think_feel_do_dashboard/arms`
@@ -50,14 +56,16 @@ Note: you will have access to the following routes:
 5. memberships: `/think_feel_do_dashboard/participants/1/groups`
 6. coach_assignments: `/think_feel_do_dashboard/participants/1/coaches`
 
-Add the appropriate password concern into the app/models/user.rb file
+Add the appropriate password concern into the app/models/user.rb file:
+
 ```
 # app/models/user.rb
-include ThinkFeelDoDashboard::Concerns::Password
 
+include ThinkFeelDoDashboard::Concerns::Password
 ```
 
-Run the migrations of the engine
+Run the migrations of the engine:
+
 ```
 rake think_feel_do_dashboard:install:migrations
 ```
