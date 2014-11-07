@@ -70,7 +70,7 @@ from another engine's User model `app/models/user.rb`. For instance,
 
 ```ruby
 require File.expand_path("../../app/models/user",
-                         SomeEngine::Engine.called_from)
+                         AnotherEngine::Engine.called_from)
 
 # Extend User model.
 class User
@@ -78,10 +78,15 @@ class User
 end
 ```
 
-Run the migrations of the engine:
+Copy the migrations from the ThinkFeelDoDashboard engine:
 
 ```console
 rake think_feel_do_dashboard:install:migrations
+```
+
+Then run the migrations:
+```console
+bin/rake db:migrate RAILS_ENV=development
 ```
 
 ## Dependencies
