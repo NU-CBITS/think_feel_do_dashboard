@@ -60,12 +60,27 @@ Note: You will have access to additional routes.
 5. memberships: `/think_feel_do_dashboard/participants/1/groups`
 6. coach_assignments: `/think_feel_do_dashboard/participants/1/coaches`
 
-Add the appropriate password concern into the app/models/user.rb file:
+Add the appropriate password concern into the app/models/user.rb file.
 
 ```ruby
 # app/models/user.rb
 
 class User < ActiveRecord::Base
+  include ThinkFeelDoDashboard::Concerns::Password
+  ...
+end
+```
+
+You may have to create a user.rb file containing a User model and extend it
+from another engine's User model. For instance,
+
+```ruby
+# app/models/user.rb
+
+require File.expand_path("../../app/models/participant",
+                         SomeEngine::Engine.called_from)
+
+class User
   include ThinkFeelDoDashboard::Concerns::Password
   ...
 end
