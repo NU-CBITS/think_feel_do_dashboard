@@ -75,7 +75,6 @@ require File.expand_path("../../app/models/user",
 # Extend User model.
 class User
   include ThinkFeelDoDashboard::Concerns::Password
-  ...
 end
 ```
 
