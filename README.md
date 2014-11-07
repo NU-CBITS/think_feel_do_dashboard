@@ -25,11 +25,9 @@ This engine expects there to be multiple models:
 
 ## Installation
 
-Update your Gemfile:
+Update your `Gemfile`:
 
 ```ruby
-# Gemfile
-
 gem 'think_feel_do_dashboard', git: 'git://github.com/cbitstech/think_feel_do_dashboard.git'
 ```
 
@@ -39,11 +37,9 @@ Update gems:
 bundle install
 ```
 
-Add the routes by configuring your routes.rb file:
+Add the routes by configuring your `routes.rb` file:
 
 ```ruby
-# routes.rb
-
 Rails.application.routes.draw do
   ...
   mount ThinkFeelDoDashboard::Engine => "think_feel_do_dashboard"
@@ -60,11 +56,9 @@ Note: You will have access to additional routes.
 5. memberships: `/think_feel_do_dashboard/participants/1/groups`
 6. coach_assignments: `/think_feel_do_dashboard/participants/1/coaches`
 
-Add the appropriate password concern to the app/models/user.rb file:
+Add the appropriate password concern to the `app/models/user.rb` file:
 
 ```ruby
-# app/models/user.rb
-
 class User < ActiveRecord::Base
   include ThinkFeelDoDashboard::Concerns::Password
   ...
@@ -72,14 +66,13 @@ end
 ```
 
 You may have to create a user.rb file containing a User model and extend it
-from another engine's User model. For instance,
+from another engine's User model `app/models/user.rb`. For instance,
 
 ```ruby
-# app/models/user.rb
-
 require File.expand_path("../../app/models/user",
                          SomeEngine::Engine.called_from)
 
+# Extend User model.
 class User
   include ThinkFeelDoDashboard::Concerns::Password
   ...
