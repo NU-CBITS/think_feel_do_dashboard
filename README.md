@@ -77,7 +77,7 @@ from another engine's User model. For instance,
 ```ruby
 # app/models/user.rb
 
-require File.expand_path("../../app/models/participant",
+require File.expand_path("../../app/models/user",
                          SomeEngine::Engine.called_from)
 
 class User
