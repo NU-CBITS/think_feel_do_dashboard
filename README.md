@@ -65,7 +65,10 @@ Add the appropriate password concern into the app/models/user.rb file:
 ```ruby
 # app/models/user.rb
 
-include ThinkFeelDoDashboard::Concerns::Password
+class User < ActiveRecord::Base
+  include ThinkFeelDoDashboard::Concerns::Password
+  ...
+end
 ```
 
 Run the migrations of the engine:
