@@ -50,6 +50,13 @@ Note: you will have access to the following routes:
 5. memberships: `/think_feel_do_dashboard/participants/1/groups`
 6. coach_assignments: `/think_feel_do_dashboard/participants/1/coaches`
 
+Add the appropriate password concern into the app/models/user.rb file
+```
+# app/models/user.rb
+include ThinkFeelDoDashboard::Concerns::Password
+
+```
+
 Run the migrations of the engine
 ```
 rake think_feel_do_dashboard:install:migrations
