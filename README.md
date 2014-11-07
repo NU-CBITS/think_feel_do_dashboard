@@ -9,7 +9,7 @@ This is a rails engine that allows for the CRUDing and Enrolling of participants
 [Membership & Enrollment Mockups](https://moqups.com/#!/edit/michael.wehrley@gmail.com/bfbZNvUJ)
 
 ### Download
-```
+```console
 git clone https://github.com/cbitstech/think_feel_do_dashboard.git [name of folder]
 ```
 
@@ -27,7 +27,7 @@ This engine expects there to be multiple models:
 
 Update your Gemfile:
 
-```
+```ruby
 # Gemfile
 
 gem 'think_feel_do_dashboard', git: 'git://github.com/cbitstech/think_feel_do_dashboard.git'
@@ -35,19 +35,22 @@ gem 'think_feel_do_dashboard', git: 'git://github.com/cbitstech/think_feel_do_da
 
 Update gems:
 
-```
+```console
 bundle install
 ```
 
 Add the routes by configuring your routes.rb file:
 
-```
+```ruby
 # routes.rb
-
-mount ThinkFeelDoDashboard::Engine => "think_feel_do_dashboard"
+Rails.application.routes.draw do
+  ...
+  mount ThinkFeelDoDashboard::Engine => "think_feel_do_dashboard"
+  ...
+end
 ```
 
-Note: You will have access to the following routes:
+Note: You will have access to additional routes.
 
 1. projects: `/think_feel_do_dashboard/projects`
 2. arms: `/think_feel_do_dashboard/arms`
@@ -58,7 +61,7 @@ Note: You will have access to the following routes:
 
 Add the appropriate password concern into the app/models/user.rb file:
 
-```
+```ruby
 # app/models/user.rb
 
 include ThinkFeelDoDashboard::Concerns::Password
@@ -66,7 +69,7 @@ include ThinkFeelDoDashboard::Concerns::Password
 
 Run the migrations of the engine:
 
-```
+```console
 rake think_feel_do_dashboard:install:migrations
 ```
 
@@ -92,26 +95,30 @@ __Confluence:__ N/A
 
 Make sure you are in the top level folder; i.e., think_feel_do_dashboard. Then run:
 
-```
+```console
 rake app:db:drop app:db:create app:db:migrate
 ```
 
 ## Seeding Database
-```
+
+```console
 app:seed:with_fixtures
 ```
 
 ## Running tests
 
-After you migrate the database, you may have to update the engine's testing environment
-```
+After you migrate the database, you may have to update the engine's testing environment:
+
+```console
 rake app:db:test:prepare
 ```
 
-Because we have combined brakeman, rubocop, and rspec, you can just run the rake command to run everything
-```
+Because we have combined brakeman, rubocop, and rspec, you can just run the rake command to run everything:
+
+```console
 rake
 ```
+
 ## Services (job queues, cache servers, search engines, etc.)
 
 N/A
