@@ -15,6 +15,7 @@ module ThinkFeelDoDashboard
     def create
       @user = User.new(user_params)
       build_user_roles(params)
+
       if @user.save
         redirect_to @user,
                     notice: "User was successfully created."
@@ -67,8 +68,7 @@ module ThinkFeelDoDashboard
 
     def user_params
       params.require(:user).permit(
-        :email, :is_admin, :password,
-        :password_confirmation
+        :email, :is_admin
       )
     end
 

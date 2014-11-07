@@ -1,5 +1,5 @@
 ThinkFeelDoDashboard::Engine.routes.draw do
-  root to: "participants#index"
+  root to: "admin#index"
   resources :arm_group_joins, only: [:destroy]
   resources :arms
   resources :groups

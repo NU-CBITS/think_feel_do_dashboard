@@ -1,0 +1,10 @@
+<h1>Admin</h1>
+
+<div class="list-group">
+  <% @admin_functionalities.each do |functionality| %>
+  <a href="<%= functionality[1] %>" class="list-group-item">
+    <h4 class="list-group-item-heading"><%= functionality[0] %></h4>
+    <p class="list-group-item-text"><%= functionality[2] %></p>
+  </a>
+  <% end %>
+</div>

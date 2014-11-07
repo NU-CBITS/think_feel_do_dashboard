@@ -29,9 +29,12 @@ Gem::Specification.new do |s|
   # bootstrap
   s.add_dependency "bootstrap-sass", "~> 3.3.0"
   s.add_dependency "sass-rails", "~> 4.0"
+
+  # validate phone numbers for participants
   s.add_dependency "phonelib"
 
   ### DEVELOPMENT ###
+
   # development database
   s.add_development_dependency "pg"
 

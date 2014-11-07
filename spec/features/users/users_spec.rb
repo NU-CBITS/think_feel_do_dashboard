@@ -32,6 +32,10 @@ feature "Users" do
     expect(page).to have_text "Groups"
     expect(page).to have_text "None"
 
+    user = User.find_by_email("mike@example.com")
+    expect(user.password).to_not be_nil
+    expect(user.password_confirmation).to_not be_nil
+
     click_on "Users"
 
     expect(page).to have_text "mike@example.com"
