@@ -43,6 +43,7 @@ Add the routes by configuring your routes.rb file:
 
 ```ruby
 # routes.rb
+
 Rails.application.routes.draw do
   ...
   mount ThinkFeelDoDashboard::Engine => "think_feel_do_dashboard"
