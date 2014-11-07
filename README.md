@@ -60,7 +60,7 @@ Note: You will have access to additional routes.
 5. memberships: `/think_feel_do_dashboard/participants/1/groups`
 6. coach_assignments: `/think_feel_do_dashboard/participants/1/coaches`
 
-Add the appropriate password concern into the app/models/user.rb file.
+Add the appropriate password concern to the app/models/user.rb file:
 
 ```ruby
 # app/models/user.rb
