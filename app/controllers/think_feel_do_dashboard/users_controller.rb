@@ -13,7 +13,7 @@ module ThinkFeelDoDashboard
 
     # POST /think_feel_do_dashboard/users
     def create
-      @user = User.new(user_params)
+      @user = User.new(user_params.except(:user_roles))
       build_user_roles(params)
 
       if @user.save
@@ -40,7 +40,7 @@ module ThinkFeelDoDashboard
     # PATCH/PUT /think_feel_do_dashboard/users/1
     def update
       build_user_roles(params)
-      if @user.update(user_params)
+      if @user.update(user_params.except(:user_roles))
         redirect_to user_path(@user),
                     notice: "User was successfully updated.",
                     only: true
