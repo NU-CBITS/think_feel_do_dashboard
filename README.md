@@ -90,6 +90,21 @@ Then run the migrations:
 bin/rake db:migrate
 ```
 
+You will have to include any .css or .js files in the host app's to be precompiled `app/config/initializers/assets.rb`.  For example,
+```
+# Be sure to restart your server when you modify this file.
+
+# Version of your assets, change this if you want to expire all your assets.
+Rails.application.config.assets.version = '1.0'
+
+# Precompile additional assets.
+# application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+# Rails.application.config.assets.precompile += %w( search.js )
+...
+Rails.application.config.assets.precompile += %w(think_feel_do_dashboard.css think_feel_do_dashboard.js)
+...
+```
+
 ## Dependencies
 
 ruby: 2.1.2
@@ -136,13 +151,13 @@ Because we have combined brakeman, rubocop, and rspec, you can just run the rake
 rake
 ```
 
-## Services (job queues, cache servers, search engines, etc.)
+## Services
 
 N/A
 
 ## Deployment Instructions
 
-N/A
+See the "Installation" instructions above.
 
 ## To Do:
 
