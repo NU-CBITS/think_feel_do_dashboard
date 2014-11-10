@@ -49,12 +49,13 @@ end
 
 Note: You will have access to additional routes.
 
-1. projects: `/think_feel_do_dashboard/projects`
-2. arms: `/think_feel_do_dashboard/arms`
-3. groups: `/think_feel_do_dashboard/groups`
-4. participants: `/think_feel_do_dashboard/participants`
-5. memberships: `/think_feel_do_dashboard/participants/1/groups`
-6. coach_assignments: `/think_feel_do_dashboard/participants/1/coaches`
+1. home: `/think_feel_do_dashboard`
+2. projects: `/think_feel_do_dashboard/projects`
+3. arms: `/think_feel_do_dashboard/arms`
+4. groups: `/think_feel_do_dashboard/groups`
+5. participants: `/think_feel_do_dashboard/participants`
+6. memberships: `/think_feel_do_dashboard/participants/1/groups`
+7. coach_assignments: `/think_feel_do_dashboard/participants/1/coaches`
 
 Add the appropriate password concern to the `app/models/user.rb` file:
 
