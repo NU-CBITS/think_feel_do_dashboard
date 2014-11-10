@@ -30,7 +30,9 @@ feature "Enrollments" do
     expect(page).to have_text "Current Membership: Group 3"
     expect(page).to have_text "Membership Status: Active"
 
-    click_on "Participants"
+    with_scope "#main" do
+      click_on "Participants"
+    end
 
     expect(page).to have_text "Active participant5@example.com"
   end

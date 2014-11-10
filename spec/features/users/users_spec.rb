@@ -36,7 +36,9 @@ feature "Users" do
     expect(user.password).to_not be_nil
     expect(user.password_confirmation).to_not be_nil
 
-    click_on "Users"
+    with_scope "#main" do
+      click_on "Users"
+    end
 
     expect(page).to have_text "mike@example.com"
   end
@@ -76,7 +78,9 @@ feature "Users" do
     expect(page).to have_text "Email: What!"
     expect(page).to have_text "Roles: Researcher"
 
-    click_on "Users"
+    with_scope "#main" do
+      click_on "Users"
+    end
 
     expect(page).to have_text "Admin What!"
 

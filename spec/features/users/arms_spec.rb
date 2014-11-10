@@ -32,7 +32,9 @@ feature "Arms" do
     expect(page).to have_text "Project 1"
     expect(page).to have_text "Is social: Yes"
 
-    click_on "Arms"
+    with_scope "#main" do
+      click_on "Arms"
+    end
 
     expect(page).to have_text "Big arm 2"
   end

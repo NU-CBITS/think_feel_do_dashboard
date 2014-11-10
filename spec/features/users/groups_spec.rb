@@ -29,7 +29,9 @@ feature "Groups" do
     expect(page).to have_text "Group was successfully created"
     expect(page).to have_text "Title: HUGe PrOjEct 3"
 
-    click_on "Groups"
+    with_scope "#main" do
+      click_on "Groups"
+    end
 
     expect(page).to have_text "HUGe PrOjEct 3"
   end

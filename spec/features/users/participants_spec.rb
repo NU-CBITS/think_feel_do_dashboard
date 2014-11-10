@@ -39,7 +39,9 @@ feature "Participants" do
     expect(page).to have_text "Membership Status: Inactive"
     expect(page).to have_text "Below lists the participants enrollment information. This includes all the groups she/he is associated with and the current coach and group they are part of the coach or group exists."
 
-    click_on "Participants"
+    with_scope "#main" do
+      click_on "Participants"
+    end
 
     expect(page).to have_text "Inactive gwashington@ex.co"
   end

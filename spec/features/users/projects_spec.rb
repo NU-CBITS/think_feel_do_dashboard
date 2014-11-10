@@ -28,7 +28,9 @@ feature "Projects" do
     expect(page).to have_text "Project was successfully created"
     expect(page).to have_text "Name: HUGe PrOjEct 3"
 
-    click_on "Projects"
+    with_scope "#main" do
+      click_on "Projects"
+    end
 
     expect(page).to have_text "HUGe PrOjEct 3"
   end
