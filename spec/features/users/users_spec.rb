@@ -92,6 +92,11 @@ feature "Users" do
     expect(page).to_not have_text "Admin: Yes"
     expect(page).to_not have_text "Roles: Researcher"
     expect(page).to have_text "Roles: Clinician and Content Author"
+
+    click_on "Edit"
+    click_on "Update"
+
+    expect(page).to have_text "Roles: Clinician and Content Author"
   end
 
   it "should be able to delete a user" do

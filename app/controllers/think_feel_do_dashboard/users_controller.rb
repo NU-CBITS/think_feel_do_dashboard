@@ -68,14 +68,18 @@ module ThinkFeelDoDashboard
 
     def user_params
       params.require(:user).permit(
-        :email, :is_admin
+        :email, :is_admin, user_roles: {
+          clinician: "",
+          researcher: "",
+          content_author: ""
+        }
       )
     end
 
     def build_user_roles(params)
       @roles.each do |role|
-        role = role.gsub(" ", "")
-        klass_name = "Roles::#{role}"
+        role = role.tableize.singularize
+        klass_name = "Roles::#{role.classify}"
         if (params[:user][:user_roles][role] == "1") &&
           !@user.user_roles.map(&:role_class_name).include?(klass_name)
           @user.user_roles.build(role_class_name: klass_name)
