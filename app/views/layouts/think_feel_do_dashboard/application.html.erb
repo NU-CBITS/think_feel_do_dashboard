@@ -18,12 +18,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to "Admin Dashboard", root_path, class: "navbar-brand" %>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
           </ul>
           <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= link_to "Dashboard", root_path %>
+            </li>
             <% @admin_functionalities.each do |functionality| %>
               <li>
                 <%= link_to functionality[0], functionality[1] %>

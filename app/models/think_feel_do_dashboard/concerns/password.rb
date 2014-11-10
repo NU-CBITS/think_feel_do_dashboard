@@ -19,8 +19,10 @@ module ThinkFeelDoDashboard
 
       def set_password
         random_eight = SecureRandom.urlsafe_base64(nil, false)
-        self.password = random_eight
-        self.password_confirmation = random_eight
+        if password.nil?
+          self.password = random_eight
+          self.password_confirmation = random_eight
+        end
       end
     end
   end

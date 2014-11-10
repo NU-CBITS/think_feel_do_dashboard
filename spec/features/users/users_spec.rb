@@ -33,6 +33,7 @@ feature "Users" do
     expect(page).to have_text "None"
 
     user = User.find_by_email("mike@example.com")
+    password = user.password
     expect(user.password).to_not be_nil
     expect(user.password_confirmation).to_not be_nil
 
@@ -41,6 +42,12 @@ feature "Users" do
     end
 
     expect(page).to have_text "mike@example.com"
+
+    click_on "mike@example.com"
+    click_on "Edit"
+    click_on "Update"
+
+    expect(user.password).to be password
   end
 
   it "should display errors if required fields aren't filled in" do
