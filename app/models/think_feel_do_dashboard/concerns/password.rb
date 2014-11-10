@@ -8,7 +8,7 @@ module ThinkFeelDoDashboard
       # This is perfect for including functionality
       # provided by 3rd party gems, etc.
       included do
-        before_create :set_password
+        before_validation :set_password
       end
 
       # methods added to Class itself...
