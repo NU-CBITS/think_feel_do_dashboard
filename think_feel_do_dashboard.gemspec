@@ -27,19 +27,14 @@ Gem::Specification.new do |s|
   s.add_dependency "turbolinks", "~> 2.2"
 
   # bootstrap
-  s.add_dependency "bootstrap-sass", "~> 3.3.0"
+  s.add_dependency "bootstrap-sass", "~> 3.3"
   s.add_dependency "sass-rails", "~> 4.0"
 
   # validate phone numbers for participants
   s.add_dependency "phonelib"
 
-  ### DEVELOPMENT ###
-
-  # development database
+  # database
   s.add_development_dependency "pg"
-
-  # To enforce code conventions
-  s.add_development_dependency "rubocop"
 
   # For rspec testing
   s.add_development_dependency "rspec-rails", "~> 3"

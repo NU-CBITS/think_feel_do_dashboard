@@ -12,6 +12,8 @@ gemspec
 
 # To use debugger
 # gem "debugger"
+gem "jquery-rails", "~> 3.1"
+gem "bootstrap-sass", "~> 3.1"
 
 group :development, :test do
   gem "rubocop", "~> 0.26"
