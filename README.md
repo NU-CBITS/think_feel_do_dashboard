@@ -91,12 +91,14 @@ bin/rake db:migrate
 ```
 
 You will have to include any .css or .js files in the host app's to be precompiled `app/config/initializers/assets.rb`.  For example,
-```
+```ruby
 ...
 Rails.application.config.assets.precompile += %w(think_feel_do_dashboard.css think_feel_do_dashboard.js)
 ...
 ```
 Be sure to restart your server after you mkae the modifications.
+
+<!-- homelink -->
 
 ## Dependencies
 
