@@ -86,7 +86,7 @@ rake think_feel_do_dashboard:install:migrations
 
 Then run the migrations:
 ```console
-bin/rake db:migrate RAILS_ENV=development
+bin/rake db:migrate
 ```
 
 ## Dependencies
