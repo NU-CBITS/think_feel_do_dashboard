@@ -1,6 +1,7 @@
 module ThinkFeelDoDashboard
   # Top level controller.
   class ApplicationController < ActionController::Base
+    before_action :authenticate_user!
     before_action :set_admin_link
 
     def set_admin_link

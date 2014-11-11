@@ -1,6 +1,6 @@
 require "spec_helper"
 
-feature "Participants" do
+feature "Participants", type: :feature do
   fixtures :all
 
   before do

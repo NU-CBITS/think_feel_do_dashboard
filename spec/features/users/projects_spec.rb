@@ -1,6 +1,6 @@
 require "spec_helper"
 
-feature "Projects" do
+feature "Projects", type: :feature do
   fixtures :all
 
   before do

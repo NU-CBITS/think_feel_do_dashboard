@@ -1,6 +1,6 @@
 require "spec_helper"
 
-feature "Users" do
+feature "Users", type: :feature do
   fixtures :all
 
   before do

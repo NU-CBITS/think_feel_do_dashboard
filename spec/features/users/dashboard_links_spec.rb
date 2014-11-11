@@ -1,6 +1,6 @@
 require "spec_helper"
 
-feature "Admin" do
+feature "Dashboard Links", type: :feature do
   fixtures :all
 
   before do

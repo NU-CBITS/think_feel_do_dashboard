@@ -1,6 +1,6 @@
 require "spec_helper"
 
-feature "Coach Assignments" do
+feature "Coach Assignments", type: :feature do
   fixtures :all
 
   before do

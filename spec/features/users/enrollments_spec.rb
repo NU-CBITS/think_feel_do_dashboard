@@ -1,6 +1,6 @@
 require "spec_helper"
 
-feature "Enrollments" do
+feature "Enrollments", type: :feature do
   fixtures :all
 
   before do
