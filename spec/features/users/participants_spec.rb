@@ -39,11 +39,22 @@ feature "Participants" do
     expect(page).to have_text "Membership Status: Inactive"
     expect(page).to have_text "Below lists the participants enrollment information. This includes all the groups she/he is associated with and the current coach and group they are part of the coach or group exists."
 
+    participant = Participant.find_by_email("gwashington@ex.co")
+    password = participant.password
+    expect(participant.password).to_not be_nil
+    expect(participant.password_confirmation).to_not be_nil
+
     with_scope "#main" do
       click_on "Participants"
     end
 
     expect(page).to have_text "Inactive gwashington@ex.co"
+
+    click_on "gwashington@ex.co"
+    click_on "Edit"
+    click_on "Update"
+
+    expect(participant.password).to be password
   end
 
   it "should display errors if required fields aren't filled in" do
