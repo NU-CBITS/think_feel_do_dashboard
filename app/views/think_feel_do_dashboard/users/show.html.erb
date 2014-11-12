@@ -23,7 +23,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Groups</h3>
+    <h3 class="panel-title">Moderating the following Groups</h3>
   </div>
   <% if ThinkFeelDoDashboard::Moderator.where(user_id: @user.id).count == 0 %>
     <div class="panel-body">
