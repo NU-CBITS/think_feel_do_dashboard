@@ -18,7 +18,7 @@ end
 
 namespace :seed do
   desc "seed the database with fixtures from spec/fixtures"
-  task seed:with_think_feel_do_dashboard_fixtures: :environment do
+  task with_think_feel_do_dashboard_fixtures: :environment do
     puts "seeding..."
     path = File.join(File.dirname(__FILE__), "..", "..", "spec", "fixtures")
     ActiveRecord::FixtureSet.create_fixtures path, [
