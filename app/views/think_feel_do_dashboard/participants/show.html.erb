@@ -32,7 +32,7 @@
 </p>
 
 <p>
-  <strong>Current Membership:</strong>
+  <strong>Current Group:</strong>
   <% if @participant.active_membership && @participant.active_membership.group %>
     <%= link_to @participant.active_group.title, group_path(@participant.active_group) %>
   <% else %>

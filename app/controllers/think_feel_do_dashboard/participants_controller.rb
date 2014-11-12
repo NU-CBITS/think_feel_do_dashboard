@@ -19,7 +19,7 @@ module ThinkFeelDoDashboard
     def create
       @participant = Participant.new(participant_params)
 
-      if validate_contact_preference && @participant.save
+      if validate_attributes && @participant.save
         redirect_to @participant,
                     notice: "Participant was successfully created."
       else
@@ -42,7 +42,7 @@ module ThinkFeelDoDashboard
 
     # PATCH/PUT /think_feel_do_dashboard/participants/1
     def update
-      if validate_contact_preference && @participant.update(participant_params)
+      if validate_attributes && @participant.update(participant_params)
         redirect_to participant_path(@participant),
                     notice: "Participant was successfully updated.",
                     only: true
@@ -84,8 +84,24 @@ module ThinkFeelDoDashboard
       )
     end
 
-    def validate_contact_preference
-      validate_email && validate_phone_number
+    def validate_attributes
+      validate_display_name &&
+      validate_email &&
+      validate_phone_number
+    end
+
+    def validate_display_name
+      if @participant.active_group &&
+        ArmGroupJoin.find_by_group_id(@participant.active_group.id)
+        ArmGroupJoin
+          .find_by_group_id(@participant.active_group.id)
+          .arm
+          .display_name_required_for_membership?(
+            @participant, params[:participant][:display_name]
+          )
+      else
+        true
+      end
     end
 
     def validate_email
