@@ -1,3 +1,8 @@
+### 0.0.5 - 2014-11-12
+
+* enhancements
+  * Improved formatting of the display of phone numbers
+
 ### 0.0.4 - 2014-11-12
 
 * enhancements
