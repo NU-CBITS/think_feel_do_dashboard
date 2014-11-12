@@ -40,7 +40,7 @@
   <% else %>
     <div class="list-group">
       <% Membership.where(group_id: @group.id).each do |membership| %>
-        <%= link_to membership.participant.email, participant_path(membership.participant), class: "list-group-item clearfix" %>
+        <%= link_to membership.participant.study_id, participant_path(membership.participant), class: "list-group-item clearfix" %>
       <% end %>
     </div>
   <% end %>

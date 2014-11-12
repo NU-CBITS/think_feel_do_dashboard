@@ -8,7 +8,7 @@ feature "Participants", type: :feature do
   end
 
   it "displays the participants that currently exist" do
-    expect(page).to have_text "participant1@example.com"
+    expect(page).to have_text "TFD-1111"
   end
 
   it "should display errors if required fields aren't filled in when created" do
@@ -19,7 +19,7 @@ feature "Participants", type: :feature do
   end
 
   it "should enable the creation of a participant" do
-    expect(page).to_not have_text "Inactive gwashington@ex.co"
+    expect(page).to_not have_text "Inactive favoriteToken1!"
 
     click_on "New"
     fill_in "Email", with: "gwashington@ex.co"
@@ -47,9 +47,9 @@ feature "Participants", type: :feature do
       click_on "Participants"
     end
 
-    expect(page).to have_text "Inactive gwashington@ex.co"
+    expect(page).to have_text "Inactive favoriteToken1!"
 
-    click_on "gwashington@ex.co"
+    click_on "favoriteToken1!"
     click_on "Edit"
     click_on "Update"
 
@@ -57,7 +57,7 @@ feature "Participants", type: :feature do
   end
 
   it "should display errors if required fields aren't filled in" do
-    click_on "participant1@example.com"
+    click_on "TFD-1111"
     click_on "Edit"
     fill_in "Email", with: ""
     fill_in "Phone Number", with: ""
@@ -68,7 +68,7 @@ feature "Participants", type: :feature do
   end
 
   it "should have a valid phone number if contact preference is 'phone'" do
-    click_on "participant1@example.com"
+    click_on "TFD-1111"
     click_on "Edit"
     fill_in "Phone Number", with: "1-999-123-4223"
     select "Phone", from: "Contact Preference"
@@ -78,7 +78,7 @@ feature "Participants", type: :feature do
   end
 
   it "should have a valid phone number if contact preference is 'phone'" do
-    click_on "participant1@example.com"
+    click_on "TFD-1111"
     click_on "Edit"
     fill_in "Phone Number", with: ""
     select "Phone", from: "Contact Preference"
@@ -88,7 +88,7 @@ feature "Participants", type: :feature do
   end
 
   it "should enable the updating of a participant" do
-    click_on "participant1@example.com"
+    click_on "TFD-1111"
 
     expect(page).to have_text "Email: participant1@example.com"
     expect(page).to have_text "Phone Number: 5005550000"
@@ -119,10 +119,10 @@ feature "Participants", type: :feature do
   end
 
   it "should be able to delete a user" do
-    click_on "participant1@example.com"
+    click_on "TFD-1111"
     click_on "Destroy"
 
     expect(page).to have_text "Participant was successfully destroyed"
-    expect(page).to_not have_text "participant1@example.com"
+    expect(page).to_not have_text "TFD-1111"
   end
 end

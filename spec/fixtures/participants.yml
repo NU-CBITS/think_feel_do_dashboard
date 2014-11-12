@@ -29,11 +29,11 @@ participant4:
 
 participant5:
   contact_preference: phone
-  study_id: TFD-TFD-future1
+  study_id: TFD-future1
   email: participant5@example.com
 
 participant6:
-  study_id: TFD-TFD-future2
+  study_id: TFD-future2
   email: participant6@example.com
 
 inactive_participant:

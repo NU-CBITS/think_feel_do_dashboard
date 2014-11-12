@@ -126,10 +126,10 @@ Make sure you are in the top level folder; i.e., think_feel_do_dashboard. Then r
 rake app:db:drop app:db:create app:db:migrate
 ```
 
-## Seeding Database
+## Seeding Database with engine specific fixtures
 
 ```console
-app:seed:with_fixtures
+app:seed:with_think_feel_do_dashboard_fixtures
 ```
 
 ## Running tests

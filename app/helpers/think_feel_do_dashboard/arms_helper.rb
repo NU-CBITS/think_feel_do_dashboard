@@ -3,7 +3,7 @@ module ThinkFeelDoDashboard
   module ArmsHelper
     def arm_type(arm)
       if arm && arm.social?
-        "<small style=\"color: #3B5998; font-weight: bold;\">\
+        "<small style=\"color: #428bca; font-weight: bold;\">\
           &middot; TFD-SO\
         </small>".html_safe
       elsif arm

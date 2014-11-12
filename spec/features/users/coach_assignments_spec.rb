@@ -8,31 +8,31 @@ feature "Coach Assignments", type: :feature do
   end
 
   it "allows for the assigning of a coach" do
-    click_on "participant3@example.com"
+    click_on "TFD-33303"
 
     expect(page).to have_text "Current Coach: None"
     expect(page).to_not have_text "Current Coach: user3@example.com"
 
     click_on "Assign Coach"
 
-    expect(page).to have_text "Participant: participant3@example.com"
+    expect(page).to have_text "Participant: TFD-33303"
 
     select "user3@example.com", from: "Coach"
 
     click_on "Assign"
 
     expect(page).to have_text "Coach was successfully assigned"
-    expect(page).to have_text "Participant: participant3@example.com"
+    expect(page).to have_text "Participant: TFD-33303"
     expect(page).to have_text "Coach: user3@example.com"
 
-    click_on "participant3@example.com"
+    click_on "TFD-33303"
 
     expect(page).to_not have_text "Current Coach: None"
     expect(page).to have_text "Current Coach: user3@example.com"
   end
 
   it "doesn't allows for the assigning of no coach" do
-    click_on "participant3@example.com"
+    click_on "TFD-33303"
     click_on "Assign Coach"
     click_on "Assign"
 
@@ -40,14 +40,14 @@ feature "Coach Assignments", type: :feature do
   end
 
   it "can update the assigned a coach" do
-    click_on "participant1@example.com"
+    click_on "TFD-1111"
 
     expect(page).to have_text "Current Coach: user1@example.com"
     expect(page).to_not have_text "Current Coach: user2@example.com"
 
     click_on "user1@example.com"
 
-    expect(page).to have_text "Participant: participant1@example.com"
+    expect(page).to have_text "Participant: TFD-1111"
     expect(page).to have_text "Coach: user1@example.com"
 
     click_on "Edit"
@@ -59,14 +59,14 @@ feature "Coach Assignments", type: :feature do
     expect(page).to_not have_text "Coach: user1@example.com"
     expect(page).to have_text "Coach: user2@example.com"
 
-    click_on "participant1@example.com"
+    click_on "TFD-1111"
 
     expect(page).to_not have_text "Current Coach: user1@example.com"
     expect(page).to have_text "Current Coach: user2@example.com"
   end
 
   it "unassign a coach" do
-    click_on "participant1@example.com"
+    click_on "TFD-1111"
     click_on "user1@example.com"
     click_on "Destroy"
 
