@@ -10,6 +10,7 @@ feature "Coach Assignments", type: :feature do
   it "allows for the assigning of a coach" do
     click_on "participant3@example.com"
 
+    expect(page).to have_text "Current Coach: None"
     expect(page).to_not have_text "Current Coach: user3@example.com"
 
     click_on "Assign Coach"
@@ -24,8 +25,9 @@ feature "Coach Assignments", type: :feature do
     expect(page).to have_text "Participant: participant3@example.com"
     expect(page).to have_text "Coach: user3@example.com"
 
-    click_on "Participant"
+    click_on "participant3@example.com"
 
+    expect(page).to_not have_text "Current Coach: None"
     expect(page).to have_text "Current Coach: user3@example.com"
   end
 
@@ -40,9 +42,10 @@ feature "Coach Assignments", type: :feature do
   it "can update the assigned a coach" do
     click_on "participant1@example.com"
 
+    expect(page).to have_text "Current Coach: user1@example.com"
     expect(page).to_not have_text "Current Coach: user2@example.com"
 
-    click_on "Current Coach: user1@example.com"
+    click_on "user1@example.com"
 
     expect(page).to have_text "Participant: participant1@example.com"
     expect(page).to have_text "Coach: user1@example.com"
@@ -56,7 +59,7 @@ feature "Coach Assignments", type: :feature do
     expect(page).to_not have_text "Coach: user1@example.com"
     expect(page).to have_text "Coach: user2@example.com"
 
-    click_on "Participant"
+    click_on "participant1@example.com"
 
     expect(page).to_not have_text "Current Coach: user1@example.com"
     expect(page).to have_text "Current Coach: user2@example.com"
@@ -64,7 +67,7 @@ feature "Coach Assignments", type: :feature do
 
   it "unassign a coach" do
     click_on "participant1@example.com"
-    click_on "Current Coach: user1@example.com"
+    click_on "user1@example.com"
     click_on "Destroy"
 
     expect(page).to have_text "Coach was successfully removed"

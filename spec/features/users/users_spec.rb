@@ -68,7 +68,7 @@ feature "Users", type: :feature do
     expect(page).to have_text "Email: user1@example.com"
     expect(page).to_not have_text "Email: What!"
     expect(page).to have_text "Groups"
-    expect(page).to have_text "Group 2 · TFD-SO 2"
+    expect(page).to have_text "Group 2 · TFD-MO 2"
     expect(page).to_not have_text "Admin: Yes"
     expect(page).to_not have_text "Roles: Researcher"
 

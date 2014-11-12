@@ -5,11 +5,11 @@ module ThinkFeelDoDashboard
   class CoachAssignmentsController < ApplicationController
     before_action :set_participant
     before_action :set_coaches
-    before_action :set_coach_assignment, only: [:show, :edit, :update, :destroy]
+    before_action :set_coach_assignment,
+                  only: [:new, :show, :edit, :update, :destroy]
 
     # GET /think_feel_do_dashboard/participants/1/coaches/new
     def new
-      @coach_assignment = @participant.build_coach_assignment
     end
 
     # POST /think_feel_do_dashboard/participants/1/coaches
@@ -71,9 +71,8 @@ module ThinkFeelDoDashboard
 
     def set_coach_assignment
       @coach_assignment = CoachAssignment.where(
-        participant_id: @participant.id,
-        coach_id: params[:id]
-      ).first
+        participant_id: @participant.id
+      ).first || @participant.build_coach_assignment
     end
 
     def coach_assignment_params

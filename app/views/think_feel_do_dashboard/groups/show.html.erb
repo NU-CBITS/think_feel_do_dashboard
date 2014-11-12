@@ -17,7 +17,7 @@
 </p>
 
 <p>
-  <%= (link_to "Remove Arm", arm_group_join_path(@arm.arm_group_joins.first), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default") if @arm %>
+  <%= link_to "Remove Arm", arm_group_join_path(@arm.arm_group_joins.first), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" if @arm %>
 </p>
 
 <p>
@@ -26,7 +26,7 @@
 </p>
 
 <p>
-  <%= (link_to "Remove Moderator", moderator_path(@moderator), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default") if @moderator %>
+  <%= link_to "Remove Moderator", moderator_path(@moderator), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" if @moderator %>
 </p>
 
 <div class="panel panel-default">

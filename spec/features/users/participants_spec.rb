@@ -35,9 +35,8 @@ feature "Participants", type: :feature do
     expect(page).to have_text "Contact Preference: Phone"
     expect(page).to have_text "Display Name: Mr. Happy"
     expect(page).to have_text "Study Id: favoriteToken1!"
-    expect(page).to have_text "Enrollment Information"
     expect(page).to have_text "Membership Status: Inactive"
-    expect(page).to have_text "Below lists the participants enrollment information. This includes all the groups she/he is associated with and the current coach and group they are part of the coach or group exists."
+    expect(page).to have_text "Below lists the all groups this participant has been a member of and whether they are currently active or inactive."
 
     participant = Participant.find_by_email("gwashington@ex.co")
     password = participant.password
@@ -86,12 +85,6 @@ feature "Participants", type: :feature do
     click_on "Update"
 
     expect(page).to have_text "Phone number is not valid"
-  end
-
-  it "should list group count" do
-    click_on "participant1@example.com"
-
-    expect(page).to have_text "All Memberships1"
   end
 
   it "should enable the updating of a participant" do

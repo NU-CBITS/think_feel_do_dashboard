@@ -7,8 +7,7 @@ ThinkFeelDoDashboard::Engine.routes.draw do
   resources :projects
   resources :participants do
     resources :coaches, controller: :coach_assignments, except: [:index]
-    resources :enrollments
-    resources :groups, controller: :memberships
+    resources :groups, controller: :memberships, except: [:index]
   end
   resources :users
 end

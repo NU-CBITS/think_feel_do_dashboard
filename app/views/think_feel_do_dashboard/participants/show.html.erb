@@ -2,15 +2,9 @@
 
 <div class="btn-toolbar" role="toolbar">
   <%= link_to "Participants", participants_path, class: "btn btn-default" %>
-  <%= link_to "Enroll", new_participant_enrollment_path(@participant), class: "btn btn-default" %>
   <%= link_to "Edit", edit_participant_path(@participant), class: "btn btn-default" %>
   <%= link_to "Destroy", participant_path(@participant), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 </div>
-
-<p>
-  <strong>Display Name:</strong>
-  <%= @participant.display_name %>
-</p>
 
 <p>
   <strong>Email:</strong>
@@ -28,8 +22,39 @@
 </p>
 
 <p>
+  <strong>Display Name:</strong>
+  <%= @participant.display_name %>
+</p>
+
+<p>
   <strong>Membership Status:</strong>
   <%= membership_status @participant, @participant.active_membership %>
+</p>
+
+<p>
+  <strong>Current Membership:</strong>
+  <% if @participant.active_membership && @participant.active_membership.group %>
+    <%= link_to @participant.active_group.title, group_path(@participant.active_group) %>
+  <% else %>
+    None
+  <% end %>
+</p>
+
+<p>
+  <%= link_to "Assign Group", new_participant_group_path(@participant), class: "btn btn-default" %>
+</p>
+
+<p>
+  <strong>Current Coach:</strong>
+  <% if @participant.coach %>
+    <%= link_to @participant.coach.email, participant_coach_path(@participant, @participant.coach) %>
+  <% else %>
+    None
+  <% end %>
+</p>
+
+<p>
+  <%= link_to "Assign Coach", new_participant_coach_path(@participant), class: "btn btn-default" %>
 </p>
 
 <p>
@@ -39,14 +64,14 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Enrollment Information</h3>
+    <h3 class="panel-title">Memberships</h3>
   </div>
   <div class="panel-body">
-    Below lists the participants enrollment information. This includes all the groups she/he is associated with and the current coach and group they are part of the coach or group exists.
+    Below lists the all groups this participant has been a member of and whether they are currently active or inactive.
   </div>
   <ul class="list-group">
-    <%= current_coach_link(@participant) %>
-    <%= current_group_link(@participant) %>
-    <%= link_to "All Memberships<span class='badge'>#{@participant.groups.count}</span>".html_safe, participant_groups_path(@participant), class: "list-group-item" %>
+    <% @participant.memberships.each do |membership| %>
+      <%= link_to membership_status(@participant, membership) + membership.group.title, participant_group_path(@participant, membership.group), class: "list-group-item" %>
+    <% end %>
   </ul>
 </div>
