@@ -1,7 +1,12 @@
+### 0.0.6 - 2014-11-12
+
+* enhancements
+  * Changed the formatting of participant phone numbers by adding area code.
+
 ### 0.0.5 - 2014-11-12
 
 * enhancements
-  * Improved formatting of the display of phone numbers
+  * Improved formatting of the display of phone numbers.
 
 ### 0.0.4 - 2014-11-12
 

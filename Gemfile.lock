@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    think_feel_do_dashboard (0.0.5)
+    think_feel_do_dashboard (0.0.6)
       phonelib
 
 GEM

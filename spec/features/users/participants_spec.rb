@@ -31,7 +31,7 @@ feature "Participants", type: :feature do
 
     expect(page).to have_text "Participant was successfully created"
     expect(page).to have_text "Email: gwashington@ex.co"
-    expect(page).to have_text "Phone Number: 608-516-9918"
+    expect(page).to have_text "Phone Number: (608) 516-9918"
     expect(page).to have_text "Contact Preference: Phone"
     expect(page).to have_text "Display Name: Mr. Happy"
     expect(page).to have_text "Study Id: favoriteToken1!"
@@ -91,12 +91,12 @@ feature "Participants", type: :feature do
     click_on "TFD-1111"
 
     expect(page).to have_text "Email: participant1@example.com"
-    expect(page).to have_text "Phone Number: 500-555-0000"
+    expect(page).to have_text "Phone Number: (500) 555-0000"
     expect(page).to have_text "Contact Preference: Phone"
     expect(page).to have_text "Study Id: TFD-1111"
 
     expect(page).to_not have_text "Email: gwashington@ex.co"
-    expect(page).to_not have_text "Phone Number: 123-456-7890"
+    expect(page).to_not have_text "Phone Number: (123) 456-7890"
     expect(page).to_not have_text "Contact Preference: Email"
     expect(page).to_not have_text "Study Id: favoriteToken1!"
 
@@ -108,12 +108,12 @@ feature "Participants", type: :feature do
     click_on "Update"
 
     expect(page).to_not have_text "Email: participant1@example.com"
-    expect(page).to_not have_text "Phone Number: 500-555-0000"
+    expect(page).to_not have_text "Phone Number: (500) 555-0000"
     expect(page).to_not have_text "Contact Preference: Phone"
     expect(page).to_not have_text "Study Id: TFD-1111"
 
     expect(page).to have_text "Email: gwashington@ex.co"
-    expect(page).to have_text "Phone Number: 123-456-7890"
+    expect(page).to have_text "Phone Number: (123) 456-7890"
     expect(page).to have_text "Contact Preference: Email"
     expect(page).to have_text "Study Id: favoriteToken1!"
   end
