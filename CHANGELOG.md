@@ -1,5 +1,3 @@
-### Unreleased
-
 ### 0.0.4 - 2014-11-12
 
 * enhancements
