@@ -156,4 +156,15 @@ See the "Installation" instructions above.
 
 ## To Do:
 
-N/A
+_Fix mystery bug if I can consistently reproduce:_
+
+click_on participant
+They MAY have no memberships
+click_on Assign Group
+choose Group1
+then delete
+click_on Assign Group
+choose Group 2
+fill in "display name" with: asdf
+Make membership active
+ERROR
