@@ -3,6 +3,7 @@
 # Every participant is inherently part of at least one group
 class Participant < ActiveRecord::Base
   include ThinkFeelDoDashboard::Concerns::Password
+  include ThinkFeelDoDashboard::Concerns::RequiredUserAttributes
 
   has_one :coach_assignment, dependent: :destroy
   has_one :coach, class_name: "User", through: :coach_assignment
@@ -19,6 +20,6 @@ class Participant < ActiveRecord::Base
 
   # My tests check this, but it isn't part of the application
   validates :phone_number, allow_nil: true, allow_blank: true, uniqueness: true
-  validates :study_id, :email, :password, presence: true, uniqueness: true
+  validates :email, :password, presence: true, uniqueness: true
   validates :contact_preference, presence: true, inclusion: %w(email phone)
 end

@@ -79,10 +79,28 @@ class User
 end
 ```
 
-Copy the migrations from the ThinkFeelDoDashboard engine:
+Add the appropriate password and validation concerns to the `app/models/participant.rb` file:
 
-```console
-rake think_feel_do_dashboard:install:migrations
+```ruby
+class Participant < ActiveRecord::Base
+  include ThinkFeelDoDashboard::Concerns::Password
+  include ThinkFeelDoDashboard::Concerns::RequiredUserAttributes
+  ...
+end
+```
+
+You may have to create a participant.rb file containing a Participant model and extend it
+from another engine's Participant model `app/models/participant.rb`. For instance,
+
+```ruby
+require File.expand_path("../../app/models/participant",
+                         AnotherEngine::Engine.called_from)
+
+# Extend Participant model.
+class Participant
+  include ThinkFeelDoDashboard::Concerns::Password
+  include ThinkFeelDoDashboard::Concerns::RequiredUserAttributes
+end
 ```
 
 Then run the migrations:

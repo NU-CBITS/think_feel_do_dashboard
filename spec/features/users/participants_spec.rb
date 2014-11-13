@@ -16,6 +16,7 @@ feature "Participants", type: :feature do
     click_on "Create"
 
     expect(page).to have_text "prohibited this participant from being saved"
+    expect(page).to have_text "Study can't be blank"
   end
 
   it "should enable the creation of a participant" do
@@ -56,7 +57,7 @@ feature "Participants", type: :feature do
     expect(participant.password).to be password
   end
 
-  it "should display errors if required fields aren't filled in" do
+  it "should display errors if required fields aren't filled in upon edit" do
     click_on "TFD-1111"
     click_on "Edit"
     fill_in "Email", with: ""
@@ -65,6 +66,15 @@ feature "Participants", type: :feature do
     click_on "Update"
 
     expect(page).to have_text "prohibited this participant from being saved"
+  end
+
+  it "should display errors if required fields aren't filled in upon edit" do
+    click_on "TFD-1111"
+    click_on "Edit"
+    fill_in "Study Id", with: ""
+    click_on "Update"
+
+    expect(page).to have_text "Study can't be blank"
   end
 
   it "should have a valid phone number if contact preference is 'phone'" do
@@ -91,7 +101,7 @@ feature "Participants", type: :feature do
     click_on "TFD-1111"
 
     expect(page).to have_text "Email: participant1@example.com"
-    expect(page).to have_text "Phone Number: (500) 555-0000"
+    expect(page).to have_text "Phone Number: (608) 215-3900"
     expect(page).to have_text "Contact Preference: Phone"
     expect(page).to have_text "Study Id: TFD-1111"
 
@@ -108,7 +118,7 @@ feature "Participants", type: :feature do
     click_on "Update"
 
     expect(page).to_not have_text "Email: participant1@example.com"
-    expect(page).to_not have_text "Phone Number: (500) 555-0000"
+    expect(page).to_not have_text "Phone Number: (608) 215-3900"
     expect(page).to_not have_text "Contact Preference: Phone"
     expect(page).to_not have_text "Study Id: TFD-1111"
 
