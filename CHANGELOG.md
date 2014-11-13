@@ -1,3 +1,8 @@
+### 0.0.8 - 2014-11-13
+
+* bugfixes
+  * Added back in authentication
+
 ### 0.0.7 - 2014-11-13
 
 * enhancements
