@@ -42,7 +42,7 @@ module ThinkFeelDoDashboard
         redirect_to participant_coach_path(
           @participant, @coach_assignment.coach
         ),
-                    notice: "New coach was successfully assigned."
+                    notice: "Coach was successfully assigned."
       else
         render :edit
       end

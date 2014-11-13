@@ -4,7 +4,9 @@ PATH
     think_feel_do_dashboard (0.0.6)
       bootstrap-sass (~> 3.3)
       phonelib
+      rails (~> 4.1.7)
       sass-rails (~> 4.0)
+      turbolinks (~> 2.2)
 
 GEM
   remote: https://rubygems.org/

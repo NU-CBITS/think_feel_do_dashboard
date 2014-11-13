@@ -31,6 +31,25 @@ feature "Coach Assignments", type: :feature do
     expect(page).to have_text "Current Coach: user3@example.com"
   end
 
+  it "allows for the re-assigning of a coach" do
+    click_on "TFD-1111"
+
+    expect(page).to have_text "Current Coach: user1@example.com"
+    expect(page).to_not have_text "Current Coach: user3@example.com"
+
+    click_on "Assign Coach"
+    select "user3@example.com", from: "Coach"
+    click_on "Update"
+
+    expect(page).to have_text "Coach was successfully assigned."
+    expect(page).to have_text "Coach: user3@example.com"
+
+    click_on "TFD-1111"
+
+    expect(page).to_not have_text "Current Coach: user1@example.com"
+    expect(page).to have_text "Current Coach: user3@example.com"
+  end
+
   it "doesn't allows for the assigning of no coach" do
     click_on "TFD-33303"
     click_on "Assign Coach"
@@ -55,7 +74,7 @@ feature "Coach Assignments", type: :feature do
 
     click_on "Update"
 
-    expect(page).to have_text "New coach was successfully assigned."
+    expect(page).to have_text "Coach was successfully assigned."
     expect(page).to_not have_text "Coach: user1@example.com"
     expect(page).to have_text "Coach: user2@example.com"
 

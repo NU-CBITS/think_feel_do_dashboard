@@ -54,7 +54,11 @@
 </p>
 
 <p>
-  <%= link_to "Assign Coach", new_participant_coach_path(@participant), class: "btn btn-default" %>
+  <% if @participant.coach %>
+    <%= link_to "Assign Coach", edit_participant_coach_path(@participant, @participant.coach), class: "btn btn-default" %>
+  <% else %>
+    <%= link_to "Assign Coach", new_participant_coach_path(@participant), class: "btn btn-default" %>
+  <% end %>
 </p>
 
 <p>
