@@ -1,3 +1,13 @@
+### 0.0.9 - 2014-11-13
+
+* enhancements
+  * Updated sass related gems
+  * Changed application.css extension
+  * Updated app/config/initialize/assets.rb file so local css and js are precompiled"
+
+* bugfixes
+  * Application no longer fails on Travis
+
 ### 0.0.8 - 2014-11-13
 
 * bugfixes
