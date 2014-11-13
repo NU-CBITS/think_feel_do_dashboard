@@ -1,10 +1,11 @@
 ### 0.0.7 - 2014-11-13
 
 * enhancements
-  * Updated the participant's profile page
-  * Finished how enrollments is completed for participants
-  * Add validation for "display name" on participant updating that now determines if an arm is associated
-  * display study_id of a participant instead of email
+  * Updated the participant's profile page.
+  * Finished how enrollments is completed for participants.
+  * Add validation for "display name" on participant updating that now determines if an arm is associated.
+  * Display study_id of a participant instead of email and made this a concern that is added to participant model, if it isn't already included.
+  * Updated the participant show page.
 * bugfixes
   * Switch label text for "is social?"
   * If no groups exist you cannot edit participant is now possible do to the change in work flow.
