@@ -2,7 +2,9 @@ PATH
   remote: .
   specs:
     think_feel_do_dashboard (0.0.6)
+      bootstrap-sass (~> 3.3)
       phonelib
+      sass-rails (~> 4.0)
 
 GEM
   remote: https://rubygems.org/

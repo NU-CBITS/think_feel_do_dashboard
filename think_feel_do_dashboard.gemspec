@@ -24,4 +24,8 @@ Gem::Specification.new do |s|
   # Validates phone numbers for participants
   # Uese Google library
   s.add_dependency "phonelib"
+
+  # bootstrap
+  s.add_dependency "bootstrap-sass", "~> 3.3"
+  s.add_dependency "sass-rails", "~> 4.0"
 end

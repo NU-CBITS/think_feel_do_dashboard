@@ -19,7 +19,7 @@ end
 namespace :seed do
   desc "seed the database with fixtures from spec/fixtures"
   task with_think_feel_do_dashboard_fixtures: :environment do
-    puts "seeding..."
+    puts "seeding with_think_feel_do_dashboard_fixtures..."
     path = File.join(File.dirname(__FILE__), "..", "..", "spec", "fixtures")
     ActiveRecord::FixtureSet.create_fixtures path, [
       :participants,
@@ -32,6 +32,6 @@ namespace :seed do
       :'think_feel_do_dashboard/arm_group_joins',
       :'think_feel_do_dashboard/moderators'
     ]
-    puts "seeded"
+    puts "seeded with_think_feel_do_dashboard_fixtures."
   end
 end
