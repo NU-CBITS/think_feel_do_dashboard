@@ -18,8 +18,9 @@ gem "jquery-rails", "~> 3.1"
 gem "turbolinks", "~> 2.2"
 
 # Boostrap styling
-gem "bootstrap-sass", "~> 3.1"
-gem "sass-rails"
+gem "bootstrap-sass", "~> 3.3.1"
+gem "sass-rails", "~> 4.0.4"
+gem "autoprefixer-rails"
 
 group :development, :test do
   gem "rubocop", "~> 0.26"
