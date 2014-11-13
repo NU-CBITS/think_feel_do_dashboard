@@ -19,7 +19,7 @@ gem "turbolinks", "~> 2.2"
 
 # Boostrap styling
 gem "bootstrap-sass", "~> 3.1"
-gem "sass-rails", "~> 4.0"
+gem "sass-rails"
 
 group :development, :test do
   gem "rubocop", "~> 0.26"

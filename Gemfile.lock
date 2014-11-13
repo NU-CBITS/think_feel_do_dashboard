@@ -198,6 +198,6 @@ DEPENDENCIES
   rails (~> 4.1.7)
   rspec-rails (~> 3)
   rubocop (~> 0.26)
-  sass-rails (~> 4.0)
+  sass-rails
   think_feel_do_dashboard!
   turbolinks (~> 2.2)
