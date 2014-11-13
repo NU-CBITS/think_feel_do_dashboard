@@ -25,8 +25,7 @@ Gem::Specification.new do |s|
   # Uese Google library
   s.add_dependency "phonelib"
 
-
-  #...
+  # ...
   s.add_dependency "rails", "~> 4.1.7"
 
   # turbolinks
