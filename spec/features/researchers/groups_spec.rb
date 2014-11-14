@@ -1,6 +1,6 @@
 require "spec_helper"
 
-feature "Groups", type: :feature do
+feature "Researcher - Groups", type: :feature do
   fixtures :all
 
   before do

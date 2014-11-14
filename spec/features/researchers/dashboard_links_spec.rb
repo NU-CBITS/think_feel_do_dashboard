@@ -1,6 +1,6 @@
 require "spec_helper"
 
-feature "Dashboard Links", type: :feature do
+feature "Researcher - Dashboard Links", type: :feature do
   fixtures :all
 
   before do
@@ -13,5 +13,6 @@ feature "Dashboard Links", type: :feature do
     expect(page).to have_link "Arms", href: "/think_feel_do_dashboard/arms"
     expect(page).to have_link "Groups", href: "/think_feel_do_dashboard/groups"
     expect(page).to have_link "Participants", href: "/think_feel_do_dashboard/participants"
+    expect(page).to have_link "Reports", href: "/think_feel_do_dashboard/reports"
   end
 end

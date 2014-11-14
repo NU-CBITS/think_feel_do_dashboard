@@ -1,6 +1,6 @@
 require "spec_helper"
 
-feature "Arms", type: :feature do
+feature "Super User - Arms", type: :feature do
   fixtures :all
 
   before do
