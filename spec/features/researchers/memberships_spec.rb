@@ -1,6 +1,6 @@
 require "spec_helper"
 
-feature "Memberships", type: :feature do
+feature "Researcher - Memberships", type: :feature do
   fixtures :all
 
   before do

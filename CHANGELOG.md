@@ -1,3 +1,8 @@
+### 0.1.0 - 2014-11-14
+
+* enhancements
+  * Moved reports controller and views into this gem.  Therefore, researches now have access to download CSV reports through this engine.
+
 ### 0.0.9 - 2014-11-13
 
 * enhancements

@@ -1,6 +1,6 @@
 require "spec_helper"
 
-feature "Projects", type: :feature do
+feature "Super User - Projects", type: :feature do
   fixtures :all
 
   before do
