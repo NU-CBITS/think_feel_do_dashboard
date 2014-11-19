@@ -26,6 +26,11 @@ group :development, :test do
   gem "rubocop", "~> 0.26"
   gem "launchy"
   gem "pg"
+  gem "think_feel_do_engine",
+      git: "https://github.com/cbitstech/think_feel_do_engine.git"
+  gem "event_capture",
+      git: "https://github.com/cbitstech/event_capture.git",
+      ref: "1f9a199"
 end
 
 group :development do

@@ -30,7 +30,7 @@ feature "Researcher - Groups", type: :feature do
     expect(page).to have_text "Title: HUGe PrOjEct 3"
 
     with_scope "#main" do
-      click_on "Groups"
+      visit "/think_feel_do_dashboard/groups"
     end
 
     expect(page).to have_text "HUGe PrOjEct 3"

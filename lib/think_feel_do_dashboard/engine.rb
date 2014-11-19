@@ -3,10 +3,10 @@ module ThinkFeelDoDashboard
   class Engine < ::Rails::Engine
     isolate_namespace ThinkFeelDoDashboard
 
-    config.generators do |g|
-      g.test_framework :rspec
-      g.assets false
-      g.helper false
+    initializer "think_feel_do_dashboard.action_controller" do
+      ActiveSupport.on_load :action_controller do
+        helper ThinkFeelDoDashboard::ArmsHelper
+      end
     end
   end
 end

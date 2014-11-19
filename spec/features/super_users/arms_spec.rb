@@ -33,7 +33,7 @@ feature "Super User - Arms", type: :feature do
     expect(page).to have_text "Is social: Yes"
 
     with_scope "#main" do
-      click_on "Arms"
+      visit "/think_feel_do_dashboard/arms"
     end
 
     expect(page).to have_text "Big arm 2"

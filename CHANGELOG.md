@@ -1,3 +1,12 @@
+### 0.2.0 - 2014-11-19
+
+* enhancements
+  * Updated toolbars and added role
+  * Improved navigation to host applications by adding ThinkFeelDo link and added references to arms path in the host application
+  * Reordered homepage for improved clarification along with removing navigation links
+  * Updated spec dummy (i.e., routes.rb) to mimic more closely the host application
+  * Changed semantics on buttons and headers for easier navigation from host app
+
 ### 0.1.0 - 2014-11-14
 
 * enhancements

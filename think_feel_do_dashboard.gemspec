@@ -22,6 +22,6 @@ Gem::Specification.new do |s|
                 "README.rdoc"]
 
   # Validates phone numbers for participants
-  # Uese Google library
+  # phonelib uses a Google library for varification
   s.add_dependency "phonelib"
 end
