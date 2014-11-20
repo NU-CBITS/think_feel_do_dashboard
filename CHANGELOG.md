@@ -1,3 +1,8 @@
+### 0.2.1 - 2014-11-20
+
+* enhancements
+  * Updated to be compatible with rails 4.1.8
+
 ### 0.2.0 - 2014-11-19
 
 * enhancements
