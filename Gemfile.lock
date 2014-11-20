@@ -30,7 +30,7 @@ GIT
 PATH
   remote: .
   specs:
-    think_feel_do_dashboard (0.1.0)
+    think_feel_do_dashboard (0.2.0)
       phonelib
 
 GEM
