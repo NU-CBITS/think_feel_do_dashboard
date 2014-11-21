@@ -1,3 +1,8 @@
+### 0.3.1 - 2014-11-20
+
+* bugfixes
+  * Added default time zone of "Central Time (US & Canada)"
+
 ### 0.3.0 - 2014-11-20
 
 * enhancements
