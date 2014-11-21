@@ -1,3 +1,8 @@
+### 0.3.2 - 2014-11-20
+
+* bugfixes
+  * Commented out default time zone of "Central Time (US & Canada)" because it didn't solve the error on travis
+
 ### 0.3.1 - 2014-11-20
 
 * bugfixes

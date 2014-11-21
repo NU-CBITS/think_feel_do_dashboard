@@ -9,8 +9,8 @@ module ThinkFeelDoDashboard
       end
     end
 
-    config.before_initialize do |app|
-      app.config.time_zone = "Central Time (US & Canada)"
-    end
+    # config.before_initialize do |app|
+    #   app.config.time_zone = "Central Time (US & Canada)"
+    # end
   end
 end
