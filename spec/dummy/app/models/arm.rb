@@ -2,12 +2,9 @@
 # Between 1 and 8 groups are in each arm and each group
 # could have between 1 and 10 or so participants
 class Arm < ActiveRecord::Base
-  belongs_to :project
   has_many :groups
 
   validates :title, presence: true
-
-  delegate :title, to: :project, prefix: true
 
   def display_name_required_for_membership?(participant, display_name)
     if social? && display_name.empty?

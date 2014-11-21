@@ -9,10 +9,7 @@ module ThinkFeelDoDashboard
 
     def set_admin_link
       @admin_functionalities = [
-        ["Projects", projects_path, "Create necessary \
-          projects for studies."],
-        ["Arms", arms_path, "Create, update, delete, and \
-          associate arms with projects."],
+        ["Arms", arms_path, "Create, update, delete arms"],
         ["Groups", groups_path, "Create, update, delete, \
           and associate groups with arms along with set moderators."],
         ["Participants", participants_path, "Create, update,\

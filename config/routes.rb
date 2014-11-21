@@ -3,7 +3,6 @@ ThinkFeelDoDashboard::Engine.routes.draw do
   resources :arms
   resources :groups
   resources :moderators, only: [:destroy]
-  resources :projects
   resources :participants do
     resources :coaches, controller: :coach_assignments, except: [:index]
     resources :groups, controller: :memberships, except: [:index]

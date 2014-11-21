@@ -11,14 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141120223528) do
+ActiveRecord::Schema.define(version: 20141120222925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "arms", force: true do |t|
     t.string   "title",      default: ""
-    t.integer  "project_id",                 null: false
     t.boolean  "is_social",  default: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -62,12 +61,6 @@ ActiveRecord::Schema.define(version: 20141120223528) do
   add_index "participants", ["email"], name: "index_participants_on_email", unique: true, using: :btree
   add_index "participants", ["phone_number"], name: "index_participants_on_phone_number", unique: true, using: :btree
   add_index "participants", ["study_id"], name: "index_participants_on_study_id", unique: true, using: :btree
-
-  create_table "projects", force: true do |t|
-    t.string   "title",      default: ""
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "think_feel_do_dashboard_moderators", force: true do |t|
     t.integer  "group_id",   null: false

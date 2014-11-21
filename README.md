@@ -18,13 +18,12 @@ git clone https://github.com/cbitstech/think_feel_do_dashboard.git [name of fold
 This engine expects there to be multiple models:
 
 1. Participant: a Devise-like API available and an authenticatable Participant class stored in a participants table;
-2. Project: a Project class stored in the projects table and has a title:string
-3. Arms: an Arm class stored in the arms table and has a title:string and belongs to a project. Arms are also determined to be social or not via is_social:boolean
-2. Group: a Group class stored in the groups table and has a title:string and is dependent on belonging to an arm.
-3. Membership: a Membership class that stores a group_id:integer and participant_id:integer in the memberships table. Each membership as a start_date:date and end_date:date that determines if the participant [membership] is active
-4. User: a Devise-like API available and an authenticatable User class stored in a users table but referred to as coaches;
-5. CoachAssignment: a CoachAssignment class that stores the participant:integer and user_id:integer in the coach_assignments table;
-6. Reports and class that depend on reports.  The Reports module references ContentModules and ThinkDoFeelEngine.  Accessing the index page of reprots `/think_feel_do_dashboard/reports` will not break, but downloading CSVs will break _unless_ the host application has ContentModules and the ThinkDoFeelEngine.
+2. Arms: an Arm class stored in the arms table and has a title:string and belongs to a project. Arms are also determined to be social or not via is_social:boolean
+3. Group: a Group class stored in the groups table and has a title:string and is dependent on belonging to an arm.
+4. Membership: a Membership class that stores a group_id:integer and participant_id:integer in the memberships table. Each membership as a start_date:date and end_date:date that determines if the participant [membership] is active
+5. User: a Devise-like API available and an authenticatable User class stored in a users table but referred to as coaches;
+6. CoachAssignment: a CoachAssignment class that stores the participant:integer and user_id:integer in the coach_assignments table;
+7. Reports and class that depend on reports.  The Reports module references ContentModules and ThinkDoFeelEngine.  Accessing the index page of reprots `/think_feel_do_dashboard/reports` will not break, but downloading CSVs will break _unless_ the host application has ContentModules and the ThinkDoFeelEngine.
 
 ## Installation
 
@@ -53,13 +52,12 @@ end
 Note: You will have access to additional routes.
 
 1. home: `/think_feel_do_dashboard`
-2. projects: `/think_feel_do_dashboard/projects`
-3. arms: `/think_feel_do_dashboard/arms`
-4. groups: `/think_feel_do_dashboard/groups`
-5. participants: `/think_feel_do_dashboard/participants`
-6. memberships: `/think_feel_do_dashboard/participants/1/groups`
-7. coach_assignments: `/think_feel_do_dashboard/participants/1/coaches`
-8. reports: `/think_feel_do_dashboard/reports`
+2. arms: `/think_feel_do_dashboard/arms`
+3. groups: `/think_feel_do_dashboard/groups`
+4. participants: `/think_feel_do_dashboard/participants`
+5. memberships: `/think_feel_do_dashboard/participants/1/groups`
+6. coach_assignments: `/think_feel_do_dashboard/participants/1/coaches`
+7. reports: `/think_feel_do_dashboard/reports`
 
 Add the appropriate password concern to the `app/models/user.rb` file:
 
@@ -174,7 +172,10 @@ N/A
 
 See the "Installation" instructions above.
 
-Install the engine's migrations into the host application via command line:
+Install the engine's migrations into the host application and migrate:
 ```console
 rake think_feel_do_dashboard:install:migrations
+```
+```console
+rake db:migrate
 ```

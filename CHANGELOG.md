@@ -1,3 +1,8 @@
+### 0.4.0 - 2014-11-21
+
+* enhancements
+  * Removed projects table and model because they are no longer necessary for scoping
+
 ### 0.3.2 - 2014-11-20
 
 * bugfixes

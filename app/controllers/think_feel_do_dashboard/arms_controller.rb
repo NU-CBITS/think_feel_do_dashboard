@@ -4,7 +4,6 @@ module ThinkFeelDoDashboard
   # Allows for the creation, updating, and deletion of arms
   class ArmsController < ApplicationController
     before_action :set_arm, only: [:show, :edit, :update, :destroy]
-    before_action :set_projects, only: [:new, :create, :edit, :update]
 
     # GET /think_feel_do_dashboard/arms
     def index
@@ -60,13 +59,9 @@ module ThinkFeelDoDashboard
       @arm = Arm.find(params[:id])
     end
 
-    def set_projects
-      @projects = Project.all
-    end
-
     def arm_params
       params.require(:arm).permit(
-        :title, :project_id, :is_social
+        :title, :is_social
       )
     end
   end

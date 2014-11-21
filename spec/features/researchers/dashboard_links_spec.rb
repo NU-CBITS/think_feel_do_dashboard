@@ -9,7 +9,6 @@ feature "Researcher - Dashboard Links", type: :feature do
 
   it "displays correct links" do
     expect(page).to have_link "ThinkFeelDo", href: "/arms"
-    expect(page).to have_link "Projects", href: "/think_feel_do_dashboard/projects"
     expect(page).to have_link "Arms", href: "/think_feel_do_dashboard/arms"
     expect(page).to have_link "Groups", href: "/think_feel_do_dashboard/groups"
     expect(page).to have_link "Participants", href: "/think_feel_do_dashboard/participants"
