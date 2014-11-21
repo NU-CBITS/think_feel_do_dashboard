@@ -3,8 +3,7 @@ require_dependency "think_feel_do_dashboard/application_controller"
 module ThinkFeelDoDashboard
   # Assigns a participant with a group along with setting the start and end date
   class MembershipsController < ApplicationController
-    before_action :set_participant, :set_groups,
-                  :arm_group_join_options, :set_arm_group_join
+    before_action :set_participant, :set_groups, :group_options
     before_action :set_membership, only: [:show, :edit, :update, :destroy]
 
     # GET /think_feel_do_dashboard/participants/1/groups
@@ -64,33 +63,22 @@ module ThinkFeelDoDashboard
 
     private
 
-    def arm_group_join(arm, group)
-      ArmGroupJoin.where(arm_id: arm.id, group_id: group.id).first
-    end
-
-    def arm_group_join_options
-      @arm_group_join_options = []
+    def group_options
+      @group_options = []
       Arm.all.each do |arm|
-        @arm_group_join_options << [
-          arm.name, arm.groups.map do |group|
+        @group_options << [
+          arm.title, arm.groups.map do |group|
             [group.title, group.id]
           end
         ]
       end
     end
 
-    def set_arm_group_join
-      if params[:membership] && !params[:membership][:group_id].empty?
-        @arm_group_join = ArmGroupJoin
-          .where(group_id: params[:membership][:group_id])
-          .first
-      elsif params[:id]
-        @arm_group_join = ArmGroupJoin
-          .where(group_id: params[:id])
-          .first
-      else
-        @arm_group_join = ArmGroupJoin.new
-      end
+    def set_arm
+      return false if membership_params[:group_id].empty?
+      Group
+        .find(membership_params[:group_id])
+        .arm
     end
 
     def set_groups
@@ -118,9 +106,9 @@ module ThinkFeelDoDashboard
     end
 
     def valid_enrollment?
-      if @arm_group_join && @arm_group_join.arm
-        @arm_group_join.arm.display_name_required_for_membership?(
-            @participant, membership_params[:display_name])
+      if set_arm
+        set_arm.display_name_required_for_membership?(
+              @participant, membership_params[:display_name])
       else
         @membership = Membership.new
         @membership.errors.add(:group_id, "can't be blank")

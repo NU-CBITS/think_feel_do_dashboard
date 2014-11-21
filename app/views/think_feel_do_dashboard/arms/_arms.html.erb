@@ -1,5 +1,5 @@
 <div class="list-group">
   <% arms.each do |arm| %>
-    <%= link_to "#{arm.name} #{arm_type(arm)} <span class=\"badge\">#{arm.groups.count}</span>".html_safe, arm_path(arm), class: "list-group-item clearfix" %>
+    <%= link_to "#{arm.title} #{arm_type(arm)} <span class=\"badge\">#{arm.groups.count}</span>".html_safe, arm_path(arm), class: "list-group-item clearfix" %>
   <% end %>
 </div>

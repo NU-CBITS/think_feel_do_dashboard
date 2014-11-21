@@ -23,11 +23,13 @@ feature "Researcher - Groups", type: :feature do
 
     click_on "New"
     fill_in "Title", with: "HUGe PrOjEct 3"
+    select "Arm 1", from: "Arm"
 
     click_on "Create"
 
     expect(page).to have_text "Group was successfully created"
     expect(page).to have_text "Title: HUGe PrOjEct 3"
+    expect(page).to have_text "Arm: Arm 1"
 
     with_scope "#main" do
       visit "/think_feel_do_dashboard/groups"
@@ -48,7 +50,7 @@ feature "Researcher - Groups", type: :feature do
 
     expect(page).to have_text "Group was successfully created"
     expect(page).to have_text "Title: HUGe PrOjEct 3"
-    expect(page).to have_text "Arm 1"
+    expect(page).to have_text "Arm: Arm 1"
     expect(page).to have_text "Moderator: admin1@example.com"
   end
 
@@ -65,7 +67,7 @@ feature "Researcher - Groups", type: :feature do
     click_on "Group 1"
 
     expect(page).to have_text "Arm:"
-    expect(page).to have_link "Arm 1", href: "/think_feel_do_dashboard/arms/#{ThinkFeelDoDashboard::Arm.find_by_name("Arm 1").id}"
+    expect(page).to have_link "Arm 1", href: "/think_feel_do_dashboard/arms/#{Arm.find_by_title("Arm 1").id}"
   end
 
   it "should be able to view all associated participants" do
@@ -104,37 +106,6 @@ feature "Researcher - Groups", type: :feature do
 
     expect(page).to have_text "Moderator: None"
     expect(page).to_not have_text "Moderator: user1@example.com"
-  end
-
-  it "should enable the updating of a group" do
-    click_on "Group 1"
-
-    expect(page).to have_text "Arm: Arm 1"
-    expect(page).to_not have_text "Arm: None"
-    expect(page).to have_text "Moderator: admin1@example.com"
-    expect(page).to_not have_text "Moderator: None"
-
-    click_on "Edit"
-    select "Select Arm", from: "Arm"
-    select "Select Moderator", from: "Moderator"
-    click_on "Update"
-
-    expect(page).to have_text "Arm: None"
-    expect(page).to_not have_text "Arm: Arm 1"
-    expect(page).to have_text "Moderator: None"
-    expect(page).to_not have_text "Moderator: admin1@example.com"
-  end
-
-  it "should be able to disassociate an arm from the group" do
-    click_on "Group 1"
-
-    expect(page).to have_text "Arm: Arm 1"
-
-    click_on "Remove Arm"
-
-    expect(page).to have_text "Group and arm were successfully disassociated"
-    expect(page).to have_text "Arm: None"
-    expect(page).to_not have_text "Arm 1"
   end
 
   it "should be able to remove a moderator from the group" do

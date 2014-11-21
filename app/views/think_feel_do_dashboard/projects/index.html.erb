@@ -7,6 +7,6 @@
 
 <div class="list-group">
   <% @projects.each do |project| %>
-    <%= link_to "#{project.name} <span class=\"badge\">#{project.arms.count}</span>".html_safe, project_path(project), class: "list-group-item clearfix" %>
+    <%= link_to "#{project.title} <span class=\"badge\">#{project.arms.count}</span>".html_safe, project_path(project), class: "list-group-item clearfix" %>
   <% end %>
 </div>

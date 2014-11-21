@@ -1,8 +1,8 @@
 arm1:
-  name: Arm 1
+  title: Arm 1
   project: project1
   is_social: true
 
 arm2:
-  name: Arm 2
-  project: project1
+  title: Arm 2
+  project: project2

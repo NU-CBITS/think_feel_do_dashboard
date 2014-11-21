@@ -60,7 +60,7 @@ module ThinkFeelDoDashboard
     end
 
     def project_params
-      params.require(:project).permit(:name)
+      params.require(:project).permit(:title)
     end
   end
 end

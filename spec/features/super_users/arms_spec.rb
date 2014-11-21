@@ -22,13 +22,13 @@ feature "Super User - Arms", type: :feature do
     expect(page).to_not have_text "Big arm 2"
 
     click_on "New"
-    fill_in "Name", with: "Big arm 2"
+    fill_in "Title", with: "Big arm 2"
     select "Project 1", from: "Project"
     check "Is social"
     click_on "Create"
 
     expect(page).to have_text "Arm was successfully created"
-    expect(page).to have_text "Name: Big arm 2"
+    expect(page).to have_text "Title: Big arm 2"
     expect(page).to have_text "Project 1"
     expect(page).to have_text "Is social: Yes"
 
@@ -43,7 +43,7 @@ feature "Super User - Arms", type: :feature do
     click_on "Arm 1"
 
     expect(page).to have_text "Project:"
-    expect(page).to have_link "Project 1", href: "/think_feel_do_dashboard/projects/#{ThinkFeelDoDashboard::Project.find_by_name("Project 1").id}"
+    expect(page).to have_link "Project 1", href: "/think_feel_do_dashboard/projects/#{Project.find_by_title("Project 1").id}"
   end
 
   it "should be able to view all associated groups" do
@@ -56,7 +56,7 @@ feature "Super User - Arms", type: :feature do
   it "should display errors if required fields aren't filled in" do
     click_on "Arm 1"
     click_on "Edit"
-    fill_in "Name", with: ""
+    fill_in "Title", with: ""
     click_on "Update"
 
     expect(page).to have_text "prohibited this arm from being saved"
@@ -65,38 +65,27 @@ feature "Super User - Arms", type: :feature do
   it "should enable the updating of a arm" do
     click_on "Arm 1"
 
-    expect(page).to have_text "Name: Arm 1"
+    expect(page).to have_text "Title: Arm 1"
     expect(page).to have_text "Project 1"
     expect(page).to have_text "Is social: Yes"
-    expect(page).to_not have_text "Name: What!"
+    expect(page).to_not have_text "Title: What!"
     expect(page).to_not have_text "Project 2"
     expect(page).to_not have_text "Is social: No"
 
     click_on "Edit"
-    fill_in "Name", with: "What!"
+    fill_in "Title", with: "What!"
     select "Project 2", from: "Project"
     uncheck "Is social"
     click_on "Update"
 
     expect(page).to have_text "Arm was successfully updated"
 
-    expect(page).to_not have_text "Name: Arm 1"
+    expect(page).to_not have_text "Title: Arm 1"
     expect(page).to_not have_text "Project 1"
     expect(page).to_not have_text "Is social: Yes"
-    expect(page).to have_text "Name: What!"
+    expect(page).to have_text "Title: What!"
     expect(page).to have_text "Project 2"
     expect(page).to have_text "Is social: No"
-  end
-
-  it "should be able to disassociate an arm from a project" do
-    click_on "Arm 1"
-
-    expect(page).to have_text "Project: Project 1"
-
-    click_on "Remove Project"
-
-    expect(page).to have_text "Arm was successfully updated."
-    expect(page).to_not have_text "Project 1"
   end
 
   it "should be able to delete a user" do

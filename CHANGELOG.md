@@ -1,3 +1,14 @@
+### 0.3.0 - 2014-11-20
+
+* enhancements
+  * Added arm_id to groups and removed ArmJoinGroup
+  * Added foreign key validations to groups and arms
+  * Removed Arms and Projects from this project and made them a dependency b/c they are used now in multiple engines
+  * Update forms and views to include arm_ids and project_ids
+  * Updated toolbars and added role
+  * Updated fixtures and specs
+  * Updated readme
+
 ### 0.2.1 - 2014-11-20
 
 * enhancements

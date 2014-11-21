@@ -18,7 +18,9 @@ git clone https://github.com/cbitstech/think_feel_do_dashboard.git [name of fold
 This engine expects there to be multiple models:
 
 1. Participant: a Devise-like API available and an authenticatable Participant class stored in a participants table;
-2. Group: a Group class stored in the groups table and has a title:string
+2. Project: a Project class stored in the projects table and has a title:string
+3. Arms: an Arm class stored in the arms table and has a title:string and belongs to a project. Arms are also determined to be social or not via is_social:boolean
+2. Group: a Group class stored in the groups table and has a title:string and is dependent on belonging to an arm.
 3. Membership: a Membership class that stores a group_id:integer and participant_id:integer in the memberships table. Each membership as a start_date:date and end_date:date that determines if the participant [membership] is active
 4. User: a Devise-like API available and an authenticatable User class stored in a users table but referred to as coaches;
 5. CoachAssignment: a CoachAssignment class that stores the participant:integer and user_id:integer in the coach_assignments table;
@@ -118,8 +120,6 @@ Rails.application.config.assets.precompile += %w(think_feel_do_dashboard.css thi
 ```
 Be sure to restart your server after you mkae the modifications.
 
-<!-- homelink -->
-
 ## Dependencies
 
 ruby: 2.1.2
@@ -174,17 +174,7 @@ N/A
 
 See the "Installation" instructions above.
 
-## To Do:
-
-_Fix mystery bug if I can consistently reproduce:_
-
-click_on participant
-They MAY have no memberships
-click_on Assign Group
-choose Group1
-then delete
-click_on Assign Group
-choose Group 2
-fill in "display name" with: asdf
-Make membership active
-ERROR
+Install the engine's migrations into the host application via command line:
+```console
+rake think_feel_do_dashboard:install:migrations
+```

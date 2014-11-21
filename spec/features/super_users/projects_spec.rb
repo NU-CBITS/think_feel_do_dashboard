@@ -22,11 +22,11 @@ feature "Super User - Projects", type: :feature do
     expect(page).to_not have_text "HUGe PrOjEct 3"
 
     click_on "New"
-    fill_in "Name", with: "HUGe PrOjEct 3"
+    fill_in "Title", with: "HUGe PrOjEct 3"
     click_on "Create"
 
     expect(page).to have_text "Project was successfully created"
-    expect(page).to have_text "Name: HUGe PrOjEct 3"
+    expect(page).to have_text "Title: HUGe PrOjEct 3"
 
     with_scope "#main" do
       click_on "Projects"
@@ -38,7 +38,7 @@ feature "Super User - Projects", type: :feature do
   it "should display errors if required fields aren't filled in" do
     click_on "Project 1"
     click_on "Edit"
-    fill_in "Name", with: ""
+    fill_in "Title", with: ""
     click_on "Update"
 
     expect(page).to have_text "prohibited this project from being saved"
@@ -47,17 +47,17 @@ feature "Super User - Projects", type: :feature do
   it "should enable the updating of a project" do
     click_on "Project 1"
 
-    expect(page).to have_text "Name: Project 1"
-    expect(page).to_not have_text "Name: What!"
+    expect(page).to have_text "Title: Project 1"
+    expect(page).to_not have_text "Title: What!"
 
     click_on "Edit"
-    fill_in "Name", with: "What!"
+    fill_in "Title", with: "What!"
     click_on "Update"
 
     expect(page).to have_text "Project was successfully updated"
 
-    expect(page).to_not have_text "Name: Project 1"
-    expect(page).to have_text "Name: What!"
+    expect(page).to_not have_text "Title: Project 1"
+    expect(page).to have_text "Title: What!"
   end
 
   it "should be able to delete a project" do
@@ -72,6 +72,6 @@ feature "Super User - Projects", type: :feature do
     click_on "Project 1"
 
     expect(page).to have_text "Arms"
-    expect(page).to have_link "Arm 1", href: "/think_feel_do_dashboard/arms/#{ThinkFeelDoDashboard::Arm.find_by_name("Arm 1").id}"
+    expect(page).to have_link "Arm 1", href: "/think_feel_do_dashboard/arms/#{Arm.find_by_title("Arm 1").id}"
   end
 end

@@ -1,14 +1,15 @@
 <h1>Project</h1>
 
 <div class="btn-toolbar" role="toolbar">
+  <%= link_to "Dashboard", root_path, class: "btn btn-default" %>
   <%= link_to "Projects", projects_path, class: "btn btn-default" %>
   <%= link_to "Edit", edit_project_path(@project), class: "btn btn-default" %>
   <%= link_to "Destroy", project_path(@project), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 </div>
 
 <p>
-  <strong>Name:</strong>
-  <%= @project.name %>
+  <strong>Title:</strong>
+  <%= @project.title %>
 </p>
 
 <div class="panel panel-default">

@@ -66,7 +66,7 @@ module ThinkFeelDoDashboard
 
     def arm_params
       params.require(:arm).permit(
-        :name, :project_id, :is_social
+        :title, :project_id, :is_social
       )
     end
   end

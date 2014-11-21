@@ -1,6 +1,7 @@
 <h1>Participant</h1>
 
 <div class="btn-toolbar" role="toolbar">
+  <%= link_to "Dashboard", root_path, class: "btn btn-default" %>
   <%= link_to "Participants", participants_path, class: "btn btn-default" %>
   <%= link_to "Edit", edit_participant_path(@participant), class: "btn btn-default" %>
   <%= link_to "Destroy", participant_path(@participant), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>

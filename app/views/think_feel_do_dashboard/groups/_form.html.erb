@@ -16,7 +16,7 @@
   </div>
   <div class="form-group">
     <%= label_tag "group[arm_id]", "Arm" %>
-    <%= select_tag "group[arm_id]", options_from_collection_for_select(@arms, :id, :name, @arm.try(:id)), prompt: "Select Arm", class: "form-control" %>
+    <%= select_tag "group[arm_id]", options_from_collection_for_select(@arms, :id, :title, @arm.try(:id)), prompt: "Select Arm", class: "form-control" %>
   </div>
   <div class="form-group">
     <%= label_tag "group[user_id]", "Moderator" %>

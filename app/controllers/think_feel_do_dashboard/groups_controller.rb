@@ -14,9 +14,9 @@ module ThinkFeelDoDashboard
 
     # POST /think_feel_do_dashboard/groups
     def create
-      @group = Group.new(group_params.except(:arm_id, :user_id))
+      @group = Group.new(group_params.except(:user_id))
 
-      if @group.save && create_agj && create_moderator
+      if @group.save && create_moderator
         redirect_to @group,
                     notice: "Group was successfully created."
       else
@@ -39,9 +39,8 @@ module ThinkFeelDoDashboard
 
     # PATCH/PUT /think_feel_do_dashboard/groups/1
     def update
-      if update_agj &&
-        update_moderator &&
-        @group.update(group_params.except(:arm_id, :user_id))
+      if update_moderator &&
+        @group.update(group_params.except(:user_id))
         redirect_to group_path(@group),
                     notice: "Group was successfully updated.",
                     only: true
@@ -60,10 +59,7 @@ module ThinkFeelDoDashboard
     private
 
     def set_arm
-      agj = ArmGroupJoin.where(group_id: @group.id).first
-      if agj
-        @arm = agj.arm
-      end
+      @arm = @group.arm
     end
 
     def set_arms
@@ -88,19 +84,6 @@ module ThinkFeelDoDashboard
       )
     end
 
-    def update_agj
-      agj = ArmGroupJoin.where(group_id: @group.id).first
-      if agj && !group_params[:arm_id].empty?
-        agj.update(arm_id: group_params[:arm_id])
-      elsif agj && group_params[:arm_id].empty?
-        agj.destroy
-      elsif !group_params[:arm_id].empty?
-        ArmGroupJoin.create(arm_id: group_params[:arm_id], group_id: @group.id)
-      else
-        true
-      end
-    end
-
     def update_moderator
       moderator = Moderator.where(group_id: @group.id).first
       if moderator && !group_params[:user_id].empty?
@@ -109,14 +92,6 @@ module ThinkFeelDoDashboard
         moderator.destroy
       elsif !group_params[:user_id].empty?
         Moderator.create(user_id: group_params[:user_id], group_id: @group.id)
-      else
-        true
-      end
-    end
-
-    def create_agj
-      if group_params[:arm_id]
-        ArmGroupJoin.create(arm_id: group_params[:arm_id], group_id: @group.id)
       else
         true
       end

@@ -60,6 +60,12 @@ module ThinkFeelDoDashboard
 
     private
 
+    def set_arm
+      @participant
+        .active_group
+        .arm
+    end
+
     def set_participant
       @participant = Participant.find(params[:id])
     end
@@ -91,12 +97,8 @@ module ThinkFeelDoDashboard
     end
 
     def validate_display_name
-      if @participant.active_group &&
-        ArmGroupJoin.find_by_group_id(@participant.active_group.id)
-        ArmGroupJoin
-          .find_by_group_id(@participant.active_group.id)
-          .arm
-          .display_name_required_for_membership?(
+      if @participant.active_group && set_arm
+        set_arm.display_name_required_for_membership?(
             @participant, params[:participant][:display_name]
           )
       else

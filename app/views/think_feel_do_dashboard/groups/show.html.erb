@@ -1,7 +1,8 @@
-<h1>Group <%= arm_type(ThinkFeelDoDashboard::ArmGroupJoin.where(group_id: @group.id).first.try(:arm)) %></h1>
+<h1>Group <%= arm_type(@group.arm) %></h1>
 
 <div class="btn-toolbar" role="toolbar">
-  <%= link_to "ThinkFeelDoSo", main_app.arms_path, class: "btn btn-default" %>
+  <%= link_to "Dashboard", root_path, class: "btn btn-default" %>
+  <%= link_to "Groups", groups_path, class: "btn btn-default" %>
 
   <%= link_to "Manage Learning Tasks", think_feel_do_engine.manage_tasks_group_path(@group), class: "btn btn-default" %>
 
@@ -16,11 +17,7 @@
 
 <p>
   <strong>Arm:</strong>
-  <%= @arm ? link_to(@arm.name, arm_path(@arm)) : "None" %>
-</p>
-
-<p>
-  <%= link_to "Remove Arm", arm_group_join_path(@arm.arm_group_joins.first), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" if @arm %>
+  <%= @arm ? link_to(@arm.title, arm_path(@arm)) : "None" %>
 </p>
 
 <p>

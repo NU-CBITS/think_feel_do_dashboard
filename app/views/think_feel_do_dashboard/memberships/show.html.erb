@@ -1,4 +1,4 @@
-<h1>Membership <%= arm_type(ThinkFeelDoDashboard::ArmGroupJoin.where(group_id: @membership.group_id).first.try(:arm)) %></h1>
+<h1>Membership <%= arm_type(@membership.group.arm) %></h1>
 
 <div class="btn-toolbar" role="toolbar">
   <%= link_to "Edit", edit_participant_group_path(@membership.participant, @membership.group), class: "btn btn-default" %>
