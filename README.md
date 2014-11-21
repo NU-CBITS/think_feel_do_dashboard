@@ -105,9 +105,10 @@ class Participant
 end
 ```
 
-Then run the migrations:
+Install the engine's migrations into the host application and migrate:
 ```console
-bin/rake db:migrate
+rake think_feel_do_dashboard:install:migrations
+rake db:migrate
 ```
 
 You will have to include any .css or .js files in the host app's to be precompiled `app/config/initializers/assets.rb`.  For example,
@@ -117,6 +118,11 @@ Rails.application.config.assets.precompile += %w(think_feel_do_dashboard.css thi
 ...
 ```
 Be sure to restart your server after you mkae the modifications.
+
+Or you can run the migration locally for your spec/dummy:
+```console
+bin/rake db:migrate
+```
 
 ## Dependencies
 
@@ -168,14 +174,6 @@ rake
 
 N/A
 
-## Deployment Instructions
+## Deployment Instructions to Host
 
 See the "Installation" instructions above.
-
-Install the engine's migrations into the host application and migrate:
-```console
-rake think_feel_do_dashboard:install:migrations
-```
-```console
-rake db:migrate
-```
