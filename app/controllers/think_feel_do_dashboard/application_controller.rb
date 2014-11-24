@@ -1,10 +1,7 @@
 module ThinkFeelDoDashboard
   # Top level controller.
   class ApplicationController < ActionController::Base
-    unless Rails.env.development? || Rails.env.test?
-      before_action :authenticate_user!
-    end
-
+    before_action :authenticate_user! if defined?(authenticate_user!)
     before_action :set_admin_link
 
     def set_admin_link

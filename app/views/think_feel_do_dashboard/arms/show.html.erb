@@ -1,7 +1,6 @@
 <h1>Arm <%= arm_type(@arm) %></h1>
 
 <div class="btn-toolbar" role="toolbar">
-  <%= link_to "Dashboard", root_path, class: "btn btn-default" %>
   <%= link_to "Arms", arms_path, class: "btn btn-default" %>
   <%= link_to "Edit", edit_arm_path(@arm), class: "btn btn-default" %>
   <%= link_to "Destroy", arm_path(@arm), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>

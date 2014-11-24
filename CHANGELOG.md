@@ -1,3 +1,9 @@
+### 0.4.1 - 2014-11-24
+
+* enhancements
+  * Updated think_feel_do_engine gem in order to display the correct Home and NavBrand links
+  * Added "Research Dashboard" to the views in order to clear up navigation
+
 ### 0.4.0 - 2014-11-21
 
 * enhancements
