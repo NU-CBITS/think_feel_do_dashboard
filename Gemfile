@@ -28,7 +28,7 @@ group :development, :test do
   gem "pg"
   gem "think_feel_do_engine",
       git: "https://github.com/cbitstech/think_feel_do_engine.git",
-      ref: "5398498c1d"
+      ref: "e2bbbd5ef0a033ea8720c84c939c00532bde21c8"
   gem "event_capture",
       git: "https://github.com/cbitstech/event_capture.git",
       ref: "1f9a199"

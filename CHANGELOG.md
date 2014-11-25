@@ -1,3 +1,8 @@
+### 0.4.3 - 2014-11-25
+
+* enhancements
+  * Updated to latest think_feel_do_engine
+
 ### 0.4.2 - 2014-11-25
 
 * enhancements
