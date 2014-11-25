@@ -41,6 +41,7 @@ module ThinkFeelDoDashboard
     def update
       build_user_roles(params)
       if @user.update(user_params.except(:user_roles))
+        sign_in @user, bypass: true if @user == current_user
         redirect_to user_path(@user),
                     notice: "User was successfully updated.",
                     only: true

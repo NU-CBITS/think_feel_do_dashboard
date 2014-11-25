@@ -1,3 +1,8 @@
+### 0.4.4 - 2014-11-25
+
+* bugfixes
+  * After a user edit's their profile, they signed back in automatically
+
 ### 0.4.3 - 2014-11-25
 
 * enhancements
