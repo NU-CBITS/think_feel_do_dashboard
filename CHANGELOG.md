@@ -1,3 +1,9 @@
+### 0.4.2 - 2014-11-25
+
+* enhancements
+  * Merged in migration changes dealing with removing migration from this engine that removed arm_id from group (note: if this migration is later than the host application migration, there may be a conflict)
+  * Added in 'Sign Out' link if user is logged in.
+
 ### 0.4.1 - 2014-11-24
 
 * enhancements
