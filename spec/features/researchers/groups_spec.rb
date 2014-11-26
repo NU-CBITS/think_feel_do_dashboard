@@ -4,7 +4,12 @@ feature "Researcher - Groups", type: :feature do
   fixtures :all
 
   before do
+    sign_in(users(:researcher1))
     visit "/think_feel_do_dashboard/groups"
+  end
+
+  after do
+    # click_on "Sign Out"
   end
 
   it "displays the groups that currently exist" do
@@ -85,12 +90,12 @@ feature "Researcher - Groups", type: :feature do
     expect(page).to have_text "Arm: Arm 1"
     expect(page).to_not have_text "Arm: Arm 2"
     expect(page).to have_text "Moderator: admin1@example.com"
-    expect(page).to_not have_text "Moderator: user1@example.com"
+    expect(page).to_not have_text "Moderator: clinician1@example.com"
 
     click_on "Edit"
     fill_in "Title", with: "What!"
     select "Arm 2", from: "Arm"
-    select "user1@example.com", from: "Moderator"
+    select "clinician1@example.com", from: "Moderator"
     click_on "Update"
 
     expect(page).to_not have_text "Title: Group 1"
@@ -98,14 +103,14 @@ feature "Researcher - Groups", type: :feature do
     expect(page).to have_text "Arm: Arm 2"
     expect(page).to_not have_text "Arm: Arm 1"
     expect(page).to_not have_text "Moderator: admin1@example.com"
-    expect(page).to have_text "Moderator: user1@example.com"
+    expect(page).to have_text "Moderator: clinician1@example.com"
 
     click_on "Edit"
     select "Select Moderator", from: "Moderator"
     click_on "Update"
 
     expect(page).to have_text "Moderator: None"
-    expect(page).to_not have_text "Moderator: user1@example.com"
+    expect(page).to_not have_text "Moderator: clinician1@example.com"
   end
 
   it "should be able to remove a moderator from the group" do

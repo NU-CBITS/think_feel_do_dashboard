@@ -24,6 +24,7 @@ namespace :seed do
     ActiveRecord::FixtureSet.create_fixtures path, [
       :participants,
       :users,
+      :user_roles,
       :arms,
       :groups,
       :coach_assignments,

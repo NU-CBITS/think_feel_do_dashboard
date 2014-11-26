@@ -4,7 +4,12 @@ feature "Researcher - Coach Assignments", type: :feature do
   fixtures :all
 
   before do
+    sign_in(users(:researcher1))
     visit "/think_feel_do_dashboard/participants"
+  end
+
+  after do
+    # click_on "Sign Out"
   end
 
   it "allows for the assigning of a coach" do
@@ -34,7 +39,7 @@ feature "Researcher - Coach Assignments", type: :feature do
   it "allows for the re-assigning of a coach" do
     click_on "TFD-1111"
 
-    expect(page).to have_text "Current Coach: user1@example.com"
+    expect(page).to have_text "Current Coach: clinician1@example.com"
     expect(page).to_not have_text "Current Coach: user3@example.com"
 
     click_on "Assign Coach"
@@ -46,7 +51,7 @@ feature "Researcher - Coach Assignments", type: :feature do
 
     click_on "TFD-1111"
 
-    expect(page).to_not have_text "Current Coach: user1@example.com"
+    expect(page).to_not have_text "Current Coach: clinician1@example.com"
     expect(page).to have_text "Current Coach: user3@example.com"
   end
 
@@ -61,13 +66,13 @@ feature "Researcher - Coach Assignments", type: :feature do
   it "can update the assigned a coach" do
     click_on "TFD-1111"
 
-    expect(page).to have_text "Current Coach: user1@example.com"
+    expect(page).to have_text "Current Coach: clinician1@example.com"
     expect(page).to_not have_text "Current Coach: user2@example.com"
 
-    click_on "user1@example.com"
+    click_on "clinician1@example.com"
 
     expect(page).to have_text "Participant: TFD-1111"
-    expect(page).to have_text "Coach: user1@example.com"
+    expect(page).to have_text "Coach: clinician1@example.com"
 
     click_on "Edit"
     select "user2@example.com", from: "Coach"
@@ -75,22 +80,22 @@ feature "Researcher - Coach Assignments", type: :feature do
     click_on "Update"
 
     expect(page).to have_text "Coach was successfully assigned."
-    expect(page).to_not have_text "Coach: user1@example.com"
+    expect(page).to_not have_text "Coach: clinician1@example.com"
     expect(page).to have_text "Coach: user2@example.com"
 
     click_on "TFD-1111"
 
-    expect(page).to_not have_text "Current Coach: user1@example.com"
+    expect(page).to_not have_text "Current Coach: clinician1@example.com"
     expect(page).to have_text "Current Coach: user2@example.com"
   end
 
   it "unassign a coach" do
     click_on "TFD-1111"
-    click_on "user1@example.com"
+    click_on "clinician1@example.com"
     click_on "Destroy"
 
     expect(page).to have_text "Coach was successfully removed"
-    expect(page).to_not have_text "Current Coach: user1@example.com"
+    expect(page).to_not have_text "Current Coach: clinician1@example.com"
     expect(page).to have_text "Assign Coach"
   end
 end

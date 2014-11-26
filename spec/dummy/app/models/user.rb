@@ -3,10 +3,30 @@
 # Admin, Coach etc in the parent application
 class User < ActiveRecord::Base
   include ThinkFeelDoDashboard::Concerns::Password
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 
   has_many :coach_assignments, foreign_key: :coach_id, dependent: :destroy
   has_many :participants, through: :coach_assignments
   has_many :user_roles, dependent: :destroy
   validates :email, presence: true
   validates :password, presence: true
+
+  def admin?
+    is_admin
+  end
+
+  def coach?
+    user_roles.map(&:role_class_name).include?("Roles::Clinician")
+  end
+
+  def researcher?
+    user_roles.map(&:role_class_name).include?("Roles::Researcher")
+  end
+
+  def content_author?
+    user_roles.map(&:role_class_name).include?("Roles::ContentAuthor")
+  end
 end

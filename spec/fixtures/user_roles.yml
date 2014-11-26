@@ -1,0 +1,31 @@
+admin1_role1:
+  user: admin1
+  role_class_name: "Roles::Clinician"
+
+admin1_role2:
+  user: admin1
+  role_class_name: "Roles::Researcher"
+
+admin1_role3:
+  user: admin1
+  role_class_name: "Roles::ContentAuthor"
+
+user_role1:
+  user: clinician1
+  role_class_name: "Roles::Clinician"
+
+user_role2:
+  user: user2
+  role_class_name: "Roles::Clinician"
+
+user_role_user_without_participants:
+  user: user_without_participants
+  role_class_name: "Roles::Clinician"
+
+user_role_with_user_with_memberless_participant:
+  user: user_with_memberless_participant
+  role_class_name: "Roles::Clinician"
+
+researcher1_role1:
+  user: researcher1
+  role_class_name: "Roles::Researcher"

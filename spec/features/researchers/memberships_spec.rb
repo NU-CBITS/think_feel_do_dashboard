@@ -4,7 +4,12 @@ feature "Researcher - Memberships", type: :feature do
   fixtures :all
 
   before do
+    sign_in(users(:researcher1))
     visit "/think_feel_do_dashboard/participants"
+  end
+
+  after do
+    # click_on "Sign Out"
   end
 
   it "display all groups and group details" do

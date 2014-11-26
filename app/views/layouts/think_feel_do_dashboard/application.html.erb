@@ -14,13 +14,10 @@
         <div class="navbar-header">
           <%= link_to "ThinkFeelDo", think_feel_do_engine.arms_path, class: "navbar-brand" %>
         </div>
-
-        <% if current_user %>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Sign Out", think_feel_do_engine.destroy_user_session_path, method: :delete %></li>
-          </ul>
-          <p class="navbar-text navbar-right">Signed in as <%= current_user.email %></p>
-        <% end %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Sign Out", think_feel_do_engine.destroy_user_session_path, method: :delete %></li>
+        </ul>
+        <p class="navbar-text navbar-right">Signed in as <%= current_user.email %></p>
       </div>
 
     </nav>

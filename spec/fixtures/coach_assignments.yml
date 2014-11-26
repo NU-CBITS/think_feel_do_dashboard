@@ -1,6 +1,6 @@
 assignment1:
   participant: participant1
-  coach: user1
+  coach: clinician1
 
 assignment2:
   participant: participant2
@@ -8,7 +8,7 @@ assignment2:
 
 assignment3:
   participant: inactive_participant
-  coach: user1
+  coach: clinician1
 
 assignment4:
   participant: participant_wo_membership1

@@ -4,7 +4,12 @@ feature "Researcher - Reports", type: :feature do
   fixtures :all
 
   before do
+    sign_in(users(:researcher1))
     visit "/think_feel_do_dashboard/reports"
+  end
+
+  after do
+    # click_on "Sign Out"
   end
 
   it "displays delay message to users" do

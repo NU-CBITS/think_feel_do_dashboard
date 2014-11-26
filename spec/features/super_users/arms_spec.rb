@@ -4,7 +4,12 @@ feature "Super User - Arms", type: :feature do
   fixtures :all
 
   before do
+    sign_in(users(:admin1))
     visit "/think_feel_do_dashboard/arms"
+  end
+
+  after do
+    # click_on "Sign Out"
   end
 
   it "displays the arms that currently exist" do
