@@ -1,3 +1,10 @@
+### 0.4.5 - 2014-11-26
+
+* enhancements
+  * Added devise gem to verify authentication
+  * removed password and password confirmation columns from User model in spec/dummy/app/models/user.rb
+  * Added UserRole class and updated specs to log in with correct UserRole
+
 ### 0.4.4 - 2014-11-25
 
 * bugfixes
