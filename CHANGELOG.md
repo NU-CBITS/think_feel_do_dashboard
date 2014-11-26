@@ -1,3 +1,9 @@
+### 0.4.6 - 2014-11-26
+
+* enhancements
+  * removed null constrating (it is added later)
+  * removed commented code
+
 ### 0.4.5 - 2014-11-26
 
 * enhancements
