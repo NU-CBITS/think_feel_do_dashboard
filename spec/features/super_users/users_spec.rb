@@ -13,15 +13,15 @@ feature "Super User - Users", type: :feature do
   end
 
   it "should enable the creation of a Super User" do
-    expect(page).to_not have_text "Admin admin2@example.com"
+    expect(page).to_not have_text "Super User admin2@example.com"
 
     click_on "New"
-    check "Admin"
+    check "Super User"
     fill_in "Email", with: "admin2@example.com"
     click_on "Create"
 
     expect(page).to have_text "User was successfully created"
-    expect(page).to have_text "Admin: Yes"
+    expect(page).to have_text "Super User: Yes"
     expect(page).to have_text "Email: admin2@example.com"
 
     user = User.find_by_email("admin2@example.com")
@@ -29,27 +29,27 @@ feature "Super User - Users", type: :feature do
   end
 
   it "should enable the updating of a Super User" do
-    expect(page).to_not have_text "Admin clinician1@example.com"
+    expect(page).to_not have_text "Super User clinician1@example.com"
 
     click_on "clinician1@example.com"
 
-    expect(page).to have_text "Admin: No"
+    expect(page).to have_text "Super User: No"
     expect(page).to have_text "Email: clinician1@example.com"
     expect(page).to_not have_text "Email: what@ex.co"
     expect(page).to have_text "Groups"
     expect(page).to have_text "Group 2 · TFD-MO 2"
-    expect(page).to_not have_text "Admin: Yes"
+    expect(page).to_not have_text "Super User: Yes"
     expect(page).to_not have_text "Roles: Clinician and Researcher"
 
     click_on "Edit"
-    check "Admin"
+    check "Super User"
     check "Researcher"
     fill_in "Email", with: "what@ex.co"
     click_on "Update"
 
     expect(page).to have_text "User was successfully updated"
-    expect(page).to have_text "Admin: Yes"
-    expect(page).to_not have_text "Admin: No"
+    expect(page).to have_text "Super User: Yes"
+    expect(page).to_not have_text "Super User: No"
     expect(page).to_not have_text "Email: clinician1@example.com"
     expect(page).to have_text "Email: what@ex.co"
     expect(page).to have_text "Roles: Clinician and Researcher"
@@ -58,18 +58,18 @@ feature "Super User - Users", type: :feature do
       click_on "Users"
     end
 
-    expect(page).to have_text "Admin what@ex.co"
+    expect(page).to have_text "Super User what@ex.co"
 
-    click_on "Admin what@ex.co"
+    click_on "Super User what@ex.co"
     click_on "Edit"
-    uncheck "Admin"
+    uncheck "Super User"
     uncheck "Researcher"
     check "Clinician"
     check "Content Author"
     click_on "Update"
 
-    expect(page).to have_text "Admin: No"
-    expect(page).to_not have_text "Admin: Yes"
+    expect(page).to have_text "Super User: No"
+    expect(page).to_not have_text "Super User: Yes"
     expect(page).to_not have_text "Roles: Clinician and Researcher"
     expect(page).to have_text "Roles: Clinician and Content Author"
 

@@ -57,7 +57,7 @@ feature "Researcher - Users", type: :feature do
   it "should not enable the creation of a Super User" # do
   #   click_on "New"
 
-  #   expect(page).to_not have_text "Admin"
+  #   expect(page).to_not have_text "Super User"
   # end
 
   it "should enable the updating of a Super User" do
@@ -106,7 +106,7 @@ feature "Researcher - Users", type: :feature do
   #   click_on "clinician1@example.com"
   #   click_on "Edit"
 
-  #   expect(page).to_not have_text "Admin"
+  #   expect(page).to_not have_text "Super User"
   # end
 
   it "should display errors if required fields aren't filled in" do

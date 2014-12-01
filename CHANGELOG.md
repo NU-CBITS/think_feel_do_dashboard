@@ -1,3 +1,8 @@
+### 0.5.0 - 2014-12-01
+
+* enhancements
+  * Renamed 'Admin' to Super User in forms, show pages, and index pages
+
 ### 0.4.6 - 2014-11-26
 
 * enhancements

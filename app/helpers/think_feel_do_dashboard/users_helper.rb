@@ -3,7 +3,7 @@ module ThinkFeelDoDashboard
   module UsersHelper
     def admin_status(is_admin)
       if is_admin
-        "<span class=\"label label-primary\">Admin</span> ".html_safe
+        "<span class=\"label label-primary\">Super User</span> ".html_safe
       else
         ""
       end
