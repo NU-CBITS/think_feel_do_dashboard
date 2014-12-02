@@ -1,3 +1,8 @@
+### 0.5.1 - 2014-12-02
+
+* bugfixes
+  * Removed conflicting migrations that are already included in think_feel_do_engine
+
 ### 0.5.0 - 2014-12-01
 
 * enhancements
