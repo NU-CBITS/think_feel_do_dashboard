@@ -38,7 +38,6 @@ feature "Researcher - Users", type: :feature do
     expect(page).to have_text "None"
 
     user = User.find_by_email("mike@example.com")
-    encrypted_password = user.encrypted_password
     expect(user.encrypted_password).to_not be_nil
 
     with_scope "#main" do
@@ -46,12 +45,6 @@ feature "Researcher - Users", type: :feature do
     end
 
     expect(page).to have_text "mike@example.com"
-
-    click_on "mike@example.com"
-    click_on "Edit"
-    click_on "Update"
-
-    expect(user.encrypted_password).to be encrypted_password
   end
 
   it "should not enable the creation of a Super User" # do

@@ -44,22 +44,11 @@ feature "Researcher -  Participants", type: :feature do
     expect(page).to have_text "Membership Status: Inactive"
     expect(page).to have_text "Below lists the all groups this participant has been a member of and whether they are currently active or inactive."
 
-    participant = Participant.find_by_email("gwashington@ex.co")
-    password = participant.password
-    expect(participant.password).to_not be_nil
-    expect(participant.password_confirmation).to_not be_nil
-
     with_scope "#main" do
       click_on "Participants"
     end
 
     expect(page).to have_text "Inactive favoriteToken1!"
-
-    click_on "favoriteToken1!"
-    click_on "Edit"
-    click_on "Update"
-
-    expect(participant.password).to be password
   end
 
   it "should display errors if required fields aren't filled in upon edit" do

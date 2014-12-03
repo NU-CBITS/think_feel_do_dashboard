@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
   has_many :participants, through: :coach_assignments
   has_many :user_roles, dependent: :destroy
   validates :email, presence: true
-  validates :password, presence: true
 
   def admin?
     is_admin
