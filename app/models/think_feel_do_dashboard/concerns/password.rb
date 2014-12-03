@@ -8,7 +8,7 @@ module ThinkFeelDoDashboard
       # This is perfect for including functionality
       # provided by 3rd party gems, etc.
       included do
-        before_validation :set_password
+        before_validation :set_password, on: :create
       end
 
       # methods added to Class itself...
@@ -18,11 +18,9 @@ module ThinkFeelDoDashboard
       private
 
       def set_password
-        random_string = SecureRandom.urlsafe_base64(nil, false)
-        if password.nil?
-          self.password = random_string
-          self.password_confirmation = random_string
-        end
+        random_string = SecureRandom.hex(64)
+        self.password = random_string
+        self.password_confirmation = random_string
       end
     end
   end
