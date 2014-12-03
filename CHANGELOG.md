@@ -1,3 +1,8 @@
+### 0.5.2 - 2014-12-02
+
+* enhancements
+  * updated engine think_feel_do_engine and the corresponding routes
+
 ### 0.5.1 - 2014-12-02
 
 * bugfixes

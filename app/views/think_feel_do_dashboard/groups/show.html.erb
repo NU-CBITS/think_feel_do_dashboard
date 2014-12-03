@@ -3,7 +3,7 @@
 <div class="btn-toolbar" role="toolbar">
   <%= link_to "Groups", groups_path, class: "btn btn-default" %>
 
-  <%= link_to "Manage Tasks", think_feel_do_engine.manage_tasks_group_path(@group), class: "btn btn-default" %>
+  <%= link_to "Manage Tasks", think_feel_do_engine.arm_manage_tasks_group_path(@group.arm, @group), class: "btn btn-default" %>
 
   <%= link_to "Edit", edit_group_path(@group), class: "btn btn-default" %>
   <%= link_to "Destroy", group_path(@group), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
