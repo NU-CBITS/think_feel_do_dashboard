@@ -1,6 +1,7 @@
 # A Participant is anyone who is participanting in a study
 # Please keep in mind that a participant is tied to a group, thus
 # Every participant is inherently part of at least one group
+require "strong_password"
 class Participant < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -23,7 +24,12 @@ class Participant < ActiveRecord::Base
   has_one :active_group, through: :active_membership
 
   # My tests check this, but it isn't part of the application
+  validates :password, password_strength: { use_dictionary: true }, :if => :password_is_not_blank?
   validates :phone_number, allow_nil: true, allow_blank: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validates :contact_preference, presence: true, inclusion: %w(email phone)
+
+  def password_is_not_blank?
+    !password.blank?
+  end
 end

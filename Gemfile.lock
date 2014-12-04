@@ -272,6 +272,7 @@ DEPENDENCIES
   rspec-rails (~> 3)
   rubocop (~> 0.26)
   sass-rails (~> 4.0.4)
+  strong_password (~> 0)
   think_feel_do_dashboard!
   think_feel_do_engine!
   turbolinks (~> 2.2)
