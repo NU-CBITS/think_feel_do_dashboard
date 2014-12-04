@@ -1,3 +1,15 @@
+### 0.5.4 - 2014-12-04
+
+* enhancments
+  * updated participants fixtures and dummy app participant model
+
+
+### 0.5.3 - 2014-12-03
+
+* bugfixes
+  * modified Password concern to only validate on create
+  *updated specs for user/participant creation and password concern
+
 ### 0.5.2 - 2014-12-02
 
 * enhancements
