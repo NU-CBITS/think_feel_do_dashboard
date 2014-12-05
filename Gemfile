@@ -28,9 +28,9 @@ group :development, :test do
   gem "launchy"
   gem "pg"
 
-  # currently used for helper links and authorization
+  # Currently used for helper links and authorization
   gem "think_feel_do_engine",
-      tag: "1.5.6",
+      tag: "1.5.7",
       git: "https://github.com/cbitstech/think_feel_do_engine.git"
 
   gem "event_capture",
