@@ -1,3 +1,8 @@
+### 0.5.5 - 2014-12-05
+
+* enhancments
+  * Using the latest ability.rb file from think_feel_do_engine
+
 ### 0.5.4 - 2014-12-04
 
 * enhancments
