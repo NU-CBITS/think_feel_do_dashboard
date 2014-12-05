@@ -10,10 +10,12 @@ module ThinkFeelDoDashboard
 
     # GET /think_feel_do_dashboard/participants/1/coaches/new
     def new
+      authorize! :new, CoachAssignment
     end
 
     # POST /think_feel_do_dashboard/participants/1/coaches
     def create
+      authorize! :create, CoachAssignment
       @coach_assignment = @participant.build_coach_assignment(
         coach_assignment_params
       )
@@ -30,14 +32,17 @@ module ThinkFeelDoDashboard
 
     # GET /think_feel_do_dashboard/participants/1/coaches/1
     def show
+      authorize! :read, @coach_assignment
     end
 
     # GET /think_feel_do_dashboard/participants/1/coaches/1/edit
     def edit
+      authorize! :edit, @coach_assignment
     end
 
     # PATCH/PUT /think_feel_do_dashboard/participants/1/coaches/1
     def update
+      authorize! :update, @coach_assignment
       if @coach_assignment.update(coach_assignment_params)
         redirect_to participant_coach_path(
           @participant, @coach_assignment.coach
@@ -50,6 +55,7 @@ module ThinkFeelDoDashboard
 
     # DELETE /think_feel_do_dashboard/participants/1/coaches/1
     def destroy
+      authorize! :destroy, @coach_assignment
       if @coach_assignment.destroy
         redirect_to participant_path(@participant),
                     notice: "Coach was successfully removed."

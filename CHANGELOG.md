@@ -8,7 +8,7 @@
 
 * bugfixes
   * modified Password concern to only validate on create
-  *updated specs for user/participant creation and password concern
+  * updated specs for user/participant creation and password concern
 
 ### 0.5.2 - 2014-12-02
 

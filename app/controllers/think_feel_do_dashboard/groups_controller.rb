@@ -3,8 +3,9 @@ require_dependency "think_feel_do_dashboard/application_controller"
 module ThinkFeelDoDashboard
   # Allows for the creation, updating, and deletion of groups
   class GroupsController < ApplicationController
+    load_and_authorize_resource
     before_action :set_arms, :set_users
-    before_action :set_group, :set_arm, :set_moderator,
+    before_action :set_arm, :set_moderator,
                   only: [:show, :edit, :update, :destroy]
 
     # GET /think_feel_do_dashboard/groups
@@ -64,10 +65,6 @@ module ThinkFeelDoDashboard
 
     def set_arms
       @arms = Arm.all
-    end
-
-    def set_group
-      @group = Group.find(params[:id])
     end
 
     def set_moderator

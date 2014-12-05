@@ -3,11 +3,12 @@ require_dependency "think_feel_do_dashboard/application_controller"
 module ThinkFeelDoDashboard
   # Allows for the creation, updating, and deletion of arms
   class ArmsController < ApplicationController
-    before_action :set_arm, only: [:show, :edit, :update, :destroy]
+    load_and_authorize_resource
 
     # GET /think_feel_do_dashboard/arms
     def index
       @arms = Arm.all
+      authorize! :read, @arms
     end
 
     # POST /think_feel_do_dashboard/arms
@@ -54,10 +55,6 @@ module ThinkFeelDoDashboard
     end
 
     private
-
-    def set_arm
-      @arm = Arm.find(params[:id])
-    end
 
     def arm_params
       params.require(:arm).permit(

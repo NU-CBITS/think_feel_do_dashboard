@@ -5,7 +5,7 @@ module ThinkFeelDoDashboard
   require "phonelib"
   #
   class ParticipantsController < ApplicationController
-    before_action :set_participant, only: [:show, :edit, :update, :destroy]
+    load_and_authorize_resource
     before_action :set_contact_preferences,
                   only: [:new, :create, :show, :edit, :update]
     before_action :set_contact_preference, only: [:create, :update]
@@ -64,10 +64,6 @@ module ThinkFeelDoDashboard
       @participant
         .active_group
         .arm
-    end
-
-    def set_participant
-      @participant = Participant.find(params[:id])
     end
 
     def set_contact_preferences

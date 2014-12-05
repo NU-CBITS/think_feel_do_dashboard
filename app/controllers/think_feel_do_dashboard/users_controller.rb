@@ -3,8 +3,8 @@ require_dependency "think_feel_do_dashboard/application_controller"
 module ThinkFeelDoDashboard
   # Allows for the creation, updating, and deletion of users
   class UsersController < ApplicationController
+    load_and_authorize_resource
     before_action :set_roles
-    before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     # GET /think_feel_do_dashboard/users
     def index
@@ -61,10 +61,6 @@ module ThinkFeelDoDashboard
 
     def set_roles
       @roles = UserRole::ROLES.map(&:demodulize)
-    end
-
-    def set_user
-      @user = User.find(params[:id])
     end
 
     def user_params

@@ -21,11 +21,11 @@ class User < ActiveRecord::Base
     user_roles.map(&:role_class_name).include?("Roles::Clinician")
   end
 
-  def researcher?
-    user_roles.map(&:role_class_name).include?("Roles::Researcher")
-  end
-
   def content_author?
     user_roles.map(&:role_class_name).include?("Roles::ContentAuthor")
+  end
+
+  def researcher?
+    user_roles.map(&:role_class_name).include?("Roles::Researcher")
   end
 end

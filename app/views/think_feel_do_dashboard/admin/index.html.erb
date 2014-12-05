@@ -5,10 +5,34 @@
 </div>
 
 <div class="list-group">
-  <% @admin_functionalities.each do |functionality| %>
-  <a href="<%= functionality[1] %>" class="list-group-item">
-    <h4 class="list-group-item-heading"><%= functionality[0] %></h4>
-    <p class="list-group-item-text"><%= functionality[2] %></p>
-  </a>
+  <% if can? :read, Arm %>
+    <a href="<%= arms_path %>" class="list-group-item">
+      <h4 class="list-group-item-heading">Arms</h4>
+      <p class="list-group-item-text">Create, update, delete arms</p>
+    </a>
+  <% end %>
+  <% if can? :read, Group %>
+    <a href="<%= groups_path %>" class="list-group-item">
+      <h4 class="list-group-item-heading">Groups</h4>
+      <p class="list-group-item-text">Create, update, delete, and associate groups with arms along with set moderators.</p>
+    </a>
+  <% end %>
+  <% if can? :read, Participant %>
+    <a href="<%= participants_path %>" class="list-group-item">
+      <h4 class="list-group-item-heading">Participants</h4>
+      <p class="list-group-item-text">Create, update, and delete participants along with assigning them to groups.</p>
+    </a>
+  <% end %>
+  <% if can? :read, User %>
+    <a href="<%= users_path %>" class="list-group-item">
+      <h4 class="list-group-item-heading">Users</h4>
+      <p class="list-group-item-text">Create and view admins, clinicians, researchers, and content authors.</p>
+    </a>
+  <% end %>
+  <% if can? :read, Reports %>
+    <a href="<%= reports_path %>" class="list-group-item">
+      <h4 class="list-group-item-heading">CSV Reports</h4>
+      <p class="list-group-item-text">Download data via csv.</p>
+    </a>
   <% end %>
 </div>
