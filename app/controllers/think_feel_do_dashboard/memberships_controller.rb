@@ -8,11 +8,13 @@ module ThinkFeelDoDashboard
 
     # GET /think_feel_do_dashboard/participants/1/groups
     def index
+      authorize! :read, Membership
     end
 
     # GET /think_feel_do_dashboard/participants/1/groups/new
     def new
       @membership = @participant.memberships.build
+      authorize! :new, @membership
     end
 
     # POST /think_feel_do_dashboard/participants/1/groups
@@ -20,6 +22,7 @@ module ThinkFeelDoDashboard
       @membership = @participant.memberships.build(
         membership_params.except(:display_name)
       )
+      authorize! :create, @membership
       if valid_enrollment? &&
         @membership.save &&
         @participant.update(membership_params.slice(:display_name))
@@ -32,14 +35,17 @@ module ThinkFeelDoDashboard
 
     # GET /think_feel_do_dashboard/participants/1/groups/1
     def show
+      authorize! :read, @membership
     end
 
     # GET /think_feel_do_dashboard/participants/1/groups/1/edit
     def edit
+      authorize! :edit, @membership
     end
 
     # PATCH/PUT /think_feel_do_dashboard/participants/1/groups/1
     def update
+      authorize! :update, @membership
       if valid_enrollment? &&
         @membership.update(membership_params.except(:display_name)) &&
         @participant.update(membership_params.slice(:display_name))
@@ -52,6 +58,7 @@ module ThinkFeelDoDashboard
 
     # DELETE /think_feel_do_dashboard/participants/1/groups/1
     def destroy
+      authorize! :destroy, @membership
       if @membership.destroy
         redirect_to participant_path(@participant),
                     notice: "Group was successfully removed."

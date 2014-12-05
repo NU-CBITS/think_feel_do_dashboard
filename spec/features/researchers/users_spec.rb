@@ -47,19 +47,19 @@ feature "Researcher - Users", type: :feature do
     expect(page).to have_text "mike@example.com"
   end
 
-  it "should not enable the creation of a Super User" # do
-  #   click_on "New"
+  it "should not enable the creation of a Super User" do
+    click_on "New"
 
-  #   expect(page).to_not have_text "Super User"
-  # end
+    expect(page).to_not have_text "Super User"
+  end
 
-  it "should enable the updating of a Super User" do
+  it "should enable the updating of a user" do
     click_on "clinician1@example.com"
 
     expect(page).to have_text "Email: clinician1@example.com"
     expect(page).to_not have_text "Email: what@ex.co"
     expect(page).to have_text "Groups"
-    expect(page).to have_text "Group 2 · TFD-MO 2"
+    expect(page).to have_text "Group 2 · MOBILE 2"
     expect(page).to_not have_text "Roles: Clinician and Researcher"
 
     click_on "Edit"
@@ -95,12 +95,12 @@ feature "Researcher - Users", type: :feature do
     expect(page).to have_text "Roles: Clinician and Content Author"
   end
 
-  it "should not enable the creation of a Super User" # do
-  #   click_on "clinician1@example.com"
-  #   click_on "Edit"
+  it "should not enable the updating of a User to be a Super User" do
+    click_on "clinician1@example.com"
+    click_on "Edit"
 
-  #   expect(page).to_not have_text "Super User"
-  # end
+    expect(page).to_not have_text "Super User"
+  end
 
   it "should display errors if required fields aren't filled in" do
     click_on "clinician1@example.com"

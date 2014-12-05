@@ -21,16 +21,17 @@ gem "turbolinks", "~> 2.2"
 gem "bootstrap-sass", "~> 3.3.1"
 gem "sass-rails", "~> 4.0.4"
 gem "autoprefixer-rails"
-gem "cancancan", "~> 1.9"
 
 group :development, :test do
+  gem "cancancan", "~> 1.9"
   gem "rubocop", "~> 0.26"
   gem "launchy"
   gem "pg"
+
+  # currently used for helper links and authorization
   gem "think_feel_do_engine",
-      # tag: "1.5.6",
-      # git: "https://github.com/cbitstech/think_feel_do_engine.git"
-      path: "/Users/usabilitymonitor/Desktop/Github/think_feel_do_engine"
+      tag: "1.5.6",
+      git: "https://github.com/cbitstech/think_feel_do_engine.git"
 
   gem "event_capture",
       git: "https://github.com/cbitstech/event_capture.git",

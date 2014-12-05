@@ -10,11 +10,13 @@
       </ul>
     </div>
   <% end %>
-  <div class="checkbox">
-    <label for="user_is_admin">
-      <%= f.check_box :is_admin %>Super User
-    </label>
-  </div>
+  <% if can? :manage, :all %>
+    <div class="checkbox">
+      <label for="user_is_admin">
+        <%= f.check_box :is_admin %>Super User
+      </label>
+    </div>
+  <% end %>
   <div class="form-group">
     <label>Roles</label>
     <% @roles.each do |role| %>

@@ -4,11 +4,11 @@ module ThinkFeelDoDashboard
     def arm_type(arm)
       if arm && arm.social?
         "<small style=\"color: #428bca; font-weight: bold;\">\
-          &middot; TFD-SO\
+          &middot; SOCIAL\
         </small>".html_safe
       elsif arm
         "<small style=\"color: #5cb85c; font-weight: bold;\">\
-          &middot; TFD-MO\
+          &middot; MOBILE\
         </small>".html_safe
       end
     end

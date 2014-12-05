@@ -4,8 +4,9 @@ feature "Super User - Arms", type: :feature do
   fixtures :all
 
   before do
-    sign_in(users(:admin1))
-    visit "/think_feel_do_dashboard/arms"
+    sign_in users :admin1
+    visit "/think_feel_do_dashboard"
+    click_on "Arms"
   end
 
   after do

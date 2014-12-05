@@ -4,8 +4,9 @@ feature "Super User - Users", type: :feature do
   fixtures :all
 
   before do
-    sign_in(users(:admin1))
-    visit "/think_feel_do_dashboard/users"
+    sign_in users :admin1
+    visit "/think_feel_do_dashboard"
+    click_on "Users"
   end
 
   after do
@@ -37,7 +38,7 @@ feature "Super User - Users", type: :feature do
     expect(page).to have_text "Email: clinician1@example.com"
     expect(page).to_not have_text "Email: what@ex.co"
     expect(page).to have_text "Groups"
-    expect(page).to have_text "Group 2 · TFD-MO 2"
+    expect(page).to have_text "Group 2 · MOBILE 2"
     expect(page).to_not have_text "Super User: Yes"
     expect(page).to_not have_text "Roles: Clinician and Researcher"
 

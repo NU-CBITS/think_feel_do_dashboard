@@ -29,3 +29,7 @@ user_role_with_user_with_memberless_participant:
 researcher1_role1:
   user: researcher1
   role_class_name: "Roles::Researcher"
+
+content_author1_role1:
+  user: content_author1
+  role_class_name: "Roles::ContentAuthor"

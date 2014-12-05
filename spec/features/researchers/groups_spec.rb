@@ -4,8 +4,9 @@ feature "Researcher - Groups", type: :feature do
   fixtures :all
 
   before do
-    sign_in(users(:researcher1))
-    visit "/think_feel_do_dashboard/groups"
+    sign_in users :researcher1
+    visit "/think_feel_do_dashboard"
+    click_on "Groups"
   end
 
   after do

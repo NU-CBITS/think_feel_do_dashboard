@@ -3,19 +3,19 @@ require_dependency "think_feel_do_dashboard/application_controller"
 module ThinkFeelDoDashboard
   # Allows for the creation, updating, and deletion of groups
   class GroupsController < ApplicationController
-    load_and_authorize_resource
+    load_and_authorize_resource except: [:create]
     before_action :set_arms, :set_users
     before_action :set_arm, :set_moderator,
                   only: [:show, :edit, :update, :destroy]
 
     # GET /think_feel_do_dashboard/groups
     def index
-      @groups = Group.all
     end
 
     # POST /think_feel_do_dashboard/groups
     def create
       @group = Group.new(group_params.except(:user_id))
+      authorize! :create, @group
 
       if @group.save && create_moderator
         redirect_to @group,
@@ -27,7 +27,6 @@ module ThinkFeelDoDashboard
 
     # GET /think_feel_do_dashboard/groups/new
     def new
-      @group = Group.new
     end
 
     # GET /think_feel_do_dashboard/groups/1

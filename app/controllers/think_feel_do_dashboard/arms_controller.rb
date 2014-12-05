@@ -7,14 +7,10 @@ module ThinkFeelDoDashboard
 
     # GET /think_feel_do_dashboard/arms
     def index
-      @arms = Arm.all
-      authorize! :read, @arms
     end
 
     # POST /think_feel_do_dashboard/arms
     def create
-      @arm = Arm.new(arm_params)
-
       if @arm.save
         redirect_to @arm,
                     notice: "Arm was successfully created."

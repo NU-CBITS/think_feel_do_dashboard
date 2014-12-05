@@ -4,6 +4,7 @@ module ThinkFeelDoDashboard
   # Provide access to data exports.
   class ReportsController < ApplicationController
     def index
+      authorize! :read, Reports::LessonSlideView
       @reports = [
         { title: "Lesson Slide View", id: :lesson_slide_view },
         { title: "Lesson Viewing", id: :lesson_viewing },
@@ -24,6 +25,7 @@ module ThinkFeelDoDashboard
         "video_session" => Reports::VideoSession
       }[params[:id]]
 
+      authorize! :download, report
       respond_to do |format|
         format.csv { send_data report.to_csv, type: "text/csv" }
       end
