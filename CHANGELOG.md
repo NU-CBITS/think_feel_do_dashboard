@@ -1,3 +1,8 @@
+### 0.5.7 - 2014-12-08
+
+* enhancements
+  * updated think_feel_do_engine
+
 ### 0.5.6 - 2014-12-05
 
 * enhancements
