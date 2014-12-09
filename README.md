@@ -162,7 +162,6 @@ After you migrate the database, you may have to update the engine's testing envi
 
 ```console
   rake app:db:drop app:db:create app:db:migrate RAILS_ENV=test
-  rake
 ```
 
 Because we have combined brakeman, rubocop, and rspec, you can just run the rake command to run everything:
