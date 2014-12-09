@@ -156,12 +156,13 @@ rake app:db:drop app:db:create app:db:migrate
 app:seed:with_think_feel_do_dashboard_fixtures
 ```
 
-## Running tests
+## Running Specs
 
 After you migrate the database, you may have to update the engine's testing environment:
 
 ```console
-rake app:db:test:prepare
+  rake app:db:drop app:db:create app:db:migrate RAILS_ENV=test
+  rake
 ```
 
 Because we have combined brakeman, rubocop, and rspec, you can just run the rake command to run everything:
