@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203201524) do
+ActiveRecord::Schema.define(version: 20141211143757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20141203201524) do
     t.string   "study_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "display_name",           default: "", null: false
+    t.string   "display_name",           default: ""
     t.string   "contact_preference",     default: ""
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

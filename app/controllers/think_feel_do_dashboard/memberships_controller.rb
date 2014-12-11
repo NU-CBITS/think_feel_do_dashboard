@@ -8,7 +8,7 @@ module ThinkFeelDoDashboard
 
     # GET /think_feel_do_dashboard/participants/1/groups
     def index
-      authorize! :read, Membership
+      authorize! :index, Membership
     end
 
     # GET /think_feel_do_dashboard/participants/1/groups/new
@@ -19,13 +19,13 @@ module ThinkFeelDoDashboard
 
     # POST /think_feel_do_dashboard/participants/1/groups
     def create
-      @membership = @participant.memberships.build(
-        membership_params.except(:display_name)
-      )
+      @membership = @participant
+                      .memberships
+                      .build(
+                        membership_params
+                      )
       authorize! :create, @membership
-      if valid_enrollment? &&
-        @membership.save &&
-        @participant.update(membership_params.slice(:display_name))
+      if @membership.save
         redirect_to participant_group_path(@participant, @membership.group),
                     notice: "Group was successfully assigned"
       else
@@ -35,7 +35,7 @@ module ThinkFeelDoDashboard
 
     # GET /think_feel_do_dashboard/participants/1/groups/1
     def show
-      authorize! :read, @membership
+      authorize! :show, @membership
     end
 
     # GET /think_feel_do_dashboard/participants/1/groups/1/edit
@@ -46,9 +46,7 @@ module ThinkFeelDoDashboard
     # PATCH/PUT /think_feel_do_dashboard/participants/1/groups/1
     def update
       authorize! :update, @membership
-      if valid_enrollment? &&
-        @membership.update(membership_params.except(:display_name)) &&
-        @participant.update(membership_params.slice(:display_name))
+      if @membership.update(membership_params)
         redirect_to participant_group_path(@participant, @membership.group),
                     notice: "New group was successfully assigned."
       else
@@ -81,17 +79,6 @@ module ThinkFeelDoDashboard
       end
     end
 
-    def set_arm
-      return false if membership_params[:group_id].empty?
-      Group
-        .find(membership_params[:group_id])
-        .arm
-    end
-
-    def set_groups
-      @groups = Group.all.map { |group| [group.title, group.id] }
-    end
-
     def membership_params
       params
         .require(:membership)
@@ -99,6 +86,10 @@ module ThinkFeelDoDashboard
           :start_date, :end_date,
           :group_id, :display_name
         )
+    end
+
+    def set_groups
+      @groups = Group.all.map { |group| [group.title, group.id] }
     end
 
     def set_membership
@@ -110,17 +101,6 @@ module ThinkFeelDoDashboard
     def set_participant
       @participant = Participant
         .find(params[:participant_id])
-    end
-
-    def valid_enrollment?
-      if set_arm
-        set_arm.display_name_required_for_membership?(
-              @participant, membership_params[:display_name])
-      else
-        @membership = Membership.new
-        @membership.errors.add(:group_id, "can't be blank")
-        false
-      end
     end
   end
 end
