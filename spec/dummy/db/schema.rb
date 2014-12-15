@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141214203919) do
+ActiveRecord::Schema.define(version: 20141215204615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20141214203919) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "arm_id"
+    t.integer  "moderator_id", null: false
   end
 
   create_table "memberships", force: true do |t|
@@ -74,13 +75,6 @@ ActiveRecord::Schema.define(version: 20141214203919) do
   create_table "slideshow_anchors", force: true do |t|
     t.integer  "bit_core_slideshow_id"
     t.string   "target_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "think_feel_do_dashboard_moderators", force: true do |t|
-    t.integer  "group_id",   null: false
-    t.integer  "user_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

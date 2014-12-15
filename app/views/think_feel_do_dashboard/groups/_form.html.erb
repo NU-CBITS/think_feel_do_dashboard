@@ -19,8 +19,9 @@
     <%= select_tag "group[arm_id]", options_from_collection_for_select(@arms, :id, :title, @arm.try(:id)), prompt: "Select Arm", class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= label_tag "group[user_id]", "Moderator" %>
-    <%= select_tag "group[user_id]", options_from_collection_for_select(@users, :id, :email, @moderator.try(:user_id)), prompt: "Select Moderator", class: "form-control" %>
+    <%= f.label :moderator_id %>
+    <%= f.select :moderator_id, options_from_collection_for_select(@users, :id, :email), prompt: "Select Moderator", class: "form-control" %>
+    <p class="help-block">All notifications are emailed to this user's email</p>
   </div>
   <div class="actions">
     <%= f.submit button_text, class: "btn btn-primary" %>

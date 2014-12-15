@@ -25,14 +25,14 @@
   <div class="panel-heading">
     <h3 class="panel-title">Moderating the following Groups</h3>
   </div>
-  <% if ThinkFeelDoDashboard::Moderator.where(user_id: @user.id).count == 0 %>
+  <% if @user.groups.count == 0 %>
     <div class="panel-body">
       None
     </div>
   <% else %>
     <div class="list-group">
-      <% ThinkFeelDoDashboard::Moderator.where(user_id: @user.id).each do |moderator|  %>
-        <%= render "think_feel_do_dashboard/groups/group_item_link", group: moderator.group %>
+      <% @user.groups.each do |group|  %>
+        <%= render "think_feel_do_dashboard/groups/group_item_link", group: group %>
       <% end %>
     </div>
   <% end %>

@@ -28,8 +28,7 @@ namespace :seed do
       :arms,
       :groups,
       :coach_assignments,
-      :memberships,
-      :'think_feel_do_dashboard/moderators'
+      :memberships
     ]
     puts "seeded with_think_feel_do_dashboard_fixtures."
   end

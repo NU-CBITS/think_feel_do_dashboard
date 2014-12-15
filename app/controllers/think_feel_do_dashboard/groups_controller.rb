@@ -5,7 +5,7 @@ module ThinkFeelDoDashboard
   class GroupsController < ApplicationController
     load_and_authorize_resource except: [:create]
     before_action :set_arms, :set_users
-    before_action :set_arm, :set_moderator,
+    before_action :set_arm,
                   only: [:show, :edit, :update, :destroy]
 
     # GET /think_feel_do_dashboard/groups
@@ -17,7 +17,7 @@ module ThinkFeelDoDashboard
       @group = Group.new(group_params.except(:user_id))
       authorize! :create, @group
 
-      if @group.save && create_moderator
+      if @group.save
         redirect_to @group,
                     notice: "Group was successfully created."
       else
@@ -39,8 +39,7 @@ module ThinkFeelDoDashboard
 
     # PATCH/PUT /think_feel_do_dashboard/groups/1
     def update
-      if update_moderator &&
-        @group.update(group_params.except(:user_id))
+      if @group.update(group_params.except(:user_id))
         redirect_to group_path(@group),
                     notice: "Group was successfully updated.",
                     only: true
@@ -66,39 +65,14 @@ module ThinkFeelDoDashboard
       @arms = Arm.all
     end
 
-    def set_moderator
-      @moderator = Moderator.where(group_id: @group.id).first
-    end
-
     def set_users
       @users = User.all
     end
 
     def group_params
       params.require(:group).permit(
-        :arm_id, :title, :user_id
+        :arm_id, :title, :moderator_id
       )
-    end
-
-    def update_moderator
-      moderator = Moderator.where(group_id: @group.id).first
-      if moderator && !group_params[:user_id].empty?
-        moderator.update(user_id: group_params[:user_id])
-      elsif moderator && group_params[:user_id].empty?
-        moderator.destroy
-      elsif !group_params[:user_id].empty?
-        Moderator.create(user_id: group_params[:user_id], group_id: @group.id)
-      else
-        true
-      end
-    end
-
-    def create_moderator
-      if group_params[:user_id]
-        Moderator.create(user_id: group_params[:user_id], group_id: @group.id)
-      else
-        true
-      end
     end
   end
 end

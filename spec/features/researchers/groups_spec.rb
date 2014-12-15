@@ -29,6 +29,7 @@ feature "Researcher - Groups", type: :feature do
 
     click_on "New"
     fill_in "Title", with: "HUGe PrOjEct 3"
+    select "clinician1@example.com", from: "Moderator"
     select "Arm 1", from: "Arm"
 
     click_on "Create"
@@ -36,6 +37,7 @@ feature "Researcher - Groups", type: :feature do
     expect(page).to have_text "Group was successfully created"
     expect(page).to have_text "Title: HUGe PrOjEct 3"
     expect(page).to have_text "Arm: Arm 1"
+    expect(page).to have_text "Moderator: clinician1@example.com"
 
     with_scope "#main" do
       visit "/think_feel_do_dashboard/groups"
@@ -90,40 +92,26 @@ feature "Researcher - Groups", type: :feature do
     expect(page).to_not have_text "Title: What!"
     expect(page).to have_text "Arm: Arm 1"
     expect(page).to_not have_text "Arm: Arm 2"
-    expect(page).to have_text "Moderator: admin1@example.com"
-    expect(page).to_not have_text "Moderator: clinician1@example.com"
+    expect(page).to have_text "Moderator: clinician1@example.com"
+    expect(page).to_not have_text "Moderator: admin1@example.com"
 
     click_on "Edit"
     fill_in "Title", with: "What!"
     select "Arm 2", from: "Arm"
-    select "clinician1@example.com", from: "Moderator"
+    select "admin1@example.com", from: "Moderator"
     click_on "Update"
 
     expect(page).to_not have_text "Title: Group 1"
     expect(page).to have_text "Title: What!"
     expect(page).to have_text "Arm: Arm 2"
     expect(page).to_not have_text "Arm: Arm 1"
-    expect(page).to_not have_text "Moderator: admin1@example.com"
-    expect(page).to have_text "Moderator: clinician1@example.com"
+    expect(page).to have_text "Moderator: admin1@example.com"
+    expect(page).to_not have_text "Moderator: clinician1@example.com"
 
     click_on "Edit"
-    select "Select Moderator", from: "Moderator"
     click_on "Update"
 
-    expect(page).to have_text "Moderator: None"
-    expect(page).to_not have_text "Moderator: clinician1@example.com"
-  end
-
-  it "should be able to remove a moderator from the group" do
-    click_on "Group 1"
-
     expect(page).to have_text "Moderator: admin1@example.com"
-
-    click_on "Remove Moderator"
-
-    expect(page).to have_text "Moderator was successfully removed"
-    expect(page).to have_text "Moderator: None"
-    expect(page).to_not have_text "Moderator: admin1@example.com"
   end
 
   it "should be able to delete a group" do

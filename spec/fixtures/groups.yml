@@ -1,23 +1,29 @@
 group1:
   title: Group 1
   arm: arm1
+  moderator: clinician1
 
 group2:
   title: Group 2
   arm: arm2
+  moderator: clinician1
 
 group3:
   title: Group 3
   arm: arm1
+  moderator: clinician1
 
 group4:
   title: Group Without Creator
   arm: arm1
+  moderator: clinician1
 
 group_without_members1:
   title: Group Without Members 1
   arm: arm1
+  moderator: clinician1
 
 group_without_members2:
   title: Group Without Members 2
   arm: arm2
+  moderator: clinician1
