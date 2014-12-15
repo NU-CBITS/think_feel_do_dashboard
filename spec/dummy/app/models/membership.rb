@@ -29,7 +29,7 @@ class Membership < ActiveRecord::Base
   private
 
   def ensure_display_name_for_social_arms
-    if active_group && active_group.arm.social? && display_name.blank?
+    if active_group && active_group.arm.social? && participant.display_name.blank?
       errors.add(
         :display_name, "is required because the arm of this \
           intervention utilizes social features."
