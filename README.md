@@ -85,6 +85,7 @@ Add the appropriate password and validation concerns to the `app/models/particip
 
 ```ruby
 class Participant < ActiveRecord::Base
+  include ThinkFeelDoDashboard::Concerns::ParticipantValidations
   include ThinkFeelDoDashboard::Concerns::Password
   include ThinkFeelDoDashboard::Concerns::RequiredUserAttributes
   ...
@@ -100,6 +101,7 @@ require File.expand_path("../../app/models/participant",
 
 # Extend Participant model.
 class Participant
+  include ThinkFeelDoDashboard::Concerns::ParticipantValidations
   include ThinkFeelDoDashboard::Concerns::Password
   include ThinkFeelDoDashboard::Concerns::RequiredUserAttributes
 end
