@@ -30,11 +30,13 @@ feature "Super User - Arms", type: :feature do
     click_on "New"
     fill_in "Title", with: "Big arm 2"
     check "Is social"
+    check "Wizard of Oz"
     click_on "Create"
 
     expect(page).to have_text "Arm was successfully created"
     expect(page).to have_text "Title: Big arm 2"
     expect(page).to have_text "Is social: Yes"
+    expect(page).to have_text "Wizard of Oz enabled: Yes"
 
     with_scope "#main" do
       visit "/think_feel_do_dashboard/arms"
@@ -66,10 +68,12 @@ feature "Super User - Arms", type: :feature do
     expect(page).to have_text "Is social: Yes"
     expect(page).to_not have_text "Title: What!"
     expect(page).to_not have_text "Is social: No"
+    expect(page).to have_text "Wizard of Oz enabled: Yes"
 
     click_on "Edit"
     fill_in "Title", with: "What!"
     uncheck "Is social"
+    uncheck "Wizard of Oz"
     click_on "Update"
 
     expect(page).to have_text "Arm was successfully updated"
@@ -78,6 +82,7 @@ feature "Super User - Arms", type: :feature do
     expect(page).to_not have_text "Is social: Yes"
     expect(page).to have_text "Title: What!"
     expect(page).to have_text "Is social: No"
+    expect(page).to have_text "Wizard of Oz enabled: No"
   end
 
   it "should be able to delete a user" do

@@ -1,6 +1,7 @@
 arm1:
   title: Arm 1
   is_social: true
+  has_woz: true
 
 arm2:
   title: Arm 2

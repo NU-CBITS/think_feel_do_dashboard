@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203201524) do
+ActiveRecord::Schema.define(version: 20141214203919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20141203201524) do
     t.boolean  "is_social",  default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "has_woz",    default: false
   end
 
   create_table "coach_assignments", force: true do |t|

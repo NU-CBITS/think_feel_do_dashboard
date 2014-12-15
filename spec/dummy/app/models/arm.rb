@@ -23,4 +23,8 @@ class Arm < ActiveRecord::Base
   def social?
     is_social
   end
+
+  def woz?
+    has_woz
+  end
 end
