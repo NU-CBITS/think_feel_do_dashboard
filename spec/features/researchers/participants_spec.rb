@@ -77,6 +77,7 @@ feature "Researcher -  Participants", type: :feature do
     click_on "Edit"
     fill_in "Phone Number", with: "19991234223"
     select "Phone", from: "Contact Preference"
+    fill_in "Display Name", with: "Big Time Name"
     click_on "Update"
 
     expect(page).to have_text "Phone number is not valid"
@@ -89,7 +90,7 @@ feature "Researcher -  Participants", type: :feature do
     select "Phone", from: "Contact Preference"
     click_on "Update"
 
-    expect(page).to have_text "Phone number is not valid"
+    expect(page).to have_text "Phone number can't be blank if your contact preference is phone."
   end
 
   it "should enable the updating of a participant" do
@@ -101,13 +102,13 @@ feature "Researcher -  Participants", type: :feature do
     expect(page).to have_text "Study Id: TFD-1111"
 
     expect(page).to_not have_text "Email: gwashington@ex.co"
-    expect(page).to_not have_text "Phone Number: (123) 456-7890"
+    expect(page).to_not have_text "Phone Number: (608) 845-6890"
     expect(page).to_not have_text "Contact Preference: Email"
     expect(page).to_not have_text "Study Id: favoriteToken1!"
 
     click_on "Edit"
     fill_in "Email", with: "gwashington@ex.co"
-    fill_in "Phone Number", with: "1234567890"
+    fill_in "Phone Number", with: "6088456890"
     select "Email", from: "Contact Preference"
     fill_in "Study Id", with: "favoriteToken1!"
     click_on "Update"
@@ -118,7 +119,7 @@ feature "Researcher -  Participants", type: :feature do
     expect(page).to_not have_text "Study Id: TFD-1111"
 
     expect(page).to have_text "Email: gwashington@ex.co"
-    expect(page).to have_text "Phone Number: (123) 456-7890"
+    expect(page).to have_text "Phone Number: (608) 845-6890"
     expect(page).to have_text "Contact Preference: Email"
     expect(page).to have_text "Study Id: favoriteToken1!"
   end

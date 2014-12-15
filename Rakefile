@@ -42,3 +42,11 @@ task :spec_lint do
 end
 
 task default: :spec_lint
+
+desc "Sets up the database, runs migrations, and seeds the database w/ fixtures"
+task :setup do
+  Rake::Task["app:db:drop"].invoke
+  Rake::Task["app:db:create"].invoke
+  Rake::Task["app:db:migrate"].invoke
+  Rake::Task["app:seed:with_think_feel_do_dashboard_fixtures"].invoke
+end

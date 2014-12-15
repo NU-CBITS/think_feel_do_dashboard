@@ -7,6 +7,7 @@ class Participant < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  include ThinkFeelDoDashboard::Concerns::ParticipantValidations
   include ThinkFeelDoDashboard::Concerns::Password
   include ThinkFeelDoDashboard::Concerns::RequiredUserAttributes
 
@@ -23,11 +24,11 @@ class Participant < ActiveRecord::Base
   has_many :groups, through: :memberships
   has_one :active_group, through: :active_membership
 
-  # My tests check this, but it isn't part of the application
   validates :password, password_strength: { use_dictionary: true }, :if => :password_is_not_blank?
   validates :phone_number, allow_nil: true, allow_blank: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validates :contact_preference, presence: true, inclusion: %w(email phone)
+  validates :study_id, presence: true, uniqueness: true
 
   def password_is_not_blank?
     !password.blank?

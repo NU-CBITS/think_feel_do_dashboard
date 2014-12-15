@@ -145,7 +145,6 @@ __Confluence:__ N/A
 ## Database initialization/creation
 
 Make sure you are in the top level folder; i.e., think_feel_do_dashboard. Then run:
-
 ```console
 rake app:db:drop app:db:create app:db:migrate
 ```
@@ -159,13 +158,16 @@ app:seed:with_think_feel_do_dashboard_fixtures
 ## Running Specs
 
 After you migrate the database, you may have to update the engine's testing environment:
-
 ```console
   rake app:db:drop app:db:create app:db:migrate RAILS_ENV=test
 ```
 
-Because we have combined brakeman, rubocop, and rspec, you can just run the rake command to run everything:
+Compelete setup (drops and creates the database, runs migrations, and seeds the database with fixtures):
+```console
+  rake setup
+```
 
+Because we have combined brakeman, rubocop, and rspec, you can just run the rake command to run everything:
 ```console
 rake
 ```

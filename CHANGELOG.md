@@ -1,3 +1,8 @@
+### 0.5.8 - 2014-12-15
+
+* enhancements
+  * improved validations by placing them in the membership and participant model
+
 ### 0.5.7 - 2014-12-08
 
 * enhancements

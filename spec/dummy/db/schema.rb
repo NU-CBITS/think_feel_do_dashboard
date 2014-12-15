@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20141214203919) do
     t.string   "study_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "display_name",           default: "", null: false
+    t.string   "display_name",           default: ""
     t.string   "contact_preference",     default: ""
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
