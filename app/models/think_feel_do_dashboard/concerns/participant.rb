@@ -1,6 +1,5 @@
 # validates phone numbers against Google api
 require "phonelib"
-
 module ThinkFeelDoDashboard
   module Concerns
     # is included in the Participant model and

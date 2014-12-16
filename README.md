@@ -85,9 +85,8 @@ Add the appropriate password and validation concerns to the `app/models/particip
 
 ```ruby
 class Participant < ActiveRecord::Base
-  include ThinkFeelDoDashboard::Concerns::ParticipantValidations
+  include ThinkFeelDoDashboard::Concerns::Participant
   include ThinkFeelDoDashboard::Concerns::Password
-  include ThinkFeelDoDashboard::Concerns::RequiredUserAttributes
   ...
 end
 ```
@@ -101,9 +100,30 @@ require File.expand_path("../../app/models/participant",
 
 # Extend Participant model.
 class Participant
-  include ThinkFeelDoDashboard::Concerns::ParticipantValidations
+  include ThinkFeelDoDashboard::Concerns::Participant
   include ThinkFeelDoDashboard::Concerns::Password
-  include ThinkFeelDoDashboard::Concerns::RequiredUserAttributes
+end
+```
+
+Add the appropriate group concern to the `app/models/group.rb` file:
+
+```ruby
+class Group < ActiveRecord::Base
+  include ThinkFeelDoDashboard::Concerns::Group
+  ...
+end
+```
+
+You may have to create a group.rb file containing a Group model and extend it
+from another engine's Group model `app/models/group.rb`. For instance,
+
+```ruby
+require File.expand_path("../../app/models/group",
+                         AnotherEngine::Engine.called_from)
+
+# Extend Group model.
+class Group
+  include ThinkFeelDoDashboard::Concerns::Group
 end
 ```
 
