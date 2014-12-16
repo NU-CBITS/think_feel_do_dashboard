@@ -21,37 +21,82 @@ feature "Researcher - Memberships", type: :feature do
 
   it "allows for the assigning of a participant to a group from the participant show page" do
     click_on "TFD-future2"
-    click_on "Assign Group"
+    click_on "Assign New Group"
 
-    expect(page).to have_text "Assigning Group to Participant"
+    expect(page).to have_text "Assigning New Group to Participant"
 
     click_on "Cancel"
   end
 
-  it "allows for the assigning of a participant to a group" do
+  it "allows for the updating of a participant with a membership to a group that requires a 'Display Name'" do
+    click_on "TFD-inactive"
+
+    expect(page).to have_text "Current Group: None"
+    expect(page).to_not have_text "Current Group: Group 1"
+
+    click_on "Assign New Group"
+    select "Group 1", from: "Group"
+    fill_in "Display Name", with: "TestName"
+    click_on "Assign"
+
+    expect(page).to have_text "Group was successfully assigned"
+    expect(page).to_not have_text "Current Group: None"
+    expect(page).to have_text "Current Group: Group 1"
+    expect(page).to have_text "Study Id: TFD-inactive"
+  end
+
+  it "allows for the updating of a participant's membership's 'Display Name'" do
+    click_on "TFD-1111"
+    click_on "Active Group 1"
+    click_on "Edit"
+    fill_in "Display Name", with: "TestName"
+    click_on "Update"
+
+    expect(page).to_not have_text "Display Name: Joe"
+    expect(page).to have_text "Display Name: TestName"
+  end
+
+  it "doesn't allows for the assing of a participant to two active groups" do
+    click_on "TFD-33303"
+    click_on "Assign New Group"
+    select "Group 1", from: "Group"
+    fill_in "Display Name", with: "TestName"
+    click_on "Assign"
+
+    expect(page).to have_text "Participant can't be assigned to this group because they are already active."
+  end
+
+  it "doesn't allow for the assigning of a participant to a group that requires a 'Display Name' but none is given" do
+    click_on "TFD-1111"
+    click_on "Active Group 1"
+    click_on "Edit"
+    fill_in "Display Name", with: ""
+    click_on "Update"
+
+    expect(page).to have_text "is required because the arm of this intervention utilizes social features"
+  end
+
+  it "allows for the assigning of a participant to multiple groups - but only one active group" do
     click_on "TFD-1111"
 
     expect(page).to have_text "Active Group 1"
     expect(page).to_not have_text "Group 2"
 
-    click_on "Assign Group"
+    click_on "Assign New Group"
 
-    expect(page).to have_text "Assigning Group to Participant"
+    expect(page).to have_text "Assigning New Group to Participant"
     expect(page).to have_text "Participant: TFD-1111"
 
     select "Group 2", from: "Group"
 
     click_on "Assign"
 
-    expect(page).to have_text "Group was successfully assigned"
-    expect(page).to_not have_text "Group: Group 1"
-    expect(page).to have_text "Group: Group 2"
-    expect(page).to have_text "Participant: TFD-1111"
+    expect(page).to have_text "Participant can't be assigned to this group because they are already active."
   end
 
   it "doesn't allow for the assigning of no group to a participant" do
     click_on "TFD-1111"
-    click_on "Assign Group"
+    click_on "Assign New Group"
     click_on "Assign"
 
     expect(page).to have_text "prohibited this group from being assigned"
@@ -80,11 +125,10 @@ feature "Researcher - Memberships", type: :feature do
     click_on "Update"
 
     expect(page).to have_text "New group was successfully assigned"
-    expect(page).to have_text "Group: Group Without Creator"
-    expect(page).to_not have_text "Group: Group 1"
-    expect(page).to have_text "Participant: TFD-1111"
-    expect(page).to have_text "Start Date: " + DateTime.now.strftime("%Y-%m-%d")
-    expect(page).to have_text "End Date: " + 4.days.from_now.strftime("%Y-%m-%d")
+    expect(page).to have_text "Participant"
+    expect(page).to have_text "Current Group: Group Without Creator"
+    expect(page).to_not have_text "Current Group: Group 1"
+    expect(page).to have_text "Study Id: TFD-1111"
   end
 
   it "allows for the unassigning a group" do

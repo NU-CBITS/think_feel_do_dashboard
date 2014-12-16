@@ -28,11 +28,8 @@ feature "Researcher - Coach Assignments", type: :feature do
     click_on "Assign"
 
     expect(page).to have_text "Coach was successfully assigned"
-    expect(page).to have_text "Participant: TFD-33303"
-    expect(page).to have_text "Coach: user3@example.com"
-
-    click_on "TFD-33303"
-
+    expect(page).to have_text "Participant"
+    expect(page).to have_text "Study Id: TFD-33303"
     expect(page).to_not have_text "Current Coach: None"
     expect(page).to have_text "Current Coach: user3@example.com"
   end
@@ -48,10 +45,6 @@ feature "Researcher - Coach Assignments", type: :feature do
     click_on "Update"
 
     expect(page).to have_text "Coach was successfully assigned."
-    expect(page).to have_text "Coach: user3@example.com"
-
-    click_on "TFD-1111"
-
     expect(page).to_not have_text "Current Coach: clinician1@example.com"
     expect(page).to have_text "Current Coach: user3@example.com"
   end
@@ -81,11 +74,6 @@ feature "Researcher - Coach Assignments", type: :feature do
     click_on "Update"
 
     expect(page).to have_text "Coach was successfully assigned."
-    expect(page).to_not have_text "Coach: clinician1@example.com"
-    expect(page).to have_text "Coach: user2@example.com"
-
-    click_on "TFD-1111"
-
     expect(page).to_not have_text "Current Coach: clinician1@example.com"
     expect(page).to have_text "Current Coach: user2@example.com"
   end

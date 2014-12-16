@@ -11,7 +11,19 @@ module ThinkFeelDoDashboard
                    class_name: "User",
                    foreign_key: :moderator_id
 
-        validates :moderator_id, presence: true
+        before_validation :create_moderator,
+                          on: :create,
+                          if: proc { |g| g.arm && g.arm.social? }
+
+        validates :moderator_id,
+                  presence: true,
+                  if: proc { |g| g.arm && g.arm.social? }
+      end
+
+      def moderating_participant
+        if active_memberships.count > 0
+          active_participants.find_by_is_admin(true)
+        end
       end
 
       # methods added to Class itself...
@@ -20,6 +32,31 @@ module ThinkFeelDoDashboard
 
       private
 
+      def create_moderator
+        unless moderating_participant
+          ActiveRecord::Base.transaction do
+            participant = create_participant(SecureRandom.hex(64))
+            memberships.build(
+              participant_id: participant.id,
+              start_date: Date.today,
+              end_date: Date.today.advance(weeks: 8)
+            )
+          end
+        end
+      end
+
+      def create_participant(study_id)
+        password = SecureRandom.hex(64)
+        ::Participant.create!(
+          contact_preference: "email",
+          display_name: "ThinkFeelDo",
+          email: "#{study_id}@example.com",
+          is_admin: true,
+          password: password,
+          password_confirmation: password,
+          study_id: study_id
+        )
+      end
     end
   end
 end

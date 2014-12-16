@@ -45,3 +45,15 @@ membership6:
   group: group1
   start_date: <%= Date.today + 365.days %>
   end_date: <%= Date.today + 365.days + 14.days %>
+
+membership_of_moderator_for_group1:
+  participant: moderator_for_group1
+  group: group1
+  start_date: <%= Date.today %>
+  end_date: <%= Date.today.advance(days: 10) %>
+
+membership_of_moderator_for_group2:
+  participant: moderator_for_group2
+  group: group2
+  start_date: <%= Date.today %>
+  end_date: <%= Date.today.advance(days: 10) %>

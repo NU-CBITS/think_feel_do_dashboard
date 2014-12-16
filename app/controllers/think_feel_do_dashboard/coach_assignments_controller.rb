@@ -21,8 +21,8 @@ module ThinkFeelDoDashboard
       )
 
       if @coach_assignment.save
-        redirect_to participant_coach_path(
-          @participant, @coach_assignment.coach
+        redirect_to participant_path(
+          @participant
         ),
                     notice: "Coach was successfully assigned."
       else
@@ -44,8 +44,8 @@ module ThinkFeelDoDashboard
     def update
       authorize! :update, @coach_assignment
       if @coach_assignment.update(coach_assignment_params)
-        redirect_to participant_coach_path(
-          @participant, @coach_assignment.coach
+        redirect_to participant_path(
+          @participant
         ),
                     notice: "Coach was successfully assigned."
       else

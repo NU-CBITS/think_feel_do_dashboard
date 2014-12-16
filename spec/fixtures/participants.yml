@@ -8,48 +8,75 @@ participant1:
 
 participant2:
   contact_preference: phone
+  phone_number: "6082153901"
   display_name: Joe
   study_id: TFD-2
   email: participant2@example.com
   encrypted_password: <%= Participant.new.send(:password_digest, SecureRandom.hex(64)) %>
 
 participant3:
+  contact_preference: email
   study_id: TFD-33303
   email: participant3@example.com
   encrypted_password: <%= Participant.new.send(:password_digest, SecureRandom.hex(64)) %>
 
 participant_wo_membership1:
+  contact_preference: email
   study_id: TFD-without_membership1
   email: participant_wo_membership1@example.com
   encrypted_password: <%= Participant.new.send(:password_digest, SecureRandom.hex(64)) %>
 
 participant_wo_membership2:
+  contact_preference: email
   study_id: TFD-without_membership2
   email: participant_wo_membership2@example.com
   encrypted_password: <%= Participant.new.send(:password_digest, SecureRandom.hex(64)) %>
 
 participant4:
+  contact_preference: email
   study_id: TFD-44444
   email: participant4@example.com
   encrypted_password: <%= Participant.new.send(:password_digest, SecureRandom.hex(64)) %>
 
 participant5:
   contact_preference: phone
+  phone_number: "6082153902"
   study_id: TFD-future1
   email: participant5@example.com
   encrypted_password: <%= Participant.new.send(:password_digest, SecureRandom.hex(64)) %>
 
 participant6:
+  contact_preference: email
   study_id: TFD-future2
   email: participant6@example.com
   encrypted_password: <%= Participant.new.send(:password_digest, SecureRandom.hex(64)) %>
 
 inactive_participant:
+  contact_preference: email
   study_id: TFD-inactive
   email: inactive_participant@example.com
   encrypted_password: <%= Participant.new.send(:password_digest, SecureRandom.hex(64)) %>
 
 active_participant:
+  contact_preference: email
   study_id: TFD-active
   email: active_participant@example.com
   encrypted_password: <%= Participant.new.send(:password_digest, SecureRandom.hex(64)) %>
+
+# always needs active membership
+moderator_for_group1:
+  contact_preference: email
+  study_id: Moderator for Group 1
+  display_name: Asia
+  email: moderator1@example.com
+  encrypted_password: <%= Participant.new.send(:password_digest, "9ed56e32af0a77d8b60d85b3a6361054aa9306996a28eed36e95e87bef3642b3576239d978febfb2d21595a98dc4a48c7460b595d279d6f23a9d03d989bb1503") %>
+  is_admin: true
+
+# always needs active membership
+moderator_for_group2:
+  contact_preference: email
+  study_id: Moderator for Group 2
+  display_name: Kiara
+  email: moderator2@example.com
+  encrypted_password: <%= Participant.new.send(:password_digest, "9ed56e32af0a77d8b60d85b3a6361054aa9306996a28eed36e95e87bef3642b3576239d978febfb2d21595a98dc4a48c7460b595d279d6f23a9d03d989bb1503") %>
+  is_admin: true

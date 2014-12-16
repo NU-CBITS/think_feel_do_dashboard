@@ -62,6 +62,19 @@ feature "Researcher - Groups", type: :feature do
     expect(page).to have_text "Moderator: admin1@example.com"
   end
 
+  it "should enable the creation of a group without a moderator if the arm is not social" do
+    click_on "New"
+    fill_in "Title", with: "HUGe PrOjEct 4"
+    select "Arm 2", from: "Arm"
+
+    click_on "Create"
+
+    expect(page).to have_text "Group was successfully created"
+    expect(page).to have_text "Title: HUGe PrOjEct 4"
+    expect(page).to have_text "Arm: Arm 2"
+    expect(page).to have_text "Moderator: None"
+  end
+
   it "should display errors if required fields aren't filled in" do
     click_on "Group 1"
     click_on "Edit"

@@ -4,7 +4,7 @@ module ThinkFeelDoDashboard
   module Concerns
     # is included in the Participant model and
     # checks whether a display_name needs to be set
-    # if an arm is socila
+    # if an arm is social
     module Participant
       extend ActiveSupport::Concern
 
@@ -16,6 +16,8 @@ module ThinkFeelDoDashboard
         before_validation :ensure_display_name
 
         validates :study_id, presence: true, uniqueness: true
+
+        validate :at_least_one_moderator_exists
       end
 
       # methods added to Class itself...
@@ -23,6 +25,14 @@ module ThinkFeelDoDashboard
       end
 
       private
+
+      def at_least_one_moderator_exists
+        if (is_admin == false) &&
+          active_group &&
+          active_group.active_participants.where(is_admin: true).count == 1
+          errors.add(:base, "at least one moderator needs to exist.")
+        end
+      end
 
       def ensure_contact_preference
         if contact_preference == "phone" && phone_number.blank?
@@ -45,7 +55,12 @@ module ThinkFeelDoDashboard
       end
 
       def ensure_display_name
-        active_membership.valid? if active_membership
+        if active_membership && active_group.arm.social? && display_name.blank?
+          errors.add(
+            :display_name, "is required because the arm of this \
+              intervention utilizes social features."
+            )
+        end
       end
     end
   end

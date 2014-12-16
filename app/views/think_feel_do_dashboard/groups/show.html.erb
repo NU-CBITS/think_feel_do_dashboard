@@ -21,7 +21,7 @@
 
 <p>
   <strong>Moderator:</strong>
-  <%= link_to(@group.moderator.email, user_path(@group.moderator)) %>
+  <%= @group.moderator ? link_to(@group.moderator.email, user_path(@group.moderator)) : "None" %>
 </p>
 
 <div class="panel panel-default">
