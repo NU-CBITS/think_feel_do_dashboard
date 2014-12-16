@@ -7,9 +7,9 @@ class Participant < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  include ThinkFeelDoDashboard::Concerns::ParticipantValidations
+
+  include ThinkFeelDoDashboard::Concerns::Participant
   include ThinkFeelDoDashboard::Concerns::Password
-  include ThinkFeelDoDashboard::Concerns::RequiredUserAttributes
 
   has_one :coach_assignment, dependent: :destroy
   has_one :coach, class_name: "User", through: :coach_assignment

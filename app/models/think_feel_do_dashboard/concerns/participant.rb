@@ -6,7 +6,7 @@ module ThinkFeelDoDashboard
     # is included in the Participant model and
     # checks whether a display_name needs to be set
     # if an arm is socila
-    module ParticipantValidations
+    module Participant
       extend ActiveSupport::Concern
 
       # This is perfect for including functionality
@@ -15,6 +15,8 @@ module ThinkFeelDoDashboard
         before_validation :ensure_phone_number, unless: "phone_number.blank?"
         before_validation :ensure_contact_preference
         before_validation :ensure_display_name
+
+        validates :study_id, presence: true, uniqueness: true
       end
 
       # methods added to Class itself...
