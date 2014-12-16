@@ -35,7 +35,7 @@ class Membership < ActiveRecord::Base
           intervention utilizes social features."
         )
     else
-      participant.update_attribute('display_name', display_name)
+      participant.update_attribute("display_name", display_name)
     end
   end
 end
