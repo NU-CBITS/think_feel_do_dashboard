@@ -1,7 +1,7 @@
 ### 0.5.12 - 2014-12-16
 
-* enhancments
-  * Moved moderator actions - routes, views, actions - from think_feel_do_engine
+* enhancements
+  * Moved moderator actions - routes, views, actions - from think_feel_do_engine into engine
 
 ### 0.5.11 - 2014-12-16
 
