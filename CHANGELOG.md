@@ -1,3 +1,8 @@
+### 0.5.11 - 2014-12-16
+
+* bug fixes
+  * fixed merge conflicts
+
 ### 0.5.10 - 2014-12-16
 
 * enhancements

@@ -47,11 +47,7 @@ GIT
 PATH
   remote: .
   specs:
-<<<<<<< HEAD
-    think_feel_do_dashboard (0.5.9)
-=======
-    think_feel_do_dashboard (0.5.10)
->>>>>>> added validation check on participant when membership is creatred
+    think_feel_do_dashboard (0.5.11)
       phonelib
 
 GEM

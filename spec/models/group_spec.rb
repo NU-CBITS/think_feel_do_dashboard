@@ -13,7 +13,6 @@ describe Group do
       it "creates a moderating participant" do
         moderating_participant = group.moderating_participant
         moderating_participant.reload
-        puts "moderating_participant.attributes = #{moderating_participant.attributes}"
 
         expect(moderating_participant).to_not be_nil
         expect(moderating_participant.is_admin).to eq true
