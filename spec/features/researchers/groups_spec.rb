@@ -17,6 +17,16 @@ feature "Researcher - Groups", type: :feature do
     expect(page).to have_text "Group 1"
   end
 
+  it "displays the moderate link if the group is social" do
+    click_on "Group 1 · SOCIAL"
+    expect(page).to have_link "Moderate"
+  end
+
+  it "displays the moderate link if the group is NOT social" do
+    click_on "Group 2"
+    expect(page).to_not have_link "Moderate"
+  end
+
   it "should display errors if required fields aren't filled in when created" do
     click_on "New"
     click_on "Create"

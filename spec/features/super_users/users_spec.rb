@@ -37,8 +37,6 @@ feature "Super User - Users", type: :feature do
     expect(page).to have_text "Super User: No"
     expect(page).to have_text "Email: clinician1@example.com"
     expect(page).to_not have_text "Email: what@ex.co"
-    expect(page).to have_text "Groups"
-    expect(page).to have_text "Group 2 · MOBILE"
     expect(page).to_not have_text "Super User: Yes"
     expect(page).to_not have_text "Roles: Clinician and Researcher"
 

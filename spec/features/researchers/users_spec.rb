@@ -34,8 +34,6 @@ feature "Researcher - Users", type: :feature do
     expect(page).to have_text "User was successfully created"
     expect(page).to have_text "Email: mike@example.com"
     expect(page).to have_text "Roles: Researcher"
-    expect(page).to have_text "Groups"
-    expect(page).to have_text "None"
 
     user = User.find_by_email("mike@example.com")
     expect(user.encrypted_password).to_not be_nil
@@ -58,8 +56,6 @@ feature "Researcher - Users", type: :feature do
 
     expect(page).to have_text "Email: clinician1@example.com"
     expect(page).to_not have_text "Email: what@ex.co"
-    expect(page).to have_text "Groups"
-    expect(page).to have_text "Group 2 · MOBILE"
     expect(page).to_not have_text "Roles: Clinician and Researcher"
 
     click_on "Edit"

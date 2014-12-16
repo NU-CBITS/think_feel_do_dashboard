@@ -3,6 +3,10 @@
 <div class="btn-toolbar" role="toolbar">
   <%= link_to "Groups", groups_path, class: "btn btn-default" %>
 
+  <% if can?(:moderate, @group) && @group.arm.social? %>
+    <%= link_to "Moderate", group_moderators_path(@group), method: :post, :class => "btn btn-default", target: "_blank" %>
+  <% end %>
+
   <%= link_to "Manage Tasks", think_feel_do_engine.arm_manage_tasks_group_path(@group.arm, @group), class: "btn btn-default" %>
 
   <%= link_to "Edit", edit_group_path(@group), class: "btn btn-default" %>
