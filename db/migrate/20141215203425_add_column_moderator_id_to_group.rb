@@ -10,23 +10,9 @@ class AddColumnModeratorIdToGroup < ActiveRecord::Migration
         group.update_attributes(moderator_id: User.first.id)
       end
     end
-
-    execute <<-SQL
-      ALTER TABLE groups
-        ADD CONSTRAINT fk_groups_user
-        FOREIGN KEY (moderator_id)
-        REFERENCES users(id)
-    SQL
-
-    change_column_null :groups, :moderator_id, false
   end
 
   def down
     remove_column :groups, :moderator_id, :integer
-
-    execute <<-SQL
-      ALTER TABLE groups
-        DROP CONSTRAINT fk_groups_user
-    SQL
   end
 end

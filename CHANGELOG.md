@@ -1,3 +1,9 @@
+### 0.5.9 - 2014-12-16
+
+* enhancements
+  * added in moderator validations from think_feel_do_engine
+  * updated redirects after participant creation
+
 ### 0.5.8 - 2014-12-15
 
 * enhancements

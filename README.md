@@ -67,7 +67,6 @@ class User < ActiveRecord::Base
   ...
 end
 ```
-
 You may have to create a user.rb file containing a User model and extend it
 from another engine's User model `app/models/user.rb`. For instance,
 
@@ -90,7 +89,6 @@ class Participant < ActiveRecord::Base
   ...
 end
 ```
-
 You may have to create a participant.rb file containing a Participant model and extend it
 from another engine's Participant model `app/models/participant.rb`. For instance,
 
@@ -113,7 +111,6 @@ class Group < ActiveRecord::Base
   ...
 end
 ```
-
 You may have to create a group.rb file containing a Group model and extend it
 from another engine's Group model `app/models/group.rb`. For instance,
 
@@ -126,6 +123,26 @@ class Group
   include ThinkFeelDoDashboard::Concerns::Group
 end
 ```
+
+Add the appropriate membership concern to the `app/models/membership.rb` file:
+
+```ruby
+class Membership < ActiveRecord::Base
+  include ThinkFeelDoDashboard::Concerns::Membership
+  ...
+end
+```
+You may have to create a membership.rb file containing a Membership model and extend it
+from another engine's Membership model `app/models/membership.rb`. For instance,
+
+```ruby
+require File.expand_path("../../app/models/membership",
+                         AnotherEngine::Engine.called_from)
+
+# Extend Membership model.
+class Membership
+  include ThinkFeelDoDashboard::Concerns::Membership
+end
 
 Install the engine's migrations into the host application and migrate:
 ```console

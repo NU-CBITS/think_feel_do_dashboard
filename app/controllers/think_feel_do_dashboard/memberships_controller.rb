@@ -26,7 +26,7 @@ module ThinkFeelDoDashboard
                       )
       authorize! :create, @membership
       if @membership.save
-        redirect_to participant_group_path(@participant, @membership.group),
+        redirect_to participant_path(@participant),
                     notice: "Group was successfully assigned"
       else
         render :new
@@ -47,7 +47,7 @@ module ThinkFeelDoDashboard
     def update
       authorize! :update, @membership
       if @membership.update(membership_params)
-        redirect_to participant_group_path(@participant, @membership.group),
+        redirect_to participant_path(@participant),
                     notice: "New group was successfully assigned."
       else
         render :edit
