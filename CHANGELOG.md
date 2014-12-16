@@ -1,3 +1,8 @@
+### 0.5.10 - 2014-12-16
+
+* enhancements
+  * updated membership creation to validate the participant being assigned.
+
 ### 0.5.9 - 2014-12-16
 
 * enhancements

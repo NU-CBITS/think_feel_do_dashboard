@@ -38,7 +38,7 @@ module ThinkFeelDoDashboard
             )
         else
           name = display_name || participant.display_name
-          participant.update_attribute("display_name", name)
+          participant.update_attributes(display_name: name)
         end
       end
 

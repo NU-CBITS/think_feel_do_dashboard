@@ -18,6 +18,7 @@ describe Group do
         expect(moderating_participant).to_not be_nil
         expect(moderating_participant.is_admin).to eq true
         expect(moderating_participant.display_name).to eq "ThinkFeelDo"
+        expect(moderating_participant.email).to_not be_nil
       end
 
       it "validates whether a moderating participant exists for groups of social arms" do
