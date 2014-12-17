@@ -26,7 +26,7 @@ describe Group do
         p = SocialNetworking::Profile.find_by_participant_id(moderating_participant.id)
         expect(p).to_not be_nil
         expect(p.icon_name).to eq "admin"
-        expect(p.active).to be_true
+        expect(p.active).to eq true
       end
 
       it "validates whether a moderating participant exists for groups of social arms" do

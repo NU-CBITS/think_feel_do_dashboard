@@ -1,8 +1,9 @@
 module SocialNetworking
   # A set of data representing a Social Profile belonging to a Participant.
   class Profile < ActiveRecord::Base
-    belongs_to :participant
+    self.table_name = "social_networking_profiles"
 
-    validates :participant_id, presence: true
+    belongs_to :participant
+    validates :participant, presence: true
   end
 end

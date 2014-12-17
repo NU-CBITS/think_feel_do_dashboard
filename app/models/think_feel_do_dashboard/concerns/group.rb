@@ -59,14 +59,11 @@ module ThinkFeelDoDashboard
       end
 
       def create_profile(participant_id)
-        puts "defined?(::SocialNetworking::Profile) = #{defined?(::SocialNetworking::Profile)}"
-        if defined?(::SocialNetworking::Profile)
-          SocialNetworking::Profile.create!(
-            participant_id: participant_id,
-            icon_name: "admin",
-            active: true
-          )
-        end
+        ::SocialNetworking::Profile.create!(
+          participant_id: participant_id,
+          icon_name: "admin",
+          active: true
+        )
       end
     end
   end
