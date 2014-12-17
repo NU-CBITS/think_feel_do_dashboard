@@ -55,21 +55,23 @@
   <%= @group.moderator ? link_to(@group.moderator.email, user_path(@group.moderator)) : "None" %>
 </p>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Participants</h3>
+<% if can? :show, Participant %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Participants</h3>
+    </div>
+    <% if Membership.where(group_id: @group.id).count == 0 %>
+      <div class="panel-body">
+        None
+      </div>
+    <% else %>
+      <div class="list-group">
+        <% Membership.where(group_id: @group.id).each do |membership| %>
+          <% if can? :show, membership.participant %>
+            <%= link_to membership.participant.study_id, participant_path(membership.participant), class: "list-group-item clearfix" %>
+            <% end %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-  <% if Membership.where(group_id: @group.id).count == 0 %>
-    <div class="panel-body">
-      None
-    </div>
-  <% else %>
-    <div class="list-group">
-      <% Membership.where(group_id: @group.id).each do |membership| %>
-        <% if can? :show, membership.participant %>
-          <%= link_to membership.participant.study_id, participant_path(membership.participant), class: "list-group-item clearfix" %>
-          <% end %>
-      <% end %>
-    </div>
-  <% end %>
-</div>
+<% end %>

@@ -12,7 +12,6 @@ module ThinkFeelDoDashboard
                    foreign_key: :moderator_id
 
         before_validation :create_moderator,
-                          on: :create,
                           if: proc { |g| g.arm && g.arm.social? }
 
         validates :moderator_id,

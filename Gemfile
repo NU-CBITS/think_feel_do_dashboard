@@ -38,7 +38,7 @@ group :development, :test do
 
   # Currently used for helper links and authorization
   gem "think_feel_do_engine",
-      # tag: "1.5.15",
+      # tag: "1.7.3",
       # git: "https://github.com/cbitstech/think_feel_do_engine.git"
       path: "/Users/usabilitymonitor/Desktop/Github/think_feel_do_engine"
 

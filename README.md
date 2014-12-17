@@ -60,7 +60,6 @@ Note: You will have access to additional routes.
 7. reports: `/think_feel_do_dashboard/reports`
 
 Add the appropriate password concern to the `app/models/user.rb` file:
-
 ```ruby
 class User < ActiveRecord::Base
   include ThinkFeelDoDashboard::Concerns::Password
@@ -81,7 +80,6 @@ end
 ```
 
 Add the appropriate password and validation concerns to the `app/models/participant.rb` file:
-
 ```ruby
 class Participant < ActiveRecord::Base
   include ThinkFeelDoDashboard::Concerns::Participant
@@ -104,7 +102,6 @@ end
 ```
 
 Add the appropriate group concern to the `app/models/group.rb` file:
-
 ```ruby
 class Group < ActiveRecord::Base
   include ThinkFeelDoDashboard::Concerns::Group
@@ -125,7 +122,6 @@ end
 ```
 
 Add the appropriate membership concern to the `app/models/membership.rb` file:
-
 ```ruby
 class Membership < ActiveRecord::Base
   include ThinkFeelDoDashboard::Concerns::Membership
@@ -143,6 +139,7 @@ require File.expand_path("../../app/models/membership",
 class Membership
   include ThinkFeelDoDashboard::Concerns::Membership
 end
+```
 
 Install the engine's migrations into the host application and migrate:
 ```console
