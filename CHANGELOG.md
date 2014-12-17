@@ -1,3 +1,9 @@
+### 0.5.14 - 2014-12-17
+
+* bug fixes
+  * Removed bad migration
+  * Updated validations for moderator on a group
+
 ### 0.5.13 - 2014-12-17
 
 * enhancements
