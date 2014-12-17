@@ -1,3 +1,8 @@
+### 0.5.13 - 2014-12-17
+
+* enhancements
+  * Updated (b/c of authorization) views with the latest ability.rb - from think_feel_do_engine
+
 ### 0.5.12 - 2014-12-16
 
 * enhancements
