@@ -35,6 +35,7 @@ module ThinkFeelDoDashboard
         unless moderating_participant
           ActiveRecord::Base.transaction do
             participant = create_participant(SecureRandom.hex(64))
+            create_profile(participant.id)
             memberships.build(
               participant_id: participant.id,
               start_date: Date.today,
@@ -54,6 +55,14 @@ module ThinkFeelDoDashboard
           password: password,
           password_confirmation: password,
           study_id: study_id
+        )
+      end
+
+      def create_profile(participant_id)
+        ::SocialNetworking::Profile.create!(
+          participant_id: participant_id,
+          icon_name: "admin",
+          active: true
         )
       end
     end

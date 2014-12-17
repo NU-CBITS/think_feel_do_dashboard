@@ -1,3 +1,9 @@
+### 0.6.0 - 2014-12-17
+
+* enhancements
+  * added auto-generation of SocialNetworking::Profiles on group and group_moderator creation
+  * Fixed merge conflict with a pull from 0.5.14
+
 ### 0.5.14 - 2014-12-17
 
 * bug fixes

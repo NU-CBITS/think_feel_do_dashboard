@@ -18,6 +18,10 @@ module ThinkFeelDoDashboard
         before_destroy :admin_is_not_destroyable?
 
         validates :study_id, presence: true, uniqueness: true
+
+        has_many :social_networking_profiles,
+                 class_name: "SocialNetworking::Profile",
+                 dependent: :destroy
       end
 
       # methods added to Class itself...

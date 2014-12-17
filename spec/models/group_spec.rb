@@ -20,6 +20,15 @@ describe Group do
         expect(moderating_participant.email).to_not be_nil
       end
 
+      it "creates a social networking profile" do
+        moderating_participant = group.moderating_participant
+
+        p = SocialNetworking::Profile.find_by_participant_id(moderating_participant.id)
+        expect(p).to_not be_nil
+        expect(p.icon_name).to eq "admin"
+        expect(p.active).to eq true
+      end
+
       it "doesn't allow an 'is admin' participant's is_admin attribute to be updated" do
         moderating_participant = group.moderating_participant
         moderating_participant.update_attributes(is_admin: false)
@@ -38,7 +47,7 @@ describe Group do
         expect(moderating_participant.errors.full_messages.include?("Is admin can't be updated.")).to_not eq true
       end
 
-      it "allows other attributes can be updated" do
+      it "doesn't allow a moderating participant to be deleted" do
         moderating_participant = group.moderating_participant
         moderating_participant.destroy
         moderating_participant.reload
