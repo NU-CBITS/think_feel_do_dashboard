@@ -3,7 +3,13 @@ class AddColumnModeratorIdToGroup < ActiveRecord::Migration
     add_column :groups, :moderator_id, :integer
 
     Group.all.each do |group|
-      moderator = ThinkFeelDoDashboard::Moderator.where(group_id: group.id).first
+
+      if defined?(ThinkFeelDoDashboard::Moderator)
+        moderator = ThinkFeelDoDashboard::Moderator.where(group_id: group.id).first
+      else
+        moderator = nil
+      end
+
       if moderator
         group.update_attributes(moderator_id: moderator.user_id)
       else
