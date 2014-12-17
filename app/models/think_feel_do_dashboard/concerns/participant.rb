@@ -14,10 +14,10 @@ module ThinkFeelDoDashboard
         before_validation :ensure_phone_number, unless: "phone_number.blank?"
         before_validation :ensure_contact_preference
         before_validation :ensure_display_name
+        before_validation :prevent_is_admin_update, on: :update
+        before_destroy :admin_is_not_destroyable?
 
         validates :study_id, presence: true, uniqueness: true
-
-        validate :at_least_one_moderator_exists
       end
 
       # methods added to Class itself...
@@ -26,11 +26,22 @@ module ThinkFeelDoDashboard
 
       private
 
-      def at_least_one_moderator_exists
-        if (is_admin == false) &&
-          active_group &&
-          active_group.active_participants.where(is_admin: true).count == 1
-          errors.add(:base, "at least one moderator needs to exist.")
+      def prevent_is_admin_update
+        if changed.include?("is_admin")
+          errors.add(
+            :is_admin,
+            "can't be updated."
+          )
+        end
+      end
+
+      def admin_is_not_destroyable?
+        if is_admin
+          errors.add(
+            :is_admin,
+            "can't be destroyed."
+          )
+          false
         end
       end
 

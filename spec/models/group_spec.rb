@@ -20,14 +20,30 @@ describe Group do
         expect(moderating_participant.email).to_not be_nil
       end
 
-      it "validates whether a moderating participant exists for groups of social arms" do
+      it "doesn't allow an 'is admin' participant's is_admin attribute to be updated" do
         moderating_participant = group.moderating_participant
         moderating_participant.update_attributes(is_admin: false)
         moderating_participant.reload
 
         expect(moderating_participant).to_not be_nil
         expect(moderating_participant.is_admin).to eq true
-        expect(moderating_participant.errors.full_messages.include?("at least one moderator needs to exist.")).to eq true
+        expect(moderating_participant.errors.full_messages.include?("Is admin can't be updated.")).to eq true
+      end
+
+      it "allows other attributes can be updated" do
+        moderating_participant = group.moderating_participant
+        moderating_participant.update_attributes(contact_preference: "email")
+        moderating_participant.reload
+
+        expect(moderating_participant.errors.full_messages.include?("Is admin can't be updated.")).to_not eq true
+      end
+
+      it "allows other attributes can be updated" do
+        moderating_participant = group.moderating_participant
+        moderating_participant.destroy
+        moderating_participant.reload
+
+        expect(moderating_participant.errors.full_messages.include?("Is admin can't be destroyed.")).to eq true
       end
     end
 
