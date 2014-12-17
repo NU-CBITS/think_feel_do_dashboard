@@ -1,9 +1,44 @@
 <h1>Arm <%= arm_type(@arm) %></h1>
 
 <div class="btn-toolbar" role="toolbar">
-  <%= link_to "Arms", arms_path, class: "btn btn-default" %>
-  <%= link_to "Edit", edit_arm_path(@arm), class: "btn btn-default" %>
-  <%= link_to "Destroy", arm_path(@arm), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <div class="btn-group">
+    <%= link_to "Arms", arms_path, class: "btn btn-default" %>
+  </div>
+
+  <% if can? :edit, @arm %>
+    <div class="btn-group">
+      <%= link_to "Edit", edit_arm_path(@arm), class: "btn btn-default" %>
+    </div>
+  <% end %>
+
+  <% if can? :manage, BitCore::ContentModule %>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        Manage Content <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <% if can? :manage, BitCore::ContentModule %>
+          <li>
+            <%= link_to "Content Modules", think_feel_do_engine.arm_bit_maker_content_modules_path(@arm) %>
+          </li>
+        <% end %>
+        <li>
+          <% if can? :manage, ContentModules::LessonModule %>
+            <%= link_to "Lesson Modules", think_feel_do_engine.arm_lessons_path(@arm) %>
+          <% end %>
+        </li>
+        <li>
+          <% if can? :manage, BitCore::Slideshow %>
+            <%= link_to "Slideshows", think_feel_do_engine.arm_bit_maker_slideshows_path(@arm) %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if can? :destroy, @arm %>
+    <%= link_to "Destroy", arm_path(@arm), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <% end %>
 </div>
 
 <p>
@@ -20,15 +55,17 @@
   <%= @arm.woz? ? "Yes" : "No" %>
 </p>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Groups</h3>
-  </div>
-  <% if @arm.groups.count == 0 %>
-    <div class="panel-body">
-      None
+<% if can? :show, Group %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Groups</h3>
     </div>
-  <% else %>
-    <%= render "think_feel_do_dashboard/groups/groups", groups: @arm.groups %>
-  <% end %>
-</div>
+    <% if @arm.groups.count == 0 %>
+      <div class="panel-body">
+        None
+      </div>
+    <% else %>
+      <%= render "think_feel_do_dashboard/groups/groups", groups: @arm.groups %>
+    <% end %>
+  </div>
+<% end %>

@@ -1,16 +1,43 @@
 <h1>Group <%= arm_type(@group.arm) %></h1>
 
 <div class="btn-toolbar" role="toolbar">
-  <%= link_to "Groups", groups_path, class: "btn btn-default" %>
+  <div class="btn-group">
+    <%= link_to "Arm", arm_path(@group.arm), class: "btn btn-default" %>
+  </div>
+
+  <%# if can? %>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        Messaging <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <%# if can? %>
+            <%= link_to "Messages", think_feel_do_engine.coach_messages_path %>
+          <%# end %>
+        </li>
+        <li>
+          <%# if can? %>
+            <%= link_to "Site Messaging", think_feel_do_engine.site_messages_path %>
+          <%# end %>
+        </li>
+      </ul>
+    </div>
+  <%# end %>
 
   <% if can?(:moderate, @group) && @group.arm.social? %>
     <%= link_to "Moderate", group_moderators_path(@group), method: :post, :class => "btn btn-default", target: "_blank" %>
   <% end %>
+  <% if can? :manage, @group %>
+    <%= link_to "Manage Tasks", think_feel_do_engine.arm_manage_tasks_group_path(@group.arm, @group), class: "btn btn-default" %>
+  <% end %>
 
-  <%= link_to "Manage Tasks", think_feel_do_engine.arm_manage_tasks_group_path(@group.arm, @group), class: "btn btn-default" %>
-
-  <%= link_to "Edit", edit_group_path(@group), class: "btn btn-default" %>
-  <%= link_to "Destroy", group_path(@group), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <% if can? :edit, @group %>
+    <%= link_to "Edit", edit_group_path(@group), class: "btn btn-default" %>
+  <% end %>
+  <% if can? :destroy, @group %>
+    <%= link_to "Destroy", group_path(@group), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <% end %>
 </div>
 
 <p>
@@ -39,7 +66,9 @@
   <% else %>
     <div class="list-group">
       <% Membership.where(group_id: @group.id).each do |membership| %>
-        <%= link_to membership.participant.study_id, participant_path(membership.participant), class: "list-group-item clearfix" %>
+        <% if can? :show, membership.participant %>
+          <%= link_to membership.participant.study_id, participant_path(membership.participant), class: "list-group-item clearfix" %>
+          <% end %>
       <% end %>
     </div>
   <% end %>

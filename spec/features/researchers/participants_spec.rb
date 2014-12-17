@@ -29,11 +29,11 @@ feature "Researcher -  Participants", type: :feature do
     expect(page).to_not have_text "Inactive favoriteToken1!"
 
     click_on "New"
+    fill_in "Study Id", with: "favoriteToken1!"
     fill_in "Email", with: "gwashington@ex.co"
     fill_in "Phone Number", with: "6085169918"
     select "Phone", from: "Contact Preference"
     fill_in "Display Name", with: "Mr. Happy"
-    fill_in "Study Id", with: "favoriteToken1!"
     click_on "Create"
 
     expect(page).to have_text "Participant was successfully created"

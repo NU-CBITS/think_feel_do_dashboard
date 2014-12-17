@@ -1,9 +1,18 @@
 <h1>Participant</h1>
 
 <div class="btn-toolbar" role="toolbar">
-  <%= link_to "Participants", participants_path, class: "btn btn-default" %>
-  <%= link_to "Edit", edit_participant_path(@participant), class: "btn btn-default" %>
-  <%= link_to "Destroy", participant_path(@participant), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <% if can? :index, Participant %>
+    <%= link_to "Participants", participants_path, class: "btn btn-default" %>
+  <% end %>
+  <% if @participant.active_group && (can? :show, @participant.active_group) %>
+    <%= link_to "Group", group_path(@participant.active_group), class: "btn btn-default" %>
+  <% end %>
+  <% if can? :edit, @participant %>
+    <%= link_to "Edit", edit_participant_path(@participant), class: "btn btn-default" %>
+  <% end %>
+  <% if can? :destroy, @participant %>
+    <%= link_to "Destroy", participant_path(@participant), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <% end %>
 </div>
 
 <p>
@@ -45,9 +54,11 @@
   <% end %>
 </p>
 
-<p>
-  <%= link_to "Assign New Group", new_participant_group_path(@participant), class: "btn btn-default" %>
-</p>
+<% if can? :update, @participant %>
+  <p>
+    <%= link_to "Assign New Group", new_participant_group_path(@participant), class: "btn btn-default" %>
+  </p>
+<% end %>
 
 <p>
   <strong>Current Coach:</strong>
@@ -58,13 +69,15 @@
   <% end %>
 </p>
 
-<p>
-  <% if @participant.coach %>
-    <%= link_to "Assign Coach", edit_participant_coach_path(@participant, @participant.coach), class: "btn btn-default" %>
-  <% else %>
-    <%= link_to "Assign Coach", new_participant_coach_path(@participant), class: "btn btn-default" %>
-  <% end %>
-</p>
+<% if can? :update, @participant %>
+  <p>
+    <% if @participant.coach %>
+      <%= link_to "Assign Coach", edit_participant_coach_path(@participant, @participant.coach), class: "btn btn-default" %>
+    <% else %>
+      <%= link_to "Assign Coach", new_participant_coach_path(@participant), class: "btn btn-default" %>
+    <% end %>
+  </p>
+<% end %>
 
 <div class="panel panel-default">
   <div class="panel-heading">

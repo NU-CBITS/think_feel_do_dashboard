@@ -19,15 +19,6 @@ feature "Researcher - Memberships", type: :feature do
     expect(page).to have_text "Active Group 1"
   end
 
-  it "allows for the assigning of a participant to a group from the participant show page" do
-    click_on "TFD-future2"
-    click_on "Assign New Group"
-
-    expect(page).to have_text "Assigning New Group to Participant"
-
-    click_on "Cancel"
-  end
-
   it "allows for the updating of a participant with a membership to a group that requires a 'Display Name'" do
     click_on "TFD-inactive"
 

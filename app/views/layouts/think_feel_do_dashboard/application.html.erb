@@ -12,10 +12,12 @@
     <nav class="navbar navbar-default" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <%= link_to "ThinkFeelDo", think_feel_do_engine.arms_path, class: "navbar-brand" %>
+          <%= link_to "ThinkFeelDo", root_path, class: "navbar-brand" %>
         </div>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Sign Out", think_feel_do_engine.destroy_user_session_path, method: :delete %></li>
+          <li>
+            <a data-method="delete" href="/users/sign_out" rel="nofollow">Sign Out</a>
+          </li>
         </ul>
         <p class="navbar-text navbar-right">Signed in as <%= current_user.email %></p>
       </div>

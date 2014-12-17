@@ -1,12 +1,16 @@
 <h1>Listing Participants</h1>
 
 <div class="btn-toolbar" role="toolbar">
-  <%= link_to "Researcher Dashboard", root_path, class: "btn btn-default" %>
-  <%= link_to "New", new_participant_path, class: "btn btn-default" %>
+  <%= link_to "Home", root_path, class: "btn btn-default" %>
+  <% if can? :new, Participant %>
+    <%= link_to "New", new_participant_path, class: "btn btn-default" %>
+  <% end %>
 </div>
 
 <div class="list-group">
   <% @participants.each do |participant| %>
-    <%= link_to membership_status(participant, participant.active_membership) + participant.study_id, participant, class: "list-group-item" %>
+    <% if can? :show, participant %>
+      <%= link_to membership_status(participant, participant.active_membership) + participant.study_id, participant, class: "list-group-item" %>
+    <% end %>
   <% end %>
 </div>

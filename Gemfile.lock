@@ -24,12 +24,16 @@ GIT
       jbuilder
       rails (>= 4.1.5)
 
-GIT
-  remote: https://github.com/cbitstech/think_feel_do_engine.git
-  revision: 760f08c824989394a7a098e6e2b04edbd58f2703
-  tag: 1.5.15
+PATH
+  remote: .
   specs:
-    think_feel_do_engine (1.5.15)
+    think_feel_do_dashboard (0.5.12)
+      phonelib
+
+PATH
+  remote: /Users/usabilitymonitor/Desktop/Github/think_feel_do_engine
+  specs:
+    think_feel_do_engine (1.6.1)
       bootstrap-sass (~> 3.1)
       cancancan (~> 1.9)
       devise (~> 3.2)
@@ -43,12 +47,6 @@ GIT
       turbolinks (~> 2.2)
       twilio-ruby (~> 3.12)
       underscore-rails (~> 1.6)
-
-PATH
-  remote: .
-  specs:
-    think_feel_do_dashboard (0.5.12)
-      phonelib
 
 GEM
   remote: https://rubygems.org/

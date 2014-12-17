@@ -4,8 +4,6 @@ module ThinkFeelDoDashboard
   # Allows for the creation, updating, and deletion of participants
   class ParticipantsController < ApplicationController
     load_and_authorize_resource
-    # before_action :set_contact_preferences,
-    #               only: [:new, :create, :show, :edit, :update]
     before_action :set_contact_preferences
 
     # GET /think_feel_do_dashboard/participants

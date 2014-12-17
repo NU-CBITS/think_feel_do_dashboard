@@ -5,7 +5,7 @@ module ThinkFeelDoDashboard
   class AdminController < ApplicationController
     # GET /think_feel_do_dashboard
     def index
-      authorize! :manage, CoachAssignment
+      authorize! :index, Arm
     end
   end
 end

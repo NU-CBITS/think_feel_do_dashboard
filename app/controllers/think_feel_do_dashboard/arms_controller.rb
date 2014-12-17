@@ -21,7 +21,6 @@ module ThinkFeelDoDashboard
 
     # GET /think_feel_do_dashboard/arms/new
     def new
-      @arm = Arm.new
     end
 
     # GET /think_feel_do_dashboard/arms/1

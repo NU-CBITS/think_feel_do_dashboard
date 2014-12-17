@@ -1,29 +1,25 @@
-<h1>Researcher Dashboard</h1>
-
-<div class="btn-toolbar" role="toolbar">
-  <%= link_to "Home", think_feel_do_engine.arms_path, class: "btn btn-default" %>
-</div>
+<h1>Home</h1>
 
 <div class="list-group">
-  <% if can? :read, Arm %>
+  <% if can? :index, Arm %>
     <a href="<%= arms_path %>" class="list-group-item">
       <h4 class="list-group-item-heading">Arms</h4>
-      <p class="list-group-item-text">Create, update, delete arms</p>
+      <p class="list-group-item-text">Navigate to groups and participants througth arms.</p>
     </a>
   <% end %>
-  <% if can? :read, Group %>
+  <% if can? :index, Group %>
     <a href="<%= groups_path %>" class="list-group-item">
       <h4 class="list-group-item-heading">Groups</h4>
       <p class="list-group-item-text">Create, update, delete, and associate groups with arms along with set moderators.</p>
     </a>
   <% end %>
-  <% if can? :read, Participant %>
+  <% if can? :index, Participant %>
     <a href="<%= participants_path %>" class="list-group-item">
       <h4 class="list-group-item-heading">Participants</h4>
       <p class="list-group-item-text">Create, update, and delete participants along with assigning them to groups.</p>
     </a>
   <% end %>
-  <% if can? :read, User %>
+  <% if can? :index, User %>
     <a href="<%= users_path %>" class="list-group-item">
       <h4 class="list-group-item-heading">Users</h4>
       <p class="list-group-item-text">Create and view admins, clinicians, researchers, and content authors.</p>
