@@ -33,7 +33,7 @@ PATH
 PATH
   remote: /Users/usabilitymonitor/Desktop/Github/think_feel_do_engine
   specs:
-    think_feel_do_engine (1.6.1)
+    think_feel_do_engine (1.7.3)
       bootstrap-sass (~> 3.1)
       cancancan (~> 1.9)
       devise (~> 3.2)

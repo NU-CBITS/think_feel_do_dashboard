@@ -15,6 +15,7 @@ class AddColumnModeratorIdToGroup < ActiveRecord::Migration
       else
         group.update_attributes(moderator_id: User.first.id)
       end
+      group.save
     end
   end
 
