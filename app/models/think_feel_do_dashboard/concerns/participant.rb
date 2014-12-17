@@ -29,7 +29,7 @@ module ThinkFeelDoDashboard
       def at_least_one_moderator_exists
         if (is_admin == false) &&
           active_group &&
-          active_group.active_participants.where(is_admin: true).count == 1
+          active_group.active_participants.where(is_admin: true).count == 0
           errors.add(:base, "at least one moderator needs to exist.")
         end
       end

@@ -20,6 +20,15 @@ describe Group do
         expect(moderating_participant.email).to_not be_nil
       end
 
+      it "creates a social networking profile" do
+        moderating_participant = group.moderating_participant
+
+        p = SocialNetworking::Profile.find_by_participant_id(moderating_participant.id)
+        expect(p).to_not be_nil
+        expect(p.icon_name).to eq "admin"
+        expect(p.active).to be_true
+      end
+
       it "validates whether a moderating participant exists for groups of social arms" do
         moderating_participant = group.moderating_participant
         moderating_participant.update_attributes(is_admin: false)
