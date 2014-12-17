@@ -55,17 +55,9 @@
   <%= @arm.woz? ? "Yes" : "No" %>
 </p>
 
-<% if can? :show, Group %>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">Groups</h3>
-    </div>
-    <% if @arm.groups.count == 0 %>
-      <div class="panel-body">
-        None
-      </div>
-    <% else %>
-      <%= render "think_feel_do_dashboard/groups/groups", groups: @arm.groups %>
-    <% end %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Groups</h3>
   </div>
-<% end %>
+  <%= render "think_feel_do_dashboard/groups/groups", groups: @arm.groups %>
+</div>

@@ -14,14 +14,14 @@ feature "Researcher - Coach Assignments", type: :feature do
   end
 
   it "allows for the assigning of a coach" do
-    click_on "TFD-33303"
+    click_on "Inactive TFD-without_membership2"
 
     expect(page).to have_text "Current Coach: None"
     expect(page).to_not have_text "Current Coach: user3@example.com"
 
     click_on "Assign Coach"
 
-    expect(page).to have_text "Participant: TFD-33303"
+    expect(page).to have_text "Participant: TFD-without_membership2"
 
     select "user3@example.com", from: "Coach"
 
@@ -29,7 +29,7 @@ feature "Researcher - Coach Assignments", type: :feature do
 
     expect(page).to have_text "Coach was successfully assigned"
     expect(page).to have_text "Participant"
-    expect(page).to have_text "Study Id: TFD-33303"
+    expect(page).to have_text "Study Id: TFD-without_membership2"
     expect(page).to_not have_text "Current Coach: None"
     expect(page).to have_text "Current Coach: user3@example.com"
   end
@@ -50,7 +50,7 @@ feature "Researcher - Coach Assignments", type: :feature do
   end
 
   it "doesn't allows for the assigning of no coach" do
-    click_on "TFD-33303"
+    click_on "TFD-without_membership2"
     click_on "Assign Coach"
     click_on "Assign"
 
