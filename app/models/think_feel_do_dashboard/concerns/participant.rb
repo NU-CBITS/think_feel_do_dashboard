@@ -1,10 +1,9 @@
 # validates phone numbers against Google api
 require "phonelib"
+
 module ThinkFeelDoDashboard
   module Concerns
-    # is included in the Participant model and
-    # checks whether a display_name needs to be set
-    # if an arm is social
+    # Validations for Participants.
     module Participant
       extend ActiveSupport::Concern
 
@@ -13,41 +12,11 @@ module ThinkFeelDoDashboard
       included do
         before_validation :ensure_phone_number, unless: "phone_number.blank?"
         before_validation :ensure_contact_preference
-        before_validation :ensure_display_name
-        before_validation :prevent_is_admin_update, on: :update
-        before_destroy :admin_is_not_destroyable?
 
         validates :study_id, presence: true, uniqueness: true
-
-        has_many :social_networking_profiles,
-                 class_name: "SocialNetworking::Profile",
-                 dependent: :destroy
-      end
-
-      # methods added to Class itself...
-      module ClassMethods
       end
 
       private
-
-      def prevent_is_admin_update
-        if changed.include?("is_admin")
-          errors.add(
-            :is_admin,
-            "can't be updated."
-          )
-        end
-      end
-
-      def admin_is_not_destroyable?
-        if is_admin
-          errors.add(
-            :is_admin,
-            "can't be destroyed."
-          )
-          false
-        end
-      end
 
       def ensure_contact_preference
         if contact_preference == "phone" && phone_number.blank?
@@ -66,15 +35,6 @@ module ThinkFeelDoDashboard
           self.phone_number = sanitized_num
         else
           errors.add(:phone_number, "is not valid")
-        end
-      end
-
-      def ensure_display_name
-        if active_membership && active_group.arm.social? && display_name.blank?
-          errors.add(
-            :display_name, "is required because the arm of this \
-              intervention utilizes social features."
-            )
         end
       end
     end

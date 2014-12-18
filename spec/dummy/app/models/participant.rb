@@ -9,6 +9,7 @@ class Participant < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   include ThinkFeelDoDashboard::Concerns::Participant
+  include ThinkFeelDoDashboard::Concerns::SocialParticipant
   include ThinkFeelDoDashboard::Concerns::Password
 
   has_one :coach_assignment, dependent: :destroy
