@@ -60,8 +60,8 @@ module ThinkFeelDoDashboard
 
       def ensure_phone_number
         sanitized_num = Phonelib
-                          .parse(phone_number)
-                          .sanitized
+                        .parse(phone_number)
+                        .sanitized
         if Phonelib.valid?(sanitized_num)
           self.phone_number = sanitized_num
         else

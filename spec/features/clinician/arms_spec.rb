@@ -4,7 +4,6 @@ feature "Clinician - Arms", type: :feature do
   fixtures :all
 
   describe "Logged in as a clinician" do
-
     scenario "should only see the groups of an arm that a coach is assigned to via coach_assignments" do
       sign_in users :clinician1
       visit "arms/#{arms(:arm1).id}"

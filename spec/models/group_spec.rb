@@ -4,7 +4,6 @@ describe Group do
   fixtures :all
 
   describe "creation of moderator" do
-
     context "Social Arms" do
       let(:social_arm) { arms(:arm1) }
       let(:clinician2) { users(:user2) }

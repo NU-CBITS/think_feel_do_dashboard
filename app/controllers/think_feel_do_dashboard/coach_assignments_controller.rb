@@ -77,7 +77,7 @@ module ThinkFeelDoDashboard
 
     def set_coach_assignment
       @coach_assignment = @participant.coach_assignment ||
-        @participant.build_coach_assignment
+                          @participant.build_coach_assignment
     end
 
     def coach_assignment_params

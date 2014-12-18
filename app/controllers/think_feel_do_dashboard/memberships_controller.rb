@@ -20,10 +20,8 @@ module ThinkFeelDoDashboard
     # POST /think_feel_do_dashboard/participants/1/groups
     def create
       @membership = @participant
-                      .memberships
-                      .build(
-                        membership_params
-                      )
+                    .memberships
+                    .build(membership_params)
       authorize! :create, @membership
       if @membership.save
         redirect_to participant_path(@participant),
@@ -94,13 +92,12 @@ module ThinkFeelDoDashboard
 
     def set_membership
       @membership = @participant
-        .memberships
-        .find_by_group_id(params[:id])
+                    .memberships
+                    .find_by_group_id(params[:id])
     end
 
     def set_participant
-      @participant = Participant
-        .find(params[:participant_id])
+      @participant = Participant.find(params[:participant_id])
     end
   end
 end

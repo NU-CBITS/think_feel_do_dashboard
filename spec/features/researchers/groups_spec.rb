@@ -98,14 +98,20 @@ feature "Researcher - Groups", type: :feature do
     click_on "Group 1"
 
     expect(page).to have_text "Arm:"
-    expect(page).to have_link "Arm 1", href: "/think_feel_do_dashboard/arms/#{Arm.find_by_title("Arm 1").id}"
+    arm_id = Arm.find_by_title("Arm 1").id
+    expect(page).to have_link "Arm 1",
+                              href: "/think_feel_do_dashboard/arms/#{ arm_id }"
   end
 
   it "should be able to view all associated participants" do
     click_on "Group 1"
 
     expect(page).to have_text "Participants"
-    expect(page).to have_link "TFD-1111", href: "/think_feel_do_dashboard/participants/#{Participant.find_by_email("participant1@example.com").id}"
+    participant_id = Participant.find_by_email("participant1@example.com").id
+    expect(page).to have_link(
+      "TFD-1111",
+      href: "/think_feel_do_dashboard/participants/#{ participant_id }"
+    )
   end
 
   it "should enable the updating of a group" do
