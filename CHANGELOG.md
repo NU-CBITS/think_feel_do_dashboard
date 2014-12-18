@@ -1,3 +1,7 @@
+### 0.6.1
+
+  * refactored Participant Concern into 2 Concerns
+
 ### 0.6.0 - 2014-12-17
 
 * enhancements
