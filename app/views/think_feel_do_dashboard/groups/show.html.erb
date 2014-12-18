@@ -50,10 +50,12 @@
   <%= link_to(@group.arm.title, arm_path(@group.arm)) %>
 </p>
 
-<p>
-  <strong>Moderator:</strong>
-  <%= @group.moderator ? link_to(@group.moderator.email, user_path(@group.moderator)) : "None" %>
-</p>
+<% if @group.respond_to?(:moderator) %>
+  <p>
+    <strong>Moderator:</strong>
+    <%= @group.moderator ? link_to(@group.moderator.email, user_path(@group.moderator)) : "None" %>
+  </p>
+<% end %>
 
 <div class="panel panel-default">
   <div class="panel-heading">
