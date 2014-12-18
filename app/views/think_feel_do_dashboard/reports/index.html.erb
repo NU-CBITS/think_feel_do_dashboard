@@ -12,7 +12,7 @@
 
 <div class="list-group">
   <% @reports.each do |report| %>
-    <% if can? :download, Reports::LessonSlideView %>
+    <% if can? :download, ThinkFeelDoDashboard::Reports::LessonSlideView %>
       <%= link_to report[:title], report_path(id: report[:id], format: "csv"), class: "list-group-item" %>
     <% end %>
   <% end %>
