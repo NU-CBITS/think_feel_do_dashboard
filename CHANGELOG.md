@@ -1,3 +1,7 @@
+### 0.6.3
+
+  * conditionally display Group Moderator info
+
 ### 0.6.2
 
   * completed refactor to move Report classes
