@@ -1,3 +1,7 @@
+### 0.6.2
+
+  * completed refactor to move Report classes
+
 ### 0.6.1
 
   * refactored Participant Concern into 2 Concerns
