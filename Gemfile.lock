@@ -26,10 +26,10 @@ GIT
 
 GIT
   remote: https://github.com/cbitstech/think_feel_do_engine.git
-  revision: 5dbf01b1775d7e4272c1a3be1dae257964567b5a
-  tag: 1.9.1
+  revision: 87fc83be266c228c17cc6f0bbe4403578ee41594
+  tag: 1.10.1
   specs:
-    think_feel_do_engine (1.9.1)
+    think_feel_do_engine (1.10.0)
       bootstrap-sass (~> 3.1)
       cancancan (~> 1.9)
       devise (~> 3.2)
