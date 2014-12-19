@@ -1,3 +1,8 @@
+### 0.7.0 - 2014-12-18
+
+* enhancements
+  * all patient funcationality is scoped within arms
+
 ### 0.6.3
 
   * conditionally display Group Moderator info
