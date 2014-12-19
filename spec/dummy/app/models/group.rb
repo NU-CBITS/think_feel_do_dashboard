@@ -6,7 +6,6 @@ class Group < ActiveRecord::Base
   belongs_to :arm
 
   has_many :memberships, dependent: :destroy
-
   has_many :active_memberships,
            -> { active },
            class_name: "Membership",

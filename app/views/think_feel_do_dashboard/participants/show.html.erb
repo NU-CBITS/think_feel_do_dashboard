@@ -79,16 +79,18 @@
   </p>
 <% end %>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Memberships</h3>
+<% if can? :index, Membership %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Memberships</h3>
+    </div>
+    <div class="panel-body">
+      Below lists the all groups this participant has been a member of and whether they are currently active or inactive.
+    </div>
+    <ul class="list-group">
+      <% @participant.memberships.each do |membership| %>
+        <%= link_to membership_status(@participant, membership) + membership.group.title, participant_group_path(@participant, membership.group), class: "list-group-item" %>
+      <% end %>
+    </ul>
   </div>
-  <div class="panel-body">
-    Below lists the all groups this participant has been a member of and whether they are currently active or inactive.
-  </div>
-  <ul class="list-group">
-    <% @participant.memberships.each do |membership| %>
-      <%= link_to membership_status(@participant, membership) + membership.group.title, participant_group_path(@participant, membership.group), class: "list-group-item" %>
-    <% end %>
-  </ul>
-</div>
+<% end %>

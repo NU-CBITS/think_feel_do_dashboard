@@ -11,12 +11,10 @@ group2:
 group3:
   title: Group 3
   arm: arm1
-  moderator: clinician1
 
 group4:
   title: Group Without Creator
   arm: arm1
-  moderator: clinician1
 
 group_without_members1:
   title: Group Without Members 1

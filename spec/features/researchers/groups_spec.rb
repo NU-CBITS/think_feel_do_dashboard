@@ -5,8 +5,7 @@ feature "Researcher - Groups", type: :feature do
 
   before do
     sign_in users :researcher1
-    visit "/think_feel_do_dashboard"
-    click_on "Groups"
+    visit "/think_feel_do_dashboard/groups"
   end
 
   after do
@@ -19,7 +18,7 @@ feature "Researcher - Groups", type: :feature do
 
   it "displays the moderate link if the group is social" do
     click_on "Group 1 · SOCIAL"
-    expect(page).to have_link "Moderate"
+    expect(page).to_not have_link "Moderate"
   end
 
   it "displays the moderate link if the group is NOT social" do
@@ -106,7 +105,7 @@ feature "Researcher - Groups", type: :feature do
   it "should be able to view all associated participants" do
     click_on "Group 1"
 
-    expect(page).to have_text "Participants"
+    expect(page).to have_text "Participant Info"
     participant_id = Participant.find_by_email("participant1@example.com").id
     expect(page).to have_link(
       "TFD-1111",

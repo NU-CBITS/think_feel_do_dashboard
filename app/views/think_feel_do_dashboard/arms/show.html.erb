@@ -11,24 +11,24 @@
     </div>
   <% end %>
 
-  <% if can? :manage, BitCore::ContentModule %>
+  <% if can?(:index, BitCore::ContentModule) || can?(:index, ContentModules::LessonModule) || can?(:index, BitCore::Slideshow) %>
     <div class="btn-group">
       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         Manage Content <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" role="menu">
-        <% if can? :manage, BitCore::ContentModule %>
+        <% if can? :index, BitCore::ContentModule %>
           <li>
             <%= link_to "Content Modules", think_feel_do_engine.arm_bit_maker_content_modules_path(@arm) %>
           </li>
         <% end %>
         <li>
-          <% if can? :manage, ContentModules::LessonModule %>
+          <% if can? :index, ContentModules::LessonModule %>
             <%= link_to "Lesson Modules", think_feel_do_engine.arm_lessons_path(@arm) %>
           <% end %>
         </li>
         <li>
-          <% if can? :manage, BitCore::Slideshow %>
+          <% if can? :index, BitCore::Slideshow %>
             <%= link_to "Slideshows", think_feel_do_engine.arm_bit_maker_slideshows_path(@arm) %>
           <% end %>
         </li>
@@ -55,9 +55,11 @@
   <%= @arm.woz? ? "Yes" : "No" %>
 </p>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Groups</h3>
+<% if can? :show, Group %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Groups</h3>
+    </div>
+    <%= render "think_feel_do_dashboard/groups/groups", groups: @arm.groups %>
   </div>
-  <%= render "think_feel_do_dashboard/groups/groups", groups: @arm.groups %>
-</div>
+<% end %>

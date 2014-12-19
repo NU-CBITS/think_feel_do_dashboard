@@ -5,30 +5,36 @@
     <%= link_to "Arm", arm_path(@group.arm), class: "btn btn-default" %>
   </div>
 
-  <%# if can? %>
+  <% if can? :show, Participant %>
+    <div class="btn-group">
+      <%= link_to "Patients", think_feel_do_engine.coach_group_patient_dashboards_path(@group), class: "btn btn-default" %>
+    </div>
+  <% end %>
+
+  <% if can?(:index, Message) || can?(:index, SiteMessage) %>
     <div class="btn-group">
       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         Messaging <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" role="menu">
         <li>
-          <%# if can? %>
-            <%= link_to "Messages", think_feel_do_engine.coach_messages_path %>
-          <%# end %>
+          <% if can? :index, Message %>
+            <%= link_to "Messages", think_feel_do_engine.coach_group_messages_path(@group) %>
+          <% end %>
         </li>
         <li>
-          <%# if can? %>
-            <%= link_to "Site Messaging", think_feel_do_engine.site_messages_path %>
-          <%# end %>
+          <% if can? :index, SiteMessage %>
+            <%= link_to "Site Messaging", think_feel_do_engine.coach_group_site_messages_path(@group) %>
+          <% end %>
         </li>
       </ul>
     </div>
-  <%# end %>
+  <% end %>
 
   <% if can?(:moderate, @group) && @group.arm.social? %>
-    <%= link_to "Moderate", group_moderators_path(@group), method: :post, :class => "btn btn-default", target: "_blank" %>
+    <%= link_to "Moderate", group_moderators_path(@group), method: :post, class: "btn btn-default", target: "_blank" %>
   <% end %>
-  <% if can? :manage, @group %>
+  <% if can? :update, @group %>
     <%= link_to "Manage Tasks", think_feel_do_engine.arm_manage_tasks_group_path(@group.arm, @group), class: "btn btn-default" %>
   <% end %>
 
@@ -53,19 +59,26 @@
 <% if @group.respond_to?(:moderator) %>
   <p>
     <strong>Moderator:</strong>
-    <%= @group.moderator ? link_to(@group.moderator.email, user_path(@group.moderator)) : "None" %>
+    <%= @group.moderator ? link_to_if((can? :read, @group.moderator), @group.moderator.email, user_path(@group.moderator)) : "None" %>
   </p>
 <% end %>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Participants</h3>
+<p>
+  <strong>Moderator:</strong>
+  <%= @group.moderator ? link_to_if((can? :read, @group.moderator), @group.moderator.email, user_path(@group.moderator)) : "None" %>
+</p>
+
+<% if can? :index, Participant %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Participant Info</h3>
+    </div>
+    <div class="list-group">
+      <% Membership.where(group_id: @group.id).each do |membership| %>
+        <% if can? :show, membership.participant %>
+          <%= link_to membership.participant.study_id, participant_path(membership.participant), class: "list-group-item clearfix" %>
+          <% end %>
+      <% end %>
+    </div>
   </div>
-  <div class="list-group">
-    <% Membership.where(group_id: @group.id).each do |membership| %>
-      <% if can? :show, membership.participant %>
-        <%= link_to membership.participant.study_id, participant_path(membership.participant), class: "list-group-item clearfix" %>
-        <% end %>
-    <% end %>
-  </div>
-</div>
+<% end %>
