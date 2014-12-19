@@ -149,4 +149,9 @@ feature "Researcher - Groups", type: :feature do
     expect(page).to have_text "Group was successfully destroyed"
     expect(page).to_not have_text "Group 1"
   end
+
+  it "does display the link to the moderator if you don't have permission" do
+    visit "groups/#{groups(:group1).id}"
+    expect(page).to have_link groups(:group1).moderator.email
+  end
 end

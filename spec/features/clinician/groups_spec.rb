@@ -23,4 +23,16 @@ feature "Clinician - Groups", type: :feature do
     click_on "Group 2"
     expect(page).to_not have_link "Moderate"
   end
+
+  it "does display the link to the moderator if you don't have permission" do
+    visit "groups/#{groups(:group1).id}"
+    expect(page).to have_text groups(:group1).moderator.email
+    expect(page).to_not have_link groups(:group1).moderator.email
+  end
+
+  scenario "should display group links" do
+    visit "arms/#{arms(:arm1).id}"
+
+    expect(page).to have_link "Group 1"
+  end
 end

@@ -1,3 +1,8 @@
+### 0.7.4 - 2014-12-19
+
+* enhancements
+  * added additional tests for checking if moderator can be accessed from group page
+
 ### 0.7.3 - 2014-12-19
 
 * enhancements
