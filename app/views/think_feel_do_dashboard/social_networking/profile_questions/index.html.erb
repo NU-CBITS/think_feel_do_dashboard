@@ -1,0 +1,20 @@
+<h1>Profile Questions</h1>
+
+<div class="btn-toolbar" role="toolbar">
+  <%= link_to "Back", group_path(@group), class: "btn btn-default" %>
+  <%= link_to "New", new_group_social_networking_profile_question_url(@group), class: "btn btn-default" %>
+</div>
+
+<table class="table">
+  <tr>
+    <th>Question Text</th>
+    <th colspan="2"></th>
+  </tr>
+  <% @profile_questions.each do |profile_question| %>
+    <tr>
+      <td><%= profile_question.question_text %></td>
+      <td><%= link_to "edit", edit_group_social_networking_profile_question_path(@group, profile_question) %></td>
+      <td><%= link_to 'delete', group_social_networking_profile_question_path(@group, profile_question), method: :delete %></td>
+    </tr>
+  <% end %>
+</table>

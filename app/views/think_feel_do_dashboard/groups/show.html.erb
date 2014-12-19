@@ -36,6 +36,7 @@
   <% end %>
   <% if can? :update, @group %>
     <%= link_to "Manage Tasks", think_feel_do_engine.arm_manage_tasks_group_path(@group.arm, @group), class: "btn btn-default" %>
+    <%= link_to "Manage Profile Questions", group_social_networking_profile_questions_path(@group), class: "btn btn-default" %>
   <% end %>
 
   <% if can? :edit, @group %>

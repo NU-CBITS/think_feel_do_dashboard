@@ -2,6 +2,9 @@ ThinkFeelDoDashboard::Engine.routes.draw do
   root to: "admin#index"
   resources :arms
   resources :groups do
+    namespace :social_networking do
+      resources :profile_questions
+    end
     resource :moderators, only: :create
   end
   resources :participants do

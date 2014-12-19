@@ -7,6 +7,8 @@ module ThinkFeelDoDashboard
       # This is perfect for including functionality
       # provided by 3rd party gems, etc.
       included do
+        has_many :profile_questions,
+                   class_name: "SocialNetworking::ProfileQuestion"
         belongs_to :moderator,
                    class_name: "User",
                    foreign_key: :moderator_id

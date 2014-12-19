@@ -80,6 +80,13 @@ ActiveRecord::Schema.define(version: 20141219032108) do
     t.datetime "updated_at"
   end
 
+  create_table "social_networking_profile_questions", force: true do |t|
+    t.integer  "group_id"
+    t.text     "question_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "social_networking_profiles", force: true do |t|
     t.integer  "participant_id"
     t.string   "icon_name"

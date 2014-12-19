@@ -1,0 +1,7 @@
+profile_question1:
+  question_text: question 1 question text
+  group: group1
+
+profile_question2:
+  question_text: question 2 question text
+  group: group2
