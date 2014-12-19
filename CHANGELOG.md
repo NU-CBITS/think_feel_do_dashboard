@@ -1,3 +1,8 @@
+### 0.7.7 - 2014-12-19
+
+* bug fix
+  * super users can now view patients link
+
 ### 0.7.6 - 2014-12-19
 
 * enhancements

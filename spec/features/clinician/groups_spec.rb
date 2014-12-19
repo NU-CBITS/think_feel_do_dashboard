@@ -35,4 +35,15 @@ feature "Clinician - Groups", type: :feature do
 
     expect(page).to have_link "Group 1"
   end
+
+  it "displays the correct managment links" do
+    visit "groups/#{groups(:group1).id}"
+
+    expect(page).to have_link "Patients"
+    expect(page).to_not have_link "Manage Tasks"
+    expect(page).to have_button "Messaging"
+    expect(page).to have_link "Messages"
+    expect(page).to have_link "Site Messaging"
+    expect(page).to have_link "Moderate"
+  end
 end
