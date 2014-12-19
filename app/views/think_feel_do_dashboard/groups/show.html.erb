@@ -63,11 +63,6 @@
   </p>
 <% end %>
 
-<p>
-  <strong>Moderator:</strong>
-  <%= @group.moderator ? link_to_if((can? :read, @group.moderator), @group.moderator.email, user_path(@group.moderator)) : "None" %>
-</p>
-
 <% if can? :index, Participant %>
   <div class="panel panel-default">
     <div class="panel-heading">

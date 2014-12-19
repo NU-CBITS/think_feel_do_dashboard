@@ -1,3 +1,7 @@
+### 0.7.2
+
+  * removed redundant/buggy view markup
+
 ### 0.7.1 - 2014-12-19
 
 * enhancements
