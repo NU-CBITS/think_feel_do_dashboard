@@ -1,3 +1,8 @@
+### 0.7.8 - 2014-12-19
+
+* bug fix
+  * commented back in uncommented gem
+
 ### 0.7.7 - 2014-12-19
 
 * bug fix
