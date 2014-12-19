@@ -38,7 +38,7 @@ group :development, :test do
 
   # Currently used for helper links and authorization
   gem "think_feel_do_engine",
-      tag: "1.9.0",
+      tag: "1.9.1",
       git: "https://github.com/cbitstech/think_feel_do_engine.git"
 
   gem "event_capture",

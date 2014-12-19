@@ -26,10 +26,10 @@ GIT
 
 GIT
   remote: https://github.com/cbitstech/think_feel_do_engine.git
-  revision: 367400a4609b3b88ab90418baf19ea469eb4b20f
-  tag: 1.9.0
+  revision: 5dbf01b1775d7e4272c1a3be1dae257964567b5a
+  tag: 1.9.1
   specs:
-    think_feel_do_engine (1.9.0)
+    think_feel_do_engine (1.9.1)
       bootstrap-sass (~> 3.1)
       cancancan (~> 1.9)
       devise (~> 3.2)
@@ -47,7 +47,7 @@ GIT
 PATH
   remote: .
   specs:
-    think_feel_do_dashboard (0.7.2)
+    think_feel_do_dashboard (0.7.3)
       phonelib
 
 GEM

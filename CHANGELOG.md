@@ -1,3 +1,8 @@
+### 0.7.3 - 2014-12-19
+
+* enhancements
+  * updated think_feel_do_engine gem
+
 ### 0.7.2
 
   * removed redundant/buggy view markup
