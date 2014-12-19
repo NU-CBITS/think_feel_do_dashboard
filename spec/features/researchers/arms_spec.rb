@@ -4,7 +4,6 @@ feature "Content Author - Arms", type: :feature do
   fixtures :all
 
   context "Logged in as a content author" do
-
     before do
       sign_in users :researcher1
     end

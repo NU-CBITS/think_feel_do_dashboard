@@ -1,3 +1,8 @@
+### 0.7.1 - 2014-12-19
+
+* enhancements
+  * fixed with rubocop
+
 ### 0.7.0 - 2014-12-18
 
 * enhancements
