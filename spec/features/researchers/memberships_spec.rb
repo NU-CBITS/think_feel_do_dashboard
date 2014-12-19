@@ -3,131 +3,133 @@ require "spec_helper"
 feature "Researcher - Memberships", type: :feature do
   fixtures :all
 
-  before do
-    sign_in users :researcher1
-    visit "/think_feel_do_dashboard"
-    click_on "Participants"
-  end
+  describe "Logged in as a researcher" do
+    before do
+      sign_in users :researcher1
+      visit "/think_feel_do_dashboard"
+      click_on "Participants"
+    end
 
-  after do
-    # click_on "Sign Out"
-  end
+    after do
+      # click_on "Sign Out"
+    end
 
-  it "display all groups and group details" do
-    click_on "TFD-1111"
+    it "display all groups and group details" do
+      click_on "TFD-1111"
 
-    expect(page).to have_text "Active Group 1"
-  end
+      expect(page).to have_text "Active Group 1"
+    end
 
-  it "allows for the updating of a participant with a membership to a group that requires a 'Display Name'" do
-    click_on "TFD-inactive"
+    it "allows for the updating of a participant with a membership to a group that requires a 'Display Name'" do
+      click_on "TFD-inactive"
 
-    expect(page).to have_text "Current Group: None"
-    expect(page).to_not have_text "Current Group: Group 1"
+      expect(page).to have_text "Current Group: None"
+      expect(page).to_not have_text "Current Group: Group 1"
 
-    click_on "Assign New Group"
-    select "Group 1", from: "Group"
-    fill_in "Display Name", with: "TestName"
-    click_on "Assign"
+      click_on "Assign New Group"
+      select "Group 1", from: "Group"
+      fill_in "Display Name", with: "TestName"
+      click_on "Assign"
 
-    expect(page).to have_text "Group was successfully assigned"
-    expect(page).to_not have_text "Current Group: None"
-    expect(page).to have_text "Current Group: Group 1"
-    expect(page).to have_text "Study Id: TFD-inactive"
-  end
+      expect(page).to have_text "Group was successfully assigned"
+      expect(page).to_not have_text "Current Group: None"
+      expect(page).to have_text "Current Group: Group 1"
+      expect(page).to have_text "Study Id: TFD-inactive"
+    end
 
-  it "allows for the updating of a participant's membership's 'Display Name'" do
-    click_on "TFD-1111"
-    click_on "Active Group 1"
-    click_on "Edit"
-    fill_in "Display Name", with: "TestName"
-    click_on "Update"
+    it "allows for the updating of a participant's membership's 'Display Name'" do
+      click_on "TFD-1111"
+      click_on "Active Group 1"
+      click_on "Edit"
+      fill_in "Display Name", with: "TestName"
+      click_on "Update"
 
-    expect(page).to_not have_text "Display Name: Joe"
-    expect(page).to have_text "Display Name: TestName"
-  end
+      expect(page).to_not have_text "Display Name: Joe"
+      expect(page).to have_text "Display Name: TestName"
+    end
 
-  it "doesn't allows for the assing of a participant to two active groups" do
-    click_on "TFD-33303"
-    click_on "Assign New Group"
-    select "Group 1", from: "Group"
-    fill_in "Display Name", with: "TestName"
-    click_on "Assign"
+    it "doesn't allows for the assing of a participant to two active groups" do
+      click_on "TFD-33303"
+      click_on "Assign New Group"
+      select "Group 1", from: "Group"
+      fill_in "Display Name", with: "TestName"
+      click_on "Assign"
 
-    expect(page).to have_text "Participant can't be assigned to this group because they are already active."
-  end
+      expect(page).to have_text "Participant can't be assigned to this group because they are already active."
+    end
 
-  it "doesn't allow for the assigning of a participant to a group that requires a 'Display Name' but none is given" do
-    click_on "TFD-1111"
-    click_on "Active Group 1"
-    click_on "Edit"
-    fill_in "Display Name", with: ""
-    click_on "Update"
+    it "doesn't allow for the assigning of a participant to a group that requires a 'Display Name' but none is given" do
+      click_on "TFD-1111"
+      click_on "Active Group 1"
+      click_on "Edit"
+      fill_in "Display Name", with: ""
+      click_on "Update"
 
-    expect(page).to have_text "is required because the arm of this intervention utilizes social features"
-  end
+      expect(page).to have_text "is required because the arm of this intervention utilizes social features"
+    end
 
-  it "allows for the assigning of a participant to multiple groups - but only one active group" do
-    click_on "TFD-1111"
+    it "allows for the assigning of a participant to multiple groups - but only one active group" do
+      click_on "TFD-1111"
 
-    expect(page).to have_text "Active Group 1"
-    expect(page).to_not have_text "Group 2"
+      expect(page).to have_text "Active Group 1"
+      expect(page).to_not have_text "Group 2"
 
-    click_on "Assign New Group"
+      click_on "Assign New Group"
 
-    expect(page).to have_text "Assigning New Group to Participant"
-    expect(page).to have_text "Participant: TFD-1111"
+      expect(page).to have_text "Assigning New Group to Participant"
+      expect(page).to have_text "Participant: TFD-1111"
 
-    select "Group 2", from: "Group"
+      select "Group 2", from: "Group"
 
-    click_on "Assign"
+      click_on "Assign"
 
-    expect(page).to have_text "Participant can't be assigned to this group because they are already active."
-  end
+      expect(page).to have_text "Participant can't be assigned to this group because they are already active."
+    end
 
-  it "doesn't allow for the assigning of no group to a participant" do
-    click_on "TFD-1111"
-    click_on "Assign New Group"
-    click_on "Assign"
+    it "doesn't allow for the assigning of no group to a participant" do
+      click_on "TFD-1111"
+      click_on "Assign New Group"
+      click_on "Assign"
 
-    expect(page).to have_text "prohibited this group from being assigned"
-  end
+      expect(page).to have_text "prohibited this group from being assigned"
+    end
 
-  it "allows for the editing of an assigned group to a participant" do
-    click_on "TFD-1111"
+    it "allows for the editing of an assigned group to a participant" do
+      click_on "TFD-1111"
 
-    expect(page).to_not have_text "Group Without Creator"
+      expect(page).to_not have_text "Group Without Creator"
 
-    click_on "Active Group 1"
+      click_on "Active Group 1"
 
-    expect(page).to have_text "Participant: TFD-1111"
-    expect(page).to have_text "Group: Group 1"
-    expect(page).to have_text "Membership Status: Active"
-    expect(page).to have_text "Start Date: " + DateTime.now.strftime("%Y-%m-%d")
-    expect(page).to have_text "End Date: " + 4.days.from_now.strftime("%Y-%m-%d")
-    expect(page).to_not have_text "Group: Group Without Creator"
+      expect(page).to have_text "Participant: TFD-1111"
+      expect(page).to have_text "Group: Group 1"
+      expect(page).to have_text "Membership Status: Active"
+      expect(page).to have_text "Start Date: " + DateTime.now.strftime("%Y-%m-%d")
+      expect(page).to have_text "End Date: " + 4.days.from_now.strftime("%Y-%m-%d")
+      expect(page).to_not have_text "Group: Group Without Creator"
 
-    click_on "Edit"
+      click_on "Edit"
 
-    expect(page).to have_text "Participant: TFD-1111"
+      expect(page).to have_text "Participant: TFD-1111"
 
-    select "Group Without Creator", from: "Group"
+      select "Group Without Creator", from: "Group"
 
-    click_on "Update"
+      click_on "Update"
 
-    expect(page).to have_text "New group was successfully assigned"
-    expect(page).to have_text "Participant"
-    expect(page).to have_text "Current Group: Group Without Creator"
-    expect(page).to_not have_text "Current Group: Group 1"
-    expect(page).to have_text "Study Id: TFD-1111"
-  end
+      expect(page).to have_text "New group was successfully assigned"
+      expect(page).to have_text "Participant"
+      expect(page).to have_text "Current Group: Group Without Creator"
+      expect(page).to_not have_text "Current Group: Group 1"
+      expect(page).to have_text "Study Id: TFD-1111"
+    end
 
-  it "allows for the unassigning a group" do
-    click_on "TFD-1111"
-    click_on "Active Group 1"
-    click_on "Destroy"
+    it "allows for the unassigning a group" do
+      click_on "TFD-1111"
+      click_on "Active Group 1"
+      click_on "Destroy"
 
-    expect(page).to have_text "Group was successfully removed"
-    expect(page).to_not have_text "Active Group 1"
+      expect(page).to have_text "Group was successfully removed"
+      expect(page).to_not have_text "Active Group 1"
+    end
   end
 end

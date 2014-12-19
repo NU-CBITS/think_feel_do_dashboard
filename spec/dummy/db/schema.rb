@@ -88,13 +88,6 @@ ActiveRecord::Schema.define(version: 20141219032108) do
     t.datetime "updated_at"
   end
 
-  create_table "think_feel_do_dashboard_moderators", force: true do |t|
-    t.integer  "group_id",   null: false
-    t.integer  "user_id",    null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "user_roles", force: true do |t|
     t.integer  "user_id"
     t.string   "role_class_name"
