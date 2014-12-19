@@ -1,3 +1,8 @@
+### 0.8.0
+
+* enhancements
+  * implemented ProfileQuestion CRUD
+
 ### 0.7.8 - 2014-12-19
 
 * bug fix
