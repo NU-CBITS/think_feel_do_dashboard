@@ -1,3 +1,8 @@
+### 0.7.5 - 2014-12-19
+
+* bug fixes
+  * updated the authorization veiw of whether a reasearcher should view the 'Patients' link
+
 ### 0.7.4 - 2014-12-19
 
 * enhancements

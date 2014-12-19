@@ -5,7 +5,7 @@
     <%= link_to "Arm", arm_path(@group.arm), class: "btn btn-default" %>
   </div>
 
-  <% if can? :show, Participant %>
+  <% if can?(:show, Participant) && current_user.coach? %>
     <div class="btn-group">
       <%= link_to "Patients", think_feel_do_engine.coach_group_patient_dashboards_path(@group), class: "btn btn-default" %>
     </div>
