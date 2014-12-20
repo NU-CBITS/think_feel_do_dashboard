@@ -1,3 +1,8 @@
+### 0.8.1
+
+* enhancements
+  * added auth and specs to ProfileQuestion CRUD
+
 ### 0.8.0
 
 * enhancements
