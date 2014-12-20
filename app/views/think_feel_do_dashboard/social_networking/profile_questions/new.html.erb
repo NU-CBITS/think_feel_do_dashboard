@@ -1,3 +1,5 @@
 <h1>New Profile Question</h1>
 
-<%= render 'form', button_text: "Create", cancel_path: group_social_networking_profile_questions_path(@group) %>
+<%= form_for([@group, @profile_question], url: group_social_networking_profile_questions_path(@group), html: { role: :form }) do |f| %>
+  <%= render 'form', button_text: "Create", cancel_path: group_social_networking_profile_questions_path(@group), f: f %>
+<% end %>
