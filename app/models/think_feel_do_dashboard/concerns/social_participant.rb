@@ -9,6 +9,10 @@ module ThinkFeelDoDashboard
         before_validation :prevent_is_admin_update, on: :update
         before_destroy :admin_is_not_destroyable?
 
+        has_many :social_networking_shared_items,
+                 class_name: "SocialNetworking::SharedItem",
+                 dependent: :destroy
+
         has_many :social_networking_profiles,
                  class_name: "SocialNetworking::Profile",
                  dependent: :destroy
