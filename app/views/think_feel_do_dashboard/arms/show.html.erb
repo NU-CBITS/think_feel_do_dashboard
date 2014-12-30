@@ -19,17 +19,17 @@
       <ul class="dropdown-menu" role="menu">
         <% if can? :index, BitCore::ContentModule %>
           <li>
-            <%= link_to "Content Modules", think_feel_do_engine.arm_bit_maker_content_modules_path(@arm) %>
+            <%= link_to "Content Modules", (defined?(think_feel_do_engine) ? think_feel_do_engine.arm_bit_maker_content_modules_path(@arm) : root_path) %>
           </li>
         <% end %>
         <li>
           <% if can? :index, ContentModules::LessonModule %>
-            <%= link_to "Lesson Modules", think_feel_do_engine.arm_lessons_path(@arm) %>
+            <%= link_to "Lesson Modules", (defined?(think_feel_do_engine) ? think_feel_do_engine.arm_lessons_path(@arm) : root_path) %>
           <% end %>
         </li>
         <li>
           <% if can? :index, BitCore::Slideshow %>
-            <%= link_to "Slideshows", think_feel_do_engine.arm_bit_maker_slideshows_path(@arm) %>
+            <%= link_to "Slideshows", (defined?(think_feel_do_engine) ? think_feel_do_engine.arm_bit_maker_slideshows_path(@arm) : root_path) %>
           <% end %>
         </li>
       </ul>

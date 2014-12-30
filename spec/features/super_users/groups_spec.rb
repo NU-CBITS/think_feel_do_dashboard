@@ -5,7 +5,7 @@ feature "Researcher - Groups", type: :feature do
 
   before do
     sign_in users :admin1
-    visit "groups/#{groups(:group1).id}"
+    visit "/think_feel_do_dashboard/groups/#{groups(:group1).id}"
   end
 
   after do

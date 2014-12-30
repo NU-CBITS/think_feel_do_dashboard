@@ -9,7 +9,7 @@ feature "Content Author - Arms", type: :feature do
     end
 
     scenario "should see all arms" do
-      visit "arms"
+      visit "/think_feel_do_dashboard/arms"
 
       expect(page).to have_link "Arm 1"
       expect(page).to have_link "Arm 2"
@@ -18,17 +18,17 @@ feature "Content Author - Arms", type: :feature do
     end
 
     scenario "should have appropriate management links" do
-      visit "arms"
+      visit "/think_feel_do_dashboard/arms"
       click_on "Arm 1"
 
       expect(page).to have_button "Manage Content"
-      expect(page).to have_link "Content Module", href: "/arms/#{arms(:arm1).id}/bit_maker/content_modules"
-      expect(page).to have_link "Slideshows", href: "/arms/#{arms(:arm1).id}/bit_maker/slideshows"
-      expect(page).to have_link "Lesson Modules", href: "/arms/#{arms(:arm1).id}/lessons"
+      expect(page).to have_link "Content Module"
+      expect(page).to have_link "Slideshows"
+      expect(page).to have_link "Lesson Modules"
     end
 
     scenario "should not display group links" do
-      visit "arms/#{arms(:arm1).id}"
+      visit "/think_feel_do_dashboard/arms/#{arms(:arm1).id}"
 
       expect(page).to_not have_link "Group 1"
     end

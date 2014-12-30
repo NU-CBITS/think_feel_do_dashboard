@@ -1,8 +1,8 @@
 module AuthenticationHelpers
   def sign_in(user)
-    visit think_feel_do_engine.new_user_session_path
+    visit "/users/sign_in"
     fill_in "Email", with: user.email
     fill_in "Password", with: "secrets!"
-    click_on "Sign in"
+    click_on "Log in"
   end
 end

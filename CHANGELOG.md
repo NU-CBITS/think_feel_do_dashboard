@@ -1,5 +1,11 @@
+### 0.9.1 - 2014-12-30
+
+* enhancements
+  * removed think_feel_do_engine, bit_core, and bit_player dependencies
+
 ### 0.9.0
 
+* enhancements
   * added Login and Tool Share reports
 
 ### 0.8.1

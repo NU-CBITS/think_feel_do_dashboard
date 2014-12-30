@@ -27,20 +27,7 @@ group :development, :test do
   gem "rubocop", "~> 0.26"
   gem "launchy"
   gem "pg"
-
-  gem "bit_core",
-      tag: "1.3.2",
-      git: "https://github.com/cbitstech/bit_core.git"
-
-  gem "bit_player",
-      tag: "0.4.7",
-      git: "https://github.com/cbitstech/bit_player.git"
-
-  # Currently used for helper links and authorization
-  gem "think_feel_do_engine",
-      tag: "1.10.1",
-      git: "https://github.com/cbitstech/think_feel_do_engine.git"
-
+  gem "devise"
   gem "event_capture",
       git: "https://github.com/cbitstech/event_capture.git",
       ref: "1f9a199"

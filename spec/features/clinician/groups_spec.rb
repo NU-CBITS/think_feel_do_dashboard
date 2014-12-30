@@ -25,19 +25,19 @@ feature "Clinician - Groups", type: :feature do
   end
 
   it "does display the link to the moderator if you don't have permission" do
-    visit "groups/#{groups(:group1).id}"
+    visit "/think_feel_do_dashboard/groups/#{groups(:group1).id}"
     expect(page).to have_text groups(:group1).moderator.email
     expect(page).to_not have_link groups(:group1).moderator.email
   end
 
   scenario "should display group links" do
-    visit "arms/#{arms(:arm1).id}"
+    visit "/think_feel_do_dashboard/arms/#{arms(:arm1).id}"
 
     expect(page).to have_link "Group 1"
   end
 
   it "displays the correct managment links" do
-    visit "groups/#{groups(:group1).id}"
+    visit "/think_feel_do_dashboard/groups/#{groups(:group1).id}"
 
     expect(page).to have_link "Patients"
     expect(page).to_not have_link "Manage Tasks"

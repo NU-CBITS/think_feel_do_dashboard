@@ -1,21 +1,4 @@
 GIT
-  remote: https://github.com/cbitstech/bit_core.git
-  revision: 69c8905ee34858a5a768c2c15fc04d294fcc82df
-  tag: 1.3.2
-  specs:
-    bit_core (1.3.2)
-      rails (~> 4.1)
-      redcarpet (~> 2.3)
-
-GIT
-  remote: https://github.com/cbitstech/bit_player.git
-  revision: 405d5bd8a27eaae8a9a568f3575319a898adff1a
-  tag: 0.4.7
-  specs:
-    bit_player (0.4.7)
-      rails (~> 4.1)
-
-GIT
   remote: https://github.com/cbitstech/event_capture.git
   revision: 1f9a1999f36cf08b7381aae8d9b7715c42a7de01
   ref: 1f9a199
@@ -24,30 +7,10 @@ GIT
       jbuilder
       rails (>= 4.1.5)
 
-GIT
-  remote: https://github.com/cbitstech/think_feel_do_engine.git
-  revision: 87fc83be266c228c17cc6f0bbe4403578ee41594
-  tag: 1.10.1
-  specs:
-    think_feel_do_engine (1.10.0)
-      bootstrap-sass (~> 3.1)
-      cancancan (~> 1.9)
-      devise (~> 3.2)
-      font-awesome-rails (= 4.2.0.0)
-      jquery-ui-rails (= 4.2.1)
-      rails (~> 4.1)
-      redcarpet (~> 2.3)
-      rickshaw_rails (~> 1.4)
-      sass-rails (~> 4.0)
-      strong_password (~> 0)
-      turbolinks (~> 2.2)
-      twilio-ruby (~> 3.12)
-      underscore-rails (~> 1.6)
-
 PATH
   remote: .
   specs:
-    think_feel_do_dashboard (0.9.0)
+    think_feel_do_dashboard (0.9.1)
       phonelib
 
 GEM
@@ -135,8 +98,6 @@ GEM
     erubis (2.7.0)
     execjs (2.2.2)
     fastercsv (1.5.5)
-    font-awesome-rails (4.2.0.0)
-      railties (>= 3.2, < 5.0)
     haml (4.0.6)
       tilt
     highline (1.6.21)
@@ -148,10 +109,7 @@ GEM
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (4.2.1)
-      railties (>= 3.2.16)
     json (1.8.1)
-    jwt (1.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     mail (2.6.3)
@@ -189,11 +147,8 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (2.0.0)
     rake (10.3.2)
-    redcarpet (2.3.0)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
-    rickshaw_rails (1.4.5)
-      railties (>= 3.1.0)
     rspec-core (3.1.7)
       rspec-support (~> 3.1.0)
     rspec-expectations (3.1.2)
@@ -250,13 +205,8 @@ GEM
     tilt (1.4.1)
     turbolinks (2.5.2)
       coffee-rails
-    twilio-ruby (3.14.2)
-      builder (>= 2.1.2)
-      jwt (~> 1.0.0)
-      multi_json (>= 1.3.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    underscore-rails (1.7.0)
     warden (1.2.3)
       rack (>= 1.0)
     xpath (2.0.0)
@@ -269,13 +219,12 @@ DEPENDENCIES
   autoprefixer-rails
   better_errors
   binding_of_caller
-  bit_core!
-  bit_player!
   bootstrap-sass (~> 3.3.1)
   brakeman
   cancancan (~> 1.9)
   capybara (~> 2)
   database_cleaner (~> 1.3)
+  devise
   event_capture!
   jquery-rails (~> 3.1)
   launchy
@@ -286,5 +235,4 @@ DEPENDENCIES
   sass-rails (~> 4.0.4)
   strong_password (~> 0)
   think_feel_do_dashboard!
-  think_feel_do_engine!
   turbolinks (~> 2.2)
