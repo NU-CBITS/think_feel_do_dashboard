@@ -11,8 +11,13 @@ module ThinkFeelDoDashboard
         { title: "Module Page View", id: :module_page_view },
         { title: "Module Session", id: :module_session },
         { title: "Site Session", id: :site_session },
-        { title: "Video Session", id: :video_session }
+        { title: "Video Session", id: :video_session },
+        { title: "Login", id: :login }
       ]
+
+      if defined? SocialNetworking
+        @reports << { title: "Tool Share", id: :tool_share }
+      end
     end
 
     def show
@@ -22,7 +27,9 @@ module ThinkFeelDoDashboard
         "module_page_view" => Reports::ModulePageView,
         "module_session" => Reports::ModuleSession,
         "site_session" => Reports::SiteSession,
-        "video_session" => Reports::VideoSession
+        "video_session" => Reports::VideoSession,
+        "login" => Reports::Login,
+        "tool_share" => Reports::ToolShare
       }[params[:id]]
 
       authorize! :download, report
