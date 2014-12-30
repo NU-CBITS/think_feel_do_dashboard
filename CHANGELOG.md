@@ -1,3 +1,7 @@
+### 0.9.0
+
+  * added Login and Tool Share reports
+
 ### 0.8.1
 
 * enhancements
