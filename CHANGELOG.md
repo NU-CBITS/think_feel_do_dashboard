@@ -1,3 +1,8 @@
+### 0.9.2 - 2014-12-30
+
+* enhancements
+  * now handling expections that are thrown in the Group class when a moderating participant is created
+
 ### 0.9.1 - 2014-12-30
 
 * enhancements
