@@ -36,13 +36,17 @@ module ThinkFeelDoDashboard
       def create_moderator
         unless moderating_participant
           ActiveRecord::Base.transaction do
-            participant = create_participant(SecureRandom.hex(64))
-            create_profile(participant.id)
-            memberships.build(
-              participant_id: participant.id,
-              start_date: Date.today,
-              end_date: Date.today.advance(weeks: 8)
-            )
+            begin
+              participant = create_participant(SecureRandom.hex(64))
+              create_profile(participant.id)
+              memberships.build(
+                participant_id: participant.id,
+                start_date: Date.today,
+                end_date: Date.today.advance(weeks: 8)
+              )
+            rescue => e
+              logger.warn "There were errors: #{e}"
+            end
           end
         end
       end

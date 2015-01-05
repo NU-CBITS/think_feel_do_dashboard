@@ -53,6 +53,14 @@ describe Group do
 
         expect(moderating_participant.errors.full_messages.include?("Is admin can't be destroyed.")).to eq true
       end
+
+      it ".create_moderator catches and displays error" do
+        Participant.any_instance.stub(:valid?).and_return(false)
+        groupie = Group.new(arm_id: arms(:arm1).id, moderator_id: clinician2.id, title: "Test")
+
+        expect { groupie.save! }.not_to raise_exception
+        expect { groupie.save! }.not_to raise_error
+      end
     end
 
     context "Non-Social Arms" do
