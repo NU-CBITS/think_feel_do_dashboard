@@ -1,3 +1,8 @@
+### 0.10.0
+
+  * added Reports
+  * updated deprecated RSpec syntax
+
 ### 0.9.2 - 2014-12-30
 
 * enhancements
