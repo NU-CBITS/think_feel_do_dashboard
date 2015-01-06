@@ -12,6 +12,8 @@ module ThinkFeelDoDashboard
         { title: "Module Session", id: :module_session },
         { title: "Site Session", id: :site_session },
         { title: "Video Session", id: :video_session },
+        { title: "Task Completion", id: :task_completion },
+        { title: "Tool Access", id: :tool_access },
         { title: "Login", id: :login }
       ]
 
@@ -28,14 +30,14 @@ module ThinkFeelDoDashboard
         "module_session" => Reports::ModuleSession,
         "site_session" => Reports::SiteSession,
         "video_session" => Reports::VideoSession,
+        "task_completion" => Reports::TaskCompletion,
+        "tool_access" => Reports::ToolAccess,
         "login" => Reports::Login,
         "tool_share" => Reports::ToolShare
       }[params[:id]]
 
       authorize! :download, report
-      respond_to do |format|
-        format.csv { send_data report.to_csv, type: "text/csv" }
-      end
+      respond_to { |fmt| fmt.csv { send_data report.to_csv, type: "text/csv" } }
     end
   end
 end
