@@ -55,7 +55,7 @@ describe Group do
       end
 
       it ".create_moderator catches and displays error" do
-        Participant.any_instance.stub(:valid?).and_return(false)
+        allow_any_instance_of(Participant).to receive(:valid?) { false }
         groupie = Group.new(arm_id: arms(:arm1).id, moderator_id: clinician2.id, title: "Test")
 
         expect { groupie.save! }.not_to raise_exception
