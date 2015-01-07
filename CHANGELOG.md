@@ -1,3 +1,8 @@
+### 0.10.2 - 2014-1-7
+
+* bug fixes
+  * new Gemfile.lock file because of error on moodtech: https://github.com/cbitstech/think_feel_do_dashboard.git (at 0.10.1) is not yet checked out. Run `bundle install` first. (Bundler::GitError)
+
 ### 0.10.1 - 2014-1-7
 
 * bug fixes
