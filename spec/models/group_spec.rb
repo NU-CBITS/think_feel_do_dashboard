@@ -56,10 +56,16 @@ describe Group do
 
       it ".create_moderator catches and displays error" do
         allow_any_instance_of(Participant).to receive(:valid?) { false }
+        membership_count = Membership.count
+        participant_count = Participant.count
+        profile_count = SocialNetworking::Profile.count
         groupie = Group.new(arm_id: arms(:arm1).id, moderator_id: clinician2.id, title: "Test")
 
-        expect { groupie.save! }.not_to raise_exception
-        expect { groupie.save! }.not_to raise_error
+        expect { groupie.save! }.to raise_error
+        expect(groupie.errors.full_messages.include?("There were errors: Validation failed: ")).to eq true
+        expect(Membership.count).to eq membership_count
+        expect(Participant.count).to eq participant_count
+        expect(SocialNetworking::Profile.count).to eq profile_count
       end
     end
 
