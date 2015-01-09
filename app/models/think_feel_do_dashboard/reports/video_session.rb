@@ -6,7 +6,7 @@ module ThinkFeelDoDashboard
     class VideoSession
       def self.all
         Participant.select(:id, :study_id).map do |participant|
-          video_play_events.map do |e|
+          video_play_events(participant.id).map do |e|
             m = e.current_url.match(/.*\/providers\/(\d+)\/(\d+)$/)
             provider_id = m ? m[1] : -1
             position = m ? m[2] : -1
@@ -41,9 +41,9 @@ module ThinkFeelDoDashboard
 
       private
 
-      def self.video_play_events
+      def self.video_play_events(participant_id)
         EventCapture::Event
-          .where(kind: "videoPlay")
+          .where(participant_id: participant_id, kind: "videoPlay")
           .select(:participant_id, :kind, :emitted_at, :payload)
           .order(:emitted_at)
       end
