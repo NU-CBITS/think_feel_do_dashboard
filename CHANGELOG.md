@@ -1,3 +1,7 @@
+### 0.11.0
+
+ * added reports
+
 ### 0.10.2 - 2014-1-7
 
 * bug fixes
