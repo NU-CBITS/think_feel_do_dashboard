@@ -25,7 +25,13 @@ feature "Researcher - Reports", type: :feature do
     expect(page).to have_link "Video Session"
     expect(page).to have_link "Task Completion"
     expect(page).to have_link "Tool Access"
+    expect(page).to have_link "User Agent"
     expect(page).to have_link "Login"
+    expect(page).to have_link "Comment"
+    expect(page).to have_link "Goal"
+    expect(page).to have_link "Like"
+    expect(page).to have_link "Nudge"
+    expect(page).to have_link "Off Topic Post"
     expect(page).to have_link "Tool Share"
   end
 end

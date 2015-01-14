@@ -12,6 +12,7 @@ PATH
   specs:
     think_feel_do_dashboard (0.10.2)
       phonelib
+      user_agent_parser
 
 GEM
   remote: https://rubygems.org/
@@ -207,6 +208,7 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    user_agent_parser (2.2.0)
     warden (1.2.3)
       rack (>= 1.0)
     xpath (2.0.0)

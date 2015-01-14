@@ -24,5 +24,6 @@ Gem::Specification.new do |s|
   # Validates phone numbers for participants
   # phonelib uses a Google library for varification
   s.add_dependency "phonelib"
+  s.add_dependency "user_agent_parser"
   s.add_development_dependency "strong_password", "~> 0"
 end
