@@ -1,3 +1,6 @@
+### 0.11.1
+ * Report namespace bug fix
+
 ### 0.11.0
 
  * added reports
