@@ -6,7 +6,7 @@ module ThinkFeelDoDashboard
     class OffTopicPost
       def self.all
         Participant.select(:id, :study_id).map do |participant|
-          SocialNetworking::OnTheMindStatement
+          ::SocialNetworking::OnTheMindStatement
           .where(participant_id: participant.id).map do |post|
             {
               participant_id: participant.study_id,

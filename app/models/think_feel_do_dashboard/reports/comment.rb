@@ -6,7 +6,7 @@ module ThinkFeelDoDashboard
     class Comment
       def self.all
         Participant.select(:id, :study_id).map do |participant|
-          SocialNetworking::Comment
+          ::SocialNetworking::Comment
           .where(participant_id: participant.id).map do |comment|
             item = (comment.item.try(:item) || comment.item)
             next if item.nil?

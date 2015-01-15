@@ -6,7 +6,7 @@ module ThinkFeelDoDashboard
     class ToolShare
       def self.all
         Participant.select(:id, :study_id).map do |participant|
-          SocialNetworking::SharedItem
+          ::SocialNetworking::SharedItem
           .where(participant_id: participant.id, is_public: true).map do |item|
             {
               participant_id: participant.study_id,

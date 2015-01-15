@@ -6,7 +6,7 @@ module ThinkFeelDoDashboard
     class Nudge
       def self.all
         Participant.select(:id, :study_id).map do |participant|
-          SocialNetworking::Nudge
+          ::SocialNetworking::Nudge
           .where(initiator_id: participant.id).map do |nudge|
             {
               participant_id: participant.study_id,

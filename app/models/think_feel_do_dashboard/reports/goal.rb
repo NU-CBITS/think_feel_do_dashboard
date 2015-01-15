@@ -6,7 +6,7 @@ module ThinkFeelDoDashboard
     class Goal
       def self.all
         Participant.select(:id, :study_id).map do |participant|
-          SocialNetworking::Goal
+          ::SocialNetworking::Goal
           .where(participant_id: participant.id).map do |goal|
             {
               participant_id: participant.study_id,

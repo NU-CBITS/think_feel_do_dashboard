@@ -6,7 +6,7 @@ module ThinkFeelDoDashboard
     class Like
       def self.all
         Participant.select(:id, :study_id).map do |participant|
-          SocialNetworking::Like
+          ::SocialNetworking::Like
           .where(participant_id: participant.id).map do |like|
             item = (like.item.try(:item) || like.item)
             next if item.nil?
