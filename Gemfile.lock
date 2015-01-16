@@ -9,10 +9,10 @@ GIT
 
 GIT
   remote: https://github.com/eschlange/git_tagger.git
-  revision: d3da76c677e3ac5750db936e64e7c89cac54b814
-  tag: 1.0.3
+  revision: 4282c5d1c23d5384d33e66b8f82ee0cd93b5d2f8
+  tag: 1.0.7
   specs:
-    git_tagger (1.0.3)
+    git_tagger (1.0.7)
 
 PATH
   remote: .
