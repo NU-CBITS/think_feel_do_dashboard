@@ -1,3 +1,6 @@
+## 0.11.3 - 2015-01-16
+ * updated Gemlock reference
+ 
 ## 0.11.2 - 2015-01-16
  * updated the length a moderator exists for a group when created, add tagging gem
 

@@ -26,7 +26,7 @@ feature "Super User - Users", type: :feature do
     expect(page).to have_text "Email: admin2@example.com"
 
     user = User.find_by_email("admin2@example.com")
-    expect(user.is_admin).to eq true
+    expect(user.is_admin).to be_truthy
   end
 
   it "should enable the updating of a Super User" do
