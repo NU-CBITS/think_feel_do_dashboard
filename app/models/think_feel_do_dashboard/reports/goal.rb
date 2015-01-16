@@ -11,7 +11,8 @@ module ThinkFeelDoDashboard
             {
               participant_id: participant.study_id,
               created_at: goal.created_at,
-              is_completed: goal.is_completed
+              is_completed: goal.is_completed,
+              description: goal.description
             }
           end
         end.flatten
@@ -19,7 +20,7 @@ module ThinkFeelDoDashboard
 
       def self.to_csv
         CSV.generate do |csv|
-          columns = %w( participant_id created_at is_completed )
+          columns = %w( participant_id created_at is_completed description )
           csv << columns
           Reports::Goal.all.each do |s|
             csv << columns.map { |c| s[c.to_sym] }

@@ -14,7 +14,8 @@ module ThinkFeelDoDashboard
             {
               participant_id: participant.study_id,
               occurred_at: comment.created_at,
-              item_type: item.class.to_s
+              item_type: item.class.to_s,
+              text: comment.text
             }
           end
         end.flatten.compact
@@ -22,7 +23,7 @@ module ThinkFeelDoDashboard
 
       def self.to_csv
         CSV.generate do |csv|
-          columns = %w( participant_id occurred_at item_type )
+          columns = %w( participant_id occurred_at item_type text )
           csv << columns
           Reports::Comment.all.each do |s|
             csv << columns.map { |c| s[c.to_sym] }

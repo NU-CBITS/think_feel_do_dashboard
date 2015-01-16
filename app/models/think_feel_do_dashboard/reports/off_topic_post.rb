@@ -10,7 +10,8 @@ module ThinkFeelDoDashboard
           .where(participant_id: participant.id).map do |post|
             {
               participant_id: participant.study_id,
-              occurred_at: post.created_at
+              occurred_at: post.created_at,
+              description: post.description
             }
           end
         end.flatten
@@ -18,7 +19,7 @@ module ThinkFeelDoDashboard
 
       def self.to_csv
         CSV.generate do |csv|
-          columns = %w( participant_id occurred_at )
+          columns = %w( participant_id occurred_at description )
           csv << columns
           Reports::OffTopicPost.all.each do |s|
             csv << columns.map { |c| s[c.to_sym] }
