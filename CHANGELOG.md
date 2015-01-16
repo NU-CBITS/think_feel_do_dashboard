@@ -1,3 +1,6 @@
+## 0.11.2 - 2015-01-16
+ * updated the length a moderator exists for a group when created, add tagging gem
+
 ### 0.11.1
  * Report namespace bug fix
 
