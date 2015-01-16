@@ -1,3 +1,6 @@
+## 0.11.4 - 2015-01-16
+ * updated git_tagger
+
 ## 0.11.3 - 2015-01-16
  * updated Gemlock reference
  
