@@ -42,7 +42,7 @@ module ThinkFeelDoDashboard
               memberships.build(
                 participant_id: participant.id,
                 start_date: Date.today,
-                end_date: Date.today.advance(weeks: 8)
+                end_date: Date.today.advance(years: 100)
               )
             end
           rescue ActiveRecord::RecordInvalid => e

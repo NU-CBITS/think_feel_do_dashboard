@@ -1,3 +1,7 @@
+# For auto tagging & updating of Changlog
+git_tagger = Gem::Specification.find_by_name "git_tagger"
+load "#{git_tagger.gem_dir}/lib/tasks/deploy.rake"
+
 begin
   require "bundler/setup"
 rescue LoadError

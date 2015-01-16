@@ -14,7 +14,7 @@ describe Group do
         moderating_participant.reload
 
         expect(moderating_participant).to_not be_nil
-        expect(moderating_participant.is_admin).to eq true
+        expect(moderating_participant.is_admin).to be_truthy
         expect(moderating_participant.display_name).to eq "ThinkFeelDo"
         expect(moderating_participant.email).to_not be_nil
       end
@@ -25,7 +25,7 @@ describe Group do
         p = SocialNetworking::Profile.find_by_participant_id(moderating_participant.id)
         expect(p).to_not be_nil
         expect(p.icon_name).to eq "admin"
-        expect(p.active).to eq true
+        expect(p.active).to be_truthy
       end
 
       it "doesn't allow an 'is admin' participant's is_admin attribute to be updated" do
@@ -34,8 +34,8 @@ describe Group do
         moderating_participant.reload
 
         expect(moderating_participant).to_not be_nil
-        expect(moderating_participant.is_admin).to eq true
-        expect(moderating_participant.errors.full_messages.include?("Is admin can't be updated.")).to eq true
+        expect(moderating_participant.is_admin).to be_truthy
+        expect(moderating_participant.errors.full_messages.include?("Is admin can't be updated.")).to be_truthy
       end
 
       it "allows other attributes can be updated" do
@@ -43,7 +43,7 @@ describe Group do
         moderating_participant.update_attributes(contact_preference: "email")
         moderating_participant.reload
 
-        expect(moderating_participant.errors.full_messages.include?("Is admin can't be updated.")).to_not eq true
+        expect(moderating_participant.errors.full_messages.include?("Is admin can't be updated.")).to_not be_truthy
       end
 
       it "doesn't allow a moderating participant to be deleted" do
@@ -51,7 +51,7 @@ describe Group do
         moderating_participant.destroy
         moderating_participant.reload
 
-        expect(moderating_participant.errors.full_messages.include?("Is admin can't be destroyed.")).to eq true
+        expect(moderating_participant.errors.full_messages.include?("Is admin can't be destroyed.")).to be_truthy
       end
 
       it ".create_moderator catches and displays error" do
@@ -62,10 +62,22 @@ describe Group do
         groupie = Group.new(arm_id: arms(:arm1).id, moderator_id: clinician2.id, title: "Test")
 
         expect { groupie.save! }.to raise_error
-        expect(groupie.errors.full_messages.include?("There were errors: Validation failed: ")).to eq true
+        expect(groupie.errors.full_messages.include?("There were errors: Validation failed: ")).to be_truthy
         expect(Membership.count).to eq membership_count
         expect(Participant.count).to eq participant_count
         expect(SocialNetworking::Profile.count).to eq profile_count
+      end
+
+      it ".create_moderator allows a participant to active nearly a century later" do
+        groupie = Group.create(arm_id: arms(:arm1).id, moderator_id: clinician2.id, title: "Test")
+
+        expect(groupie.moderating_participant).to_not be_nil
+
+        Timecop.travel(Date.today.advance(years: 99))
+
+        expect(groupie.moderating_participant.memberships.first.active?).to be_truthy
+
+        Timecop.return
       end
     end
 
@@ -85,7 +97,7 @@ describe Group do
           end_date: Date.today.advance(weeks: 8)
         )
 
-        expect(membership.errors.full_messages.include?("moderators can't be part of this group.")).to eq true
+        expect(membership.errors.full_messages.include?("moderators can't be part of this group.")).to be_truthy
       end
     end
   end
