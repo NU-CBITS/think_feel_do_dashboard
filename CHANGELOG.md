@@ -1,3 +1,6 @@
+## 0.11.5 - 2015-01-16
+ * added content to Reports
+
 ## 0.11.4 - 2015-01-16
  * updated git_tagger
 
