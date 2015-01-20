@@ -46,7 +46,7 @@ module ThinkFeelDoDashboard
       def create_moderating_participant
         days = ENV["MODERATOR_LIFESPAN"] || 36_525
         ActiveRecord::Base.transaction do
-          participant = create_participant(SecureRandom.hex(64))
+          participant = create_participant(SecureRandom.hex(8))
           create_profile(participant.id)
           memberships.build(
             participant_id: participant.id,
