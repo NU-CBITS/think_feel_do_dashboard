@@ -1,3 +1,6 @@
+## 0.11.8 - 2015-01-23
+ * added logic to coach selection for woz arm participants.
+
 ## 0.11.7 - 2015-01-20
  * updated default study id for a moderating participant
 
