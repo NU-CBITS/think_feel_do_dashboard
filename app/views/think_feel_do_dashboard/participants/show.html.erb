@@ -71,7 +71,9 @@
 
 <% if can? :update, @participant %>
   <p>
-    <% if @participant.coach %>
+    <% if @participant.active_group && @participant.active_group.arm.woz? %>
+      <%= link_to "Assign Coach", woz_participant_coach_path(participant_id: @participant.id), class: "btn btn-default" %>
+    <% elsif @participant.coach %>
       <%= link_to "Assign Coach", edit_participant_coach_path(@participant, @participant.coach), class: "btn btn-default" %>
     <% else %>
       <%= link_to "Assign Coach", new_participant_coach_path(@participant), class: "btn btn-default" %>

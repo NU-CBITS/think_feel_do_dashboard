@@ -8,7 +8,9 @@ ThinkFeelDoDashboard::Engine.routes.draw do
     resource :moderators, only: :create
   end
   resources :participants do
-    resources :coaches, controller: :coach_assignments, except: [:index]
+    resources :coaches, controller: :coach_assignments, except: [:index] do
+      get 'woz', on: :member
+    end
     resources :groups, controller: :memberships, except: [:index]
   end
   resources :reports

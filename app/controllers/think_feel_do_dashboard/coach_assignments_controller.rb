@@ -65,7 +65,51 @@ module ThinkFeelDoDashboard
       end
     end
 
+    # GET /think_feel_do_dashboard/participants/1/coaches/woz
+    def woz
+      if @participant.coach
+        set_coach_assignment
+        authorize! :edit, @coach_assignment
+
+        update_woz_coach
+      else
+        authorize! :new, CoachAssignment
+        set_new_woz_coach
+      end
+    end
+
     private
+
+    def set_new_woz_coach
+      @coach_assignment = CoachAssignment.new(
+        participant: @participant,
+        coach_id: @participant.active_group.moderator_id)
+      if @coach_assignment.save
+        notification = "Coach was successfully assigned to WOZ"\
+                              " moderator."
+      else
+        notification = "An error occurred in the update of the "\
+                              "participant's coach to the WOZ moderator."
+      end
+      redirect_to participant_path(
+                    @participant
+                  ),
+                  notice: notification
+    end
+
+    def update_woz_coach
+      @coach_assignment.update(coach_id: @participant.active_group.moderator_id)
+      if @coach_assignment.save
+        notification = "Coach was successfully assigned to WOZ moderator."
+      else
+        notification = "An error occurred in the update of the "\
+                              "participant's coach to the WOZ moderator."
+      end
+      redirect_to participant_path(
+                    @participant
+                  ),
+                  notice: notification
+    end
 
     def set_coaches
       @coaches = User.all.map { |user| [user.email, user.id] }
