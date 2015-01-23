@@ -36,18 +36,23 @@ module ThinkFeelDoDashboard
       def create_moderator
         unless moderating_participant
           begin
-            ActiveRecord::Base.transaction do
-              participant = create_participant(SecureRandom.hex(64))
-              create_profile(participant.id)
-              memberships.build(
-                participant_id: participant.id,
-                start_date: Date.today,
-                end_date: Date.today.advance(years: 100)
-              )
-            end
+            create_moderating_participant
           rescue ActiveRecord::RecordInvalid => e
             errors.add(:base, "There were errors: #{e}")
           end
+        end
+      end
+
+      def create_moderating_participant
+        days = ENV["MODERATOR_LIFESPAN"] || 36_525
+        ActiveRecord::Base.transaction do
+          participant = create_participant(SecureRandom.hex(8))
+          create_profile(participant.id)
+          memberships.build(
+            participant_id: participant.id,
+            start_date: Date.today,
+            end_date: Date.today.advance(days: days)
+          )
         end
       end
 

@@ -1,3 +1,9 @@
+## 0.11.7 - 2015-01-20
+ * updated default study id for a moderating participant
+
+## 0.11.6 - 2015-01-20
+ * constant can now be used to set duration of moderating participant's membership
+
 ## 0.11.5 - 2015-01-16
  * added content to Reports
 
