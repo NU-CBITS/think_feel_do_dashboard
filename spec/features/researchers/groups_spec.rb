@@ -17,7 +17,7 @@ feature "Researcher - Groups", type: :feature do
   end
 
   it "displays the moderate link if the group is social" do
-    click_on "Group 1 · SOCIAL"
+    click_on "Group 1"
     expect(page).to_not have_link "Moderate"
   end
 

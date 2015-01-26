@@ -13,8 +13,8 @@ feature "Clinician - Groups", type: :feature do
   end
 
   it "displays the moderate link if the group is social" do
-    click_on "Arm 1 · SOCIAL"
-    click_on "Group 1 · SOCIAL"
+    click_on "Arm 1"
+    click_on "Group 1"
     expect(page).to have_link "Moderate"
   end
 
