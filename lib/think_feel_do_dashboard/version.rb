@@ -1,4 +1,4 @@
 # Version number of engine
 module ThinkFeelDoDashboard
-  VERSION = "0.12.0"
+  VERSION = "0.8.1"
 end
