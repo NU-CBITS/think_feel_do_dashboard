@@ -1,3 +1,6 @@
+## 0.8.1 - 2015-01-27
+ * includes an app-level config method determining if parts of a view are visible when the host app has social capabilities
+
 ## 0.12.0 - 2015-01-27
  * removed inline style
  * removed unnecessary stylesheets, scripts, gems
