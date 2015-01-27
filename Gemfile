@@ -12,15 +12,7 @@ gemspec
 
 gem "rails", "~> 4.1.8"
 
-# To use debugger
-# gem "debugger"
-gem "jquery-rails", "~> 3.1"
 gem "turbolinks", "~> 2.2"
-
-# Boostrap styling
-gem "bootstrap-sass", "~> 3.3.1"
-gem "sass-rails", "~> 4.0.4"
-gem "autoprefixer-rails"
 
 gem "git_tagger",
     git: "https://github.com/eschlange/git_tagger.git",

@@ -21,7 +21,7 @@
     <label>Roles</label>
     <% @roles.each do |role| %>
       <% role = role.underscore %>
-      <div class="checkbox" style="margin-top: 0px; margin-bottom: 5px;">
+      <div class="checkbox">
         <label for="user_user_roles_<%= role %>">
           <input name="user[user_roles][<%= role %>]" type="hidden" value="0">
           <input id="user_user_roles_<%= role %>" name="user[user_roles][<%= role %>]" type="checkbox" value="1" <%= "checked" if @user.user_roles.map(&:role_class_name).include?("Roles::#{role.titleize.gsub(' ', '')}") %>>
