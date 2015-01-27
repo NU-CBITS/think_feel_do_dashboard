@@ -1,3 +1,6 @@
+## 0.12.2 - 2015-01-27
+ * removes the main id attached to body along with updates tests to no longer use with_scope and removes feature helper file
+
 ## 0.12.1 - 2015-01-27
  * includes an app-level config method determining if parts of a view are visible when the host app has social capabilities
 
