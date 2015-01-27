@@ -46,14 +46,16 @@
   <%= @arm.title %>
 </p>
 
-<p>
-  <strong>Is social:</strong>
-  <%= @arm.social? ? "Yes" : "No" %>
-</p>
-<p>
-  <strong>Wizard of Oz enabled:</strong>
-  <%= @arm.woz? ? "Yes" : "No" %>
-</p>
+<% if social_features? %>
+  <p>
+    <strong>Is social:</strong>
+    <%= @arm.social? ? "Yes" : "No" %>
+  </p>
+  <p>
+    <strong>Wizard of Oz enabled:</strong>
+    <%= @arm.woz? ? "Yes" : "No" %>
+  </p>
+<% end %>
 
 <% if can? :show, Group %>
   <div class="panel panel-default">

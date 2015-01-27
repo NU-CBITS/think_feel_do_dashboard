@@ -14,16 +14,20 @@
     <%= f.label :title %>
     <%= f.text_field :title, class: "form-control" %>
   </div>
-  <div class="form-group">
-    <%= f.check_box :is_social %>
-    <%= f.label :is_social %>
-    <p class="help-block">This requires participants to have display names.</p>
-  </div>
-  <div class="form-group">
-    <%= f.check_box :has_woz %>
-    <%= f.label :has_woz, "Wizard of Oz" %>
-    <p class="help-block">This requires the social feature to be enabled.</p>
-  </div>
+
+  <% if social_features? %>
+    <div class="form-group">
+      <%= f.check_box :is_social %>
+      <%= f.label :is_social %>
+      <p class="help-block">This requires participants to have display names.</p>
+    </div>
+    <div class="form-group">
+      <%= f.check_box :has_woz %>
+      <%= f.label :has_woz, "Wizard of Oz" %>
+      <p class="help-block">This requires the social feature to be enabled.</p>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit button_text, class: "btn btn-primary" %>
     <%= link_to "Cancel", cancel_path, class: "btn btn-default" %>

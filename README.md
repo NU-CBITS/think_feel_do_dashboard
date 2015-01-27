@@ -143,8 +143,8 @@ end
 
 Install the engine's migrations into the host application and migrate:
 ```console
-rake think_feel_do_dashboard:install:migrations
-rake db:migrate
+bundle exec rake think_feel_do_dashboard:install:migrations
+bundle exec rake db:migrate
 ```
 
 You will have to include any .css or .js files in the host app's to be precompiled `app/config/initializers/assets.rb`.  For example,
@@ -182,7 +182,7 @@ __Confluence:__ N/A
 
 Make sure you are in the top level folder; i.e., think_feel_do_dashboard. Then run:
 ```console
-rake app:db:drop app:db:create app:db:migrate
+bundle exec rake app:db:drop app:db:create app:db:migrate
 ```
 
 ## Seeding Database with engine specific fixtures
@@ -195,17 +195,17 @@ app:seed:with_think_feel_do_dashboard_fixtures
 
 After you migrate the database, you may have to update the engine's testing environment:
 ```console
-  rake app:db:drop app:db:create app:db:migrate RAILS_ENV=test
+  bundle exec rake app:db:drop app:db:create app:db:migrate RAILS_ENV=test
 ```
 
 Compelete setup (drops and creates the database, runs migrations, and seeds the database with fixtures):
 ```console
-  rake setup
+  bundle exec rake setup
 ```
 
 Because we have combined brakeman, rubocop, and rspec, you can just run the rake command to run everything:
 ```console
-rake
+bundle exec rake
 ```
 
 ## Services
