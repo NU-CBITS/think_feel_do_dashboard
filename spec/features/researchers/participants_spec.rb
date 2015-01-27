@@ -45,9 +45,7 @@ feature "Researcher -  Participants", type: :feature do
     expect(page).to have_text "Membership Status: Inactive"
     expect(page).to have_text "Below lists the all groups this participant has been a member of and whether they are currently active or inactive."
 
-    with_scope "#main" do
-      click_on "Participants"
-    end
+    click_on "Participants"
 
     expect(page).to have_text "Inactive favoriteToken1!"
   end

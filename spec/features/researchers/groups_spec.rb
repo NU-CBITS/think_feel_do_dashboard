@@ -55,9 +55,7 @@ feature "Researcher - Groups", type: :feature do
     expect(page).to have_text "Arm: Arm 1"
     expect(page).to have_text "Moderator: clinician1@example.com"
 
-    with_scope "#main" do
-      visit "/think_feel_do_dashboard/groups"
-    end
+    visit "/think_feel_do_dashboard/groups"
 
     expect(page).to have_text "HUGe PrOjEct 3"
   end

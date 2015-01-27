@@ -78,9 +78,7 @@ feature "Super User - Arms", type: :feature do
       expect(page).to have_text "Is social: Yes"
       expect(page).to have_text "Wizard of Oz enabled: Yes"
 
-      with_scope "#main" do
-        visit "/think_feel_do_dashboard/arms"
-      end
+      visit "/think_feel_do_dashboard/arms"
 
       expect(page).to have_text "Big arm 2"
     end

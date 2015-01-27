@@ -53,9 +53,7 @@ feature "Super User - Users", type: :feature do
     expect(page).to have_text "Email: what@ex.co"
     expect(page).to have_text "Roles: Clinician and Researcher"
 
-    with_scope "#main" do
-      click_on "Users"
-    end
+    click_on "Users"
 
     expect(page).to have_text "Super User what@ex.co"
 
