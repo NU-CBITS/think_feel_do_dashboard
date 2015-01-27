@@ -1,3 +1,7 @@
+## 0.12.0 - 2015-01-27
+ * removed inline style
+ * removed unnecessary stylesheets, scripts, gems
+
 ## 0.11.8 - 2015-01-23
  * added logic to coach selection for woz arm participants.
 
