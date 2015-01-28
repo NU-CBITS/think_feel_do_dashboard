@@ -7,3 +7,56 @@
   <%= label_tag "membership[end_date]", "End Date" %>
   <%= text_field_tag "membership[end_date]", {}, type: :date, class: "form-control", value: (membership.end_date || Date.today + 1.week) %>
 </div>
+<% if Rails.application.config.study_length_in_weeks %>
+    Standard number of weeks: <%= Rails.application.config.study_length_in_weeks %>,
+    Projected End Date from today: <label id="membership_end_date_calculation"></label>
+<% end %>
+
+<% if Rails.application.config.study_length_in_weeks %>
+    <script>
+      Date.prototype.addDays = function(days)
+      {
+        var dat = new Date(this.valueOf());
+        dat.setDate(dat.getDate() + days);
+        return dat;
+      }
+
+      var calculate_end_date = function(start_date_string) {
+        var days_in_week = 7;
+        var study_weeks = <%= Rails.application.config.study_length_in_weeks %>;
+        var total_study_days = days_in_week * study_weeks;
+        var split_date = null;
+        var start_date = null;
+        if (start_date_string.indexOf("-") > -1) {
+            split_date = start_date_string.split("-");
+            start_date = new Date(split_date[0], split_date[1], split_date[2], 0,0,0,0);
+        } else {
+            split_date = start_date_string.split("\/");
+            start_date = new Date(split_date[2], split_date[0], split_date[1], 0,0,0,0);
+        }
+        var projected_end_date = start_date.addDays(total_study_days);
+        var curr_date = projected_end_date.getDate();
+        var curr_month = projected_end_date.getMonth() + 1; //Months are zero based
+        var curr_year = projected_end_date.getFullYear();
+        return curr_month + "\/" + curr_date + "\/" + curr_year;
+      };
+
+      $(document).ready(function() {
+        $("#membership_end_date_calculation").text(calculate_end_date("<%= membership.start_date || Date.today %>"));
+      });
+
+      /*
+      $("#membership_start_date").blur(function() {
+          var date_pattern_load = /^\d{4}[./-]\d{2}[./-]\d{2}$/;
+          var date_pattern_update = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+          var start_date_string = $("#membership_start_date").value;
+          alert(date_pattern_update.test(start_date_string) + " " + start_date_string)
+          if(date_pattern_load.test(start_date_string) || date_pattern_update.test(start_date_string)) {
+              $("#membership_end_date_calculation").
+                      text(calculate_end_date(start_date_string));
+          }
+        }
+      );
+      */
+    </script>
+<% end %>
