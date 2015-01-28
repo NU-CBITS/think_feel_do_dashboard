@@ -1,3 +1,6 @@
+## 0.13.0 - 2015-01-28
+ * prevent updating a Membership's group association
+
 ## 0.12.3 - 2015-01-28
  * Fixes bug in validating a participant's membership
 
