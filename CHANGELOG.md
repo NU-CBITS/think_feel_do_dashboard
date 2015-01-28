@@ -1,3 +1,6 @@
+## 0.12.3 - 2015-01-28
+ * Fixes bug in validating a participant's membership
+
 ## 0.12.2 - 2015-01-27
  * removes the main id attached to body along with updates tests to no longer use with_scope and removes feature helper file
 
