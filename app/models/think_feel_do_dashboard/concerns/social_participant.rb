@@ -40,7 +40,9 @@ module ThinkFeelDoDashboard
       end
 
       def ensure_display_name
-        if active_membership && active_group.arm.social? && display_name.blank?
+        if active_membership &&
+           active_group.arm.social? &&
+           display_name.blank?
           errors.add(
             :display_name, "is required because the arm of this \
               intervention utilizes social features."

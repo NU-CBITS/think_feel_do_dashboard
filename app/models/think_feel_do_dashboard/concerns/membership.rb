@@ -28,9 +28,7 @@ module ThinkFeelDoDashboard
       private
 
       def ensure_display_name_for_social_arms
-        if participant.active_membership &&
-           active_group.try(:arm).try(:social?) &&
-           display_name.blank?
+        if invalid_display_name?
           errors.add(:display_name,
                      "is required because the arm of this intervention " \
                      "utilizes social features.")
@@ -42,7 +40,7 @@ module ThinkFeelDoDashboard
 
       def excludes_moderators
         if active_group.try(:arm) &&
-           !active_group.arm.is_social &&
+           !active_group.arm.social? &&
            participant.is_admin
           errors.add(:base, "moderators can't be part of this group.")
         end
@@ -54,6 +52,12 @@ module ThinkFeelDoDashboard
                      "can't be assigned to this group because they are " \
                      "already active.")
         end
+      end
+
+      def invalid_display_name?
+        participant.active_membership &&
+          active_group.try(:arm).try(:social?) &&
+          participant.display_name.blank?
       end
     end
   end
