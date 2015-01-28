@@ -46,7 +46,7 @@ module ThinkFeelDoDashboard
       authorize! :update, @membership
       if @membership.update(membership_params)
         redirect_to participant_path(@participant),
-                    notice: "New group was successfully assigned."
+                    notice: "Group assignment was successfully updated."
       else
         render :edit
       end

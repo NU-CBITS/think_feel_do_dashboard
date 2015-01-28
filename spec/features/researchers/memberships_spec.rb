@@ -96,9 +96,6 @@ feature "Researcher - Memberships", type: :feature do
 
     it "allows for the editing of an assigned group to a participant" do
       click_on "TFD-1111"
-
-      expect(page).to_not have_text "Group Without Creator"
-
       click_on "Active Group 1"
 
       expect(page).to have_text "Participant: TFD-1111"
@@ -106,20 +103,17 @@ feature "Researcher - Memberships", type: :feature do
       expect(page).to have_text "Membership Status: Active"
       expect(page).to have_text "Start Date: " + DateTime.now.strftime("%Y-%m-%d")
       expect(page).to have_text "End Date: " + 4.days.from_now.strftime("%Y-%m-%d")
-      expect(page).to_not have_text "Group: Group Without Creator"
 
       click_on "Edit"
 
       expect(page).to have_text "Participant: TFD-1111"
 
-      select "Group Without Creator", from: "Group"
-
+      fill_in "Start Date", with: "01/01/2014"
       click_on "Update"
 
-      expect(page).to have_text "New group was successfully assigned"
+      expect(page).to have_text "Group assignment was successfully updated."
       expect(page).to have_text "Participant"
-      expect(page).to have_text "Current Group: Group Without Creator"
-      expect(page).to_not have_text "Current Group: Group 1"
+      expect(page).to have_text "Current Group: Group 1"
       expect(page).to have_text "Study Id: TFD-1111"
     end
 
