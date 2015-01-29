@@ -1,3 +1,7 @@
+## 0.13.1 - 2015-01-28
+ * updated membership creation view
+ * refactored stylesheets
+
 ## 0.13.0 - 2015-01-28
  * prevent updating a Membership's group association
 
