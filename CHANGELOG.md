@@ -1,3 +1,6 @@
+## 0.13.2 - 2015-01-29
+ * Button text to visit Patient Dashboard was renamed to Patient Dashboard from Patients
+
 ## 0.13.1 - 2015-01-28
  * updated membership creation view
  * refactored stylesheets
