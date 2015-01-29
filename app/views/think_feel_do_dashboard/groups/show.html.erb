@@ -7,7 +7,7 @@
 
   <% if can? :index, PhqAssessment %>
     <div class="btn-group">
-      <%= link_to "Patients", (defined?(think_feel_do_engine) ? think_feel_do_engine.coach_group_patient_dashboards_path(@group) : root_path), class: "btn btn-default" %>
+      <%= link_to "Patient Dashboard", (defined?(think_feel_do_engine) ? think_feel_do_engine.coach_group_patient_dashboards_path(@group) : root_path), class: "btn btn-default" %>
     </div>
   <% end %>
 
