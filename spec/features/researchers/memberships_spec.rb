@@ -3,8 +3,35 @@ require "spec_helper"
 feature "Researcher - Memberships", type: :feature do
   fixtures :all
 
-  describe "Logged in as a researcher" do
+  describe "Logged in as a researcher when the application doesn't have social functionality" do
+    let(:membership) { memberships(:membership1) }
+
     before do
+      sign_in users :researcher1
+    end
+
+    it "should not display the 'Display Name' field when creating a membership" do
+      visit "/think_feel_do_dashboard/participants/#{membership.participant_id}/groups/new"
+
+      expect(page).to_not have_text "Display Name"
+    end
+
+    it "should not display the 'Display Name' field when viewing a membership" do
+      visit "/think_feel_do_dashboard/participants/#{membership.participant_id}/groups/#{membership.group_id}"
+
+      expect(page).to_not have_text "Display Name"
+    end
+
+    it "should not display the 'Display Name' field when editing a membership" do
+      visit "/think_feel_do_dashboard/participants/#{membership.participant_id}/groups/#{membership.group_id}/edit"
+
+      expect(page).to_not have_text "Display Name"
+    end
+  end
+
+  describe "Logged in as a researcher when the application has social functionality" do
+    before do
+      Rails.application.config.stub(:include_social_features).and_return true
       sign_in users :researcher1
       visit "/think_feel_do_dashboard"
       click_on "Participants"
