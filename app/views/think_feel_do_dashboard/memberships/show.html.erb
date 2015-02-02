@@ -13,10 +13,14 @@
   <strong>Group:</strong>
   <%= link_to @membership.group.title, group_path(@membership.group) %>
 </p>
-<p>
-  <strong>Display Name:</strong>
-  <%= @membership.participant.display_name %>
-</p>
+
+<% if social_features? %>
+  <p>
+    <strong>Display Name:</strong>
+    <%= @membership.participant.display_name %>
+  </p>
+<% end %>
+
 <p>
   <strong>Membership Status:</strong>
   <%= membership_status @participant, @membership %>

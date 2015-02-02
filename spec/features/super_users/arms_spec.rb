@@ -3,45 +3,36 @@ require "spec_helper"
 feature "Super User - Arms", type: :feature do
   fixtures :all
 
-  describe "Application doesn't have social functionality enabled" do
-    it "should not display social functionality if include_social_features is not defined" do
-      expect(Rails.application.config.respond_to?(:include_social_features)).to be_falsey
+  describe "Logged in as an admin when the application doesn't have social functionality" do
+    let(:arm) { arms(:arm1) }
 
+    before do
       sign_in users :admin1
-      visit "/think_feel_do_dashboard/arms/new"
-
-      fill_in "Title", with: "Big arm 2"
-      expect(page).to_not have_text "Is social"
-      expect(page).to_not have_text "Wizard of Oz"
-
-      click_on "Create"
-
-      expect(page).to have_text "Arm was successfully created"
-      expect(page).to have_text "Title: Big arm 2"
-      expect(page).to_not have_text "Is social"
-      expect(page).to_not have_text "Wizard of Oz enabled"
     end
 
-    it "should not display social functionality if include_social_features is set to false" do
-      Rails.application.config.stub(:include_social_features).and_return false
-
-      sign_in users :admin1
+    it "should not display social functionality when creating an arm" do
       visit "/think_feel_do_dashboard/arms/new"
 
-      fill_in "Title", with: "Big arm 2"
       expect(page).to_not have_text "Is social"
       expect(page).to_not have_text "Wizard of Oz"
+    end
 
-      click_on "Create"
+    it "should not display social functionality when editing an arm" do
+      visit "/think_feel_do_dashboard/arms/#{arm.id}/edit"
 
-      expect(page).to have_text "Arm was successfully created"
-      expect(page).to have_text "Title: Big arm 2"
       expect(page).to_not have_text "Is social"
-      expect(page).to_not have_text "Wizard of Oz enabled"
+      expect(page).to_not have_text "Wizard of Oz"
+    end
+
+    it "should not display social functionality when viewing an arm" do
+      visit "/think_feel_do_dashboard/arms/#{arm.id}"
+
+      expect(page).to_not have_text "Is social"
+      expect(page).to_not have_text "Wizard of Oz"
     end
   end
 
-  describe "Application has social functionality enabled" do
+  describe "Application has social functionality" do
     before do
       Rails.application.config.stub(:include_social_features).and_return true
       sign_in users :admin1

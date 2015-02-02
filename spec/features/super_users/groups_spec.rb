@@ -13,7 +13,7 @@ feature "Researcher - Groups", type: :feature do
   end
 
   it "displays the correct managment links" do
-    expect(page).to have_link "Patients"
+    expect(page).to have_link "Patient Dashboard"
     expect(page).to have_link "Manage Tasks"
     expect(page).to have_button "Messaging"
     expect(page).to have_link "Messages"

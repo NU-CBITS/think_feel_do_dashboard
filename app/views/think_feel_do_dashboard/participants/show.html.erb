@@ -35,10 +35,12 @@
   <%= @participant.contact_preference.titleize %>
 </p>
 
-<p>
-  <strong>Display Name:</strong>
-  <%= @participant.display_name %>
-</p>
+<% if social_features? %>
+  <p>
+    <strong>Display Name:</strong>
+    <%= @participant.display_name %>
+  </p>
+<% end %>
 
 <p>
   <strong>Membership Status:</strong>
