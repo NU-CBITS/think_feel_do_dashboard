@@ -31,8 +31,7 @@
     <%= f.text_field :display_name, class: "form-control" %>
     <p class="help-block">This is optional and only applicable when a participant is assigned to a study arm that requires a display name</p>
   </div>
-  <div class="actions">
-    <%= f.submit button_text, class: "btn btn-primary" %>
-    <%= link_to "Cancel", cancel_path, class: "btn btn-default" %>
-  </div>
+
+  <%= f.submit button_text, class: "btn btn-primary" %>
+  <%= link_to "Cancel", cancel_path, class: "btn btn-default" %>
 <% end %>

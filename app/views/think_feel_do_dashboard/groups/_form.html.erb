@@ -23,8 +23,6 @@
     <%= f.collection_select(:moderator_id, @users, :id, :email, { prompt: "Select Moderator" }, { class: "form-control" }) %>
     <p class="help-block">All notifications are emailed to this user's email</p>
   </div>
-  <div class="actions">
-    <%= f.submit button_text, class: "btn btn-primary" %>
-    <%= link_to "Cancel", cancel_path, class: "btn btn-default" %>
-  </div>
+  <%= f.submit button_text, class: "btn btn-primary" %>
+  <%= link_to "Cancel", cancel_path, class: "btn btn-default" %>
 <% end %>

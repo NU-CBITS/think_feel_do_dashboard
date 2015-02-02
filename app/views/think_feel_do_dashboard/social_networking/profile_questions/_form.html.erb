@@ -15,7 +15,5 @@
   <%= text_field_tag "social_networking_profile_question[question_text]", @profile_question.question_text, class: "form-control" %>
 </div>
 
-<div class="actions">
-  <%= f.submit button_text, class: "btn btn-primary" %>
-  <%= link_to "Cancel", group_path(@group), class: "btn btn-default" %>
-</div>
+<%= f.submit button_text, class: "btn btn-primary" %>
+<%= link_to "Cancel", group_path(@group), class: "btn btn-default" %>
