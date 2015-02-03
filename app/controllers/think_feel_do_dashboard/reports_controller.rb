@@ -53,6 +53,11 @@ module ThinkFeelDoDashboard
         title: "Login",
         id: :login,
         klass: Reports::Login
+      },
+      {
+        title: "PHQ9 Assessment",
+        id: :phq_assessment,
+        klass: Reports::PhqAssessment
       }
     ]
 
