@@ -14,7 +14,7 @@
   <%= link_to @membership.group.title, group_path(@membership.group) %>
 </p>
 
-<% if social_features? %>
+<% if social_features? && @membership.group.arm.social? %>
   <p>
     <strong>Display Name:</strong>
     <%= @membership.participant.display_name %>

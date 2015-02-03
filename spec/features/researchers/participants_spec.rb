@@ -61,14 +61,12 @@ feature "Researcher - Participants", type: :feature do
       fill_in "Email", with: "gwashington@ex.co"
       fill_in "Phone Number", with: "6085169918"
       select "Phone", from: "Contact Preference"
-      fill_in "Display Name", with: "Mr. Happy"
       click_on "Create"
 
       expect(page).to have_text "Participant was successfully created"
       expect(page).to have_text "Email: gwashington@ex.co"
       expect(page).to have_text "Phone Number: (608) 516-9918"
       expect(page).to have_text "Contact Preference: Phone"
-      expect(page).to have_text "Display Name: Mr. Happy"
       expect(page).to have_text "Study Id: favoriteToken1!"
       expect(page).to have_text "Membership Status: Inactive"
       expect(page).to have_text "Below lists the all groups this participant has been a member of and whether they are currently active or inactive."
@@ -103,7 +101,6 @@ feature "Researcher - Participants", type: :feature do
       click_on "Edit"
       fill_in "Phone Number", with: "19991234223"
       select "Phone", from: "Contact Preference"
-      fill_in "Display Name", with: "Big Time Name"
       click_on "Update"
 
       expect(page).to have_text "Phone number is not valid"

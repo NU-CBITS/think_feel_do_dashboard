@@ -75,6 +75,31 @@ feature "Researcher - Memberships", type: :feature do
       expect(page).to have_text "Display Name: TestName"
     end
 
+    it "allows for the updating of a participant's membership and displays 'none' if none is present and the arm is not social" do
+      click_on "TFD-active"
+      click_on "Active Group 2"
+      click_on "Edit"
+
+      expect(page).to_not have_text "Display Name"
+
+      click_on "Update"
+
+      expect(page).to have_text "Display Name: none"
+    end
+
+    it "allows for the updating of a participant's membership and displays 'none' if none is present and the arm is not social" do
+      click_on "TFD-active"
+      click_on "Active Group 2"
+      click_on "Edit"
+
+      expect(page).to_not have_text "Display Name"
+
+      click_on "Update"
+      click_on "Active Group 2"
+
+      expect(page).to_not have_text "Display Name"
+    end
+
     it "doesn't allows for the assing of a participant to two active groups" do
       click_on "TFD-33303"
       click_on "Assign New Group"

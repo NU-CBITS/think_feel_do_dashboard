@@ -8,8 +8,10 @@
   <%= text_field_tag "membership[end_date]", {}, type: :date, class: "form-control", value: (membership.end_date || Date.today + 1.week) %>
 </div>
 <% if Rails.application.config.study_length_in_weeks %>
+  <p>
     Standard number of weeks: <%= Rails.application.config.study_length_in_weeks %>,
     Projected End Date from today: <label id="membership_end_date_calculation"></label>
+  </p>
 <% end %>
 
 <% if Rails.application.config.study_length_in_weeks %>

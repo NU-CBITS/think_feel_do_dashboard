@@ -33,11 +33,11 @@
     <% if @membership.new_record? %>
       <%= f.select :group_id, grouped_options_for_select(@group_options, (params[:id])), { prompt: "Select Group" }, { class: "form-control" } %>
     <% else %>
-      <p class="form-control-static"><%= @membership.group.title %></p>
+      <span class="form-control-static"><%= @membership.group.title %></span>
     <% end %>
   </div>
 
-  <% if social_features? %>
+  <% if social_features? && (@membership.new_record? || @membership.group.arm.social?) %>
     <div class="form-group">
       <%= f.label :display_name, "Display Name" %>
       <%= f.text_field :display_name, class: "form-control", value: @participant.display_name %>
