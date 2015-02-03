@@ -1,3 +1,6 @@
+## 0.13.5 - 2015-02-03
+ * Updated whether display is show on forms and show pages
+
 ## 0.13.4 - 2015-02-03
  * added a class to generate phq9 reports for researcher user
  * Removed unnecessary 'actions' div wrapper around submit buttons
