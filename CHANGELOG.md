@@ -1,3 +1,7 @@
+## 0.13.4 - 2015-02-03
+ * added a class to generate phq9 reports for researcher user
+ * Removed unnecessary 'actions' div wrapper around submit buttons
+
 ## 0.13.3 - 2015-01-29
  * no longer displays Display Name fields and info if the app is not social.
 
