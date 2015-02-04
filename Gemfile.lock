@@ -17,7 +17,7 @@ GIT
 PATH
   remote: .
   specs:
-    think_feel_do_dashboard (0.13.5)
+    think_feel_do_dashboard (0.13.6)
       phonelib
       user_agent_parser
 

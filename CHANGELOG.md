@@ -1,3 +1,6 @@
+## 0.13.6 - 2015-02-03
+ * fixed spelling mistake
+
 ## 0.13.5 - 2015-02-03
  * Updated whether display is show on forms and show pages
 
