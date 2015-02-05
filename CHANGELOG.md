@@ -1,3 +1,7 @@
+## 0.13.8 - 2015-02-05
+ * change 'admin' to 'super user'
+ * new label when a display name doesn't exist
+
 ## 0.13.7 - 2015-02-05
  * Updated display name "none" to "N/A"
 
