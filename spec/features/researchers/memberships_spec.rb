@@ -75,7 +75,7 @@ feature "Researcher - Memberships", type: :feature do
       expect(page).to have_text "Display Name: TestName"
     end
 
-    it "allows for the updating of a participant's membership and displays 'none' if none is present and the arm is not social" do
+    it "allows for the updating of a participant's membership and displays 'N/A' if a display name is not present and the arm is not social" do
       click_on "TFD-active"
       click_on "Active Group 2"
       click_on "Edit"
@@ -84,10 +84,10 @@ feature "Researcher - Memberships", type: :feature do
 
       click_on "Update"
 
-      expect(page).to have_text "Display Name: none"
+      expect(page).to have_text "Display Name: N/A"
     end
 
-    it "allows for the updating of a participant's membership and displays 'none' if none is present and the arm is not social" do
+    it "Doesn't display 'Display Name' if the arm isn't social despite that the application has social features" do
       click_on "TFD-active"
       click_on "Active Group 2"
       click_on "Edit"

@@ -1,3 +1,6 @@
+## 0.13.7 - 2015-02-05
+ * Updated display name "none" to "N/A"
+
 ## 0.13.6 - 2015-02-03
  * fixed spelling mistake
 
