@@ -44,10 +44,14 @@ module ThinkFeelDoDashboard
     # PATCH/PUT /think_feel_do_dashboard/participants/1/groups/1
     def update
       authorize! :update, @membership
-      if @membership.update(membership_params)
+      if valid_end_date? && @membership.update(membership_params)
         redirect_to participant_path(@participant),
                     notice: "Group assignment was successfully updated."
       else
+        flash[:alert] = @membership.errors.full_messages.join(", ") +
+                        "End date cannot be set prior to tomorrow's date. "\
+                        "Please use [Discontinue] or [Terminate Access] from "\
+                        "the patient dashboard."
         render :edit
       end
     end
@@ -98,6 +102,12 @@ module ThinkFeelDoDashboard
 
     def set_participant
       @participant = Participant.find(params[:participant_id])
+    end
+
+    def valid_end_date?
+      (membership_params[:end_date] &&
+        (membership_params[:end_date].to_date) > Date.today) ||
+        membership_params[:end_date].nil?
     end
   end
 end
