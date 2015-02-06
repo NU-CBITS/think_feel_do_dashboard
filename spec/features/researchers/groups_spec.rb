@@ -45,7 +45,7 @@ feature "Researcher - Groups", type: :feature do
 
     click_on "New"
     fill_in "Title", with: "HUGe PrOjEct 3"
-    select "clinician1@example.com", from: "Moderator"
+    select "clinician1@example.com", from: "Moderator/Coach"
     select "Arm 1", from: "Arm"
 
     click_on "Create"
@@ -66,7 +66,7 @@ feature "Researcher - Groups", type: :feature do
     click_on "New"
     fill_in "Title", with: "HUGe PrOjEct 3"
     select "Arm 1", from: "Arm"
-    select "admin1@example.com", from: "Moderator"
+    select "admin1@example.com", from: "Moderator/Coach"
 
     click_on "Create"
 
@@ -131,7 +131,7 @@ feature "Researcher - Groups", type: :feature do
     click_on "Edit"
     fill_in "Title", with: "What!"
     select "Arm 2", from: "Arm"
-    select "admin1@example.com", from: "Moderator"
+    select "admin1@example.com", from: "Moderator/Coach"
     click_on "Update"
 
     expect(page).to_not have_text "Title: Group 1"

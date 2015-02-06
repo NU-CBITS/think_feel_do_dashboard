@@ -1,3 +1,6 @@
+## 0.13.11 - 2015-02-06
+ * Moderator field displays Moderator/Coach
+
 ## 0.13.10 - 2015-02-06
  * fixed membership end date updating logic to fail saving past dates
 
