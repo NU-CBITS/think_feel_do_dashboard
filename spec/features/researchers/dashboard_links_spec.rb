@@ -1,4 +1,4 @@
-require "spec_helper"
+require "rails_helper"
 
 feature "Researcher - Dashboard Links", type: :feature do
   fixtures :all

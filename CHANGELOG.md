@@ -1,3 +1,6 @@
+## 0.13.9 - 2015-02-06
+ * updated spec_helper and rails_helper to be specific to their individual needs
+
 ## 0.13.8 - 2015-02-05
  * change 'admin' to 'super user'
  * new label when a display name doesn't exist

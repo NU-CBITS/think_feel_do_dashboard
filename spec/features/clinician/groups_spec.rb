@@ -1,4 +1,4 @@
-require "spec_helper"
+require "rails_helper"
 
 feature "Clinician - Groups", type: :feature do
   fixtures :all

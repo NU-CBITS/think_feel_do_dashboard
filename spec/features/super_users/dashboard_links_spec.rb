@@ -1,4 +1,4 @@
-require "spec_helper"
+require "rails_helper"
 
 feature "Super User - Dashboard Links", type: :feature do
   fixtures :all

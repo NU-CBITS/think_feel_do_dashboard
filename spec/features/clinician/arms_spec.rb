@@ -1,4 +1,4 @@
-require "spec_helper"
+require "rails_helper"
 
 feature "Clinician - Arms", type: :feature do
   fixtures :all

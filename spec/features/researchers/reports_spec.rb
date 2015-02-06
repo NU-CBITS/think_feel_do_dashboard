@@ -1,4 +1,4 @@
-require "spec_helper"
+require "rails_helper"
 
 feature "Researcher - Reports", type: :feature do
   fixtures :all
