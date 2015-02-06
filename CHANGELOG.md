@@ -1,3 +1,6 @@
+## 0.13.10 - 2015-02-06
+ * fixed membership end date updating logic to fail saving past dates
+
 ## 0.13.9 - 2015-02-06
  * updated spec_helper and rails_helper to be specific to their individual needs
 
