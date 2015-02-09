@@ -34,5 +34,6 @@ feature "Researcher - Reports", type: :feature do
     expect(page).to have_link "Off Topic Post"
     expect(page).to have_link "Tool Share"
     expect(page).to have_link "PHQ9 Assessment"
+    expect(page).to have_link "WAI Assessment"
   end
 end

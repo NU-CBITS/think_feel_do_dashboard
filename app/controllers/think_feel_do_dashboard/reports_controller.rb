@@ -58,6 +58,11 @@ module ThinkFeelDoDashboard
         title: "PHQ9 Assessment",
         id: :phq_assessment,
         klass: Reports::PhqAssessment
+      },
+      {
+        title: "WAI Assessment",
+        id: :wai_assessment,
+        klass: Reports::WaiAssessment
       }
     ]
 
