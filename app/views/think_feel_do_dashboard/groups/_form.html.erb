@@ -18,11 +18,13 @@
     <%= label_tag "group[arm_id]", "Arm" %>
     <%= select_tag "group[arm_id]", options_from_collection_for_select(@arms, :id, :title, @arm.try(:id)), prompt: "Select Arm", class: "form-control" %>
   </div>
-  <div class="form-group">
-    <%= f.label :moderator_id, "Moderator/Coach" %>
-    <%= f.collection_select(:moderator_id, @users, :id, :email, { prompt: "Select Moderator/Coach" }, { class: "form-control" }) %>
-    <p class="help-block">All notifications are emailed to this user's email</p>
-  </div>
+  <% if social_features? %>
+    <div class="form-group">
+      <%= f.label :moderator_id, "Moderator/Coach" %>
+      <%= f.collection_select(:moderator_id, @users, :id, :email, { prompt: "Select Moderator/Coach" }, { class: "form-control" }) %>
+      <p class="help-block">All notifications are emailed to this user's email</p>
+    </div>
+  <% end %>
   <%= f.submit button_text, class: "btn btn-primary" %>
   <%= link_to "Cancel", cancel_path, class: "btn btn-default" %>
 <% end %>

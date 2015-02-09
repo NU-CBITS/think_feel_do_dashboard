@@ -32,7 +32,7 @@
   <% end %>
 
   <% if can?(:moderate, @group) && @group.arm.social? %>
-    <%= link_to "Moderate", group_moderators_path(@group), method: :post, class: "btn btn-default", target: "_blank" %>
+    <%= link_to "Moderate", group_moderators_path(@group), method: :post, class: "btn btn-default", target: "_blank" if social_features? %>
     <%= link_to "Manage Profile Questions", group_social_networking_profile_questions_path(@group), class: "btn btn-default" %>
   <% end %>
   <% if can? :update, @group %>

@@ -7,7 +7,10 @@ feature "Super User - Arms", type: :feature do
     let(:arm) { arms(:arm1) }
 
     before do
+      Rails.application.config.stub(:include_social_features).and_return false
       sign_in users :admin1
+      visit "/think_feel_do_dashboard"
+      click_on "Arms"
     end
 
     it "should not display social functionality when creating an arm" do

@@ -7,7 +7,10 @@ feature "Researcher - Participants", type: :feature do
     let(:participant) { participants(:participant1) }
 
     before do
+      Rails.application.config.stub(:include_social_features).and_return false
       sign_in users :researcher1
+      visit "/think_feel_do_dashboard"
+      click_on "Participants"
     end
 
     it "should not display the 'Display Name' field when creating a participant" do
