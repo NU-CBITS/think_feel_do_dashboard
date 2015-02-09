@@ -1,3 +1,9 @@
+## 0.14.0 - 2015-02-09
+ * enable Wai Assessment export
+ * removed moderator feature for non-social host applications
+ * Latest version & Moderator field displays Moderator/Coach
+ * Moderator field displays Moderator/Coach
+
 ## 0.13.11 - 2015-02-06
  * Moderator field displays Moderator/Coach
 
