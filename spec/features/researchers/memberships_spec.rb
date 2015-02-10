@@ -172,6 +172,20 @@ feature "Researcher - Memberships", type: :feature do
       expect(page).to have_text "Study Id: TFD-1111"
     end
 
+    it "displays a discontinued participant as inactive" do
+      expect(page).to have_text "Inactive participant_discontinued"
+
+      click_on "participant_discontinued"
+
+      expect(page).to have_text "Study Id: participant_discontinued"
+      expect(page).to have_text "Group: None"
+      expect(page).to have_text "Membership Status: Inactive"
+
+      click_on "Inactive Group 1"
+
+      expect(page).to have_text "Membership Status: Inactive"
+    end
+
     it "allows for the unassigning a group" do
       click_on "TFD-1111"
       click_on "Active Group 1"
