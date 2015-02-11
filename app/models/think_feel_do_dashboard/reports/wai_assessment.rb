@@ -8,9 +8,9 @@ module ThinkFeelDoDashboard
         Participant.select(:id, :study_id).map do |participant|
             participant.wai_assessments.map do |assessment|
               {
-                participant_id: assessment.participant_id,
+                participant_id: participant.study_id,
                 date_transmitted: assessment.release_date,
-                date_completed: assessment.updated_at,
+                date_completed: assessment.updated_at.to_date,
                 wai1: assessment.q1,
                 wai2: assessment.q2,
                 wai3: assessment.q3,
@@ -34,7 +34,7 @@ module ThinkFeelDoDashboard
                           wai1 wai2 wai3 wai4 wai5 wai6 wai7 wai8 wai9 wai10
                           wai11 wai12 )
           csv << columns
-          Reports::PhqAssessment.all.each do |s|
+          Reports::WaiAssessment.all.each do |s|
             csv << columns.map { |c| s[c.to_sym] }
           end
         end
