@@ -1,3 +1,7 @@
+## 0.14.1 - 2015-02-11
+ * WAI assessment report bug fixes
+ * membership active badge logic updated
+
 ## 0.14.0 - 2015-02-09
  * enable Wai Assessment export
  * removed moderator feature for non-social host applications
