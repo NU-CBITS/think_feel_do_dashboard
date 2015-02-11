@@ -7,7 +7,8 @@ feature "Super User - Arms", type: :feature do
     let(:arm) { arms(:arm1) }
 
     before do
-      Rails.application.config.stub(:include_social_features).and_return false
+      allow(Rails.application.config).to receive(:include_social_features)
+        .and_return(false)
       sign_in users :admin1
       visit "/think_feel_do_dashboard"
       click_on "Arms"
@@ -37,7 +38,8 @@ feature "Super User - Arms", type: :feature do
 
   describe "Application has social functionality" do
     before do
-      Rails.application.config.stub(:include_social_features).and_return true
+      allow(Rails.application.config).to receive(:include_social_features)
+        .and_return(true)
       sign_in users :admin1
       visit "/think_feel_do_dashboard"
       click_on "Arms"

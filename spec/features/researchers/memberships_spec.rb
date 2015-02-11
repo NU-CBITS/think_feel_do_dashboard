@@ -7,7 +7,8 @@ feature "Researcher - Memberships", type: :feature do
     let(:membership) { memberships(:membership1) }
 
     before do
-      Rails.application.config.stub(:include_social_features).and_return false
+      allow(Rails.application.config).to receive(:include_social_features)
+        .and_return(false)
       sign_in users :researcher1
       visit "/think_feel_do_dashboard"
       click_on "Participants"
@@ -34,7 +35,8 @@ feature "Researcher - Memberships", type: :feature do
 
   describe "Logged in as a researcher when the application has social functionality" do
     before do
-      Rails.application.config.stub(:include_social_features).and_return true
+      allow(Rails.application.config).to receive(:include_social_features)
+        .and_return true
       sign_in users :researcher1
       visit "/think_feel_do_dashboard"
       click_on "Participants"

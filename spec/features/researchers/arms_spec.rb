@@ -17,7 +17,8 @@ feature "Content Author - Arms", type: :feature do
     end
 
     scenario "sees descriptive information about arms" do
-      Rails.application.config.stub(:include_social_features).and_return true
+      allow(Rails.application.config).to receive(:include_social_features)
+        .and_return(true)
       click_on "Arm 1"
 
       expect(page).to have_text "Title: Arm 1"
