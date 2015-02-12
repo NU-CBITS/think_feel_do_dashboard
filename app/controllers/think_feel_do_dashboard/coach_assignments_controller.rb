@@ -21,10 +21,8 @@ module ThinkFeelDoDashboard
       )
 
       if @coach_assignment.save
-        redirect_to participant_path(
-          @participant
-        ),
-                    notice: "Coach was successfully assigned."
+        redirect_to participant_path(@participant),
+                    notice: "Coach/Moderator was successfully assigned."
       else
         render :new
       end
@@ -47,7 +45,7 @@ module ThinkFeelDoDashboard
         redirect_to participant_path(
           @participant
         ),
-                    notice: "Coach was successfully assigned."
+                    notice: "Coach/Moderator was successfully assigned."
       else
         render :edit
       end
@@ -58,7 +56,7 @@ module ThinkFeelDoDashboard
       authorize! :destroy, @coach_assignment
       if @coach_assignment.destroy
         redirect_to participant_path(@participant),
-                    notice: "Coach was successfully removed."
+                    notice: "Coach/Moderator was successfully removed."
       else
         redirect_to participant_path(@participant),
                     alert: "There were errors."
@@ -85,7 +83,7 @@ module ThinkFeelDoDashboard
         participant: @participant,
         coach_id: @participant.active_group.moderator_id)
       if @coach_assignment.save
-        notification = "Coach was successfully assigned to WOZ"\
+        notification = "Coach/Moderator was successfully assigned to WOZ"\
                               " moderator."
       else
         notification = "An error occurred in the update of the "\
@@ -100,7 +98,8 @@ module ThinkFeelDoDashboard
     def update_woz_coach
       @coach_assignment.update(coach_id: @participant.active_group.moderator_id)
       if @coach_assignment.save
-        notification = "Coach was successfully assigned to WOZ moderator."
+        notification = "Coach/Moderator was successfully assigned "\
+                              "to WOZ moderator."
       else
         notification = "An error occurred in the update of the "\
                               "participant's coach to the WOZ moderator."

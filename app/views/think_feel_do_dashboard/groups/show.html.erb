@@ -59,7 +59,7 @@
 
 <% if @group.respond_to?(:moderator) %>
   <p>
-    <strong>Moderator:</strong>
+    <strong>Coach/Moderator:</strong>
     <%= @group.moderator ? link_to_if((can? :read, @group.moderator), @group.moderator.email, user_path(@group.moderator)) : "None" %>
   </p>
 <% end %>
