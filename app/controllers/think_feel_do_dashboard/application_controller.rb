@@ -1,8 +1,12 @@
 module ThinkFeelDoDashboard
   # Top level controller.
   class ApplicationController < ActionController::Base
-    before_action :authenticate_user!
+    include ThinkFeelDoDashboard::Concerns::BrowserDetective
+
+    before_action :authenticate_user!, :detect_browser
     check_authorization
+
+    layout "application"
 
     rescue_from CanCan::AccessDenied do |exception|
       redirect_to root_url, alert: exception.message
