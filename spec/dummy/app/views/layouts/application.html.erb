@@ -8,6 +8,11 @@
 </head>
 <body>
 
+  <%= alert %>
+  <%= notice %>
+  <a data-method="delete" href="/users/sign_out" rel="nofollow">Sign Out</a>
+  <%= link_to "ThinkFeelDo", root_path, class: "navbar-brand" %>
+
 <%= yield %>
 
 </body>
