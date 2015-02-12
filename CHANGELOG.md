@@ -1,3 +1,6 @@
+## 0.8.1 - 2015-02-12
+ * replaces all instances of coach language with coach/moderator language
+
 ## 0.14.1 - 2015-02-11
  * WAI assessment report bug fixes
  * membership active badge logic updated
