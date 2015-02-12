@@ -45,7 +45,7 @@ feature "Researcher - Groups", type: :feature do
 
     click_on "New"
     fill_in "Title", with: "HUGe PrOjEct 3"
-    select "clinician1@example.com", from: "Moderator/Coach"
+    select "clinician1@example.com", from: "Coach/Moderator"
     select "Arm 1", from: "Arm"
 
     click_on "Create"
@@ -53,7 +53,7 @@ feature "Researcher - Groups", type: :feature do
     expect(page).to have_text "Group was successfully created"
     expect(page).to have_text "Title: HUGe PrOjEct 3"
     expect(page).to have_text "Arm: Arm 1"
-    expect(page).to have_text "Moderator: clinician1@example.com"
+    expect(page).to have_text "Coach/Moderator: clinician1@example.com"
 
     visit "/think_feel_do_dashboard/groups"
 
@@ -66,14 +66,14 @@ feature "Researcher - Groups", type: :feature do
     click_on "New"
     fill_in "Title", with: "HUGe PrOjEct 3"
     select "Arm 1", from: "Arm"
-    select "admin1@example.com", from: "Moderator/Coach"
+    select "admin1@example.com", from: "Coach/Moderator"
 
     click_on "Create"
 
     expect(page).to have_text "Group was successfully created"
     expect(page).to have_text "Title: HUGe PrOjEct 3"
     expect(page).to have_text "Arm: Arm 1"
-    expect(page).to have_text "Moderator: admin1@example.com"
+    expect(page).to have_text "Coach/Moderator: admin1@example.com"
   end
 
   it "should enable the creation of a group without a moderator if the arm is not social" do
@@ -86,7 +86,7 @@ feature "Researcher - Groups", type: :feature do
     expect(page).to have_text "Group was successfully created"
     expect(page).to have_text "Title: HUGe PrOjEct 4"
     expect(page).to have_text "Arm: Arm 2"
-    expect(page).to have_text "Moderator: None"
+    expect(page).to have_text "Coach/Moderator: None"
   end
 
   it "should display errors if required fields aren't filled in" do
@@ -125,26 +125,26 @@ feature "Researcher - Groups", type: :feature do
     expect(page).to_not have_text "Title: What!"
     expect(page).to have_text "Arm: Arm 1"
     expect(page).to_not have_text "Arm: Arm 2"
-    expect(page).to have_text "Moderator: clinician1@example.com"
-    expect(page).to_not have_text "Moderator: admin1@example.com"
+    expect(page).to have_text "Coach/Moderator: clinician1@example.com"
+    expect(page).to_not have_text "Coach/Moderator: admin1@example.com"
 
     click_on "Edit"
     fill_in "Title", with: "What!"
     select "Arm 2", from: "Arm"
-    select "admin1@example.com", from: "Moderator/Coach"
+    select "admin1@example.com", from: "Coach/Moderator"
     click_on "Update"
 
     expect(page).to_not have_text "Title: Group 1"
     expect(page).to have_text "Title: What!"
     expect(page).to have_text "Arm: Arm 2"
     expect(page).to_not have_text "Arm: Arm 1"
-    expect(page).to have_text "Moderator: admin1@example.com"
-    expect(page).to_not have_text "Moderator: clinician1@example.com"
+    expect(page).to have_text "Coach/Moderator: admin1@example.com"
+    expect(page).to_not have_text "Coach/Moderator: clinician1@example.com"
 
     click_on "Edit"
     click_on "Update"
 
-    expect(page).to have_text "Moderator: admin1@example.com"
+    expect(page).to have_text "Coach/Moderator: admin1@example.com"
   end
 
   it "should be able to delete a group" do
