@@ -1,4 +1,4 @@
-<h1>Coach Assignment</h1>
+<h1>Coach/Moderator Assignment</h1>
 
 <div class="btn-toolbar" role="toolbar">
   <% if can? :edit, @coach_assignment %>
@@ -15,6 +15,6 @@
 </p>
 
 <p>
-  <strong>Coach:</strong>
+  <strong>Coach/Moderator:</strong>
   <%= link_to @coach_assignment.coach.email, user_path(@coach_assignment.coach) %>
 </p>
