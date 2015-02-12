@@ -20,8 +20,8 @@
   </div>
   <% if social_features? %>
     <div class="form-group">
-      <%= f.label :moderator_id, "Moderator/Coach" %>
-      <%= f.collection_select(:moderator_id, @users, :id, :email, { prompt: "Select Moderator/Coach" }, { class: "form-control" }) %>
+      <%= f.label :moderator_id, "Coach/Moderator" %>
+      <%= f.collection_select(:moderator_id, @users, :id, :email, { prompt: "Select Coach/Moderator" }, { class: "form-control" }) %>
       <p class="help-block">All notifications are emailed to this user's email</p>
     </div>
   <% end %>

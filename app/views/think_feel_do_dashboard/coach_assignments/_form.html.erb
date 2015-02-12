@@ -15,7 +15,7 @@
     <%= @participant.study_id %>
   </p>
   <div class="form-group">
-    <%= f.label :coach_id, "Coach" %>
+    <%= f.label :coach_id, "Coach/Moderator" %>
     <%= f.select :coach_id, options_for_select(@coaches, @coach_assignment.coach_id), { prompt: "Select Coach" }, class: "form-control" %>
   </div>
 
