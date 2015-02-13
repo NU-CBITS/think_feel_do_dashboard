@@ -42,10 +42,6 @@ feature "Researcher - Memberships", type: :feature do
       click_on "Participants"
     end
 
-    after do
-      # click_on "Sign Out"
-    end
-
     it "display all groups and group details" do
       click_on "TFD-1111"
 
@@ -165,7 +161,7 @@ feature "Researcher - Memberships", type: :feature do
 
       expect(page).to have_text "Participant: TFD-1111"
 
-      fill_in "Start Date", with: "01/01/2014"
+      fill_in "Start Date", with: (DateTime.now - 7.days).strftime("%Y-%m-%d")
       click_on "Update"
 
       expect(page).to have_text "Group assignment was successfully updated."

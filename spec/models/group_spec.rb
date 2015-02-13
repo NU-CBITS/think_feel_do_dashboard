@@ -73,11 +73,9 @@ describe Group do
 
         expect(groupie.moderating_participant).to_not be_nil
 
-        Timecop.travel(Date.today.advance(years: 99))
-
-        expect(groupie.moderating_participant.memberships.first.active?).to be_truthy
-
-        Timecop.return
+        Timecop.travel Date.today.advance(years: 99) do
+          expect(groupie.moderating_participant.memberships.first.active?).to be_truthy
+        end
       end
     end
 

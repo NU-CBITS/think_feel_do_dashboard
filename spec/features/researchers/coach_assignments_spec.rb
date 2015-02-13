@@ -3,15 +3,13 @@ require "rails_helper"
 feature "Researcher - Coach Assignments", type: :feature do
   fixtures :all
 
-  after do
-    # click_on "Sign Out"
-  end
-
-  it "allows for the assigning of a coach" do
+  before do
     sign_in users :researcher1
     visit "/think_feel_do_dashboard"
     click_on "Participants"
+  end
 
+  it "allows for the assigning of a coach" do
     click_on "Inactive TFD-without_membership2"
 
     expect(page).to have_text "Current Coach/Moderator: None"
@@ -33,10 +31,6 @@ feature "Researcher - Coach Assignments", type: :feature do
   end
 
   it "allows for the re-assigning of a coach" do
-    sign_in users :researcher1
-    visit "/think_feel_do_dashboard"
-    click_on "Participants"
-
     click_on "TFD-1111"
 
     expect(page).to have_text "Current Coach/Moderator: clinician1@example.com"
@@ -48,10 +42,6 @@ feature "Researcher - Coach Assignments", type: :feature do
   end
 
   it "allows for the re-assignment of a coach" do
-    sign_in users :researcher1
-    visit "/think_feel_do_dashboard"
-    click_on "Participants"
-
     click_on "TFD-active"
 
     expect(page).to have_text "Current Coach/Moderator: None"
@@ -75,10 +65,6 @@ feature "Researcher - Coach Assignments", type: :feature do
   end
 
   it "doesn't allows for the assigning of no coach" do
-    sign_in users :researcher1
-    visit "/think_feel_do_dashboard"
-    click_on "Participants"
-
     click_on "TFD-without_membership2"
     click_on "Assign Coach/Moderator"
     click_on "Assign"
@@ -87,10 +73,6 @@ feature "Researcher - Coach Assignments", type: :feature do
   end
 
   it "can update the assigned a coach" do
-    sign_in users :researcher1
-    visit "/think_feel_do_dashboard"
-    click_on "Participants"
-
     click_on "TFD-1111"
 
     expect(page).to have_text "Current Coach/Moderator: clinician1@example.com"
@@ -112,10 +94,6 @@ feature "Researcher - Coach Assignments", type: :feature do
   end
 
   it "unassign a coach" do
-    sign_in users :researcher1
-    visit "/think_feel_do_dashboard"
-    click_on "Participants"
-
     click_on "TFD-1111"
     click_on "clinician1@example.com"
     click_on "Destroy"
