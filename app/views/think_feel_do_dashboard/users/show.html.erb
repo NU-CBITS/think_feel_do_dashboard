@@ -1,9 +1,12 @@
 <h1>User</h1>
 
 <div class="btn-toolbar" role="toolbar">
-  <%= link_to "Users", users_path, class: "btn btn-default" %>
-  <%= link_to "Edit", edit_user_path(@user), class: "btn btn-default" %>
-  <%= link_to "Destroy", user_path(@user), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <% if can? :edit, @user %>
+    <%= link_to "Edit", edit_user_path(@user), class: "btn btn-default" %>
+  <% end %>
+  <% if can? :destroy, @user %>
+    <%= link_to "Destroy", user_path(@user), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <% end %>
 </div>
 
 <p>

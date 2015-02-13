@@ -1,8 +1,9 @@
-<h1>Listing Groups</h1>
+<h1>Groups</h1>
 
 <div class="btn-toolbar" role="toolbar">
-  <%= link_to "Home", root_path, class: "btn btn-default" %>
-  <%= link_to "New", new_group_path, class: "btn btn-default" %>
+  <% if can? :new, Group %>
+    <%= link_to "New", new_group_path, class: "btn btn-primary" %>
+  <% end %>
 </div>
 
 <%= render "groups", groups: @groups %>

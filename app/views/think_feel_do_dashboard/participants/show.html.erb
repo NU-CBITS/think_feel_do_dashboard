@@ -1,9 +1,6 @@
 <h1>Participant</h1>
 
 <div class="btn-toolbar" role="toolbar">
-  <% if can? :index, Participant %>
-    <%= link_to "Participants", participants_path, class: "btn btn-default" %>
-  <% end %>
   <% if @participant.active_group && (can? :show, @participant.active_group) %>
     <%= link_to "Group", group_path(@participant.active_group), class: "btn btn-default" %>
   <% end %>

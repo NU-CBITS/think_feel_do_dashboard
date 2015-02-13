@@ -1,9 +1,8 @@
-<h1>Listing Participants</h1>
+<h1>Participants</h1>
 
 <div class="btn-toolbar" role="toolbar">
-  <%= link_to "Home", root_path, class: "btn btn-default" %>
   <% if can? :new, Participant %>
-    <%= link_to "New", new_participant_path, class: "btn btn-default" %>
+    <%= link_to "New", new_participant_path, class: "btn btn-primary" %>
   <% end %>
 </div>
 
