@@ -38,7 +38,7 @@ feature "Researcher - Users", type: :feature do
     user = User.find_by_email("mike@example.com")
     expect(user.encrypted_password).to_not be_nil
 
-    click_on "Users"
+    visit "/think_feel_do_dashboard/users"
 
     expect(page).to have_text "mike@example.com"
   end
@@ -66,8 +66,7 @@ feature "Researcher - Users", type: :feature do
     expect(page).to have_text "Email: what@ex.co"
     expect(page).to have_text "Roles: Clinician and Researcher"
 
-    click_on "Users"
-
+    visit "/think_feel_do_dashboard/users"
     expect(page).to have_text "what@ex.co"
 
     click_on "what@ex.co"

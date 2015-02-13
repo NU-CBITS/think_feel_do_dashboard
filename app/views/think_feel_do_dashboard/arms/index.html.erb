@@ -1,9 +1,8 @@
-<h1>Listing Arms</h1>
+<h1>Arms</h1>
 
 <div class="btn-toolbar" role="toolbar">
-  <%= link_to "Home", root_path, class: "btn btn-default" %>
   <% if can? :new, Arm %>
-    <%= link_to "New", new_arm_path, class: "btn btn-default" %>
+    <%= link_to "New", new_arm_path, class: "btn btn-primary" %>
   <% end %>
 </div>
 

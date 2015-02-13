@@ -1,13 +1,9 @@
 <h1>Arm</h1>
 
 <div class="btn-toolbar" role="toolbar">
-  <div class="btn-group">
-    <%= link_to "Arms", arms_path, class: "btn btn-default" %>
-  </div>
-
   <% if can? :edit, @arm %>
     <div class="btn-group">
-      <%= link_to "Edit", edit_arm_path(@arm), class: "btn btn-default" %>
+      <%= link_to "Edit", edit_arm_path(@arm), class: "btn btn-primary" %>
     </div>
   <% end %>
 

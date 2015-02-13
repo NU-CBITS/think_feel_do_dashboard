@@ -8,6 +8,9 @@ AllCops:
     - app/models/think_feel_do_dashboard/reports/**/*
   RunRailsCops: true
 
+AbcSize:
+  Max: 16
+
 ClassLength:
   Enabled: false
 
