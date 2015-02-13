@@ -1,3 +1,8 @@
+## 0.15.0 - 2015-02-13
+ * add Bootstrap breadcrumbs to dashboard pages
+ * updated Travis configuration
+ * enables dashboard to use host apps' layouts
+
 ## 0.14.2 - 2015-02-12
  * replaces all instances of coach language with coach/moderator language
 
