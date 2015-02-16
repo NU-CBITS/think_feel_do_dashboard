@@ -70,7 +70,7 @@
 
 <% if can? :update, @participant %>
   <p>
-    <% if @participant.active_group && @participant.active_group.arm.woz? %>
+    <% if @participant.active_group_is_social? %>
       <%= link_to "Assign Coach/Moderator", woz_participant_coach_path(participant_id: @participant.id), class: "btn btn-default" %>
     <% elsif @participant.coach %>
       <%= link_to "Assign Coach/Moderator", edit_participant_coach_path(@participant, @participant.coach), class: "btn btn-default" %>
