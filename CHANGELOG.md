@@ -1,3 +1,7 @@
+## 0.15.2 - 2015-02-16
+ * Generalize coach assignment flash messages
+ * Expand coach/moderator assignment condtion to inlcude all social arms
+
 ## 0.15.1 - 2015-02-13
  * remove moderator class
  * add migration to drop tfd moderator table
