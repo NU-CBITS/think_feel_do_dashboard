@@ -1,3 +1,7 @@
+## 0.15.1 - 2015-02-13
+ * remove moderator class
+ * add migration to drop tfd moderator table
+
 ## 0.15.0 - 2015-02-13
  * add Bootstrap breadcrumbs to dashboard pages
  * updated Travis configuration
