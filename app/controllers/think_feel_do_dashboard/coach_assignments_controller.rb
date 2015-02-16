@@ -83,8 +83,7 @@ module ThinkFeelDoDashboard
         participant: @participant,
         coach_id: @participant.active_group.moderator_id)
       if @coach_assignment.save
-        notification = "Coach/Moderator was successfully assigned to WOZ"\
-                              " moderator."
+        notification = "Coach/Moderator was successfully assigned"
       else
         notification = "An error occurred in the update of the "\
                               "participant's coach to the WOZ moderator."
@@ -98,11 +97,10 @@ module ThinkFeelDoDashboard
     def update_woz_coach
       @coach_assignment.update(coach_id: @participant.active_group.moderator_id)
       if @coach_assignment.save
-        notification = "Coach/Moderator was successfully assigned "\
-                              "to WOZ moderator."
+        notification = "Coach/Moderator was successfully assigned "
       else
         notification = "An error occurred in the update of the "\
-                              "participant's coach to the WOZ moderator."
+                              "participant's coach to the moderator."
       end
       redirect_to participant_path(
                     @participant
