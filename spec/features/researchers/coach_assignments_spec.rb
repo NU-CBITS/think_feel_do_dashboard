@@ -37,7 +37,7 @@ feature "Researcher - Coach Assignments", type: :feature do
 
     click_on "Assign Coach/Moderator"
 
-    expect(page).to have_text "Coach/Moderator was successfully assigned to WOZ moderator."
+    expect(page).to have_text "Coach/Moderator was successfully assigned"
     expect(page).to have_text "Current Coach/Moderator: clinician1@example.com"
   end
 
