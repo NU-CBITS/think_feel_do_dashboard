@@ -3,6 +3,10 @@ require "spec_helper"
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 require "rspec/rails"
 
+require "simplecov"
+SimpleCov.minimum_coverage 64
+SimpleCov.start "rails"
+
 Rails.backtrace_cleaner.remove_silencers!
 
 # Load support files
