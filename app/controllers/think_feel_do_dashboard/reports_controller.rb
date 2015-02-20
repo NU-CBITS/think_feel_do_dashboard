@@ -5,16 +5,6 @@ module ThinkFeelDoDashboard
   class ReportsController < ApplicationController
     REPORTS = [
       {
-        title: "Lesson Slide View",
-        id: :lesson_slide_view,
-        klass: Reports::LessonSlideView
-      },
-      {
-        title: "Lesson Viewing",
-        id: :lesson_viewing,
-        klass: Reports::LessonViewing
-      },
-      {
         title: "Module Page View",
         id: :module_page_view,
         klass: Reports::ModulePageView
@@ -66,6 +56,10 @@ module ThinkFeelDoDashboard
       }
     ]
 
+    if Rails.application.config.respond_to?(:reports)
+      REPORTS.concat Rails.application.config.reports
+    end
+
     if defined? SocialNetworking
       REPORTS.concat [
         {
@@ -102,7 +96,7 @@ module ThinkFeelDoDashboard
     end
 
     def index
-      authorize! :read, Reports::LessonSlideView
+      authorize! :read, Reports::SiteSession
       @reports = REPORTS
     end
 

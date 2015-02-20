@@ -25,7 +25,7 @@
       <p class="list-group-item-text">Create and view super users, clinicians, researchers, and content authors.</p>
     </a>
   <% end %>
-  <% if can? :download, ThinkFeelDoDashboard::Reports::LessonSlideView %>
+  <% if can? :download, ThinkFeelDoDashboard::Reports::SiteSession %>
     <a href="<%= reports_path %>" class="list-group-item">
       <h4 class="list-group-item-heading">CSV Reports</h4>
       <p class="list-group-item-text">Download data via csv.</p>
