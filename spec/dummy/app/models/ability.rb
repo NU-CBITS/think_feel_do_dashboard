@@ -89,10 +89,7 @@ class Ability
     can [:index, :new, :create, :edit, :show, :update, :destroy], Group
     can :manage, Membership
     can :manage, Participant
-    can :manage, ThinkFeelDoDashboard::Reports::ModulePageView
-    can :manage, ThinkFeelDoDashboard::Reports::ModuleSession
     can :manage, ThinkFeelDoDashboard::Reports::SiteSession
-    can :manage, ThinkFeelDoDashboard::Reports::VideoSession
     can :manage, ThinkFeelDoDashboard::Reports::Login
     can :manage, ThinkFeelDoDashboard::Reports::ToolShare
     can :manage, User
