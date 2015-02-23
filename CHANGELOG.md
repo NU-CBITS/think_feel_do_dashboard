@@ -1,4 +1,4 @@
-## 0.15.3 - 2015-02-23
+## 0.15.4 - 2015-02-23
  * moved some reports out of dashboard engine
 
 ## 0.15.2 - 2015-02-16
