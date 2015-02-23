@@ -1,3 +1,6 @@
+## 0.15.3 - 2015-02-23
+ * moved some reports out of dashboard engine
+
 ## 0.15.2 - 2015-02-16
  * Generalize coach assignment flash messages
  * Expand coach/moderator assignment condtion to inlcude all social arms
