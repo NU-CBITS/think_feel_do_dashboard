@@ -27,4 +27,5 @@ Gem::Specification.new do |s|
   s.add_dependency "user_agent_parser"
   s.add_dependency "font-awesome-rails", "= 4.2.0.0"
   s.add_development_dependency "strong_password", "~> 0"
+  s.add_development_dependency "simplecov", "~> 0.9.1"
 end
