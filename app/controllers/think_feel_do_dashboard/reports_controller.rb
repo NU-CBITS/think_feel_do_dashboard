@@ -5,24 +5,9 @@ module ThinkFeelDoDashboard
   class ReportsController < ApplicationController
     REPORTS = [
       {
-        title: "Module Page View",
-        id: :module_page_view,
-        klass: Reports::ModulePageView
-      },
-      {
-        title: "Module Session",
-        id: :module_session,
-        klass: Reports::ModuleSession
-      },
-      {
         title: "Site Session",
         id: :site_session,
         klass: Reports::SiteSession
-      },
-      {
-        title: "Video Session",
-        id: :video_session,
-        klass: Reports::VideoSession
       },
       {
         title: "Task Completion",

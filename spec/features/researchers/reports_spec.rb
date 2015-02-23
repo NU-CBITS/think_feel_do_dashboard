@@ -17,10 +17,7 @@ feature "Researcher - Reports", type: :feature do
   end
 
   it "displays the reports that exist" do
-    expect(page).to have_link "Module Page View"
-    expect(page).to have_link "Module Session"
     expect(page).to have_link "Site Session"
-    expect(page).to have_link "Video Session"
     expect(page).to have_link "Task Completion"
     expect(page).to have_link "Tool Access"
     expect(page).to have_link "User Agent"
