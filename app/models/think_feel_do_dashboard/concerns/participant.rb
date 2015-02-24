@@ -21,7 +21,10 @@ module ThinkFeelDoDashboard
 
       def group_assigned_before_coach
         if coach && !memberships.any?
-          errors.add "Must assign group before coach."
+          errors.add(
+            :base,
+            "Must assign group before coach."
+          )
         end
       end
 
