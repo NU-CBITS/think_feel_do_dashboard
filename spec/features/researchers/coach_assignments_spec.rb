@@ -14,10 +14,11 @@ feature "Researcher - Coach Assignments", type: :feature do
 
     expect(page).to have_text "Current Coach/Moderator: None"
     expect(page).to_not have_text "Current Coach/Moderator: user3@example.com"
+    click_on "Assign New Group"
+    select "Group 2", from: "Group"
+    click_on "Assign"
 
     click_on "Assign Coach/Moderator"
-
-    expect(page).to have_text "Participant: TFD-without_membership2"
 
     select "user3@example.com", from: "Coach/Moderator"
 
@@ -25,7 +26,6 @@ feature "Researcher - Coach Assignments", type: :feature do
 
     expect(page).to have_text "Coach/Moderator was successfully assigned"
     expect(page).to have_text "Participant"
-    expect(page).to have_text "Study Id: TFD-without_membership2"
     expect(page).to_not have_text "Current Coach/Moderator: None"
     expect(page).to have_text "Current Coach/Moderator: user3@example.com"
   end
@@ -64,12 +64,11 @@ feature "Researcher - Coach Assignments", type: :feature do
     expect(page).to have_text "Current Coach/Moderator: user2@example.com"
   end
 
-  it "doesn't allows for the assigning of no coach" do
+  it "doesn't allows for the assigning of coach if no group exists" do
     click_on "TFD-without_membership2"
-    click_on "Assign Coach/Moderator"
-    click_on "Assign"
 
-    expect(page).to have_text "prohibited this coach/moderator from being assigned"
+    expect(page).to_not have_button "Assign Coach/Moderator"
+    expect(page).to have_text "* Please assign Group first"
   end
 
   it "can update the assigned a coach" do
@@ -82,7 +81,6 @@ feature "Researcher - Coach Assignments", type: :feature do
 
     expect(page).to have_text "Participant: TFD-1111"
     expect(page).to have_text "Coach/Moderator: clinician1@example.com"
-
     click_on "Edit"
     select "user2@example.com", from: "Coach/Moderator"
 

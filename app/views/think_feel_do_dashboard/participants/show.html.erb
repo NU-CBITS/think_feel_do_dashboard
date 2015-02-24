@@ -73,9 +73,11 @@
     <% if @participant.active_group_is_social? %>
       <%= link_to "Assign Coach/Moderator", woz_participant_coach_path(participant_id: @participant.id), class: "btn btn-default" %>
     <% elsif @participant.coach %>
-      <%= link_to "Assign Coach/Moderator", edit_participant_coach_path(@participant, @participant.coach), class: "btn btn-default" %>
+      <%= link_to_if(@participant.memberships.any?, "Assign Coach/Moderator", edit_participant_coach_path(@participant, @participant.coach), class: "btn btn-default") %>
+      <span class="help-block"><%= @participant.memberships.any? ? "" : "* Please assign Group first" %></span>
     <% else %>
-      <%= link_to "Assign Coach/Moderator", new_participant_coach_path(@participant), class: "btn btn-default" %>
+      <%= link_to_if(@participant.memberships.any?, "Assign Coach/Moderator", new_participant_coach_path(@participant), class: "btn btn-default") %>
+      <span class="help-block"><%= @participant.memberships.any? ? "" : "* Please assign Group first" %></span>
     <% end %>
   </p>
 <% end %>

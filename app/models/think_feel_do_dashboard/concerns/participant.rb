@@ -14,9 +14,16 @@ module ThinkFeelDoDashboard
         before_validation :ensure_contact_preference
 
         validates :study_id, presence: true, uniqueness: true
+        validate :group_assigned_before_coach
       end
 
       private
+
+      def group_assigned_before_coach
+        if coach && !memberships.any?
+          errors.add "Must assign group before coach."
+        end
+      end
 
       def ensure_contact_preference
         if contact_preference == "phone" && phone_number.blank?
