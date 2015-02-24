@@ -1,3 +1,6 @@
+## 0.15.5 - 2015-02-23
+ * remove social reports and refactor controller
+
 ## 0.15.4 - 2015-02-23
  * moved some reports out of dashboard engine
 
