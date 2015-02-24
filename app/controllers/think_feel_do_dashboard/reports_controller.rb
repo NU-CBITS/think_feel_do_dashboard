@@ -41,55 +41,26 @@ module ThinkFeelDoDashboard
       }
     ]
 
-    if Rails.application.config.respond_to?(:reports)
-      REPORTS.concat Rails.application.config.reports
-    end
-
-    if defined? SocialNetworking
-      REPORTS.concat [
-        {
-          title: "Comment",
-          id: :comment,
-          klass: Reports::Comment
-        },
-        {
-          title: "Goal",
-          id: :goal,
-          klass: Reports::Goal
-        },
-        {
-          title: "Like",
-          id: :like,
-          klass: Reports::Like
-        },
-        {
-          title: "Nudge",
-          id: :nudge,
-          klass: Reports::Nudge
-        },
-        {
-          title: "Off Topic Post",
-          id: :off_topic_post,
-          klass: Reports::OffTopicPost
-        },
-        {
-          title: "Tool Share",
-          id: :tool_share,
-          klass: Reports::ToolShare
-        }
-      ]
-    end
-
     def index
       authorize! :read, Reports::SiteSession
-      @reports = REPORTS
+      reports
     end
 
     def show
-      report = (REPORTS.find { |r| r[:id].to_s == params[:id] } || {})[:klass]
+      report = (reports.find { |r| r[:id].to_s == params[:id] } || {})[:klass]
 
       authorize! :download, report
       respond_to { |fmt| fmt.csv { send_data report.to_csv, type: "text/csv" } }
+    end
+
+    private
+
+    def reports
+      @reports = REPORTS
+
+      return @reports unless Rails.application.config.respond_to?(:reports)
+
+      @reports += Rails.application.config.reports
     end
   end
 end
