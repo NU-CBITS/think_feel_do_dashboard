@@ -1,9 +1,14 @@
 require "rails_helper"
 
+class WozzleReport
+end
+
 feature "Researcher - Reports", type: :feature do
   fixtures :all
 
   before do
+    allow(Rails.application.config).to receive(:reports)
+      .and_return([{ title: "Wozzles", id: :wozzles, klass: WozzleReport }])
     sign_in users :researcher1
     visit "/think_feel_do_dashboard"
     click_on "CSV Reports"
@@ -17,12 +22,6 @@ feature "Researcher - Reports", type: :feature do
   end
 
   it "displays the reports that exist" do
-    expect(page).to have_link "Site Session"
-    expect(page).to have_link "Task Completion"
-    expect(page).to have_link "Tool Access"
-    expect(page).to have_link "User Agent"
-    expect(page).to have_link "Login"
-    expect(page).to have_link "PHQ9 Assessment"
-    expect(page).to have_link "WAI Assessment"
+    expect(page).to have_link "Wozzles"
   end
 end
