@@ -1,3 +1,8 @@
+## 0.15.6 - 2015-02-25
+ * remove unnecessary user_agent_parser dependency
+ * remove reports and refactor reports controller
+ * Ensure group is assigned before coach can be assigned
+
 ## 0.15.5 - 2015-02-23
  * remove social reports and refactor controller
 
