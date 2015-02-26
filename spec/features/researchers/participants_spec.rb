@@ -55,7 +55,7 @@ feature "Researcher - Participants", type: :feature do
       click_on "Create"
 
       expect(page).to have_text "prohibited this participant from being saved"
-      expect(page).to have_text "Study can't be blank"
+      expect(page).to have_text "Study ID can't be blank"
     end
 
     it "should enable the creation of a participant" do
@@ -98,7 +98,7 @@ feature "Researcher - Participants", type: :feature do
       fill_in "Study Id", with: ""
       click_on "Update"
 
-      expect(page).to have_text "Study can't be blank"
+      expect(page).to have_text "Study ID can't be blank"
     end
 
     it "should have a valid phone number if contact preference is 'phone'" do
