@@ -1,3 +1,6 @@
+## 0.15.7 - 2015-03-02
+ * Fixed validation message for study id of participant
+
 ## 0.15.6 - 2015-02-25
  * remove unnecessary user_agent_parser dependency
  * remove reports and refactor reports controller
