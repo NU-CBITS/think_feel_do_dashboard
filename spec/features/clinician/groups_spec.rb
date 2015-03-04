@@ -40,6 +40,7 @@ feature "Clinician - Groups", type: :feature do
     visit "/think_feel_do_dashboard/groups/#{groups(:group1).id}"
 
     expect(page).to have_link "Patient Dashboard"
+    expect(page).to have_link "Group Dashboard"
     expect(page).to_not have_link "Manage Tasks"
     expect(page).to have_button "Messaging"
     expect(page).to have_link "Messages"
