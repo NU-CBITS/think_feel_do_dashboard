@@ -1,4 +1,5 @@
 require "rails_helper"
+require "js_helper"
 
 feature "Researcher - Coach Assignments", type: :feature do
   fixtures :all
@@ -7,17 +8,6 @@ feature "Researcher - Coach Assignments", type: :feature do
     sign_in users :researcher1
     visit "/think_feel_do_dashboard"
     click_on "Participants"
-  end
-
-  it "displays a projected end date" do
-    click_on "Inactive TFD-without_membership2"
-
-    expect(page).to have_text "Current Coach/Moderator: None"
-    expect(page).to_not have_text "Current Coach/Moderator: user3@example.com"
-    click_on "Assign New Group"
-    select "Group 2", from: "Group"
-
-    expect(page).to have_text("Projected End Date from today")
   end
 
   it "allows for the assigning of a coach" do
@@ -110,5 +100,21 @@ feature "Researcher - Coach Assignments", type: :feature do
     expect(page).to have_text "Coach/Moderator was successfully removed"
     expect(page).to_not have_text "Current Coach/Moderator: clinician1@example.com"
     expect(page).to have_text "Assign Coach/Moderator"
+  end
+end
+
+feature "Researcher - Membership group assignment", type: :feature do
+  fixtures :all
+
+  it "displays a projected end date", js: true do
+    sign_in users :researcher1
+    visit "/think_feel_do_dashboard"
+    page.find("a", text: "Participants").trigger("click")
+    click_on "Inactive TFD-without_membership2"
+    click_on "Assign New Group"
+    select "Group 2", from: "Group"
+    expect(page).to have_text("Projected End Date from today")
+    result = page.evaluate_script("calculate_end_date(\"#{Date.today}\");")
+    expect(result).to eq("1/18/2009")
   end
 end
