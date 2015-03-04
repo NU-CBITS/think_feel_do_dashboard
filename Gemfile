@@ -27,6 +27,7 @@ group :development, :test do
   gem "event_capture",
       git: "https://github.com/cbitstech/event_capture.git",
       ref: "1f9a199"
+  gem "poltergeist"
 end
 
 group :development do
