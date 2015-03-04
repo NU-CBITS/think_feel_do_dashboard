@@ -1,3 +1,6 @@
+## 0.15.8 - 2015-03-04
+ * Added button for group dashboard, fixed a bug with the group assignment start date, added specs
+
 ## 0.15.7 - 2015-03-02
  * Fixed validation message for study id of participant
 
