@@ -38,7 +38,7 @@
         }
         var projected_end_date = start_date.addDays(total_study_days);
         var curr_date = projected_end_date.getDate();
-        var curr_month = projected_end_date.getMonth() + 1; //Months are zero based
+        var curr_month = projected_end_date.getMonth();
         var curr_year = projected_end_date.getFullYear();
         return curr_month + "\/" + curr_date + "\/" + curr_year;
       };
@@ -46,19 +46,5 @@
       $(document).ready(function() {
         $("#membership_end_date_calculation").text(calculate_end_date("<%= membership.start_date || Date.today %>"));
       });
-
-      /*
-      $("#membership_start_date").blur(function() {
-          var date_pattern_load = /^\d{4}[./-]\d{2}[./-]\d{2}$/;
-          var date_pattern_update = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
-          var start_date_string = $("#membership_start_date").value;
-          alert(date_pattern_update.test(start_date_string) + " " + start_date_string)
-          if(date_pattern_load.test(start_date_string) || date_pattern_update.test(start_date_string)) {
-              $("#membership_end_date_calculation").
-                      text(calculate_end_date(start_date_string));
-          }
-        }
-      );
-      */
     </script>
 <% end %>
