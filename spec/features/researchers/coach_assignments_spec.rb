@@ -9,6 +9,17 @@ feature "Researcher - Coach Assignments", type: :feature do
     click_on "Participants"
   end
 
+  it "displays a projected end date" do
+    click_on "Inactive TFD-without_membership2"
+
+    expect(page).to have_text "Current Coach/Moderator: None"
+    expect(page).to_not have_text "Current Coach/Moderator: user3@example.com"
+    click_on "Assign New Group"
+    select "Group 2", from: "Group"
+
+    expect(page).to have_text("Projected End Date from today")
+  end
+
   it "allows for the assigning of a coach" do
     click_on "Inactive TFD-without_membership2"
 
