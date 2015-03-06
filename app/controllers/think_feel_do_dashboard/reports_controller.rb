@@ -13,9 +13,9 @@ module ThinkFeelDoDashboard
       authorize! :read, "Reports"
 
       report = fetch_reports.find { |r| r[:id].to_s == params[:id] } || {}
-      report = report[:klass]
+      report_path = Rails.root.join("reports/#{report[:id].to_s.gsub("_", "").downcase}.csv")
 
-      respond_to { |fmt| fmt.csv { send_data report.to_csv, type: "text/csv" } }
+      respond_to { |fmt| fmt.csv { send_file report_path, type: "text/csv" } }
     end
 
     private
