@@ -10,7 +10,7 @@ module ThinkFeelDoDashboard
 
     def show
       authorize! :read, "Reports"
-      file_path = REPORTER.file_path(params[:id]) || {}
+      file_path = reporter.file_path(params[:id]) || {}
 
       respond_to { |fmt| fmt.csv { send_file file_path, type: "text/csv" } }
     end
@@ -18,9 +18,11 @@ module ThinkFeelDoDashboard
     private
 
     def fetch_reports
-      @reports = REPORTER.fetch_reports
+      @reports = reporter.fetch_reports
     end
 
-    REPORTER = ThinkFeelDoEngine::Reports::Reporter
+    def reporter
+      ThinkFeelDoEngine::Reports::Reporter
+    end
   end
 end
