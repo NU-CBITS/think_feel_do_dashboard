@@ -5,27 +5,24 @@ module ThinkFeelDoDashboard
   class ReportsController < ApplicationController
     def index
       authorize! :read, "Reports"
-
       fetch_reports
     end
 
     def show
       authorize! :read, "Reports"
+      file_path = reporter.file_path(params[:id]) || {}
 
-      report = fetch_reports.find { |r| r[:id].to_s == params[:id] } || {}
-      report = report[:klass]
-
-      respond_to { |fmt| fmt.csv { send_data report.to_csv, type: "text/csv" } }
+      respond_to { |fmt| fmt.csv { send_file file_path, type: "text/csv" } }
     end
 
     private
 
     def fetch_reports
-      @reports = []
+      @reports = reporter.fetch_reports
+    end
 
-      return @reports unless Rails.application.config.respond_to?(:reports)
-
-      @reports = Rails.application.config.reports
+    def reporter
+      ThinkFeelDoEngine::Reports::Reporter
     end
   end
 end
