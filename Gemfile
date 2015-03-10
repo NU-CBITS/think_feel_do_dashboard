@@ -16,7 +16,7 @@ gem "font-awesome-rails", "= 4.2.0.0"
 
 gem "git_tagger",
     git: "https://github.com/eschlange/git_tagger.git",
-    tag: "1.0.9"
+    tag: "1.1.8"
 
 group :development, :test do
   gem "cancancan", "~> 1.9"
