@@ -1,3 +1,8 @@
+## 0.15.9 - 2015-03-10
+ * Update git_tagger gem.
+ * Merge pull request #15 from cbitstech/ems-86571058-add-goal-and-like-content-to-reports
+ * Add fields to reports.
+
 ## 0.15.8 - 2015-03-04
  * Added button for group dashboard, fixed a bug with the group assignment start date, added specs
 
