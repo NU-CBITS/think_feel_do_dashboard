@@ -1,3 +1,10 @@
+## 1.0.0 - 2015-03-11
+ * Merge pull request #16 from cbitstech/JAH-batch_reports
+ * refactor reporter controller code
+ * Moved social reports to social networking
+ * refactor reports controller
+ * Generate batch reports
+
 ## 0.15.9 - 2015-03-10
  * Update git_tagger gem.
  * Merge pull request #15 from cbitstech/ems-86571058-add-goal-and-like-content-to-reports
