@@ -1,3 +1,7 @@
+## 1.0.1 - 2015-03-12
+ * Merge pull request #17 from cbitstech/ems-90111634-only-allow-social-arms-access-to-group-dash
+ * Remove group dash button of non-social arms.
+
 ## 1.0.0 - 2015-03-11
  * Merge pull request #16 from cbitstech/JAH-batch_reports
  * refactor reporter controller code
