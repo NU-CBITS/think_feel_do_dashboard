@@ -1,3 +1,7 @@
+## 1.0.2 - 2015-03-13
+ * Merge pull request #18 from cbitstech/ems-90111634-fix-group-dash-access
+ * Remove button for non-social.
+
 ## 1.0.1 - 2015-03-12
  * Merge pull request #17 from cbitstech/ems-90111634-only-allow-social-arms-access-to-group-dash
  * Remove group dash button of non-social arms.
