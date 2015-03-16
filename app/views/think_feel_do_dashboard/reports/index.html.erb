@@ -1,11 +1,5 @@
 <h1>CSV Reports</h1>
 
-<div class="alert alert-info alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-  <strong>Note.</strong> there may be a significant delay after selecting a link before the file
-    downloads because the reports are being generated live. Please be patient.
-</div>
-
 <div class="list-group">
   <% @reports.each do |report| %>
     <% if can? :read, "Reports" %>
