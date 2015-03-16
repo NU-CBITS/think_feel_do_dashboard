@@ -14,13 +14,6 @@ feature "Researcher - Reports", type: :feature do
     click_on "CSV Reports"
   end
 
-  it "displays delay message to users" do
-    expect(page).to have_text "Note. there may be a significant delay after " \
-                              "selecting a link before the file downloads " \
-                              "because the reports are being generated live." \
-                              " Please be patient."
-  end
-
   it "displays the reports that exist" do
     expect(page).to have_link "Wozzles"
   end

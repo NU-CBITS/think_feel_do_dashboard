@@ -3,6 +3,8 @@ require_dependency "think_feel_do_dashboard/application_controller"
 module ThinkFeelDoDashboard
   # Provide access to data exports.
   class ReportsController < ApplicationController
+    rescue_from ActionController::MissingFile, with: :missing_report
+
     def index
       authorize! :read, "Reports"
       fetch_reports
@@ -16,6 +18,10 @@ module ThinkFeelDoDashboard
     end
 
     private
+
+    def missing_report
+      redirect_to reports_url, alert: "Report not found"
+    end
 
     def fetch_reports
       @reports = reporter.fetch_reports
