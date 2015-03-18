@@ -1,3 +1,9 @@
+## 1.0.3 - 2015-03-18
+ * Merge pull request #20 from cbitstech/ems-90633568-add-disclaimer-for-refresh-on-reports
+ * Update reports disclaimer.
+ * Merge pull request #19 from cbitstech/jah_90116542_report_exception_message
+ * Handle missing report
+
 ## 1.0.2 - 2015-03-13
  * Merge pull request #18 from cbitstech/ems-90111634-fix-group-dash-access
  * Remove button for non-social.
