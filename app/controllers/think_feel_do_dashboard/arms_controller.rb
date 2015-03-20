@@ -7,6 +7,7 @@ module ThinkFeelDoDashboard
 
     # GET /think_feel_do_dashboard/arms
     def index
+      @arms = Arm.includes(:groups)
     end
 
     # POST /think_feel_do_dashboard/arms
