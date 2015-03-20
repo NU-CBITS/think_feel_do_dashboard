@@ -25,7 +25,8 @@ module ThinkFeelDoDashboard
                     .memberships
                     .build(membership_params)
       authorize! :create, @membership
-      if @membership.save
+
+      if validate_social_membership && @membership.save
         redirect_to participant_path(@participant),
                     notice: "Group was successfully assigned"
       else
@@ -110,6 +111,25 @@ module ThinkFeelDoDashboard
       (membership_params[:end_date] &&
         (membership_params[:end_date].to_date) > Date.today) ||
         membership_params[:end_date].nil?
+    end
+
+    def validate_social_membership
+      if @membership.group && @membership.group.arm.is_social?
+        validate_display_name
+      else
+        true
+      end
+    end
+
+    def validate_display_name
+      if @membership.display_name && !@membership.display_name.blank?
+        true
+      else
+        flash[:alert] = @membership.errors.full_messages.join(", ") +
+                        "#{@membership.group.title} is part of a social arm. "\
+                        "Display name is required for social arms."
+        false
+      end
     end
   end
 end
