@@ -1,3 +1,9 @@
+## 1.0.4 - 2015-03-23
+ * Merge pull request #22 from cbitstech/gs-eager-load-groups-arms
+ * Eager load groups when showing arms index
+ * Merge pull request #21 from cbitstech/ems-90648642-social-membership-display-name
+ * Update social membership creation.
+
 ## 1.0.3 - 2015-03-18
  * Merge pull request #20 from cbitstech/ems-90633568-add-disclaimer-for-refresh-on-reports
  * Update reports disclaimer.
