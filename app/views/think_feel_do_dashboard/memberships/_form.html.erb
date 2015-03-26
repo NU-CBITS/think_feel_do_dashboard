@@ -31,7 +31,7 @@
   <div class="form-group">
     <%= f.label :group_id %>
     <% if @membership.new_record? %>
-      <%= f.select :group_id, grouped_options_for_select(@group_options, (params[:id])), { prompt: "Select Group" }, { class: "form-control" } %>
+      <%= f.select :group_id, grouped_options_for_select(@group_options, @membership.group_id), { prompt: "Select Group" }, { class: "form-control" } %>
     <% else %>
       <span class="form-control-static"><%= @membership.group.title %></span>
     <% end %>
