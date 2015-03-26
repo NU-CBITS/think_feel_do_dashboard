@@ -1,3 +1,7 @@
+## 1.0.5 - 2015-03-26
+ * Merge pull request #23 from cbitstech/ems-91010606
+ * Fix membership form bug.
+
 ## 1.0.4 - 2015-03-23
  * Merge pull request #22 from cbitstech/gs-eager-load-groups-arms
  * Eager load groups when showing arms index
