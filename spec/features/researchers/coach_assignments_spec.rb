@@ -106,15 +106,15 @@ end
 feature "Researcher - Membership group assignment", type: :feature do
   fixtures :all
 
-  it "displays a projected end date", js: true do
+  it "displays a projected end date" do
+    Rails.application.config.study_length_in_weeks = 20
     sign_in users :researcher1
     visit "/think_feel_do_dashboard"
-    page.find("a", text: "Participants").trigger("click")
+    click_on "Participants"
     click_on "Inactive TFD-without_membership2"
     click_on "Assign New Group"
     select "Group 2", from: "Group"
     expect(page).to have_text("Projected End Date from today")
-    result = page.evaluate_script("calculate_end_date(\"#{Date.today}\");")
-    expect(result).to eq("1/18/2009")
+    expect(page.body).to have_css("label#membership_end_date_calculation", text: "01/19/2009")
   end
 end
