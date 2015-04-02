@@ -10,41 +10,10 @@
 <% if Rails.application.config.study_length_in_weeks %>
   <p>
     Standard number of weeks: <%= Rails.application.config.study_length_in_weeks %>,
-    Projected End Date from today: <label id="membership_end_date_calculation"></label>
+    Projected End Date from today: <label id="membership_end_date_calculation"><%= projected_end_date(membership) %></label>
   </p>
 <% end %>
 
 <% if Rails.application.config.study_length_in_weeks %>
-    <script>
-      Date.prototype.addDays = function(days)
-      {
-        var dat = new Date(this.valueOf());
-        dat.setDate(dat.getDate() + days);
-        return dat;
-      }
 
-      var calculate_end_date = function(start_date_string) {
-        var days_in_week = 7;
-        var study_weeks = <%= Rails.application.config.study_length_in_weeks %>;
-        var total_study_days = days_in_week * study_weeks;
-        var split_date = null;
-        var start_date = null;
-        if (start_date_string.indexOf("-") > -1) {
-            split_date = start_date_string.split("-");
-            start_date = new Date(split_date[0], split_date[1], split_date[2], 0,0,0,0);
-        } else {
-            split_date = start_date_string.split("\/");
-            start_date = new Date(split_date[2], split_date[0], split_date[1], 0,0,0,0);
-        }
-        var projected_end_date = start_date.addDays(total_study_days);
-        var curr_date = projected_end_date.getDate();
-        var curr_month = projected_end_date.getMonth();
-        var curr_year = projected_end_date.getFullYear();
-        return curr_month + "\/" + curr_date + "\/" + curr_year;
-      };
-
-      $(document).ready(function() {
-        $("#membership_end_date_calculation").text(calculate_end_date("<%= membership.start_date || Date.today %>"));
-      });
-    </script>
 <% end %>
