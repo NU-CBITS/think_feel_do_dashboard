@@ -10,8 +10,6 @@ feature "Researcher - Participants", type: :feature do
       allow(Rails.application.config).to receive(:include_social_features)
         .and_return(false)
       sign_in users :researcher1
-      visit "/think_feel_do_dashboard"
-      click_on "Participants"
     end
 
     it "should not display the 'Display Name' field when creating a participant" do
@@ -30,6 +28,16 @@ feature "Researcher - Participants", type: :feature do
       visit "/think_feel_do_dashboard/participants/#{participant.id}/edit"
 
       expect(page).to_not have_text "Display Name"
+    end
+
+    it "can generate a random password for the Participant", js: true do
+      visit "/think_feel_do_dashboard/participants/#{ participant.id }/edit"
+      click_on "Generate password"
+      passphrase = find("#password-display").text.strip
+      click_on "Update"
+
+      expect(page).to have_text "Participant was successfully updated."
+      expect(participant.reload.valid_password?(passphrase)).to be true
     end
   end
 

@@ -62,7 +62,7 @@ module ThinkFeelDoDashboard
     def participant_params
       params.require(:participant).permit(
         :email, :phone_number, :display_name,
-        :study_id, :contact_preference
+        :study_id, :contact_preference, :password, :password_confirmation
       )
     end
   end
