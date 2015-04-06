@@ -10,22 +10,33 @@
       </ul>
     </div>
   <% end %>
+
   <div class="form-group">
     <%= f.label :study_id, "Study Id" %>
     <%= f.text_field :study_id, class: "form-control" %>
   </div>
+
   <div class="form-group">
     <%= f.label :email %>
     <%= f.text_field :email, class: "form-control" %>
   </div>
+
   <div class="form-group">
     <%= f.label :phone_number, "Phone Number" %>
     <%= f.text_field :phone_number, class: "form-control" %>
   </div>
+
   <div class="form-group">
     <%= f.label :contact_preference, "Contact Preference" %>
     <%= f.select :contact_preference, options_for_select(@contact_preferences, @participant.contact_preference), { prompt: "Select how to be notified" }, class: "form-control" %>
   </div>
+
+  <% unless @participant.new_record? %>
+    <div class="form-group" id="password-form-group">
+      <button id="password-generator" class="btn btn-warn">Generate password</button>
+    </div>
+  <% end %>
+
   <%= f.submit button_text, class: "btn btn-primary" %>
   <%= link_to "Cancel", cancel_path, class: "btn btn-default" %>
 <% end %>

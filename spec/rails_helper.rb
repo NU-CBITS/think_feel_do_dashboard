@@ -2,10 +2,22 @@ ENV["RAILS_ENV"] ||= "test"
 require "spec_helper"
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 require "rspec/rails"
+require "capybara/poltergeist"
 
 require "simplecov"
 SimpleCov.minimum_coverage 93
 SimpleCov.start "rails"
+
+Capybara.javascript_driver = :poltergeist
+options = {
+  js_errors: false,
+  timeout: 180,
+  phantomjs_options: ["--ignore-ssl-errors=true", "--local-to-remote-url-access=false"],
+  window_size: [1024, 2000]
+}
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, options)
+end
 
 Rails.backtrace_cleaner.remove_silencers!
 

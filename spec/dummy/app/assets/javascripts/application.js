@@ -11,3 +11,4 @@
 // about supported directives.
 //
 //= require_tree .
+//= require think_feel_do_dashboard

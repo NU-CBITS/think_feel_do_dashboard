@@ -13,6 +13,7 @@ gemspec
 gem "rails", "~> 4.1.8"
 gem "turbolinks", "~> 2.2"
 gem "font-awesome-rails", "= 4.2.0.0"
+gem "jquery-rails", "~> 3.1.2"
 
 gem "git_tagger",
     git: "https://github.com/eschlange/git_tagger.git",
