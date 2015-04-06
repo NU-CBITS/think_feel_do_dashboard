@@ -1,3 +1,11 @@
+## 1.0.6 - 2015-04-06
+ * Merge pull request #25 from cbitstech/ecf_91405400_participant_passwords
+ * allow Researcher to set password for Participant
+ * Merge pull request #24 from cbitstech/ems-91623394-update-projected-end-date-logic
+ * Fix rubocop.
+ * Use i18n format specification.
+ * Make projected end date more accurate.
+
 ## 1.0.5 - 2015-03-26
  * Merge pull request #23 from cbitstech/ems-91010606
  * Fix membership form bug.
