@@ -4,10 +4,16 @@ en:
     attributes:
       participant:
         study_id: "Study ID"
+
   date:
     formats:
       standard: "%m/%d/%Y"
+
   datetime:
     formats:
       standard: "%b %d %Y %H:%M"
+
+  time:
+    formats:
+      standard: "%H:%M"
 
