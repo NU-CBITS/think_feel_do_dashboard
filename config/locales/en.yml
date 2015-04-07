@@ -15,5 +15,5 @@ en:
 
   time:
     formats:
-      standard: "%H:%M"
+      standard: "%b %d %Y %H:%M"
 
