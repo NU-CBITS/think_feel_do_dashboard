@@ -154,8 +154,8 @@ feature "Researcher - Memberships", type: :feature do
       expect(page).to have_text "Participant: TFD-1111"
       expect(page).to have_text "Group: Group 1"
       expect(page).to have_text "Membership Status: Active"
-      expect(page).to have_text "Start Date: " + DateTime.now.strftime("%Y-%m-%d")
-      expect(page).to have_text "End Date: " + 4.days.from_now.strftime("%Y-%m-%d")
+      expect(page).to have_text "Start Date: " + I18n.l(Date.today, format: :standard)
+      expect(page).to have_text "End Date: " + I18n.l(Date.today + 4, format: :standard)
 
       click_on "Edit"
 
