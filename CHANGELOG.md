@@ -1,3 +1,8 @@
+## 1.0.7 - 2015-04-08
+ * Merge pull request #26 from cbitstech/ems-91544146-standardize-date-and-datetimes
+ * Update Time output format.
+ * Update membership show and membership creation pages.
+
 ## 1.0.6 - 2015-04-06
  * Merge pull request #25 from cbitstech/ecf_91405400_participant_passwords
  * allow Researcher to set password for Participant
