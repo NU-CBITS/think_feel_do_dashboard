@@ -51,6 +51,10 @@
     <strong>Wizard of Oz enabled:</strong>
     <%= @arm.woz? ? "Yes" : "No" %>
   </p>
+  <p>
+    <strong>Allow participants to message coach after completion:</strong>
+    <%= @arm.messaging_after_membership_complete? ? "Yes" : "No" %>
+  </p>
 <% end %>
 
 <% if can? :show, Group %>

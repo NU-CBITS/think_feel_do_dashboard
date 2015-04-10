@@ -13,4 +13,8 @@ class Arm < ActiveRecord::Base
   def woz?
     has_woz
   end
+
+  def messaging_after_membership_complete?
+    can_message_after_membership_complete
+  end
 end

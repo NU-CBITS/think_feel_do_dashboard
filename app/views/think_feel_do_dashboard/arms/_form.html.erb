@@ -26,6 +26,11 @@
       <%= f.label :has_woz, "Wizard of Oz" %>
       <p class="help-block">This requires the social feature to be enabled.</p>
     </div>
+    <div class="form-group">
+      <%= f.check_box :can_message_after_membership_complete %>
+      <%= f.label :can_message_after_membership_complete, "Allow participants to message coach after membership is complete?" %>
+      <p class="help-block">This requires the social feature to be enabled.</p>
+    </div>
   <% end %>
 
   <%= f.submit button_text, class: "btn btn-primary" %>
