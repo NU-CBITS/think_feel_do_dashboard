@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213215118) do
+ActiveRecord::Schema.define(version: 20150410175659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "arms", force: true do |t|
-    t.string   "title",      default: ""
-    t.boolean  "is_social",  default: false
+    t.string   "title",                                 default: ""
+    t.boolean  "is_social",                             default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "has_woz",    default: false
+    t.boolean  "has_woz",                               default: false
+    t.boolean  "can_message_after_membership_complete", default: true,  null: false
   end
 
   create_table "coach_assignments", force: true do |t|

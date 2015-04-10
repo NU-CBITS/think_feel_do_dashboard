@@ -56,7 +56,7 @@ module ThinkFeelDoDashboard
       params
         .require(:arm)
         .permit(
-          :title, :is_social, :has_woz
+          :title, :is_social, :has_woz, :can_message_after_membership_complete
         )
     end
   end
