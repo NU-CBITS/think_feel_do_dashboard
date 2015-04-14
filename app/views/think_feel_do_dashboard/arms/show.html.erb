@@ -53,7 +53,7 @@
   </p>
   <p>
     <strong>Allow participants to message coach after completion:</strong>
-    <%= @arm.messaging_after_membership_complete? ? "Yes" : "No" %>
+    <%= @arm.can_message_after_membership_complete? ? "Yes" : "No" %>
   </p>
 <% end %>
 
