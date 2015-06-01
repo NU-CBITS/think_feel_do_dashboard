@@ -132,8 +132,8 @@ feature "Super User - Arms", type: :feature do
       click_on "Arm 1"
       click_on "Destroy"
 
-      expect(page).to have_text "Arm was successfully destroyed"
-      expect(page).to_not have_text "Arm 1"
+      expect(page).to have_text "You do not have privileges to delete an arm."\
+                  " Please contact the site administrator to remove this arm"
     end
   end
 end
