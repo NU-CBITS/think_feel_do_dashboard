@@ -1,3 +1,7 @@
+## 1.0.9 - 2015-06-01
+ * Merge pull request #29 from cbitstech/ems-92837924
+ * Remove ability to delete Arm.
+
 ## 1.0.7 - 2015-04-08
  * Merge pull request #26 from cbitstech/ems-91544146-standardize-date-and-datetimes
  * Update Time output format.
