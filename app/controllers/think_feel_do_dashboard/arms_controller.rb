@@ -45,9 +45,9 @@ module ThinkFeelDoDashboard
 
     # DELETE /think_feel_do_dashboard/arms/1
     def destroy
-      @arm.destroy
-      redirect_to arms_url,
-                  notice: "Arm was successfully destroyed."
+      redirect_to arm_path(@arm),
+                  notice: "You do not have privileges to delete an arm. "\
+                  "Please contact the site administrator to remove this arm."
     end
 
     private
