@@ -4,9 +4,27 @@ describe Group do
   fixtures :all
 
   describe "creation of moderator" do
+    let(:social_arm) { arms(:arm1) }
+    let(:clinician2) { users(:user2) }
+
+    context "Configuring App Display Name" do
+      before do
+        allow(Rails).to receive_message_chain(:application, :config, :moderating_participant_display_name).and_return("SunnySide")
+      end
+
+      it "names a moderating participant based on per-app config" do
+        group = social_arm.groups.create!(title: "Group with moderator", moderator_id: clinician2.id)
+        moderating_participant = group.moderating_participant
+        moderating_participant.reload
+
+        expect(moderating_participant).to_not be_nil
+        expect(moderating_participant.is_admin).to be_truthy
+        expect(moderating_participant.display_name).to eq "SunnySide"
+        expect(moderating_participant.email).to_not be_nil
+      end
+    end
+
     context "Social Arms" do
-      let(:social_arm) { arms(:arm1) }
-      let(:clinician2) { users(:user2) }
       let(:group) { social_arm.groups.create!(title: "Group with moderator", moderator_id: clinician2.id) }
 
       it "creates a moderating participant" do
