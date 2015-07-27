@@ -60,7 +60,9 @@ module ThinkFeelDoDashboard
         password = SecureRandom.hex(64)
         ::Participant.create!(
           contact_preference: "email",
-          display_name: "ThinkFeelDo",
+          display_name: Rails.application
+                             .config
+                             .moderating_participant_display_name,
           email: "#{study_id}@example.com",
           is_admin: true,
           password: password,
