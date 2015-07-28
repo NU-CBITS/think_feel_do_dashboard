@@ -1,3 +1,8 @@
+## 1.0.10 - 2015-07-28
+ * Merge pull request #30 from cbitstech/cl_97469840_Replace_ThinkFeelDo_moderator_name
+ * Add unit test for display_name change
+ * Have moderator name change based on app
+
 ## 1.0.9 - 2015-06-01
  * Merge pull request #29 from cbitstech/ems-92837924
  * Remove ability to delete Arm.
