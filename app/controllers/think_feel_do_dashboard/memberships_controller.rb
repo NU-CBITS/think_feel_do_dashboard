@@ -47,7 +47,7 @@ module ThinkFeelDoDashboard
     # PATCH/PUT /think_feel_do_dashboard/participants/1/groups/1
     def update
       authorize! :update, @membership
-      if valid_end_date? && @membership.update(membership_params)
+      if @membership.update(membership_params)
         redirect_to participant_path(@participant),
                     notice: "Group assignment was successfully updated."
       else
@@ -105,12 +105,6 @@ module ThinkFeelDoDashboard
 
     def set_participant
       @participant = Participant.find(params[:participant_id])
-    end
-
-    def valid_end_date?
-      (membership_params[:end_date] &&
-        (membership_params[:end_date].to_date) > Date.today) ||
-        membership_params[:end_date].nil?
     end
 
     def validate_social_membership
