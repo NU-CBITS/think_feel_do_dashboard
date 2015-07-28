@@ -1,3 +1,6 @@
+## 1.0.11 - 2015-07-28
+
+
 ## 1.0.10 - 2015-07-28
  * Merge pull request #30 from cbitstech/cl_97469840_Replace_ThinkFeelDo_moderator_name
  * Add unit test for display_name change
