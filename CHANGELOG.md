@@ -1,3 +1,7 @@
+## 1.0.12 - 2015-07-29
+ * Merge pull request #31 from cbitstech/ecf_#99708210_membership_exception
+ * remove validation that is handled at model level
+
 ## 1.0.11 - 2015-07-28
 
 
