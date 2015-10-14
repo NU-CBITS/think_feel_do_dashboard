@@ -104,7 +104,7 @@ feature "Researcher - Groups", type: :feature do
     expect(page).to have_text "Arm:"
     arm_id = Arm.find_by_title("Arm 1").id
     expect(page).to have_link "Arm 1",
-                              href: "/think_feel_do_dashboard/arms/#{ arm_id }"
+                              href: "/think_feel_do_dashboard/arms/#{arm_id}"
   end
 
   it "should be able to view all associated participants" do
@@ -114,7 +114,7 @@ feature "Researcher - Groups", type: :feature do
     participant_id = Participant.find_by_email("participant1@example.com").id
     expect(page).to have_link(
       "TFD-1111",
-      href: "/think_feel_do_dashboard/participants/#{ participant_id }"
+      href: "/think_feel_do_dashboard/participants/#{participant_id}"
     )
   end
 

@@ -31,7 +31,7 @@ feature "Researcher - Participants", type: :feature do
     end
 
     it "can generate a random password for the Participant", js: true do
-      visit "/think_feel_do_dashboard/participants/#{ participant.id }/edit"
+      visit "/think_feel_do_dashboard/participants/#{participant.id}/edit"
       click_on "Generate password"
       passphrase = find("#password-display").text.strip
       click_on "Update"
