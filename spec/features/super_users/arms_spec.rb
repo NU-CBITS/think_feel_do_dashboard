@@ -91,7 +91,7 @@ feature "Super User - Arms", type: :feature do
       group_id = Group.find_by_title("Group 1").id
       expect(page)
         .to have_link "Group 1",
-                      href: "/think_feel_do_dashboard/groups/#{ group_id }"
+                      href: "/think_feel_do_dashboard/groups/#{group_id}"
     end
 
     it "should display errors if required fields aren't filled in" do

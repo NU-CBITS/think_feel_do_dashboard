@@ -5,7 +5,7 @@ feature "Clinician - Group - Profile Question", type: :feature do
 
   before do
     sign_in users :clinician1
-    visit "/think_feel_do_dashboard/groups/#{ groups(:group1).id }"
+    visit "/think_feel_do_dashboard/groups/#{groups(:group1).id}"
     click_on "Manage Profile Questions"
   end
 

@@ -22,12 +22,12 @@ end
 Rails.backtrace_cleaner.remove_silencers!
 
 # Load support files
-Dir["#{ File.dirname(__FILE__) }/support/**/*.rb"].each { |f| require f }
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
 FIXED_TIMEPOINT = Time.local(2008, 9, 1, 10, 5, 0)
 
 RSpec.configure do |config|
-  config.fixture_path = "#{ File.dirname(__FILE__) }/fixtures"
+  config.fixture_path = "#{File.dirname(__FILE__)}/fixtures"
   config.use_transactional_fixtures = true
   config.infer_base_class_for_anonymous_controllers = false
   config.include AuthenticationHelpers, type: :feature
