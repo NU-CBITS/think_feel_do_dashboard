@@ -17,7 +17,7 @@ GIT
 PATH
   remote: .
   specs:
-    think_feel_do_dashboard (1.0.14)
+    think_feel_do_dashboard (1.0.15)
       font-awesome-rails (= 4.2.0.0)
       phonelib
 
