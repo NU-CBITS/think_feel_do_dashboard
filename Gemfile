@@ -38,6 +38,5 @@ end
 group :test do
   gem "rspec-rails", "~> 3"
   gem "capybara", "~> 2"
-  gem "database_cleaner", "~> 1.3"
   gem "timecop"
 end
