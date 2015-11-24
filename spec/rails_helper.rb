@@ -1,12 +1,12 @@
+require "simplecov"
+SimpleCov.minimum_coverage 93
+SimpleCov.start "rails"
+
 ENV["RAILS_ENV"] ||= "test"
 require "spec_helper"
 require File.expand_path("../dummy/config/environment.rb", __FILE__)
 require "rspec/rails"
 require "capybara/poltergeist"
-
-require "simplecov"
-SimpleCov.minimum_coverage 93
-SimpleCov.start "rails"
 
 Capybara.javascript_driver = :poltergeist
 options = {
