@@ -8,7 +8,7 @@ GIT
       rails (>= 4.1.5)
 
 GIT
-  remote: https://github.com/eschlange/git_tagger.git
+  remote: https://github.com/cbitstech/git_tagger.git
   revision: 2f9c53953b712677e06b47a820a3e59c56bff7b4
   tag: 1.1.8
   specs:
