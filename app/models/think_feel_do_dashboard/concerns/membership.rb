@@ -21,8 +21,8 @@ module ThinkFeelDoDashboard
       end
 
       def active?
-        (start_date.nil? || start_date <= Date.today) &&
-          (end_date.nil? || end_date >= Date.today)
+        (start_date.nil? || start_date <= Time.zone.today) &&
+          (end_date.nil? || end_date >= Time.zone.today)
       end
 
       private

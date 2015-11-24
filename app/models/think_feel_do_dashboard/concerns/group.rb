@@ -50,8 +50,8 @@ module ThinkFeelDoDashboard
           create_profile(participant.id)
           memberships.build(
             participant_id: participant.id,
-            start_date: Date.today,
-            end_date: Date.today.advance(days: days)
+            start_date: Time.zone.today,
+            end_date: Time.zone.today.advance(days: days)
           )
         end
       end

@@ -154,14 +154,14 @@ feature "Researcher - Memberships", type: :feature do
       expect(page).to have_text "Participant: TFD-1111"
       expect(page).to have_text "Group: Group 1"
       expect(page).to have_text "Membership Status: Active"
-      expect(page).to have_text "Start Date: " + I18n.l(Date.today, format: :standard)
-      expect(page).to have_text "End Date: " + I18n.l(Date.today + 4, format: :standard)
+      expect(page).to have_text "Start Date: " + I18n.l(Time.zone.today, format: :standard)
+      expect(page).to have_text "End Date: " + I18n.l(Time.zone.today + 4, format: :standard)
 
       click_on "Edit"
 
       expect(page).to have_text "Participant: TFD-1111"
 
-      fill_in "Start Date", with: (DateTime.now - 7.days).strftime("%Y-%m-%d")
+      fill_in "Start Date", with: (Time.zone.now - 7.days).strftime("%Y-%m-%d")
       click_on "Update"
 
       expect(page).to have_text "Group assignment was successfully updated."

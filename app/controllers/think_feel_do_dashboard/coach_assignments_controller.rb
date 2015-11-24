@@ -88,10 +88,7 @@ module ThinkFeelDoDashboard
         notification = "An error occurred in the update of the "\
                               "participant's coach to the WOZ moderator."
       end
-      redirect_to participant_path(
-                    @participant
-                  ),
-                  notice: notification
+      redirect_to participant_path(@participant), notice: notification
     end
 
     def update_woz_coach
@@ -102,10 +99,7 @@ module ThinkFeelDoDashboard
         notification = "An error occurred in the update of the "\
                               "participant's coach to the moderator."
       end
-      redirect_to participant_path(
-                    @participant
-                  ),
-                  notice: notification
+      redirect_to participant_path(@participant), notice: notification
     end
 
     def set_coaches
