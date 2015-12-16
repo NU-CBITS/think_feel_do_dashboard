@@ -1,3 +1,7 @@
+## 1.1.0 - 2015-12-16
+ * Merge pull request #34 from cbitstech/msw_110256638_delete_participant_flash
+ * Improve Flash Message
+
 ## 1.0.15 - 2015-10-15
  * Merge pull request #33 from cbitstech/msw_98987112_fix_auto_generating_password_bug
  * Change base 16 to base 64

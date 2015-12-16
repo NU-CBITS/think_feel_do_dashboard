@@ -17,7 +17,7 @@ GIT
 PATH
   remote: .
   specs:
-    think_feel_do_dashboard (1.0.15)
+    think_feel_do_dashboard (1.1.0)
       font-awesome-rails (= 4.2.0.0)
       phonelib
 
@@ -255,3 +255,6 @@ DEPENDENCIES
   think_feel_do_dashboard!
   timecop
   turbolinks (~> 2.2)
+
+BUNDLED WITH
+   1.11.2
