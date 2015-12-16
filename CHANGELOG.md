@@ -1,3 +1,7 @@
+## 1.1.1 - 2015-12-16
+ * Merge pull request #35 from cbitstech/msw_104572752_update_intermittent_failure
+ * Update Spec
+
 ## 1.1.0 - 2015-12-16
  * Merge pull request #34 from cbitstech/msw_110256638_delete_participant_flash
  * Improve Flash Message
