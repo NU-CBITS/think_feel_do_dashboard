@@ -19,6 +19,8 @@ RSpec.describe "think_feel_do_dashboard/participants/show.html.erb",
       allow(view).to receive(:new_participant_group_path).and_return("#")
       allow(view).to receive(:participant_coach_path).and_return("#")
       allow(view).to receive(:woz_participant_coach_path).and_return("#")
+      allow(view).to receive(:edit_participant_coach_path).and_return("#")
+      allow(view).to receive(:new_participant_coach_path).and_return("#")
 
       render
 
