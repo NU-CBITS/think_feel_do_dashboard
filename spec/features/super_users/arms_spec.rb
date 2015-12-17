@@ -19,7 +19,7 @@ feature "Super User - Arms", type: :feature do
 
       expect(page).to_not have_text "Is social"
       expect(page).to_not have_text "Wizard of Oz"
-      expect(page).to_not have_text "Allow participants to message coach after membership is complete?"
+      expect(page).to_not have_text "Completed membership messaging"
     end
 
     it "should not display social functionality when editing an arm" do
@@ -27,7 +27,7 @@ feature "Super User - Arms", type: :feature do
 
       expect(page).to_not have_text "Is social"
       expect(page).to_not have_text "Wizard of Oz"
-      expect(page).to_not have_text "Allow participants to message coach after membership is complete?"
+      expect(page).to_not have_text "Completed membership messaging"
     end
 
     it "should not display social functionality when viewing an arm" do
@@ -35,7 +35,7 @@ feature "Super User - Arms", type: :feature do
 
       expect(page).to_not have_text "Is social"
       expect(page).to_not have_text "Wizard of Oz"
-      expect(page).to_not have_text "Allow participants to message coach after membership is complete?"
+      expect(page).to_not have_text "Completed membership messaging"
     end
   end
 
@@ -70,7 +70,7 @@ feature "Super User - Arms", type: :feature do
       fill_in "Title", with: "Big arm 2"
       check "Is social"
       check "Wizard of Oz"
-      check "Allow participants to message coach after membership is complete?"
+      check "Completed membership messaging"
       click_on "Create"
 
       expect(page).to have_text "Arm was successfully created"
@@ -116,7 +116,7 @@ feature "Super User - Arms", type: :feature do
       fill_in "Title", with: "What!"
       uncheck "Is social"
       uncheck "Wizard of Oz"
-      uncheck "Allow participants to message coach after membership is complete?"
+      uncheck "Completed membership messaging"
       click_on "Update"
 
       expect(page).to have_text "Arm was successfully updated"
