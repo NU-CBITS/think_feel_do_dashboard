@@ -1,3 +1,8 @@
+## 1.1.2 - 2015-12-18
+ * Merge pull request #36 from cbitstech/msw_110288200_form_text_update
+ * Update Additional Specs
+ * Update Arm Form
+
 ## 1.1.1 - 2015-12-16
  * Merge pull request #35 from cbitstech/msw_104572752_update_intermittent_failure
  * Update Spec
