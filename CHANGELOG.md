@@ -1,3 +1,8 @@
+## 1.1.3 - 2015-12-21
+ * Merge pull request #37 from cbitstech/msw_110321804_restrict_arm_access
+ * Add Class Methods
+ * Restict Access To Learn Dependent Pages
+
 ## 1.1.2 - 2015-12-18
  * Merge pull request #36 from cbitstech/msw_110288200_form_text_update
  * Update Additional Specs
