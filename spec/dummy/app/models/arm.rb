@@ -13,4 +13,11 @@ class Arm < ActiveRecord::Base
   def woz?
     has_woz
   end
+
+  def bit_core_tools
+    self
+  end
+
+  def find_by_type(type)
+  end
 end
