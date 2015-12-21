@@ -26,6 +26,7 @@ module ThinkFeelDoDashboard
 
     # GET /think_feel_do_dashboard/arms/1
     def show
+      @lesson = @arm.bit_core_tools.find_by_type("Tools::Learn")
     end
 
     # GET /think_feel_do_dashboard/arms/1/edit

@@ -19,13 +19,17 @@
           </li>
         <% end %>
         <li>
-          <% if can? :index, ContentModules::LessonModule %>
+          <% if @lesson && can?(:index, ContentModules::LessonModule) %>
             <%= link_to "Lesson Modules", (defined?(think_feel_do_engine) ? think_feel_do_engine.arm_lessons_path(@arm) : root_path) %>
+          <% elsif can? :index, ContentModules::LessonModule %>
+            <%= link_to "Lesson Modules*", "javascript:void(0);", data: { confirm: "A learn tool has to be created in order to access this page." } %>
           <% end %>
         </li>
         <li>
-          <% if can? :index, BitCore::Slideshow %>
+          <% if @lesson && can?(:index, BitCore::Slideshow) %>
             <%= link_to "Slideshows", (defined?(think_feel_do_engine) ? think_feel_do_engine.arm_bit_maker_slideshows_path(@arm) : root_path) %>
+          <% elsif can? :index, BitCore::Slideshow %>
+            <%= link_to "Slideshows*", "javascript:void(0);", data: { confirm: "A learn tool has to be created in order to access this page." } %>
           <% end %>
         </li>
       </ul>
