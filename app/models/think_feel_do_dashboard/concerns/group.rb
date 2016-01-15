@@ -57,7 +57,7 @@ module ThinkFeelDoDashboard
       end
 
       def create_participant(study_id)
-        password = SecureRandom.base64(16)
+        password = SecureRandom.base64.gsub(/(.{1})/, '\1 ')
         ::Participant.create!(
           contact_preference: "email",
           display_name: Rails.application
