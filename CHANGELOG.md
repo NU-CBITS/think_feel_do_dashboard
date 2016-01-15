@@ -1,3 +1,7 @@
+## 1.1.4 - 2016-01-15
+ * Merge pull request #38 from cbitstech/msw_111701452_111779364_fix_failing_spec
+ * Fix Password Generation & Spec
+
 ## 1.1.3 - 2015-12-21
  * Merge pull request #37 from cbitstech/msw_110321804_restrict_arm_access
  * Add Class Methods
