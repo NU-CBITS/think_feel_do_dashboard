@@ -47,7 +47,7 @@ module ThinkFeelDoDashboard
       end
 
       def only_one_active_group
-        if participant.active_membership && self.active?
+        if participant.active_membership && active?
           errors.add(:participant,
                      "can't be assigned to this group because they are " \
                      "already active.")
