@@ -1,5 +1,5 @@
 module ThinkFeelDoDashboard
-  # Used in the participant 'show' page to create dynamic routes
+  # Display the membership status for a participant and membership
   module ParticipantsHelper
     def membership_status(participant, membership)
       if participant.memberships.active.where(
