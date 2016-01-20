@@ -30,7 +30,7 @@ module ThinkFeelDoDashboard
                use_route: :think_feel_do_dashboard,
                participant_id: "123",
                membership: {
-                 start_date: Date.today,
+                 start_date: Time.zone.today,
                  end_date: Date.tomorrow,
                  group_id: "1"
                }

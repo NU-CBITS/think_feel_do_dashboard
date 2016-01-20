@@ -6,7 +6,9 @@ AllCops:
     - spec/dummy/**/*
     - vendor/**/*
     - app/models/think_feel_do_dashboard/reports/**/*
-  RunRailsCops: true
+
+Rails:
+  Enabled: true
 
 AbcSize:
   Max: 16

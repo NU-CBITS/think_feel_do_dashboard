@@ -91,7 +91,7 @@ describe Group do
 
         expect(groupie.moderating_participant).to_not be_nil
 
-        Timecop.travel Date.today.advance(years: 99) do
+        Timecop.travel Time.zone.today.advance(years: 99) do
           expect(groupie.moderating_participant.memberships.first.active?).to be_truthy
         end
       end
@@ -109,8 +109,8 @@ describe Group do
       it "doesn't allow a moderating participant to become a member of a group in a non-social arm" do
         membership = non_social_group.memberships.create(
           participant_id: participants(:moderator_for_group1).id,
-          start_date: Date.today,
-          end_date: Date.today.advance(weeks: 8)
+          start_date: Time.zone.today,
+          end_date: Time.zone.today.advance(weeks: 8)
         )
 
         expect(membership.errors.full_messages.include?("moderators can't be part of this group.")).to be_truthy

@@ -10,13 +10,13 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-gem "rails", "~> 4.1.8"
+gem "rails", "~> 4.1.11"
 gem "turbolinks", "~> 2.2"
 gem "font-awesome-rails", "= 4.2.0.0"
 gem "jquery-rails", "~> 3.1.2"
 
 gem "git_tagger",
-    git: "https://github.com/eschlange/git_tagger.git",
+    git: "https://github.com/cbitstech/git_tagger.git",
     tag: "1.1.8"
 
 group :development, :test do
@@ -33,13 +33,10 @@ end
 
 group :development do
   gem "brakeman", require: false
-  gem "better_errors"
-  gem "binding_of_caller"
 end
 
 group :test do
   gem "rspec-rails", "~> 3"
   gem "capybara", "~> 2"
-  gem "database_cleaner", "~> 1.3"
   gem "timecop"
 end

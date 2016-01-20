@@ -1,20 +1,20 @@
 membership1:
   participant: participant1
   group: group1
-  start_date: <%= Date.today %>
-  end_date: <%= Date.today + 4.days %>
+  start_date: <%= Time.zone.today %>
+  end_date: <%= Time.zone.today + 4.days %>
 
 membership2:
   participant: participant2
   group: group1
   start_date: <%= Date.yesterday %>
-  end_date: <%= Date.today + 3.days %>
+  end_date: <%= Time.zone.today + 3.days %>
 
 inactive_membership:
   participant: inactive_participant
   group: group2
-  start_date: <%= Date.today - 5.days %>
-  end_date: <%= Date.today - 4.days %>
+  start_date: <%= Time.zone.today - 5.days %>
+  end_date: <%= Time.zone.today - 4.days %>
 
 active_membership:
   participant: active_participant
@@ -25,42 +25,42 @@ active_membership:
 membership3:
   participant: participant3
   group: group3
-  start_date: <%= Date.today %>
-  end_date: <%= Date.today + 4.days %>
+  start_date: <%= Time.zone.today %>
+  end_date: <%= Time.zone.today + 4.days %>
 
 membership4:
   participant: participant4
   group: group1
-  start_date: <%= Date.today %>
-  end_date: <%= Date.today + 14.days %>
+  start_date: <%= Time.zone.today %>
+  end_date: <%= Time.zone.today + 14.days %>
 
 membership5:
   participant: participant5
   group: group1
-  start_date: <%= Date.today + 365.days %>
-  end_date: <%= Date.today + 365.days + 3.days %>
+  start_date: <%= Time.zone.today + 365.days %>
+  end_date: <%= Time.zone.today + 365.days + 3.days %>
 
 membership6:
   participant: participant6
   group: group1
-  start_date: <%= Date.today + 365.days %>
-  end_date: <%= Date.today + 365.days + 14.days %>
+  start_date: <%= Time.zone.today + 365.days %>
+  end_date: <%= Time.zone.today + 365.days + 14.days %>
 
 membership_of_moderator_for_group1:
   participant: moderator_for_group1
   group: group1
-  start_date: <%= Date.today %>
-  end_date: <%= Date.today.advance(days: 10) %>
+  start_date: <%= Time.zone.today %>
+  end_date: <%= Time.zone.today.advance(days: 10) %>
 
 membership_of_moderator_for_group2:
   participant: moderator_for_group2
   group: group2
-  start_date: <%= Date.today %>
-  end_date: <%= Date.today.advance(days: 10) %>
+  start_date: <%= Time.zone.today %>
+  end_date: <%= Time.zone.today.advance(days: 10) %>
 
 membership_participant_discontinued:
   participant: participant_discontinued
   group: group1
-  start_date: <%= Date.today.advance(days: -20) %>
-  end_date: <%= Date.today.advance(days: -10) %>
+  start_date: <%= Time.zone.today.advance(days: -20) %>
+  end_date: <%= Time.zone.today.advance(days: -10) %>
   is_complete: true

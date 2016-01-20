@@ -21,8 +21,8 @@ module ThinkFeelDoDashboard
       end
 
       def active?
-        (start_date.nil? || start_date <= Date.today) &&
-          (end_date.nil? || end_date >= Date.today)
+        (start_date.nil? || start_date <= Time.zone.today) &&
+          (end_date.nil? || end_date >= Time.zone.today)
       end
 
       private
@@ -47,7 +47,7 @@ module ThinkFeelDoDashboard
       end
 
       def only_one_active_group
-        if participant.active_membership && self.active?
+        if participant.active_membership && active?
           errors.add(:participant,
                      "can't be assigned to this group because they are " \
                      "already active.")

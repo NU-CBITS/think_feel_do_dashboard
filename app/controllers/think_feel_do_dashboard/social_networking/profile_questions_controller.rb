@@ -16,7 +16,7 @@ module ThinkFeelDoDashboard
 
       def create
         @profile_question = @group.profile_questions
-                            .build(profile_question_params)
+                                  .build(profile_question_params)
         if @profile_question.save
           redirect_to group_social_networking_profile_questions_path(@group),
                       notice: "Profile Question was successfully created."

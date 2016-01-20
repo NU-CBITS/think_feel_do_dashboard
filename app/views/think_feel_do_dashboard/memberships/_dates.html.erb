@@ -1,11 +1,11 @@
 <% membership = membership || Membership.new %>
 <div class="form-group">
   <%= label_tag "membership[start_date]", "Start Date" %>
-  <%= text_field_tag "membership[start_date]", {}, type: :date, class: "form-control", value: (membership.start_date || Date.today) %>
+  <%= text_field_tag "membership[start_date]", {}, type: :date, class: "form-control", value: (membership.start_date || Time.zone.today) %>
 </div>
 <div class="form-group">
   <%= label_tag "membership[end_date]", "End Date" %>
-  <%= text_field_tag "membership[end_date]", {}, type: :date, class: "form-control", value: (membership.end_date || Date.today + 1.week) %>
+  <%= text_field_tag "membership[end_date]", {}, type: :date, class: "form-control", value: (membership.end_date || Time.zone.today + 1.week) %>
 </div>
 <% if Rails.application.config.study_length_in_weeks %>
   <p>

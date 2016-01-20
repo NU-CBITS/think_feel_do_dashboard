@@ -44,9 +44,10 @@ module ThinkFeelDoDashboard
            active_group.arm.social? &&
            display_name.blank?
           errors.add(
-            :display_name, "is required because the arm of this \
-              intervention utilizes social features."
-            )
+            :display_name,
+            "is required because the arm of this intervention utilizes " \
+            "social features."
+          )
         end
       end
     end

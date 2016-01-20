@@ -20,8 +20,8 @@ class Membership < ActiveRecord::Base
             uniqueness: { scope: :participant_id, message: "has already been assigned to this participant." }
 
   scope :active, lambda {
-    where("start_date <= ? OR start_date = ?", Date.today, nil)
-    .where("end_date >= ? OR end_date = ?", Date.today, nil)
+    where("start_date <= ? OR start_date = ?", Time.zone.today, nil)
+    .where("end_date >= ? OR end_date = ?", Time.zone.today, nil)
   }
 
 end

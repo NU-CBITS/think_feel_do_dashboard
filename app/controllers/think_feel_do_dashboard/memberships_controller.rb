@@ -51,10 +51,10 @@ module ThinkFeelDoDashboard
         redirect_to participant_path(@participant),
                     notice: "Group assignment was successfully updated."
       else
-        flash[:alert] = @membership.errors.full_messages.join(", ") +
-                        "End date cannot be set prior to tomorrow's date. "\
-                        "Please use [Discontinue] or [Terminate Access] from "\
-                        "the patient dashboard."
+        flash[:alert] = @membership.errors.full_messages.join(", ")
+        flash[:alert] += "End date cannot be set prior to tomorrow's date. " \
+                           "Please use [Discontinue] or [Terminate Access] " \
+                           "from the patient dashboard."
         render :edit
       end
     end
@@ -119,9 +119,9 @@ module ThinkFeelDoDashboard
       if @membership.display_name && !@membership.display_name.blank?
         true
       else
-        flash[:alert] = @membership.errors.full_messages.join(", ") +
-                        "#{@membership.group.title} is part of a social arm. "\
-                        "Display name is required for social arms."
+        flash[:alert] = @membership.errors.full_messages.join(", ")
+        flash[:alert] += "#{@membership.group.title} is part of a social arm. "\
+                           "Display name is required for social arms."
         false
       end
     end
