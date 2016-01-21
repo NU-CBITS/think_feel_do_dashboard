@@ -1,6 +1,6 @@
 module ThinkFeelDoDashboard
   # Top level controller.
-  class ApplicationController < ActionController::Base
+  class ApplicationController < ::ApplicationController
     include ThinkFeelDoDashboard::Concerns::BrowserDetective
 
     before_action :authenticate_user!, :detect_browser

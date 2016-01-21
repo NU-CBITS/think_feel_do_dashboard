@@ -1,5 +1,3 @@
-require_dependency "think_feel_do_dashboard/application_controller"
-
 module ThinkFeelDoDashboard
   # Provide access to data exports.
   class ReportsController < ApplicationController
