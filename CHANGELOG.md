@@ -1,3 +1,18 @@
+## 1.1.5 - 2016-01-21
+ * Merge pull request #41 from cbitstech/msw_update_gemfilelock
+ * Run Bundler
+ * Merge pull request #40 from cbitstech/msw_110176306_update_application_controller
+ * Update Application Controller
+ * Merge pull request #39 from cbitstech/ecf_cleanup
+ * update Ruby version and RuboCop compatibility
+ * bundle with latest bundler
+ * remove unused database_cleaner gem
+ * move simplecov config as indicated in readme
+ * remove unnecessary gems
+ * convert to cbitstech version of git_tagger
+ * update brakeman and rubocop
+ * update Rails version
+
 ## 1.1.4 - 2016-01-15
  * Merge pull request #38 from cbitstech/msw_111701452_111779364_fix_failing_spec
  * Fix Password Generation & Spec
