@@ -25,6 +25,12 @@ module ThinkFeelDoDashboard
       )
     end
 
+    def social_features?
+      if Rails.application.config.respond_to?(:include_social_features)
+        Rails.application.config.include_social_features
+      end
+    end
+
     private
 
     def show_breadcrumbs?
