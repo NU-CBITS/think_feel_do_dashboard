@@ -240,6 +240,3 @@ DEPENDENCIES
   think_feel_do_dashboard!
   timecop
   turbolinks (~> 2.2)
-
-BUNDLED WITH
-   1.11.2
