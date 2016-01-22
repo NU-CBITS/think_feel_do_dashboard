@@ -1,3 +1,7 @@
+## 1.1.6 - 2016-01-22
+ * Merge pull request #42 from cbitstech/msw_expose_helpers
+ * Expose Application Helpers
+
 ## 1.1.5 - 2016-01-21
  * Merge pull request #41 from cbitstech/msw_update_gemfilelock
  * Run Bundler
