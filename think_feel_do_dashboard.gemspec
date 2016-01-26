@@ -26,6 +26,8 @@ Gem::Specification.new do |s|
   # phonelib uses a Google library for varification
   s.add_dependency "phonelib"
   s.add_dependency "font-awesome-rails", "= 4.2.0.0"
+
+  s.add_development_dependency "rspec-rails", "~> 3.0"
   s.add_development_dependency "strong_password", "~> 0"
   s.add_development_dependency "simplecov", "~> 0.9.1"
 end

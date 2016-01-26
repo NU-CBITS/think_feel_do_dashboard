@@ -1,7 +1,7 @@
 require "rails_helper"
 
 module ThinkFeelDoDashboard
-  describe MembershipsController, type: :controller do
+  RSpec.describe MembershipsController, type: :controller do
     describe "POST create" do
       let(:user) { double("user", admin?: true) }
       let(:group) do
@@ -27,7 +27,6 @@ module ThinkFeelDoDashboard
         it "returns to membership creation if no display name is given" do
           expect(Participant).to receive(:find) { participant }
           post :create,
-               use_route: :think_feel_do_dashboard,
                participant_id: "123",
                membership: {
                  start_date: Time.zone.today,
