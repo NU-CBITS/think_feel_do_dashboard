@@ -1,3 +1,5 @@
+require_dependency "think_feel_do_dashboard/application_controller"
+
 module ThinkFeelDoDashboard
   # Assigns a participant with a group along with setting the start and end date
   class MembershipsController < ApplicationController

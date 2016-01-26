@@ -1,5 +1,6 @@
 module ThinkFeelDoDashboard
-  # Top level controller.
+  # Top level engine controller
+  # inherits from host application's ApplicationController.
   class ApplicationController < ::ApplicationController
     include ThinkFeelDoDashboard::Concerns::BrowserDetective
 

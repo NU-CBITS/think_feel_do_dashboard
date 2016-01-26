@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
                 "Rakefile",
                 "README.rdoc"]
 
+  s.add_dependency "rails", "~> 4.2"
   # Validates phone numbers for participants
   # phonelib uses a Google library for varification
   s.add_dependency "phonelib"

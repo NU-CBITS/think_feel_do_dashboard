@@ -1,3 +1,5 @@
+require_dependency "think_feel_do_dashboard/application_controller"
+
 module ThinkFeelDoDashboard
   # Allows for the creation, updating, and deletion of participants
   class ParticipantsController < ApplicationController

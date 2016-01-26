@@ -1,3 +1,5 @@
+require_dependency "think_feel_do_dashboard/application_controller"
+
 module ThinkFeelDoDashboard
   # Allows Coaches/Clinicians to moderate.
   # That is, log in as a participant
