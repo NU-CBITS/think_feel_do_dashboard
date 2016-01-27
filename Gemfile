@@ -10,9 +10,6 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-gem "rails", "~> 4.1.11"
-gem "turbolinks", "~> 2.2"
-gem "font-awesome-rails", "= 4.2.0.0"
 gem "jquery-rails", "~> 3.1.2"
 
 gem "git_tagger",
@@ -20,15 +17,11 @@ gem "git_tagger",
     tag: "1.1.8"
 
 group :development, :test do
-  gem "cancancan", "~> 1.9"
   gem "rubocop", "~> 0.26"
-  gem "launchy"
-  gem "pg"
-  gem "devise"
+  gem "devise", "~> 3.2"
   gem "event_capture",
       git: "https://github.com/cbitstech/event_capture.git",
       ref: "1f9a199"
-  gem "poltergeist"
 end
 
 group :development do
@@ -36,7 +29,6 @@ group :development do
 end
 
 group :test do
-  gem "rspec-rails", "~> 3"
   gem "capybara", "~> 2"
   gem "timecop"
 end

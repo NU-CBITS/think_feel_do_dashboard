@@ -1,3 +1,5 @@
+require_dependency "think_feel_do_dashboard/application_controller"
+
 module ThinkFeelDoDashboard
   # Used to associated coaches with participants
   class CoachAssignmentsController < ApplicationController
