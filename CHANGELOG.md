@@ -1,3 +1,9 @@
+## 1.1.7 - 2016-01-27
+ * Merge pull request #43 from cbitstech/msw_111958897_fix_authenticity_token
+ * Update Specs
+ * Remove Unncessary Gems
+ * Update Verified Requests
+
 ## 1.1.6 - 2016-01-22
  * Merge pull request #42 from cbitstech/msw_expose_helpers
  * Expose Application Helpers
