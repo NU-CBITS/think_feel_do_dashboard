@@ -18,9 +18,12 @@ PATH
   remote: .
   specs:
     think_feel_do_dashboard (1.1.6)
+      cancancan (~> 1.9)
+      devise (~> 3.2)
       font-awesome-rails (= 4.2.0.0)
       phonelib
       rails (~> 4.2)
+      turbolinks (~> 2.2)
 
 GEM
   remote: https://rubygems.org/
@@ -243,19 +246,16 @@ PLATFORMS
 
 DEPENDENCIES
   brakeman
-  cancancan (~> 1.9)
   capybara (~> 2)
-  devise
+  devise (~> 3.2)
   event_capture!
-  font-awesome-rails (= 4.2.0.0)
   git_tagger!
   jquery-rails (~> 3.1.2)
-  pg
-  poltergeist
+  pg (~> 0.18)
+  poltergeist (~> 1.6)
   rspec-rails (~> 3.0)
   rubocop (~> 0.26)
   simplecov (~> 0.9.1)
   strong_password (~> 0)
   think_feel_do_dashboard!
   timecop
-  turbolinks (~> 2.2)

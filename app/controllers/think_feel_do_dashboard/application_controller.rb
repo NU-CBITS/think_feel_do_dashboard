@@ -1,3 +1,5 @@
+require "cancancan"
+
 module ThinkFeelDoDashboard
   # Top level engine controller
   # inherits from host application's ApplicationController.

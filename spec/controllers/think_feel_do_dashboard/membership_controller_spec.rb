@@ -2,21 +2,27 @@ require "rails_helper"
 
 module ThinkFeelDoDashboard
   RSpec.describe MembershipsController, type: :controller do
+    routes { Engine.routes }
+
     describe "POST create" do
-      let(:user) { double("user", admin?: true) }
+      let(:user) { instance_double(User, admin?: true) }
       let(:group) do
-        double("group",
-               arm: double("arm", is_social?: true),
-               title: "best group eva!!111")
+        instance_double(
+          Group,
+          arm: instance_double(Arm, is_social?: true),
+          title: "best group eva!!111")
       end
       let(:participant) do
-        double("pariticipant",
-               memberships: double("memberships",
-                                   build: double("membership",
-                                                 group: group,
-                                                 display_name: nil,
-                                                 errors:
-                                                   double("errors", full_messages: []))))
+        instance_double(
+          Participant,
+          memberships: double(
+            "memberships",
+            build: instance_double(
+              Membership,
+              group: group,
+              display_name: nil,
+              errors:
+                double("errors", full_messages: []))))
       end
 
       context "create new membership in social arm" do
