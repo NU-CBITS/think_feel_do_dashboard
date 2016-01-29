@@ -27,12 +27,13 @@ Gem::Specification.new do |s|
   s.add_dependency "cancancan", "~> 1.9"
   # Validates phone numbers for participants
   # phonelib uses a Google library for varification
-  s.add_dependency "phonelib"
+  s.add_dependency "phonelib", "~> 0.5"
   s.add_dependency "font-awesome-rails", "= 4.2.0.0"
 
   s.add_development_dependency "pg", "~> 0.18"
   s.add_development_dependency "rspec-rails", "~> 3.0"
   s.add_development_dependency "poltergeist", "~> 1.6"
   s.add_development_dependency "strong_password", "~> 0"
+  s.add_development_dependency "brakeman", "~> 3"
   s.add_development_dependency "simplecov", "~> 0.9.1"
 end
