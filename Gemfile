@@ -20,15 +20,10 @@ group :development, :test do
   gem "rubocop", "~> 0.26"
   gem "devise", "~> 3.2"
   gem "event_capture",
-      git: "https://github.com/cbitstech/event_capture.git",
-      ref: "1f9a199"
-end
-
-group :development do
-  gem "brakeman", require: false
+      tag: "0.1.1",
+      git: "https://github.com/cbitstech/event_capture.git"
 end
 
 group :test do
-  gem "capybara", "~> 2"
-  gem "timecop"
+  gem "timecop", "~> 0.7"
 end
