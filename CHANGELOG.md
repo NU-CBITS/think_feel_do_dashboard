@@ -1,3 +1,7 @@
+## 1.1.8 - 2016-01-29
+ * Merge pull request #44 from cbitstech/msw_111779364_fix_failing_spec
+ * Fix Failing Spec
+
 ## 1.1.7 - 2016-01-27
  * Merge pull request #43 from cbitstech/msw_111958897_fix_authenticity_token
  * Update Specs
