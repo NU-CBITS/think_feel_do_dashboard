@@ -3,10 +3,6 @@ require "rails_helper"
 feature "Content Author - Dashboard Links", type: :feature do
   fixtures :all
 
-  after do
-    # click_on "Sign Out"
-  end
-
   it "redirects if accessed by a content author" do
     sign_in users :content_author1
     visit "/think_feel_do_dashboard"

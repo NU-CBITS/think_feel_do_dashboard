@@ -8,10 +8,6 @@ feature "Researcher - Users", type: :feature do
     visit "/think_feel_do_dashboard/users"
   end
 
-  after do
-    # click_on "Sign Out"
-  end
-
   it "displays the users that currently exist" do
     expect(page).to have_text "clinician1@example.com"
   end

@@ -3,10 +3,6 @@ require "rails_helper"
 feature "Researcher - Dashboard Links", type: :feature do
   fixtures :all
 
-  after do
-    # click_on "Sign Out"
-  end
-
   it "displays correct links for a researcher" do
     sign_in users :researcher1
     visit "/think_feel_do_dashboard"

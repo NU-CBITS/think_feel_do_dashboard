@@ -8,10 +8,6 @@ feature "Researcher - Groups", type: :feature do
     visit "/think_feel_do_dashboard/groups"
   end
 
-  after do
-    # click_on "Sign Out"
-  end
-
   it "displays the groups that currently exist" do
     expect(page).to have_text "Group 1"
   end
