@@ -8,10 +8,6 @@ feature "Clinician - Groups", type: :feature do
     visit "/think_feel_do_dashboard/arms"
   end
 
-  after do
-    # click_on "Sign Out"
-  end
-
   it "displays the moderate link if the group is social" do
     click_on "Arm 1"
     click_on "Group 1"

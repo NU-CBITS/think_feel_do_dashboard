@@ -18,7 +18,7 @@ describe "Group concern" do
         expect(Participant)
           .to receive(:create!)
           .with(
-            password: "w e a k ",
+            password: "1Aaw e a k ",
             password_confirmation:  anything,
             contact_preference: anything,
             display_name: anything,

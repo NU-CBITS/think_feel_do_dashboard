@@ -9,10 +9,6 @@ feature "Super User - Users", type: :feature do
     click_on "Users"
   end
 
-  after do
-    # click_on "Sign Out"
-  end
-
   it "should enable the creation of a Super User" do
     expect(page).to_not have_text "Super User admin2@example.com"
 

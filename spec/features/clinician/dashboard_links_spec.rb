@@ -3,10 +3,6 @@ require "rails_helper"
 feature "Clinician - Dashboard Links", type: :feature do
   fixtures :all
 
-  after do
-    # click_on "Sign Out"
-  end
-
   it "redirects if accessed by a clinician" do
     sign_in users :clinician1
     visit "/think_feel_do_dashboard"

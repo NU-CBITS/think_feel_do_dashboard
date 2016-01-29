@@ -8,10 +8,6 @@ feature "Researcher - Groups", type: :feature do
     visit "/think_feel_do_dashboard/groups/#{groups(:group1).id}"
   end
 
-  after do
-    # click_on "Sign Out"
-  end
-
   it "displays the correct managment links" do
     expect(page).to have_link "Patient Dashboard"
     expect(page).to have_link "Group Dashboard"
