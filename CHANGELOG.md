@@ -1,3 +1,7 @@
+## 1.1.9 - 2016-02-01
+ * Merge pull request #45 from cbitstech/msw_110176596_update_gems
+ * Udpate Gem Parity
+
 ## 1.1.8 - 2016-01-29
  * Merge pull request #44 from cbitstech/msw_111779364_fix_failing_spec
  * Fix Failing Spec
