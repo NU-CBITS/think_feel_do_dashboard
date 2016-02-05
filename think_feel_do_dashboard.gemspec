@@ -7,11 +7,12 @@ require "think_feel_do_dashboard/version"
 Gem::Specification.new do |s|
   s.name        = "think_feel_do_dashboard"
   s.version     = ThinkFeelDoDashboard::VERSION
-  s.authors     = ["Michael Wehrley"]
+  s.authors     = ["Eric Carty-Fickes", "Eric Schlange", "Michael Wehrley"]
   s.email       = ["michael.wehrley@northwestern.edu"]
   s.homepage    = "https://github.com/cbitstech/think_feel_do_dashboard"
-  s.summary     = "Summary of ThinkFeelDoDashboard."
-  s.description = "Description of ThinkFeelDoDashboard."
+  s.summary     = "Provides administrational tasks."
+  s.description = "Enables users to manage arms/trials, groups, "\
+                  "users, participants, and memberships."
   s.license     = "MIT"
 
   s.test_files = Dir["spec/**/*"]
@@ -28,7 +29,6 @@ Gem::Specification.new do |s|
   # Validates phone numbers for participants
   # phonelib uses a Google library for varification
   s.add_dependency "phonelib", "~> 0.5"
-  s.add_dependency "font-awesome-rails", "= 4.2.0.0"
 
   s.add_development_dependency "pg", "~> 0.18"
   s.add_development_dependency "rspec-rails", "~> 3.0"

@@ -10,3 +10,6 @@ spec/dummy/tmp/
 spec/dummy/.sass-cache
 brakeman.html
 coverage
+
+# RubyGems
+think_feel_do_dashboard-*.gem
