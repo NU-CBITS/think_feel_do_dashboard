@@ -1,8 +1,6 @@
 module ThinkFeelDoDashboard
   # Ensure font awesome icon helpers are available.
   module ApplicationHelper
-    include FontAwesome::Rails::IconHelper
-
     TOP_LEVEL_CONTROLLERS = %w( arms groups participants users reports ).freeze
 
     # Render navigational information in the form of breadcrumbs

@@ -208,6 +208,22 @@ Because we have combined brakeman, rubocop, and rspec, you can just run the rake
 bundle exec rake
 ```
 
+## Publishing to RubyGems
+
+Build the `think_feel_do_dashboard` gem
+
+```console
+gem build think_feel_do_dashboard.gemspec
+```
+
+Publish to [rubygems.org](https://rubygems.org)
+
+```console
+gem push think_feel_do_dashboard-x.x.x.gem
+```
+
+View the published `think_feel_do_dashboard` gem [here](https://rubygems.org/gems/think_feel_do_dashboard)
+
 ## Services
 
 N/A
