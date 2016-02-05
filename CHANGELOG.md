@@ -1,3 +1,7 @@
+## 1.1.10 - 2016-02-05
+ * Merge pull request #46 from cbitstech/msw_110176596_create_ruby_gem
+ * Update Gem for Publishing
+
 ## 1.1.9 - 2016-02-01
  * Merge pull request #45 from cbitstech/msw_110176596_update_gems
  * Udpate Gem Parity
