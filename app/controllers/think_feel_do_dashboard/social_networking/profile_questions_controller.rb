@@ -6,7 +6,7 @@ module ThinkFeelDoDashboard
     # profile questions
     class ProfileQuestionsController < ApplicationController
       before_action :set_profile_question, except: [:index, :new, :create]
-      before_action :set_group
+      before_action :set_group, :authorize_group_access!
 
       def index
         @profile_questions = ::SocialNetworking::ProfileQuestion
@@ -52,14 +52,23 @@ module ThinkFeelDoDashboard
 
       private
 
+      def authorize_group_access!
+        authorize! :moderate, @group
+      end
+
       def set_group
         @group = Group.find(params[:group_id])
-        authorize! :moderate, @group
+
+      rescue ActiveRecord::RecordNotFound => e
+        redirect_to root_path, alert: e.message
       end
 
       def set_profile_question
         @profile_question = ::SocialNetworking::ProfileQuestion
                             .find(params[:id])
+
+      rescue ActiveRecord::RecordNotFound => e
+        redirect_to root_path, alert: e.message
       end
 
       def profile_question_params

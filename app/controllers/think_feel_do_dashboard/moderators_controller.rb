@@ -17,6 +17,9 @@ module ThinkFeelDoDashboard
 
     def set_group
       @group = Group.find(params[:group_id])
+
+    rescue ActiveRecord::RecordNotFound => e
+      redirect_to root_path, alert: e.message
     end
   end
 end
