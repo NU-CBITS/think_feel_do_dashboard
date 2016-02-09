@@ -1,3 +1,8 @@
+## 1.1.11 - 2016-02-09
+ * Merge pull request #47 from cbitstech/msw_113284567_update_authorization
+ * Add Authentication Specs
+ * Add General Authentication
+
 ## 1.1.10 - 2016-02-05
  * Merge pull request #46 from cbitstech/msw_110176596_create_ruby_gem
  * Update Gem for Publishing
