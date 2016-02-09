@@ -4,7 +4,7 @@ module ThinkFeelDoDashboard
   # Allows Coaches/Clinicians to moderate.
   # That is, log in as a participant
   class ModeratorsController < ApplicationController
-    before_action :authenticate_user!, :set_group
+    before_action :set_group
 
     # POST /coach/groups/:group_id/moderates
     def create

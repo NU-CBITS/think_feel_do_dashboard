@@ -5,7 +5,6 @@ module ThinkFeelDoDashboard
     # Allows for the creation, updating, and deletion of social networking
     # profile questions
     class ProfileQuestionsController < ApplicationController
-      before_action :authenticate_user!
       before_action :set_profile_question, except: [:index, :new, :create]
       before_action :set_group
 
