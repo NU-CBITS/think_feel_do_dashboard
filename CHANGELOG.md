@@ -1,3 +1,8 @@
+## 1.1.12 - 2016-02-16
+ * Merge pull request #48 from cbitstech/msw_113630033_csrf_bug
+ * Add Brakeman Ignore
+ * Rescue if Token is Invalid
+
 ## 1.1.11 - 2016-02-09
  * Merge pull request #47 from cbitstech/msw_113284567_update_authorization
  * Add Authentication Specs
