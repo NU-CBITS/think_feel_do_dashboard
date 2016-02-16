@@ -30,14 +30,26 @@ end
 
 # Shared examples
 
-shared_examples "a rejected user action" do
+RSpec.shared_examples "a rejected user action" do
   it "should redirect to the user login" do
     expect(response).to redirect_to "/users/sign_in"
   end
 end
 
-shared_examples "a rejected participant action" do
+RSpec.shared_examples "a rejected participant action" do
   it "should redirect to the participant login" do
     expect(response).to redirect_to "/participants/sign_in"
+  end
+end
+
+RSpec.shared_examples "an untrusted action" do
+  it "should redirect to root path" do
+    expect(response.status)
+      .to redirect_to root_path
+  end
+
+  it "should redirect to root path" do
+    expect(flash[:alert])
+      .to eq "Your authenticity token expired. Please try again."
   end
 end

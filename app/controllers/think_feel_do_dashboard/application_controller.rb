@@ -4,7 +4,8 @@ module ThinkFeelDoDashboard
   # Top level engine controller
   # inherits from host application's ApplicationController.
   class ApplicationController < ::ApplicationController
-    include ThinkFeelDoDashboard::Concerns::BrowserDetective
+    include Concerns::BrowserDetective
+    include Concerns::InvalidAuthToken
 
     before_action :authenticate_user!, :detect_browser
     check_authorization
