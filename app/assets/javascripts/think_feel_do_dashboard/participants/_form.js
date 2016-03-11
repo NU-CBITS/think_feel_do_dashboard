@@ -8,14 +8,19 @@
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  }
+
   ParticipantForm.generatePassword = function() {
     var password = [];
 
     for (var i = 0; i < PASSPHRASE_LENGTH; i++) {
-      password.push(words()[getRandomInt(0, words().length)]);
+      var passwordFragment = words()[getRandomInt(0, words().length)];
+      password.push(capitalizeFirstLetter(passwordFragment));
     }
 
-    this.password = password.join(' ');
+    this.password = password.join(getRandomInt(0,9));
   };
 
   ParticipantForm.createPasswordFields = function() {
