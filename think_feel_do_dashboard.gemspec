@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
                 "Rakefile",
                 "README.rdoc"]
 
-  s.add_dependency "rails", "~> 4.2"
+  s.add_dependency "rails", "= 4.2.5.2"
   s.add_dependency "turbolinks", "~> 2.2"
   s.add_dependency "devise", "~> 3.2"
   s.add_dependency "cancancan", "~> 1.9"
