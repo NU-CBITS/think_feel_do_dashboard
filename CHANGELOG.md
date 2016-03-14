@@ -1,3 +1,9 @@
+## 1.1.13 - 2016-03-14
+ * Merge pull request #49 from cbitstech/ems-113186901
+ * Update gem lock file.
+ * Update rails version to solve security problem.
+ * Add complexity to participant password generation logic.
+
 ## 1.1.12 - 2016-02-16
  * Merge pull request #48 from cbitstech/msw_113630033_csrf_bug
  * Add Brakeman Ignore
