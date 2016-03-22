@@ -34,6 +34,8 @@ module ThinkFeelDoDashboard
 
     # GET /think_feel_do_dashboard/participants/1/groups/1
     def show
+      redirect_to participant_path(@participant),
+                  alert: "Membership not found." if @membership.nil?
       authorize! :show, @membership
     end
 
