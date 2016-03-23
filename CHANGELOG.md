@@ -1,3 +1,7 @@
+## 1.1.14 - 2016-03-22
+ * Merge pull request #50 from cbitstech/ems-115812555
+ * Handling show requests when membership deleted.
+
 ## 1.1.13 - 2016-03-14
  * Merge pull request #49 from cbitstech/ems-113186901
  * Update gem lock file.
