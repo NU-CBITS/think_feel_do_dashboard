@@ -36,6 +36,8 @@ module ThinkFeelDoDashboard
 
     # GET /think_feel_do_dashboard/arms/1/edit
     def edit
+      @arm = Arm.find(params[:id])
+      authorize! :manage, @arm
     end
 
     # PATCH/PUT /think_feel_do_dashboard/arms/1
