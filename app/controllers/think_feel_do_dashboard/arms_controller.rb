@@ -13,7 +13,8 @@ module ThinkFeelDoDashboard
 
     # POST /think_feel_do_dashboard/arms
     def create
-      authorize! :manage, Arm
+      authorize! :create, Arm
+      @arm = Arm.new(arm_params)
       if @arm.save
         redirect_to @arm,
                     notice: "Arm was successfully created."
@@ -24,7 +25,8 @@ module ThinkFeelDoDashboard
 
     # GET /think_feel_do_dashboard/arms/new
     def new
-      authorize! :manage, Arm
+      authorize! :new, Arm
+      @arm = Arm.new
     end
 
     # GET /think_feel_do_dashboard/arms/1
@@ -37,13 +39,13 @@ module ThinkFeelDoDashboard
     # GET /think_feel_do_dashboard/arms/1/edit
     def edit
       @arm = Arm.find(params[:id])
-      authorize! :manage, @arm
+      authorize! :edit, @arm
     end
 
     # PATCH/PUT /think_feel_do_dashboard/arms/1
     def update
       @arm = Arm.find(params[:id])
-      authorize! :manage, @arm
+      authorize! :update, @arm
       if @arm.update(arm_params)
         redirect_to arm_path(@arm),
                     notice: "Arm was successfully updated.",
@@ -55,6 +57,8 @@ module ThinkFeelDoDashboard
 
     # DELETE /think_feel_do_dashboard/arms/1
     def destroy
+      @arm = Arm.find(params[:id])
+      authorize! :destroy, @arm
       redirect_to arm_path(@arm),
                   notice: "You do not have privileges to delete an arm. "\
                   "Please contact the site administrator to remove this arm."
