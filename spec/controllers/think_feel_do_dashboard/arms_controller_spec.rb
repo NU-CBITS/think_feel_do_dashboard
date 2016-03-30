@@ -40,7 +40,7 @@ module ThinkFeelDoDashboard
           sign_in_user authorized_user
         end
 
-        it "should redirect to the application root" do
+        it "should render the index page" do
           get :index
           expect(response).to render_template :index
         end
@@ -68,7 +68,7 @@ module ThinkFeelDoDashboard
           sign_in_user authorized_user
         end
 
-        it "should redirect to the application root" do
+        it "should render the show page" do
           expect(Arm).to receive(:find) { arm }
           expect(bit_core_tools).to receive(:find_by_type) { double("Tools") }
           get :show, id: 1
