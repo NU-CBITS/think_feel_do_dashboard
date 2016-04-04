@@ -1,3 +1,12 @@
+## 1.1.15 - 2016-04-04
+ * Merge pull request #52 from cbitstech/msw_113286849_update_deletion_process
+ * Update Specs
+ * Merge pull request #51 from cbitstech/ems-116466651
+ * Update spec descriptions to apply to tests.
+ * Update controller methods for new and create.
+ * Add authorization to edit method.
+ * Revised CanCanCan auth checking of arm controller.
+
 ## 1.1.14 - 2016-03-22
  * Merge pull request #50 from cbitstech/ems-115812555
  * Handling show requests when membership deleted.
