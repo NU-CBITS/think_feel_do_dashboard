@@ -72,27 +72,57 @@ describe Group do
         expect(moderating_participant.errors.full_messages.include?("Is admin can't be destroyed.")).to be_truthy
       end
 
-      it ".create_moderator catches and displays error" do
-        allow_any_instance_of(Participant).to receive(:valid?) { false }
-        membership_count = Membership.count
-        participant_count = Participant.count
-        profile_count = SocialNetworking::Profile.count
-        groupie = Group.new(arm_id: arms(:arm1).id, moderator_id: clinician2.id, title: "Test")
+      describe "saving" do
+        let(:invalid_group) do
+          Group.new(
+            arm_id: social_arm.id,
+            moderator_id: clinician2.id,
+            title: "Test")
+        end
 
-        expect { groupie.save! }.to raise_error
-        expect(groupie.errors.full_messages.include?("There were errors: Validation failed: ")).to be_truthy
-        expect(Membership.count).to eq membership_count
-        expect(Participant.count).to eq participant_count
-        expect(SocialNetworking::Profile.count).to eq profile_count
+        describe "when invalid" do
+          before do
+            allow_any_instance_of(Participant)
+              .to receive(:valid?) { false }
+          end
+
+          it "moderator is not created" do
+            expect { invalid_group.save! }
+              .to raise_error(ActiveRecord::RecordInvalid)
+            expect { invalid_group.save }
+              .to_not change { Membership.count }
+            expect { invalid_group.save }
+              .to_not change { Participant.count }
+            expect { invalid_group.save }
+              .to_not change { SocialNetworking::Profile.count }
+          end
+        end
       end
 
-      it ".create_moderator allows a participant to active nearly a century later" do
-        groupie = Group.create(arm_id: arms(:arm1).id, moderator_id: clinician2.id, title: "Test")
+      describe ".create" do
+        let(:valid_group) do
+          Group.create!(
+            arm_id: social_arm.id,
+            moderator_id: clinician2.id,
+            title: "Test")
+        end
 
-        expect(groupie.moderating_participant).to_not be_nil
+        before do
+          valid_group.reload
+        end
 
-        Timecop.travel Time.zone.today.advance(years: 99) do
-          expect(groupie.moderating_participant.memberships.first.active?).to be_truthy
+        it "sets a participant to be active almost a year later" do
+          Timecop.travel Time.zone.today.advance(days: 365) do
+            expect(valid_group.moderating_participant)
+              .to_not be_nil
+          end
+        end
+
+        it "sets a participant to be inactive a year later" do
+          Timecop.travel Time.zone.today.advance(days: 366) do
+            expect(valid_group.moderating_participant)
+              .to be_nil
+          end
         end
       end
     end

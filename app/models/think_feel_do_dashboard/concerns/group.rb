@@ -1,11 +1,10 @@
 module ThinkFeelDoDashboard
   module Concerns
-    # adds validations to and associations to group class
+    # Creates moderator and adds validations
+    # and associations to group
     module Group
       extend ActiveSupport::Concern
 
-      # This is perfect for including functionality
-      # provided by 3rd party gems, etc.
       included do
         has_many :profile_questions,
                  class_name: "SocialNetworking::ProfileQuestion"
@@ -22,13 +21,8 @@ module ThinkFeelDoDashboard
       end
 
       def moderating_participant
-        if active_memberships.count > 0
-          active_participants.find_by_is_admin(true)
-        end
-      end
-
-      # methods added to Class itself...
-      module ClassMethods
+        return if active_memberships.empty?
+        active_participants.find_by_is_admin(true)
       end
 
       private
@@ -44,20 +38,21 @@ module ThinkFeelDoDashboard
       end
 
       def create_moderating_participant
-        days = ENV["MODERATOR_LIFESPAN"] || 36_525
+        days = ENV["MODERATOR_LIFESPAN"] || 365
+
         ActiveRecord::Base.transaction do
           participant = create_participant(SecureRandom.hex(8))
           create_profile(participant.id)
           memberships.build(
             participant_id: participant.id,
             start_date: Time.zone.today,
-            end_date: Time.zone.today.advance(days: days)
-          )
+            end_date: Time.zone.today.advance(days: days))
         end
       end
 
       def create_participant(study_id)
         password = "1Aa" + SecureRandom.base64.gsub(/(.{1})/, '\1 ')
+
         ::Participant.create!(
           contact_preference: "email",
           display_name: Rails.application
@@ -67,16 +62,14 @@ module ThinkFeelDoDashboard
           is_admin: true,
           password: password,
           password_confirmation: password,
-          study_id: study_id
-        )
+          study_id: study_id)
       end
 
       def create_profile(participant_id)
         ::SocialNetworking::Profile.create!(
           participant_id: participant_id,
           icon_name: "admin",
-          active: true
-        )
+          active: true)
       end
     end
   end
