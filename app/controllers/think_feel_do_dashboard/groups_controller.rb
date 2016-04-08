@@ -51,8 +51,11 @@ module ThinkFeelDoDashboard
     # DELETE /think_feel_do_dashboard/groups/1
     def destroy
       @group.destroy
-      redirect_to groups_url,
-                  notice: "Group was successfully destroyed."
+      response_status = { notice: "Group was successfully destroyed." }
+    rescue ActiveRecord::DeleteRestrictionError => e
+      response_status = { alert: e.message }
+    ensure
+      redirect_to groups_url, response_status
     end
 
     private
