@@ -1,3 +1,7 @@
+## 1.1.16 - 2016-04-08
+ * Merge pull request #53 from cbitstech/msw_115522141_invalid_foreign_key
+ * Add Rescue to Display Error Message
+
 ## 1.1.15 - 2016-04-04
  * Merge pull request #52 from cbitstech/msw_113286849_update_deletion_process
  * Update Specs
