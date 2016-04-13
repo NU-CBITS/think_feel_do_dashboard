@@ -1,3 +1,6 @@
+## 1.1.17 - 2016-04-13
+ * Remove cancan helper usage for find specification. (#54)
+
 ## 1.1.16 - 2016-04-08
  * Merge pull request #53 from cbitstech/msw_115522141_invalid_foreign_key
  * Add Rescue to Display Error Message
