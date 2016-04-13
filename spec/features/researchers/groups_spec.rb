@@ -155,4 +155,9 @@ feature "Researcher - Groups", type: :feature do
     visit "/think_feel_do_dashboard/groups/#{groups(:group1).id}"
     expect(page).to have_link groups(:group1).moderator.email
   end
+
+  it "redirects to the root path if group is not found" do
+    visit "/think_feel_do_dashboard/groups/1234567"
+    expect(page).to have_text "The group you are looking for no longer exists."
+  end
 end
