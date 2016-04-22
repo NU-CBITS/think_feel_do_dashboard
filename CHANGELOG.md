@@ -1,3 +1,6 @@
+## 1.1.18 - 2016-04-22
+ * Update Phone Validation for US (#55)
+
 ## 1.1.17 - 2016-04-13
  * Remove cancan helper usage for find specification. (#54)
 
