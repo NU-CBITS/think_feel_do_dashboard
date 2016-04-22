@@ -1,6 +1,6 @@
 participant1:
   contact_preference: phone
-  phone_number: "6082153900"
+  phone_number: "16082153900"
   display_name: Joe
   study_id: TFD-1111
   email: participant1@example.com
@@ -8,7 +8,7 @@ participant1:
 
 participant2:
   contact_preference: phone
-  phone_number: "6082153901"
+  phone_number: "16082153901"
   display_name: Joe
   study_id: TFD-2
   email: participant2@example.com
@@ -40,7 +40,7 @@ participant4:
 
 participant5:
   contact_preference: phone
-  phone_number: "6082153902"
+  phone_number: "16082153902"
   study_id: TFD-future1
   email: participant5@example.com
   encrypted_password: <%= Participant.new.send(:password_digest, SecureRandom.hex(64)) %>
@@ -83,7 +83,7 @@ moderator_for_group2:
 
 participant_discontinued:
   contact_preference: email
-  phone_number: "6082153950"
+  phone_number: "16082153950"
   display_name: Bobby
   study_id: participant_discontinued
   email: participant_discontinued@example.com
