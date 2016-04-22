@@ -15,4 +15,28 @@ describe "Participant concern" do
       end
     end
   end
+
+  describe "when validating phone number" do
+    let(:number) { "6082154618" }
+
+    describe "when valid" do
+      it "doesn't return an error" do
+        participant.phone_number = "1#{number}"
+        participant.save
+
+        expect(participant.errors[:phone_number])
+          .to be_empty
+      end
+    end
+
+    describe "when invalid" do
+      it "returns an error" do
+        participant.phone_number = number
+        participant.save
+
+        expect(participant.errors[:phone_number])
+          .to_not be_empty
+      end
+    end
+  end
 end

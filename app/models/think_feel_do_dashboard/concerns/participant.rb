@@ -7,6 +7,8 @@ module ThinkFeelDoDashboard
     module Participant
       extend ActiveSupport::Concern
 
+      US_COUNTRY_CODE = "US".freeze
+
       # This is perfect for including functionality
       # provided by 3rd party gems, etc.
       included do
@@ -38,14 +40,23 @@ module ThinkFeelDoDashboard
       end
 
       def ensure_phone_number
-        sanitized_num = Phonelib
-                        .parse(phone_number)
-                        .sanitized
-        if Phonelib.valid?(sanitized_num)
+        if valid_number?
           self.phone_number = sanitized_num
         else
           errors.add(:phone_number, "is not valid")
         end
+      end
+
+      def sanitized_num
+        Phonelib
+          .parse(phone_number)
+          .sanitized
+      end
+
+      def valid_number?
+        Phonelib
+          .parse(sanitized_num)
+          .valid_for_country?(US_COUNTRY_CODE)
       end
     end
   end
