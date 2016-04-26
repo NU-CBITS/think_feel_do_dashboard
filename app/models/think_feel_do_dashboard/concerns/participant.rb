@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # validates phone numbers against Google api
 require "phonelib"
 
