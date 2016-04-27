@@ -1,3 +1,6 @@
+## 1.1.19 - 2016-04-27
+ * update Travis config (#56)
+
 ## 1.1.18 - 2016-04-22
  * Update Phone Validation for US (#55)
 
