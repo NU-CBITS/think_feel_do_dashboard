@@ -11,7 +11,7 @@ gemspec
 # your gem to rubygems.org.
 
 gem "rails", "~> 4.2.6"
-gem "devise", "~> 3.2"
+gem "devise", "~> 3.5.6"
 
 # internal CBITs gems
 gem "event_capture", "~> 0.1.2"
