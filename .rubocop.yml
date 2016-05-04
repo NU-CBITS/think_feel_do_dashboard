@@ -3,6 +3,7 @@ AllCops:
     - bin/**/*
     - config/**/*
     - db/**/*
+    - gemfiles/**/*
     - spec/dummy/**/*
     - vendor/**/*
     - app/models/think_feel_do_dashboard/reports/**/*

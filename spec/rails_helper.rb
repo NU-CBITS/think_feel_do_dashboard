@@ -8,6 +8,8 @@ require File.expand_path("../dummy/config/environment.rb", __FILE__)
 require "rspec/rails"
 require "capybara/poltergeist"
 
+require "timecop"
+
 Capybara.javascript_driver = :poltergeist
 options = {
   js_errors: false,

@@ -1,0 +1,19 @@
+source "https://rubygems.org"
+
+gemspec path: ".."
+
+gem "actionpack", "~> 5.0.0.beta4"
+gem "sprockets-rails", "~> 3.0"
+gem "devise", "~> 4.0.1"
+
+# internal CBITs gems
+gem "event_capture", "~> 0.2.0.beta1"
+group :development do
+  gem "git_tagger",
+      git: "https://github.com/cbitstech/git_tagger.git",
+      tag: "1.1.8"
+end
+
+group :test do
+  gem "rails-controller-testing"
+end
