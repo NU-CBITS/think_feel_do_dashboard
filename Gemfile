@@ -10,20 +10,13 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-gem "jquery-rails", "~> 3.1.2"
+gem "rails", "~> 4.2.6"
+gem "devise", "~> 3.2"
 
-gem "git_tagger",
-    git: "https://github.com/cbitstech/git_tagger.git",
-    tag: "1.1.8"
-
-group :development, :test do
-  gem "rubocop", "~> 0.26"
-  gem "devise", "~> 3.2"
-  gem "event_capture",
-      tag: "0.1.1",
-      git: "https://github.com/cbitstech/event_capture.git"
-end
-
-group :test do
-  gem "timecop", "~> 0.7"
+# internal CBITs gems
+gem "event_capture", "~> 0.1.2"
+group :development do
+  gem "git_tagger",
+      git: "https://github.com/cbitstech/git_tagger.git",
+      tag: "1.1.8"
 end

@@ -22,18 +22,19 @@ Gem::Specification.new do |s|
                 "Rakefile",
                 "README.rdoc"]
 
-  s.add_dependency "rails", "= 4.2.5.2"
   s.add_dependency "turbolinks", "~> 2.2"
-  s.add_dependency "devise", "~> 3.2"
   s.add_dependency "cancancan", "~> 1.9"
   # Validates phone numbers for participants
   # phonelib uses a Google library for varification
   s.add_dependency "phonelib", "~> 0.5"
+  s.add_dependency "jquery-rails", "~> 3.1.2"
 
   s.add_development_dependency "pg", "~> 0.18"
-  s.add_development_dependency "rspec-rails", "~> 3.0"
+  s.add_development_dependency "rspec-rails", "~> 3.5.0.beta3"
   s.add_development_dependency "poltergeist", "~> 1.6"
   s.add_development_dependency "strong_password", "~> 0"
   s.add_development_dependency "brakeman", "~> 3"
   s.add_development_dependency "simplecov", "~> 0.9.1"
+  s.add_development_dependency "rubocop", "~> 0.26"
+  s.add_development_dependency "timecop", "~> 0.7"
 end

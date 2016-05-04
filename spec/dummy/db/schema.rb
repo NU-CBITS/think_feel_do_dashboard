@@ -68,12 +68,11 @@ ActiveRecord::Schema.define(version: 20150410175659) do
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.boolean  "is_admin"
+    t.index ["email"], name: "index_participants_on_email", unique: true, using: :btree
+    t.index ["phone_number"], name: "index_participants_on_phone_number", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_participants_on_reset_password_token", unique: true, using: :btree
+    t.index ["study_id"], name: "index_participants_on_study_id", unique: true, using: :btree
   end
-
-  add_index "participants", ["email"], name: "index_participants_on_email", unique: true, using: :btree
-  add_index "participants", ["phone_number"], name: "index_participants_on_phone_number", unique: true, using: :btree
-  add_index "participants", ["reset_password_token"], name: "index_participants_on_reset_password_token", unique: true, using: :btree
-  add_index "participants", ["study_id"], name: "index_participants_on_study_id", unique: true, using: :btree
 
   create_table "slideshow_anchors", force: :cascade do |t|
     t.integer  "bit_core_slideshow_id"
@@ -125,9 +124,8 @@ ActiveRecord::Schema.define(version: 20150410175659) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

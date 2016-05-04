@@ -1,3 +1,7 @@
+if Rails::VERSION::MAJOR == 5
+  require "rails-controller-testing"
+end
+
 module ControllerSpecHelpers
   def sign_in_participant(participant = double("participant"))
     sign_in_resource(participant, "participant")
@@ -24,6 +28,10 @@ module ControllerSpecHelpers
 end
 
 RSpec.configure do |config|
+  if Rails::VERSION::MAJOR == 5
+    config.include ::Rails::Controller::Testing::TemplateAssertions,
+                   type: :controller
+  end
   config.include Devise::TestHelpers, type: :controller
   config.include ControllerSpecHelpers, type: :controller
 end
