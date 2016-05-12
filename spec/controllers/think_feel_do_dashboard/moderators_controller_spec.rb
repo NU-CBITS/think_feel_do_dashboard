@@ -18,7 +18,8 @@ module ThinkFeelDoDashboard
               .to receive(:find) do
                 instance_double(
                   Group,
-                  moderating_participant: user)
+                  moderating_participant: user
+                )
               end
             expect(controller).to receive(:sign_in).with(user)
             allow(controller)

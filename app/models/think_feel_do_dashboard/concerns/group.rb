@@ -46,7 +46,8 @@ module ThinkFeelDoDashboard
           memberships.build(
             participant_id: participant.id,
             start_date: Time.zone.today,
-            end_date: Time.zone.today.advance(days: days))
+            end_date: Time.zone.today.advance(days: days)
+          )
         end
       end
 
@@ -62,14 +63,16 @@ module ThinkFeelDoDashboard
           is_admin: true,
           password: password,
           password_confirmation: password,
-          study_id: study_id)
+          study_id: study_id
+        )
       end
 
       def create_profile(participant_id)
         ::SocialNetworking::Profile.create!(
           participant_id: participant_id,
           icon_name: "admin",
-          active: true)
+          active: true
+        )
       end
     end
   end

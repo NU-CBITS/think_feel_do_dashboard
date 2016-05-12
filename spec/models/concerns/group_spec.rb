@@ -9,7 +9,8 @@ describe "Group concern" do
         Participant.create!(
           contact_preference: "email",
           study_id: "bar",
-          email: "foo@ex.com")
+          email: "foo@ex.com"
+        )
       end
 
       it "augments default password to ensure validity" do
@@ -24,13 +25,15 @@ describe "Group concern" do
             display_name: anything,
             email: anything,
             is_admin: true,
-            study_id: anything)
+            study_id: anything
+          )
           .and_return(participant)
 
         Group.create!(
           title: "Valid",
           arm: arms(:arm1),
-          moderator: users(:clinician1))
+          moderator: users(:clinician1)
+        )
       end
     end
   end

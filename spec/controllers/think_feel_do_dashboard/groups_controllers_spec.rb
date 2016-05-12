@@ -24,7 +24,8 @@ module ThinkFeelDoDashboard
           let(:group) do
             instance_double(
               Group,
-              arm: instance_double(Arm))
+              arm: instance_double(Arm)
+            )
           end
 
           before do

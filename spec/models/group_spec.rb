@@ -77,7 +77,8 @@ describe Group do
           Group.new(
             arm_id: social_arm.id,
             moderator_id: clinician2.id,
-            title: "Test")
+            title: "Test"
+          )
         end
 
         describe "when invalid" do
@@ -104,7 +105,8 @@ describe Group do
           Group.create!(
             arm_id: social_arm.id,
             moderator_id: clinician2.id,
-            title: "Test")
+            title: "Test"
+          )
         end
 
         before do
