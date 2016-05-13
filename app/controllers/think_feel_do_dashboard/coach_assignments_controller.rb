@@ -81,7 +81,8 @@ module ThinkFeelDoDashboard
     def set_new_woz_coach
       @coach_assignment = CoachAssignment.new(
         participant: @participant,
-        coach_id: @participant.active_group.moderator_id)
+        coach_id: @participant.active_group.moderator_id
+      )
       if @coach_assignment.save
         notification = "Coach/Moderator was successfully assigned"
       else

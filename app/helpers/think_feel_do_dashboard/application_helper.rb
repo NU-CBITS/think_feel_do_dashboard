@@ -13,11 +13,11 @@ module ThinkFeelDoDashboard
           concat(content_tag(:li, link_to("Home", root_path)))
 
           if can_view_resource_index?
-            concat(content_tag(:li,
-                               link_to(controller_name.capitalize,
-                                       url_for(controller: controller_name))
-                              )
-                  )
+            concat(
+              content_tag(
+                :li, controller_link
+              )
+            )
           end
         end
       )
@@ -43,6 +43,10 @@ module ThinkFeelDoDashboard
       end
 
       !klass.is_a?(Class) || can?(:index, klass)
+    end
+
+    def controller_link
+      link_to(controller_name.capitalize, url_for(controller: controller_name))
     end
   end
 end

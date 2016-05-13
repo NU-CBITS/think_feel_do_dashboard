@@ -13,7 +13,8 @@ module ThinkFeelDoDashboard
           Group,
           id: 1,
           arm: instance_double(Arm, is_social?: true),
-          title: "best group eva!!111")
+          title: "best group eva!!111"
+        )
       end
       let(:membership) do
         instance_double Membership
@@ -22,7 +23,8 @@ module ThinkFeelDoDashboard
         instance_double(
           Participant,
           id: 1,
-          memberships: double("memberships"))
+          memberships: double("memberships")
+        )
       end
 
       context "view membership" do
@@ -57,7 +59,8 @@ module ThinkFeelDoDashboard
         instance_double(
           Group,
           arm: instance_double(Arm, is_social?: true),
-          title: "best group eva!!111")
+          title: "best group eva!!111"
+        )
       end
       let(:participant) do
         instance_double(
@@ -69,7 +72,10 @@ module ThinkFeelDoDashboard
               group: group,
               display_name: nil,
               errors:
-                double("errors", full_messages: []))))
+                double("errors", full_messages: [])
+            )
+          )
+        )
       end
 
       context "create new membership in social arm" do
