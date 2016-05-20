@@ -1,3 +1,12 @@
+## 1.1.20 - 2016-05-20
+ * Merge pull request #58 from cbitstech/ecf_upgrade_ruby
+ * Update Rubocop Offenses
+ * upgrade to Ruby 2.3.0
+ * Merge pull request #57 from cbitstech/ecf_rails5
+ * patch with security updates
+ * test against Rails 4 and 5
+ * do not keep Gemfile.lock in version control
+
 ## 1.1.19 - 2016-04-27
  * update Travis config (#56)
 
