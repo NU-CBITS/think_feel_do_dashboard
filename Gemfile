@@ -16,7 +16,5 @@ gem "devise", "~> 3.5.6"
 # internal CBITs gems
 gem "event_capture", "~> 0.1.2"
 group :development do
-  gem "git_tagger",
-      git: "https://github.com/cbitstech/git_tagger.git",
-      tag: "1.1.8"
+  gem "git_tagger", "~> 1.1"
 end
