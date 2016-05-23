@@ -1,6 +1,6 @@
 # ThinkFeelDoDashboard
 
-[![Build Status](https://travis-ci.org/cbitstech/think_feel_do_dashboard.svg)](https://travis-ci.org/cbitstech/think_feel_do_dashboard) [![security](https://hakiri.io/github/cbitstech/think_feel_do_dashboard/master.svg)](https://hakiri.io/github/cbitstech/think_feel_do_dashboard/master)
+[![Build Status](https://travis-ci.org/NU-CBITS/think_feel_do_dashboard.svg)](https://travis-ci.org/NU-CBITS/think_feel_do_dashboard) [![security](https://hakiri.io/github/NU-CBITS/think_feel_do_dashboard/master.svg)](https://hakiri.io/github/NU-CBITS/think_feel_do_dashboard/master)
 
 This is a rails engine that allows for the CRUDing and Enrolling of participants, the CRUDing of users and their roles, groups, assigning coaches to participants and assigning participants to groups, and assiging moderators to groups (and thus indirectly arms).
 
@@ -10,7 +10,7 @@ This is a rails engine that allows for the CRUDing and Enrolling of participants
 
 ### Download
 ```console
-git clone https://github.com/cbitstech/think_feel_do_dashboard.git [name of folder]
+git clone https://github.com/NU-CBITS/think_feel_do_dashboard.git [name of folder]
 ```
 
 ## Assumptions
@@ -30,7 +30,7 @@ This engine expects there to be multiple models:
 Update your `Gemfile`:
 
 ```ruby
-gem 'think_feel_do_dashboard', git: 'git://github.com/cbitstech/think_feel_do_dashboard.git'
+gem 'think_feel_do_dashboard', git: 'git://github.com/NU-CBITS/think_feel_do_dashboard.git'
 ```
 
 Update gems:
@@ -170,7 +170,7 @@ rails: ~> 4.1.7
 
 __Application Name:__ ThinkFeelDoDashboard
 
-__Github Repo:__ https://github.com/cbitstech/think_feel_do_dashboard
+__Github Repo:__ https://github.com/NU-CBITS/think_feel_do_dashboard
 
 __Production Url:__ N/A
 

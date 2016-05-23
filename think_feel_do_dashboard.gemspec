@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = ThinkFeelDoDashboard::VERSION
   s.authors     = ["Eric Carty-Fickes", "Eric Schlange", "Michael Wehrley"]
   s.email       = ["michael.wehrley@northwestern.edu"]
-  s.homepage    = "https://github.com/cbitstech/think_feel_do_dashboard"
+  s.homepage    = "https://github.com/NU-CBITS/think_feel_do_dashboard"
   s.summary     = "Provides administrational tasks."
   s.description = "Enables users to manage arms/trials, groups, "\
                   "users, participants, and memberships."
