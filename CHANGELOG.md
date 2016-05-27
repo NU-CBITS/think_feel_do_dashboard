@@ -1,3 +1,9 @@
+## 1.1.21 - 2016-05-27
+ * Merge pull request #60 from NU-CBITS/ems-120389037
+ * Update field generation logic to eliminate duplicate elements.
+ * Merge pull request #59 from NU-CBITS/ecf_gemify
+ * install internal gems; update repository URL
+
 ## 1.1.20 - 2016-05-20
  * Merge pull request #58 from cbitstech/ecf_upgrade_ruby
  * Update Rubocop Offenses
