@@ -24,11 +24,13 @@
   };
 
   ParticipantForm.createPasswordFields = function() {
-    $('#password-form-group').append(
-      '<label class="well" id="password-display"></label>' +
-      '<input class="hidden" id="password-value" name="participant[password]" type="password">' +
-      '<input class="hidden" id="password-confirmation-value" name="participant[password_confirmation]" type="password">'
-    );
+    if($("#password-value").length == 0) {
+      $('#password-form-group').append(
+        '<label class="well" id="password-display"></label>' +
+        '<input class="hidden" id="password-value" name="participant[password]" type="password">' +
+        '<input class="hidden" id="password-confirmation-value" name="participant[password_confirmation]" type="password">'
+      );
+    }
   };
 
   ParticipantForm.setPasswordFields = function() {
