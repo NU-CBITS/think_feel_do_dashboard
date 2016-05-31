@@ -7,7 +7,8 @@ module ThinkFeelDoDashboard
     describe "POST create" do
       context "for authenticated users" do
         let(:user) { instance_double(User, admin?: true) }
-
+        let(:group) { instance_double(Group, moderating_participant: user) }
+        let(:active_memberships) { [instance_double(Membership)] }
         before do
           sign_in_user user
         end
@@ -15,23 +16,29 @@ module ThinkFeelDoDashboard
         describe "when Group is found" do
           before do
             expect(Group)
-              .to receive(:find) do
-                instance_double(
-                  Group,
-                  moderating_participant: user
-                )
-              end
-            expect(controller).to receive(:sign_in).with(user)
+              .to receive(:find) { group }
             allow(controller)
               .to receive_message_chain("social_networking.social_networking_profile_path")
               .and_return "hello_world"
           end
 
           it "should respond with a redirect to the moderator's profile page" do
+            expect(group).to receive(:active_memberships) { active_memberships }
+            expect(controller).to receive(:sign_in).with(user)
+
             post :create, group_id: 1
 
             expect(response.status).to eq 302
             expect(response.body).to match(/hello_world/)
+          end
+
+          it "should respond with a redirect to root when there are no active memberships." do
+            expect(group).to receive(:active_memberships) { [] }
+
+            post :create, group_id: 1
+
+            expect(response.status).to eq 302
+            expect(response.body).to match(/redirected/)
           end
         end
 

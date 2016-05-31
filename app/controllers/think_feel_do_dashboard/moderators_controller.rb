@@ -9,8 +9,13 @@ module ThinkFeelDoDashboard
     # POST /coach/groups/:group_id/moderates
     def create
       authorize! :moderate, @group
-      sign_in @group.moderating_participant
-      redirect_to social_networking.social_networking_profile_path
+      if @group.active_memberships.empty?
+        redirect_to root_path, alert: "Could not log in as moderator "\
+        "because there are no active membership for this group."
+      else
+        sign_in @group.moderating_participant
+        redirect_to social_networking.social_networking_profile_path
+      end
     end
 
     private
