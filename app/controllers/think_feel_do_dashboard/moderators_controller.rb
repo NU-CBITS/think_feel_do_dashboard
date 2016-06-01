@@ -11,7 +11,7 @@ module ThinkFeelDoDashboard
       authorize! :moderate, @group
       if @group.active_memberships.empty?
         redirect_to root_path, alert: "Could not log in as moderator "\
-        "because there are no active membership for this group."
+        "because there are no active memberships for this group."
       else
         sign_in @group.moderating_participant
         redirect_to social_networking.social_networking_profile_path
