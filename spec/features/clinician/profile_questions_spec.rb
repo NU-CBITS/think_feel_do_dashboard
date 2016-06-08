@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "rails_helper"
 
 feature "Clinician - Group - Profile Question", type: :feature do

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module ThinkFeelDoDashboard
   module Concerns
     # Methods for browser type detection.

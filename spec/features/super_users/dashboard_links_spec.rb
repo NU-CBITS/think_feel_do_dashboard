@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "rails_helper"
 
 feature "Super User - Dashboard Links", type: :feature do
