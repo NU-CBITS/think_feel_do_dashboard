@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require_dependency "think_feel_do_dashboard/application_controller"
 
 module ThinkFeelDoDashboard

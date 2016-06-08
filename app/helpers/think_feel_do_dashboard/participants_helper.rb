@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module ThinkFeelDoDashboard
   # Display the membership status for a participant and membership
   module ParticipantsHelper

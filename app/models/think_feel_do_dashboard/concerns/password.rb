@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module ThinkFeelDoDashboard
   module Concerns
     # is included in the User model and automatically

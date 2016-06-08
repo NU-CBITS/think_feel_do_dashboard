@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 source "https://rubygems.org"
 
 # Declare your gem's dependencies in think_feel_do_dashboard.gemspec.

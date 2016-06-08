@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module ThinkFeelDoDashboard
   # Ensure font awesome icon helpers are available.
   module ApplicationHelper

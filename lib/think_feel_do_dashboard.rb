@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "think_feel_do_dashboard/engine"
 require "jquery-rails"
 

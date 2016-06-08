@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module ThinkFeelDoDashboard
   # Used as an aid to membership creation
   module MembershipsHelper

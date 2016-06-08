@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module ThinkFeelDoDashboard
   module Concerns
     # Validations and association integrity for Participants in social Arms.

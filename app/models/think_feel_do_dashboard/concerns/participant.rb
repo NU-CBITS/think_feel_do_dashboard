@@ -8,7 +8,7 @@ module ThinkFeelDoDashboard
     module Participant
       extend ActiveSupport::Concern
 
-      US_COUNTRY_CODE = "US".freeze
+      US_COUNTRY_CODE = "US"
 
       # This is perfect for including functionality
       # provided by 3rd party gems, etc.
