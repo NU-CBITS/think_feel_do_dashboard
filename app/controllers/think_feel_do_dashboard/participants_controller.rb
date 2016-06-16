@@ -4,6 +4,7 @@ require_dependency "think_feel_do_dashboard/application_controller"
 module ThinkFeelDoDashboard
   # Allows for the creation, updating, and deletion of participants
   class ParticipantsController < ApplicationController
+    rescue_from ActiveRecord::RecordNotFound, with: :participant_not_found
     load_and_authorize_resource
     before_action :set_contact_preferences
 
@@ -65,6 +66,11 @@ module ThinkFeelDoDashboard
         :email, :phone_number, :display_name,
         :study_id, :contact_preference, :password, :password_confirmation
       )
+    end
+
+    def participant_not_found
+      redirect_to participants_path,
+                  alert: "The participant you were looking for can't be found."
     end
   end
 end
