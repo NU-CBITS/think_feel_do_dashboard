@@ -1,3 +1,12 @@
+## 1.2.1 - 2016-06-16
+ * Merge pull request #63 from NU-CBITS/msw_121324611_record_not_found
+ * Add Rescue
+ * Merge pull request #62 from NU-CBITS/ecf_rubocop
+ * update to RuboCop 0.40
+ * Merge pull request #61 from NU-CBITS/ems-118867739
+ * Update exception alert syntax.
+ * Fix issue with mod participant login for empty group.
+
 ## 1.1.21 - 2016-05-27
  * Merge pull request #60 from NU-CBITS/ems-120389037
  * Update field generation logic to eliminate duplicate elements.
