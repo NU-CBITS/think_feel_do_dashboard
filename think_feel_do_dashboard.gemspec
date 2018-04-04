@@ -36,6 +36,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "strong_password", "~> 0"
   s.add_development_dependency "brakeman", "~> 3"
   s.add_development_dependency "simplecov", "~> 0.9.1"
-  s.add_development_dependency "rubocop", "= 0.40"
+  s.add_development_dependency "rubocop"
   s.add_development_dependency "timecop", "~> 0.7"
 end
